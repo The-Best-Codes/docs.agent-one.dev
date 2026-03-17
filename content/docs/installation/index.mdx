@@ -8,41 +8,21 @@ Choose your operating system to get started with AgentOne:
 
 ## Select Your Platform
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-  <div className="border rounded-lg p-6 hover:border-blue-500 transition-colors">
-    <h3 className="text-lg font-semibold mb-2">Windows</h3>
-    <p className="text-gray-600 mb-4">Windows 10/11 (64-bit)</p>
-    <a
-      href="/docs/installation/windows"
-      className="text-blue-600 hover:underline"
-    >
-      Install on Windows →
-    </a>
-  </div>
-
-<div className="border rounded-lg p-6 hover:border-blue-500 transition-colors">
-  <h3 className="text-lg font-semibold mb-2">macOS</h3>
-  <p className="text-gray-600 mb-4">macOS 12.0 or later</p>
-  <a href="/docs/installation/macos" className="text-blue-600 hover:underline">
-    Install on macOS →
-  </a>
-</div>
-
-  <div className="border rounded-lg p-6 hover:border-blue-500 transition-colors">
-    <h3 className="text-lg font-semibold mb-2">Linux</h3>
-    <p className="text-gray-600 mb-4">Ubuntu, Debian, Fedora, or Arch</p>
-    <a
-      href="/docs/installation/linux"
-      className="text-blue-600 hover:underline"
-    >
-      Install on Linux →
-    </a>
-  </div>
-</div>
+<Cards>
+  <Card href="/docs/installation/windows" title="Windows">
+    Install AgentOne on Windows
+  </Card>
+  <Card href="/docs/installation/macos" title="macOS">
+    Install AgentOne on macOS
+  </Card>
+  <Card href="/docs/installation/windows" title="Linux">
+    Install AgentOne on Linux
+  </Card>
+</Cards>
 
 ## System Requirements
 
-- **Processor**: 64-bit processor
-- **Memory**: 4GB RAM minimum (8GB recommended)
-- **Storage**: 500MB available space
-- **Internet**: Required for downloading models and extensions
+- A 64-bit processor
+- Preferably at least 4GB RAM
+- Preferably at least 500MB available storage space
+- Access to the internet
