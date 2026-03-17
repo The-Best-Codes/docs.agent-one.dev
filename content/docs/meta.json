@@ -1,0 +1,20 @@
+{
+  "title": "Documentation",
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "installation",
+    "---Features---",
+    "providers",
+    "extensions",
+    "tools",
+    "mcp",
+    "---Customization---",
+    "settings",
+    "keyboard-shortcuts",
+    "---Account---",
+    "account",
+    "pricing",
+    "privacy"
+  ]
+}
