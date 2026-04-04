@@ -1,0 +1,95 @@
+---
+title: AppImage
+description: Step-by-step instructions for running AgentOne as an AppImage on any Linux distribution
+---
+
+<Callout>
+  Need help? [Join our Discord server.](https://www.agent-one.dev/discord)
+</Callout>
+
+The AppImage is the primary download option on the AgentOne website and works on virtually any Linux distribution without installation.
+
+## Download from agent-one.dev (recommended)
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Download the AppImage
+
+    Navigate to https://www.agent-one.dev/download in your browser. Make sure the `Linux` tab is selected, then download the `.AppImage` file.
+
+</Step>
+<Step>
+
+    ### Make it executable
+
+    Open a terminal and navigate to the directory where the file was downloaded (usually `~/Downloads`). Then run:
+
+    ```bash
+    chmod +x AgentOne_*.AppImage
+    ```
+
+</Step>
+<Step>
+
+    ### Run AgentOne
+
+    Double-click the AppImage file in your file manager, or run it from the terminal:
+
+    ```bash
+    ./AgentOne_*.AppImage
+    ```
+
+</Step>
+</Steps>
+
+## Download from GitHub Releases
+
+<Callout>
+  If you followed the steps in the [Download from
+  agent-one.dev](#download-from-agent-onedev-recommended) section, you can skip
+  this section.
+</Callout>
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Find AgentOne on GitHub Releases
+
+    Open https://github.com/AgentOne-Dev/agent-one-public/releases.
+
+</Step>
+<Step>
+
+    ### Select the latest release
+
+    Usually, the latest release is the first release on the list. You'll see a green `Latest` badge next to the latest stable release. If the release has a `Pre-release` badge or title, don't use it unless you're a developer.
+
+    ![GitHub Releases page showing the latest release with a green "Latest" badge](/images/docs/installation/gh-releases/github-releases-latest.png)
+
+    Once you've found the latest release, click on its title (for example, `AgentOne 1.0.0`) to navigate to that release.
+
+</Step>
+<Step>
+
+    ### Download the AppImage
+
+    Scroll to the bottom of the release page and expand the `Assets` accordion.
+    Look for a file named `AgentOne_x.x.x_amd64.AppImage` and click on it to download it.
+
+</Step>
+<Step>
+
+    ### Make it executable and run
+
+    Open a terminal, navigate to the directory where the file was downloaded, then run:
+
+    ```bash
+    chmod +x AgentOne_*.AppImage
+    ./AgentOne_*.AppImage
+    ```
+
+</Step>
+</Steps>
