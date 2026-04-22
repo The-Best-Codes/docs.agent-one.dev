@@ -1,0 +1,79 @@
+---
+title: Smithery Integration
+description: Use Smithery extensions in the AgentOne desktop app.
+---
+
+AgentOne supports Smithery extensions. When you install a Smithery server with AgentOne, the app opens the `Add Custom Extension` dialog and pre-fills the server details for review.
+
+You can browse servers on [Smithery](https://smithery.ai) and install compatible ones into AgentOne from their server pages.
+
+## How Smithery Works with AgentOne
+
+AgentOne registers the `agent-one://` URL scheme and handles the Smithery-style `mcp/install` deep link.
+
+When AgentOne receives a link like this:
+
+```text
+agent-one://mcp/install?v=1&name=Example%20Server&config=%7B...%7D
+```
+
+it will:
+
+- Open `Settings` -> `Extensions`
+- Launch the `Add Custom Extension` dialog
+- Pre-fill the extension name
+- Pre-fill either the local command or remote URL
+- Ask you to review the configuration before adding it
+
+AgentOne supports the two Smithery transport types documented by Smithery:
+
+- `stdio`: AgentOne combines `command` and `args` into the `Command` field
+- `http`: AgentOne fills the `URL` field for the remote MCP endpoint
+
+## Supported Smithery Config Shapes
+
+### Local Stdio Server
+
+```json
+{
+  "type": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@smithery/cli@latest",
+    "run",
+    "@wonderwhy-er/desktop-commander"
+  ]
+}
+```
+
+### Remote HTTP Server
+
+```json
+{
+  "type": "http",
+  "url": "https://exa.run.tools"
+}
+```
+
+## Install Flow
+
+1. Open a supported MCP server page on [Smithery](https://smithery.ai).
+2. Choose AgentOne as the client when Smithery offers installation options.
+3. Allow the `agent-one://` link to open AgentOne.
+4. Review the pre-filled extension details in AgentOne.
+5. Add any extra environment variables or HTTP headers the server needs.
+6. Click `Add Custom`.
+
+AgentOne does not silently install Smithery extensions. The deep link only pre-fills the form so you can verify the settings first.
+
+## Notes
+
+- The optional `v=1` version parameter is supported.
+- AgentOne reads Smithery's `name` and `config` query parameters.
+- The `config` payload should be URL-encoded JSON.
+- If a server requires additional secrets, environment variables, or headers, add them in AgentOne before completing the install.
+
+## Explore More Servers
+
+Explore more MCP servers on [the Smithery servers page](https://smithery.ai/servers).
