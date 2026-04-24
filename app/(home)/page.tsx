@@ -12,7 +12,7 @@ export default function HomePage() {
       <h1 className="text-2xl font-bold mb-4">
         Welcome to the AgentOne Documentation!
       </h1>
-      <p>
+      <p className="max-w-lg">
         If you're looking for the main website, visit{" "}
         <Link
           href="https://www.agent-one.dev"
@@ -20,7 +20,7 @@ export default function HomePage() {
         >
           www.agent-one.dev
         </Link>
-        . Otherwise,
+        . Otherwise,{" "}
         <Link href="/docs" className="font-medium underline">
           click here to read the main documentation
         </Link>
