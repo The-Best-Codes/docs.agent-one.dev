@@ -103,7 +103,7 @@ export function ViewOptionsPopover({
             height="192"
             viewBox="0 0 128 128"
             xmlns="http://www.w3.org/2000/svg"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           >
             <title>AgentOne</title>
             <rect width="128" height="128" rx="28" ry="28" fill="#FFFFFF" />
@@ -113,9 +113,9 @@ export function ViewOptionsPopover({
                 className="letter-A"
                 fill="none"
                 stroke="#000000"
-                stroke-width="6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path d="M 36 89 V 39 H 64 V 89 M 36 64 H 64" />
               </g>
@@ -123,9 +123,9 @@ export function ViewOptionsPopover({
                 <g
                   fill="none"
                   stroke="#000000"
-                  stroke-width="2.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   <path d="M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1" />
                   <path d="M7 22h1a4 4 0 0 0 4-4v-1" />
