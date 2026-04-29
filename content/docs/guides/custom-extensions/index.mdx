@@ -33,7 +33,7 @@ To install a custom MCP server, you'll need to determine what type of server it 
 <Steps>
 <Step>
       
-      ### Install Required Tools
+      #### Install Required Tools
       
       If you're not a developer, there's a high chance you'll need to install additional tools on your system to use STDIO MCP servers. Here's a guide to what you may need to install, based on what the `Command` for the MCP server you want to add begins with. If you're not sure what the `Command` is, it looks something like this:
 
@@ -48,14 +48,14 @@ To install a custom MCP server, you'll need to determine what type of server it 
 </Step>
 <Step>
       
-      ### Navigate to Extension Settings
+      #### Navigate to Extension Settings
       
       If you haven't downloaded AgentOne yet, please check the [Installation Guide](/docs/installation). Open the AgentOne desktop app, expand the sidebar and click `Settings` in the bottom left, then click `Extensions` in the sidebar.
       
 </Step>
 <Step>
       
-      ### Add a Custom Extension
+      #### Add a Custom Extension
       
       Next to the search bar, click `Add Custom`. Select `STDIO (Local)` as the server type, give your server a name, and paste the command for your server in the `Command` field.
 
@@ -64,6 +64,43 @@ To install a custom MCP server, you'll need to determine what type of server it 
       If the instructions for the server you're adding mentions environment variables, you can add those too in the `Environment Variables` section.
 
       That's it! Click `Add Custom` to install the extension, then start a chat with AgentOne. It will have access to the new extension you added.
+
+</Step>
+</Steps>
+
+### HTTP Server
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+      
+      #### Navigate to Extension Settings
+      
+      If you haven't downloaded AgentOne yet, please check the [Installation Guide](/docs/installation). Open the AgentOne desktop app, expand the sidebar and click `Settings` in the bottom left, then click `Extensions` in the sidebar.
+      
+</Step>
+<Step>
+      
+      #### Add a Custom Extension
+      
+      Next to the search bar, click `Add Custom`. Select `HTTP (Remote)` as the server type, give your server a name, and paste the connection URL for your server in the `URL` field.
+
+      ![Install custom extension modal with HTTP selected](/images/docs/guides/custom-extensions/install-http-custom.png)
+
+      If the instructions for the server you're adding mentions HTTP headers, you can add those too in the `HTTP Headers` section.
+
+      Click `Add Custom` to install the extension.
+
+</Step>
+<Step>
+      
+      #### Sign In if Necesarry
+      
+      The extension may prompt you to sign in. In this case, simply click the `Login` button and follow the instructions.
+
+      ![Login prompt for Canva extension](/images/docs/guides/custom-extensions/canva-extension-login.png)
+
+    That's it! Start a chat with AgentOne. It will have access to the new extension you added.
 
 </Step>
 </Steps>
