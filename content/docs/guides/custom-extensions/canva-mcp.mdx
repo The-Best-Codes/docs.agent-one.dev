@@ -1,0 +1,66 @@
+---
+title: Use Canva with AgentOne
+description: Connect AgentOne to your Canva account to design with AI
+---
+
+[Canva](https://canva.com) is a popular online graphic design platform that enables users to create professional-looking visuals easily without advanced technical skills. Using a drag-and-drop interface, it allows for the creation of social media graphics, presentations, videos, websites, and print products. It is available for free or through paid Pro/Enterprise plans.
+Since Canva now has an [MCP server](/docs/guides/custom-extensions#what-is-an-mcp-server), you can connect your Canva account to AgentOne and use AI to help you create better designs faster.
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+      
+      ### Open AgentOne
+      
+      If you haven't downloaded AgentOne yet, please check the [Installation Guide](/docs/installation).
+      
+</Step>
+<Step>
+  
+    ### Navigate to Custom Extension Settings
+    
+    First click `Settings` in the bottom right of the sidebar. If the sidebar is not expanded, click the "Open Sidebar" button in the top left of the app.
+    
+    ![Screenshot showing the settings button in the bottom right of the sidebar](/images/docs/guides/custom-extensions/fast-filesystem-mcp/click-settings-button.png)
+    
+    Next, click `Extensions` in the settings sidebar, then choose the `Custom` tab. If you don't see the settings sidebar, click the list icon in the top right.
+    
+    ![Screenshot showing the custom extensions section](/images/docs/guides/custom-extensions/fast-filesystem-mcp/custom-extensions.png)
+
+</Step>
+<Step>
+  
+    ### Add the official Canva extension
+    
+    Click the `Add Custom` button, then fill in the details for the `Canva` extension.
+    
+    - **Type:** HTTP (Remote).
+    - **Name:** `Canva`.
+    - **URL:** `https://mcp.canva.com/mcp`.
+        
+    ![Screenshot showing MCP server details filled out](/images/docs/guides/custom-extensions/canva-mcp/fill-out-details.png)
+
+    Leave other settings unchanged. Click the `Add Custom` button at the bottom of the dialog to complete the installation.
+
+    ![Screenshot showing custom MCP servers list with Canva on the list](/images/docs/guides/custom-extensions/canva-mcp/install-complete.png)
+
+</Step>
+<Step>
+  
+    ### Connect your Canva Account
+    
+    Click the `Connect` button that appears after installing the Canva extension and follow the steps to connect your account. You may have to reconnect Canva occasionally.
+
+    ![Screenshot showing connect button on Canva extension notification](/images/docs/guides/custom-extensions/canva-mcp/connect-button.png)
+
+</Step>
+<Step>
+  
+    ### That's it!
+    
+    You've now added the `Canva` Extension. Try it out by asking AgentOne a question about Canva.
+
+    ![Screenshot showing a chat with AgentOne where it searches Canva designs](/images/docs/guides/custom-extensions/canva-mcp/use-canva-in-chat.png)
+
+</Step>
+</Steps>
