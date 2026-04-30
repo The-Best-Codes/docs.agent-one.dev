@@ -1,0 +1,9 @@
+root_dir = "/home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev"
+index_files = ["index.mdx"]
+fallback_extensions = ["mdx"]
+include_fragments = "anchor-only"
+
+remap = [
+  "^file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/docs/ file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/content/docs/",
+  "^file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/images/ file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/public/images/"
+]
