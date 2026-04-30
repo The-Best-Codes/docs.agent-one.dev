@@ -1,0 +1,43 @@
+---
+title: Automatic Model Detection
+description: Learn what automatic model detection in AgentOne is and why it's useful
+---
+
+## What is Automatic Model Detection?
+
+**Automatic model detection** discovers available models from your custom provider by querying its API. Instead of manually adding each model, you can click the `Auto` button and AgentOne will fetch and add them for you.
+
+This is especially useful if your provider has many models or you're unsure what's available.
+
+## How to Use It
+
+When setting up a custom provider, navigate to the **Models** section and click the `Auto` button. AgentOne will:
+
+1. Query your provider's `/v1/models` endpoint
+2. Retrieve the available models
+3. Add any new ones to your list (skipping duplicates)
+
+If successful, you'll see a checkmark. If it fails, you'll see an error indicator. In that case, you can manually add models by clicking `Add Model`.
+
+<Callout>
+  Currently, automatic model detection is only available for custom providers.
+  Once AgentOne exits beta, this feature will be expanded to built-in providers
+  with additional options like auto-updating on app startup and periodically in
+  the background.
+</Callout>
+
+## When Automatic Detection Fails
+
+Common reasons:
+
+- **Invalid base URL**: Make sure it includes `/v1` at the end (e.g., `https://api.example.com/v1`)
+- **Wrong API key**: Verify it's correct for your provider
+- **Provider offline or unsupported**: Your service may be down or doesn't support the OpenAI-compatible `/v1/models` endpoint
+
+Check your provider's documentation to confirm the correct base URL and that it supports the `/v1/models` endpoint.
+
+## Manual Fallback
+
+If automatic detection doesn't work, click `Add Model` and enter the model name manually. You can retry the `Auto` button anytime... it won't create duplicates.
+
+For help, reach out on the [AgentOne Forum](https://forum.agent-one.dev) or [Discord](https://www.agent-one.dev/discord).
