@@ -1,0 +1,152 @@
+---
+title: Local LLMs with Ollama
+description: Add an Ollama provider to AgentOne to run open-source models locally
+---
+
+## What is Ollama?
+
+[Ollama](https://ollama.com) is a tool that lets you run open-source AI models on your computer. This is useful if you want to:
+
+- **Use models offline** without internet or API keys
+- **Keep data private** (nothing leaves your machine)
+- **Avoid API costs** from cloud providers
+- **Experiment with different models** easily
+
+AgentOne can connect to Ollama running locally as a custom provider, so you can chat with models like Gemma, Mistral, Llama, Qwen, and others right from AgentOne.
+
+## Install Ollama and Download a Model
+
+First, let's install Ollama and download a model to use locally.
+
+<Steps>
+<Step>
+  ### Download and Install Ollama
+
+Visit [ollama.com](https://ollama.com) and download Ollama for your operating system (macOS, Linux, or Windows).
+Follow the installation instructions for your OS. Once installed, Ollama will run as a background service. To verify the installation, open a terminal and run:
+
+```bash
+ollama --version
+```
+
+If it shows a version number, you're good to go!
+
+</Step>
+<Step>
+  ### Download a Model
+
+Ollama comes with access to many open-source models. Let's download **Gemma 4 4B** - a lightweight, fast model that's perfect for local use. Open your terminal or command prompt. Run:
+
+```bash
+ollama pull gemma4:e4b
+```
+
+This downloads the model (about 9.6GB). Depending on your internet speed, this may take a while! Once complete, list your installed models to make sure everything is there:
+
+```bash
+ollama list
+```
+
+You should see `gemma4:e4b` in the list.
+
+</Step>
+<Step>
+  ### Ensure the Server is running
+
+On macOS and Linux, the server should be running by default. Try opening http://localhost:11434/v1/models in your browser to see if it is (you should see some formatted data). If the server is not running, you may need to run `ollama serve` first or download the Ollama desktop app and open it.
+
+</Step>
+</Steps>
+
+<Callout title="Want a different model?" type="info">
+  You can browse [ollama.com/library](https://ollama.com/library) to see all
+  available models. Just replace `gemma4:e4b` with any model name (e.g.,
+  `mistral`, `qwen`).
+</Callout>
+
+## Add Ollama as a Custom Provider in AgentOne
+
+Now let's import the Ollama model to AgentOne.
+
+<Steps>
+<Step>
+  ## Open Provider Settings
+
+In AgentOne, click `Settings` in the bottom left of the sidebar, then click `Providers`.
+
+</Step>
+<Step>
+  ### Add Custom Provider
+
+Click `Add Provider` and select `OpenAI Compatible`.
+
+</Step>
+<Step>
+  ### Fill in the Details
+
+Enter:
+
+- **Name**: `Ollama` (or whatever you prefer)
+- **Base URL**: `http://localhost:11434/v1`
+- **API Key**: Leave blank (Ollama doesn't require one)
+
+![Ollama custom provider setup](/images/docs/guides/providers/ollama-setup.png)
+
+</Step>
+<Step>
+  #### Auto-Detect Models
+
+Scroll to the **Models** section and click the `Auto` button. AgentOne will query Ollama and find your Gemma 4 model.
+
+If auto-detection succeeds, you'll see `gemma4:e4b` in your model list. Done!
+
+</Step>
+<Step>
+  #### Manual Fallback
+
+If auto-detection fails, click `Add Model` and enter:
+
+- **Model ID**: `gemma4:e4b`
+- **Display Name**: `Gemma 4 (4B)` (or whatever you prefer)
+
+Leave **Supports Tools** and **Supports Images** checked.
+
+</Step>
+<Step>
+  #### Save
+
+Click `Add Provider` to save. Ollama will now appear in your providers list and Gemma 4 will be available in the model selector.
+
+</Step>
+</Steps>
+
+## Use Gemma in AgentOne
+
+Your Ollama provider is ready! You can now:
+
+- **Toggle it on/off** with the provider switch
+- **Switch to Gemma 4** in the model selector
+- **Chat normally.** It's just like using a cloud provider, but locally
+
+<Callout title="First request might be slow">
+  The first time you chat with Gemma, it may take a few seconds to load into
+  memory. Subsequent messages will be faster.
+</Callout>
+
+## Tips & Troubleshooting
+
+### Ollama isn't responding
+
+- Make sure Ollama is running (check System Preferences on macOS or Services on Windows/Linux)
+- Verify the base URL is `http://localhost:11434/v1` with `/v1` at the end
+
+### Model loading is slow
+
+- Gemma 4 (4B) is lightweight, but still takes a moment to load. Stick with it... it gets faster after the first use.
+- If you want a faster experience, try a smaller model from the model library
+
+### Want to try other models?
+
+Visit the [Ollama library](https://ollama.com/library), run `ollama pull <model-name>`, and add it to AgentOne.
+
+For help, reach out on the [AgentOne Forum](https://forum.agent-one.dev) or [Discord](https://www.agent-one.dev/discord).
