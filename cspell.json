@@ -1,0 +1,10 @@
+{
+  "dictionaries": ["dictionary"],
+  "dictionaryDefinitions": [
+    {
+      "name": "dictionary",
+      "path": "./dictionary.txt",
+      "addWords": true
+    }
+  ]
+}

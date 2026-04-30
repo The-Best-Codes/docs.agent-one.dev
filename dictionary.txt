@@ -1,0 +1,13 @@
+AgentOne
+Cerebras
+Groq
+OS
+SmartScreen
+xAI
+Canva
+Ollama
+qwen
+webui
+paru
+appimage
+Snapcraft
