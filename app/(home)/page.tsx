@@ -12,20 +12,20 @@ export default function HomePage() {
       <h1 className="text-2xl font-bold mb-4">
         Welcome to the AgentOne Documentation!
       </h1>
-      <p className="max-w-lg">
-        If you're looking for the main website, visit{" "}
+      <div className="flex flex-row gap-2">
+        <Link
+          href="/docs"
+          className="px-2.5 py-1 bg-white rounded-md border border-gray-300 text-gray-900"
+        >
+          Read Documentation
+        </Link>
         <Link
           href="https://www.agent-one.dev"
-          className="font-medium underline"
+          className="px-2.5 py-1 bg-black text-white rounded-md border border-gray-900"
         >
-          www.agent-one.dev
+          Visit Website
         </Link>
-        . Otherwise,{" "}
-        <Link href="/docs" className="font-medium underline">
-          click here to read the main documentation
-        </Link>
-        .
-      </p>
+      </div>
     </div>
   );
 }
