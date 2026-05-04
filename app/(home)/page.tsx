@@ -1,5 +1,6 @@
 import { type Metadata } from "next";
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "AgentOne Documentation",
@@ -13,15 +14,12 @@ export default function HomePage() {
         Welcome to the AgentOne Documentation!
       </h1>
       <div className="flex flex-row gap-2">
-        <Link
-          href="/docs"
-          className="px-2.5 py-1 bg-white rounded-md border border-gray-300 text-gray-900"
-        >
+        <Link href="/docs" className={buttonVariants({ variant: "primary" })}>
           Read Documentation
         </Link>
         <Link
           href="https://www.agent-one.dev"
-          className="px-2.5 py-1 bg-black text-white rounded-md border border-gray-900"
+          className={buttonVariants({ variant: "secondary" })}
         >
           Visit Website
         </Link>
