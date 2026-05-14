@@ -1220,9 +1220,9 @@ export default (
 ```
 
 
-# Fumadocs CLI (the CLI tool for automating Fumadocs apps): Fumapress
-URL: /docs/cli/press
-Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/press.mdx
+# Fumadocs CLI (the CLI tool for automating Fumadocs apps): Preview
+URL: /docs/cli/preview
+Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/preview.mdx
 
 A light tool to view Markdown files.
         
@@ -1230,7 +1230,7 @@ A light tool to view Markdown files.
 
 ## Introduction [#introduction]
 
-Fumapress allows you to view Markdown files with Fumadocs, it is useful for reading skills files & notes.
+`fumadocs-preview` allows you to view Markdown files with Fumadocs, it is useful for reading skills files & notes.
 
 Run the command under your project directory.
 
@@ -1255,25 +1255,25 @@ Run the command under your project directory.
 
   <CodeBlockTab value="npm">
     ```bash
-    npx fumapress dir/to/content
+    npx fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="pnpm">
     ```bash
-    pnpm dlx fumapress dir/to/content
+    pnpm dlx fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="yarn">
     ```bash
-    yarn dlx fumapress dir/to/content
+    yarn dlx fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="bun">
     ```bash
-    bun x fumapress dir/to/content
+    bun x fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 </CodeBlockTabs>
@@ -1303,25 +1303,25 @@ For other configurations, you can install it locally:
 
   <CodeBlockTab value="npm">
     ```bash
-    npm install fumapress -D
+    npm install fumadocs-preview -D
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="pnpm">
     ```bash
-    pnpm add fumapress -D
+    pnpm add fumadocs-preview -D
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="yarn">
     ```bash
-    yarn add fumapress --dev
+    yarn add fumadocs-preview --dev
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="bun">
     ```bash
-    bun add fumapress --dev
+    bun add fumadocs-preview --dev
     ```
   </CodeBlockTab>
 </CodeBlockTabs>
@@ -1349,25 +1349,25 @@ Then init the config file:
 
   <CodeBlockTab value="npm">
     ```bash
-    npx fumapress init
+    npx fumadocs-preview init
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="pnpm">
     ```bash
-    pnpm dlx fumapress init
+    pnpm dlx fumadocs-preview init
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="yarn">
     ```bash
-    yarn dlx fumapress init
+    yarn dlx fumadocs-preview init
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="bun">
     ```bash
-    bun x fumapress init
+    bun x fumadocs-preview init
     ```
   </CodeBlockTab>
 </CodeBlockTabs>
@@ -4654,7 +4654,7 @@ While Fumadocs UI itself has many designs around flexibility & backward compatib
     </DocsLayout>
     ```
 
-    Detailed documentations for each component are in the [Fumadocs UI](/docs/ui) section, you can take it as a reference.
+    Detailed documentation for each component is in the [Fumadocs UI](/docs/ui) section, you can take it as a reference.
 
     Most options support passing JSX elements to allow your own components.
     This approach should suffice most use cases, such as adding sections below table of contents or in sidebar.
@@ -5274,7 +5274,6 @@ To create a page-level feedback UI, add the `<Feedback />` component to your doc
 ```tsx
 import { DocsPage } from 'fumadocs-ui/layout/docs/page';
 import { Feedback } from '@/components/feedback/client';
-import posthog from 'posthog-js';
 
 export default async function Page() {
   return (
@@ -5284,7 +5283,7 @@ export default async function Page() {
         onSendAction={async (feedback) => {
           'use server';
 
-          await posthog.capture('on_rate_docs', feedback);
+          console.log(feedback);
         }}
       />
     </DocsPage>
@@ -5299,55 +5298,58 @@ For example, to report user feedback as a `on_rate_docs` event on PostHog.
 
 ### Feedback Block [#feedback-block]
 
-You can also configure block-level feedback (e.g. a feedback popover for each paragraph).
+You can also configure block-level feedback (e.g. a feedback popover as user select text).
 
-Add the `remark-feedback-block` Remark plugin:
+Add the `remark-block-id` Remark plugin:
 
 ```tsx title="source.config.ts (Fumadocs MDX)"
 import {
-  remarkFeedbackBlock,
-  type RemarkFeedbackBlockOptions,
-} from 'fumadocs-core/mdx-plugins/remark-feedback-block';
+  remarkBlockId,
+  type RemarkBlockIdOptions,
+} from 'fumadocs-core/mdx-plugins/remark-block-id';
 import { defineConfig } from 'fumadocs-mdx/config';
 
-const feedbackOptions: RemarkFeedbackBlockOptions = {
-  // other options:
+const blockIdOptions: RemarkBlockIdOptions = {
+  addDataAttribute: 'feedback',
 };
 
 export default defineConfig({
   mdxOptions: {
     remarkPlugins: [
       // [!code ++]
-      [remarkFeedbackBlock, feedbackOptions],
+      [remarkBlockId, blockIdOptions],
     ],
   },
 });
 ```
 
-Then, define the `FeedbackBlock` MDX component:
+Then, wrap your page content under the `FeedbackText` component:
 
-```tsx title="components/mdx.tsx"
-import { FeedbackBlock } from '@/components/feedback/client';
-import defaultComponents from 'fumadocs-ui/mdx';
-import type { MDXComponents } from 'mdx/types';
+```tsx
+import { DocsPage } from 'fumadocs-ui/layout/docs/page';
+import { FeedbackText } from '@/components/feedback/client';
 
-export function getMDXComponents(components?: MDXComponents) {
-  return {
-    ...defaultComponents,
-    FeedbackBlock: ({ children, ...rest }) => (
-      <FeedbackBlock {...rest} onSendAction={onBlockFeedbackAction}>
-        {children}
-      </FeedbackBlock>
-    ),
-    ...components,
-  } satisfies MDXComponents;
+export default async function Page() {
+  return (
+    <DocsPage>
+      <FeedbackText
+        onSendAction={async (feedback) => {
+          'use server';
+
+          console.log(feedback);
+        }}
+      >
+        {/* the content of page */}
+      </FeedbackText>
+    </DocsPage>
+  );
 }
 ```
 
 * `onSendAction`: fired when user submit feedback.
 
 <Callout type="info" title="Good to know">
-  `remark-feedback-block` generates a block ID from its content and order in the page, hence it is also possible to track the blocks from 3rd party services.
+  `remark-block-id` generates a block ID from its content and order in the page, hence it is also possible to track the blocks from 3rd party services.
 </Callout>
 
 ### Integrating with GitHub Discussion [#integrating-with-github-discussion]
@@ -5432,8 +5434,10 @@ async function getFeedbackDestination() {
 export async function onPageFeedbackAction(feedback: PageFeedback): Promise<ActionResponse> {
   'use server';
   feedback = pageFeedback.parse(feedback);
+  const url = new URL(feedback.url);
+
   return createDiscussionThread(
-    feedback.url,
+    url.pathname,
     `[${feedback.opinion}] ${feedback.message}\n\n> Forwarded from user feedback.`,
   );
 }
@@ -5441,9 +5445,12 @@ export async function onPageFeedbackAction(feedback: PageFeedback): Promise<Acti
 export async function onBlockFeedbackAction(feedback: BlockFeedback): Promise<ActionResponse> {
   'use server';
   feedback = blockFeedback.parse(feedback);
+  const url = new URL(feedback.url);
+  url.hash = feedback.blockId;
+
   return createDiscussionThread(
-    feedback.url,
-    `> ${feedback.blockBody ?? feedback.blockId}\n\n${feedback.message}\n\n> Forwarded from user feedback.`,
+    url.pathname,
+    `> ${feedback.blockBody}\n\n${feedback.message}\n\n> [Forwarded from user feedback](${url.href}).`,
   );
 }
 
@@ -5457,22 +5464,20 @@ async function createDiscussionThread(pageId: string, body: string) {
   if (!category) throw new Error(`Please create a "${DocsCategory}" category in GitHub Discussion`);
 
   const title = `Feedback for ${pageId}`;
-  const {
+  const queryResult: {
     search: {
-      nodes: [discussion],
-    },
-  }: {
-    search: {
-      nodes: { id: string; url: string }[];
+      nodes: { id: string; title: string; url: string }[];
     };
   } = await octokit.graphql(`
           query {
-            search(type: DISCUSSION, query: ${JSON.stringify(`${title} in:title repo:${owner}/${repo} author:@me`)}, first: 1) {
+            search(type: DISCUSSION, query: ${JSON.stringify(`"${title}" in:title repo:${owner}/${repo} author:@me`)}, first: 10) {
               nodes {
-                ... on Discussion { id, url }
+                ... on Discussion { id, title, url }
               }
             }
           }`);
+
+  const discussion = queryResult.search.nodes.find((item) => item.title === title);
 
   if (discussion) {
     const result: {
@@ -5491,7 +5496,9 @@ async function createDiscussionThread(pageId: string, body: string) {
     };
   } else {
     const result: {
-      discussion: { id: string; url: string };
+      createDiscussion: {
+        discussion: { id: string; url: string };
+      };
     } = await octokit.graphql(`
             mutation {
               createDiscussion(input: { repositoryId: "${destination.id}", categoryId: "${category.id}", body: ${JSON.stringify(body)}, title: ${JSON.stringify(title)} }) {
@@ -5500,17 +5507,17 @@ async function createDiscussionThread(pageId: string, body: string) {
             }`);
 
     return {
-      githubUrl: result.discussion.url,
+      githubUrl: result.createDiscussion.discussion.url,
     };
   }
 }
 
 ```
 
-. Create your own GitHub App and obtain its app ID and private key.
-. Fill required environment variables.
-. Replace constants like `owner`, `repo`, and `DocsCategory`.
-. Use the `onPageFeedbackAction` & `onBlockFeedbackAction` in your feedback components.
+1. Create your own GitHub App and obtain its app ID and private key.
+2. Fill required environment variables.
+3. Replace constants like `owner`, `repo`, and `DocsCategory`.
+4. Use the `onPageFeedbackAction` & `onBlockFeedbackAction` in your feedback components.
 
 
 # Fumadocs (Framework Mode): AI & LLMs
@@ -5757,11 +5764,9 @@ A version of docs for AIs to read.
   </CodeBlockTab>
 </CodeBlockTabs>
 
-### `*.mdx` [#mdx-extension]
+### `*.md` [#md-extension]
 
-Allow AI agents to get the content of a page as Markdown/MDX, by appending `.mdx` to the end of path.
-
-Make a route handler to return page content, and a middleware to point to it:
+Allow AI agents to get the content of a page as Markdown/MDX, by appending `.md` to the end of path.
 
 <CodeBlockTabs defaultValue="Next.js">
   <CodeBlockTabsList>
@@ -5811,7 +5816,7 @@ Make a route handler to return page content, and a middleware to point to it:
       async rewrites() {
         return [
           {
-            source: '/docs/:path*.mdx',
+            source: '/docs/:path*.md',
             destination: '/llms.mdx/docs/:path*',
           },
         ];
@@ -5855,7 +5860,7 @@ Make a route handler to return page content, and a middleware to point to it:
     import type { Route } from './+types/root';
 
     // [!code ++:20]
-    const { rewrite: rewriteLLM } = rewritePath('/docs{/*path}.mdx', '/llms.mdx/docs{/*path}');
+    const { rewrite: rewriteLLM } = rewritePath('/docs{/*path}.md', '/llms.mdx/docs{/*path}');
     const serverMiddleware: Route.MiddlewareFunction = async ({ request }, next) => {
       const url = new URL(request.url);
       const path = rewriteLLM(url.pathname);
@@ -5880,16 +5885,43 @@ Make a route handler to return page content, and a middleware to point to it:
   </CodeBlockTab>
 
   <CodeBlockTab value="Tanstack Start">
-    ```ts  title="src/routes/llms[.]mdx.docs.$.ts"
+    ```ts  title="lib/source.ts"
+    // create the following utils:
+
+    export function markdownPathToSlugs(segs: string[]) {
+      if (segs.length === 0) return [];
+
+      const out = [...segs];
+      out[out.length - 1] = out[out.length - 1].replace(/\.md$/, '');
+      if (out.length === 1 && out[0] === 'index') out.pop();
+      return out;
+    }
+
+    export function slugsToMarkdownPath(slugs: string[]) {
+      const segments = [...slugs];
+      if (segments.length === 0) {
+        segments.push('index.md');
+      } else {
+        segments[segments.length - 1] += '.md';
+      }
+
+      return {
+        segments,
+        url: `/docs/${segments.join('/')}`,
+      };
+    }
+    ```
+
+    ```ts  title="src/routes/docs/{$}[.]md.ts"
     import { createFileRoute, notFound } from '@tanstack/react-router';
-    import { source } from '@/lib/source';
+    import { source, markdownPathToSlugs } from '@/lib/source';
     import { getLLMText } from '@/lib/get-llm-text';
 
-    export const Route = createFileRoute('/llms.mdx/docs/$')({
+    export const Route = createFileRoute('/docs/{$}.md')({
       server: {
         handlers: {
           GET: async ({ params }) => {
-            const slugs = params._splat?.split('/') ?? [];
+            const slugs = markdownPathToSlugs(params._splat?.split('/') ?? []);
             const page = source.getPage(slugs);
             if (!page) throw notFound();
 
@@ -5901,31 +5933,6 @@ Make a route handler to return page content, and a middleware to point to it:
           },
         },
       },
-    });
-    ```
-
-    ```ts  title="src/start.ts"
-    import { createMiddleware, createStart } from '@tanstack/react-start';
-    import { rewritePath } from 'fumadocs-core/negotiation';
-    import { redirect } from '@tanstack/react-router';
-
-    const { rewrite: rewriteLLM } = rewritePath('/docs{/*path}.mdx', '/llms.mdx/docs{/*path}');
-
-    const llmMiddleware = createMiddleware().server(({ next, request }) => {
-      const url = new URL(request.url);
-      const path = rewriteLLM(url.pathname);
-
-      if (path) {
-        throw redirect(new URL(path, url));
-      }
-
-      return next();
-    });
-
-    export const startInstance = createStart(() => {
-      return {
-        requestMiddleware: [llmMiddleware],
-      };
     });
     ```
   </CodeBlockTab>
@@ -5956,7 +5963,7 @@ export default function proxy(request: NextRequest) {
 
 ### Page Actions [#page-actions]
 
-Common page actions for AI, require [`*.mdx`](#mdx-extension) to be implemented first.
+Common page actions for AI, require [`*.md`](#md-extension) to be implemented first.
 
 <img alt="AI Page Actions" src="__img0" />
 
@@ -6008,6 +6015,7 @@ Use it in your docs page like:
 
 ```tsx title="app/docs/[[...slug]]/page.tsx"
 // URL to fetch Markdown content, only need to append .mdx to URL if you have `*.mdx` configured.
+// Use .md instead for the Tanstack Start example above.
 const markdownUrl = `${page.url}.mdx`
 
 <div className="flex flex-row gap-2 items-center border-b pt-2 pb-6">
@@ -6139,6 +6147,7 @@ Add the component & trigger to docs layout:
 
 ```tsx
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+// import the installed components, e.g.
 import { AISearch, AISearchPanel, AISearchTrigger } from '@/components/ai/search';
 import { MessageCircleIcon } from 'lucide-react';
 // or import your own button styles
@@ -8690,6 +8699,70 @@ console.log('B');
   </CodeBlockTab>
 </CodeBlockTabs>
 
+To add a persist ID, define `tab-group` at the first codeblock:
+
+````mdx
+```ts tab="Tab 1" tab-group="my-custom-group"
+console.log('A');
+```
+
+```ts tab="Tab 2"
+console.log('B');
+```
+````
+
+<CodeBlockTabs defaultValue="Tab 1" groupId="my-custom-group">
+  <CodeBlockTabsList>
+    <CodeBlockTabsTrigger value="Tab 1">
+      Tab 1
+    </CodeBlockTabsTrigger>
+
+    <CodeBlockTabsTrigger value="Tab 2">
+      Tab 2
+    </CodeBlockTabsTrigger>
+  </CodeBlockTabsList>
+
+  <CodeBlockTab value="Tab 1">
+    ```ts  
+    console.log('A');
+    ```
+  </CodeBlockTab>
+
+  <CodeBlockTab value="Tab 2">
+    ```ts
+    console.log('B');
+    ```
+  </CodeBlockTab>
+</CodeBlockTabs>
+
+Another group:
+
+<CodeBlockTabs defaultValue="Tab 1" groupId="my-custom-group">
+  <CodeBlockTabsList>
+    <CodeBlockTabsTrigger value="Tab 1">
+      Tab 1
+    </CodeBlockTabsTrigger>
+
+    <CodeBlockTabsTrigger value="Tab 2">
+      Tab 2
+    </CodeBlockTabsTrigger>
+  </CodeBlockTabsList>
+
+  <CodeBlockTab value="Tab 1">
+    ```ts  
+    console.log('A');
+    ```
+  </CodeBlockTab>
+
+  <CodeBlockTab value="Tab 2">
+    ```ts
+    console.log('B');
+    ```
+  </CodeBlockTab>
+</CodeBlockTabs>
+
+#### MDX in Tab Groups [#mdx-in-tab-groups]
+
 While disabled by default, you use MDX in tab values by configuring the remark plugin:
 
 <CodeBlockTabs defaultValue="Fumadocs MDX">
@@ -8749,11 +8822,15 @@ console.log('B');
 <CodeBlockTabs defaultValue="<Building /> Tab 1">
   <CodeBlockTabsList>
     <CodeBlockTabsTrigger value="<Building /> Tab 1">
-      <Building /> Tab 1
+      <Building />
+
+       Tab 1
     </CodeBlockTabsTrigger>
 
     <CodeBlockTabsTrigger value="<Rocket /> Tab 2">
-      <Rocket /> Tab 2
+      <Rocket />
+
+       Tab 2
     </CodeBlockTabsTrigger>
   </CodeBlockTabsList>
 
@@ -10175,61 +10252,61 @@ Using Mixedbread with Fumadocs UI.
 
 ## Setup [#setup]
 
-. Integrate [Mixedbread Search](/docs/headless/search/mixedbread).
+1. Integrate [Mixedbread Search](/docs/headless/search/mixedbread).
 
-. Create a search dialog component.
+2. Create a search dialog component.
 
-  ```tsx title="components/search.tsx"
-  'use client';
+   ```tsx title="components/search.tsx"
+   'use client';
 
-  import {
-    SearchDialog,
-    SearchDialogClose,
-    SearchDialogContent,
-    SearchDialogFooter,
-    SearchDialogHeader,
-    SearchDialogIcon,
-    SearchDialogInput,
-    SearchDialogList,
-    SearchDialogOverlay,
-    type SharedProps,
-  } from 'fumadocs-ui/components/dialog/search';
-  import { useDocsSearch } from 'fumadocs-core/search/client';
-  import { useI18n } from 'fumadocs-ui/contexts/i18n';
+   import {
+     SearchDialog,
+     SearchDialogClose,
+     SearchDialogContent,
+     SearchDialogFooter,
+     SearchDialogHeader,
+     SearchDialogIcon,
+     SearchDialogInput,
+     SearchDialogList,
+     SearchDialogOverlay,
+     type SharedProps,
+   } from 'fumadocs-ui/components/dialog/search';
+   import { useDocsSearch } from 'fumadocs-core/search/client';
+   import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
-  export default function CustomSearchDialog(props: SharedProps) {
-    const { locale } = useI18n(); // (optional) for i18n
-    const { search, setSearch, query } = useDocsSearch({
-      type: 'fetch',
-      api: '/api/search',
-      locale,
-    });
+   export default function CustomSearchDialog(props: SharedProps) {
+     const { locale } = useI18n(); // (optional) for i18n
+     const { search, setSearch, query } = useDocsSearch({
+       type: 'fetch',
+       api: '/api/search',
+       locale,
+     });
 
-    return (
-      <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
-        <SearchDialogOverlay />
-        <SearchDialogContent>
-          <SearchDialogHeader>
-            <SearchDialogIcon />
-            <SearchDialogInput />
-            <SearchDialogClose />
-          </SearchDialogHeader>
-          <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
-          <SearchDialogFooter>
-            <a
-              href="https://mixedbread.com"
-              rel="noreferrer noopener"
-              className="ms-auto text-xs text-fd-muted-foreground"
-            >
-              Search powered by Mixedbread
-            </a>
-          </SearchDialogFooter>
-        </SearchDialogContent>
-      </SearchDialog>
-    );
-  }
+     return (
+       <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
+         <SearchDialogOverlay />
+         <SearchDialogContent>
+           <SearchDialogHeader>
+             <SearchDialogIcon />
+             <SearchDialogInput />
+             <SearchDialogClose />
+           </SearchDialogHeader>
+           <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+           <SearchDialogFooter>
+             <a
+               href="https://mixedbread.com"
+               rel="noreferrer noopener"
+               className="ms-auto text-xs text-fd-muted-foreground"
+             >
+               Search powered by Mixedbread
+             </a>
+           </SearchDialogFooter>
+         </SearchDialogContent>
+       </SearchDialog>
+     );
+   }
 
-  ```
+   ```
 
 ### Replace Search Dialog [#replace-search-dialog]
 
@@ -10360,67 +10437,67 @@ Using Orama Cloud with Fumadocs UI.
 
 ## Setup [#setup]
 
-. Integrate [Orama Cloud](/docs/headless/search/orama-cloud).
+1. Integrate [Orama Cloud](/docs/headless/search/orama-cloud).
 
-. Create a search dialog, replace `endpoint` and `api_key` with your desired values.
+2. Create a search dialog, replace `endpoint` and `api_key` with your desired values.
 
-  ```tsx title="components/search.tsx"
-  'use client';
+   ```tsx title="components/search.tsx"
+   'use client';
 
-  import {
-    SearchDialog,
-    SearchDialogClose,
-    SearchDialogContent,
-    SearchDialogFooter,
-    SearchDialogHeader,
-    SearchDialogIcon,
-    SearchDialogInput,
-    SearchDialogList,
-    SearchDialogOverlay,
-    type SharedProps,
-  } from 'fumadocs-ui/components/dialog/search';
-  import { useDocsSearch } from 'fumadocs-core/search/client';
-  import { OramaCloud } from '@orama/core';
-  import { useI18n } from 'fumadocs-ui/contexts/i18n';
+   import {
+     SearchDialog,
+     SearchDialogClose,
+     SearchDialogContent,
+     SearchDialogFooter,
+     SearchDialogHeader,
+     SearchDialogIcon,
+     SearchDialogInput,
+     SearchDialogList,
+     SearchDialogOverlay,
+     type SharedProps,
+   } from 'fumadocs-ui/components/dialog/search';
+   import { useDocsSearch } from 'fumadocs-core/search/client';
+   import { OramaCloud } from '@orama/core';
+   import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
-  const client = new OramaCloud({
-    projectId: '',
-    apiKey: '',
-  });
+   const client = new OramaCloud({
+     projectId: '',
+     apiKey: '',
+   });
 
-  export default function CustomSearchDialog(props: SharedProps) {
-    const { locale } = useI18n(); // (optional) for i18n
-    const { search, setSearch, query } = useDocsSearch({
-      type: 'orama-cloud',
-      client,
-      locale,
-    });
+   export default function CustomSearchDialog(props: SharedProps) {
+     const { locale } = useI18n(); // (optional) for i18n
+     const { search, setSearch, query } = useDocsSearch({
+       type: 'orama-cloud',
+       client,
+       locale,
+     });
 
-    return (
-      <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
-        <SearchDialogOverlay />
-        <SearchDialogContent>
-          <SearchDialogHeader>
-            <SearchDialogIcon />
-            <SearchDialogInput />
-            <SearchDialogClose />
-          </SearchDialogHeader>
-          <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
-          <SearchDialogFooter>
-            <a
-              href="https://orama.com"
-              rel="noreferrer noopener"
-              className="ms-auto text-xs text-fd-muted-foreground"
-            >
-              Search powered by Orama
-            </a>
-          </SearchDialogFooter>
-        </SearchDialogContent>
-      </SearchDialog>
-    );
-  }
+     return (
+       <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
+         <SearchDialogOverlay />
+         <SearchDialogContent>
+           <SearchDialogHeader>
+             <SearchDialogIcon />
+             <SearchDialogInput />
+             <SearchDialogClose />
+           </SearchDialogHeader>
+           <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+           <SearchDialogFooter>
+             <a
+               href="https://orama.com"
+               rel="noreferrer noopener"
+               className="ms-auto text-xs text-fd-muted-foreground"
+             >
+               Search powered by Orama
+             </a>
+           </SearchDialogFooter>
+         </SearchDialogContent>
+       </SearchDialog>
+     );
+   }
 
-  ```
+   ```
 
 ### Replace Search Dialog [#replace-search-dialog]
 
@@ -10790,69 +10867,69 @@ Using Typesense with Fumadocs UI.
 
 ## Setup [#setup]
 
-. Integrate [Typesense Search](/docs/headless/search/typesense).
+1. Integrate [Typesense Search](/docs/headless/search/typesense).
 
-. Create a search dialog component.
+2. Create a search dialog component.
 
-  ```tsx title="components/search.tsx"
-  'use client';
-  import {
-    SearchDialog,
-    SearchDialogClose,
-    SearchDialogContent,
-    SearchDialogFooter,
-    SearchDialogHeader,
-    SearchDialogIcon,
-    SearchDialogInput,
-    SearchDialogList,
-    SearchDialogOverlay,
-    type SharedProps,
-  } from 'fumadocs-ui/components/dialog/search';
-  import { useI18n } from 'fumadocs-ui/contexts/i18n';
-  import { Client } from 'typesense';
-  import { useTypesenseSearch } from 'typesense-fumadocs-adapter/client';
+   ```tsx title="components/search.tsx"
+   'use client';
+   import {
+     SearchDialog,
+     SearchDialogClose,
+     SearchDialogContent,
+     SearchDialogFooter,
+     SearchDialogHeader,
+     SearchDialogIcon,
+     SearchDialogInput,
+     SearchDialogList,
+     SearchDialogOverlay,
+     type SharedProps,
+   } from 'fumadocs-ui/components/dialog/search';
+   import { useI18n } from 'fumadocs-ui/contexts/i18n';
+   import { Client } from 'typesense';
+   import { useTypesenseSearch } from 'typesense-fumadocs-adapter/client';
 
-  const client = new Client({
-    nodes: [{ url: 'YOUR_TYPESENSE_SERVER_URL' }],
-    apiKey: 'YOUR_TYPESENSE_SEARCH_ONLY_API_KEY',
-  });
+   const client = new Client({
+     nodes: [{ url: 'YOUR_TYPESENSE_SERVER_URL' }],
+     apiKey: 'YOUR_TYPESENSE_SEARCH_ONLY_API_KEY',
+   });
 
-  export default function TypesenseSearchDialog(props: SharedProps) {
-    const { locale } = useI18n(); // optional
-    const { search, setSearch, query } = useTypesenseSearch({
-      typesenseCollectionName: `YOUR_TYPESENSE_COLLECTION_NAME`,
-      locale,
-      legacy: false, // optional, set to true for fumadocs-ui version < 16.6.0
-      client,
-    });
+   export default function TypesenseSearchDialog(props: SharedProps) {
+     const { locale } = useI18n(); // optional
+     const { search, setSearch, query } = useTypesenseSearch({
+       typesenseCollectionName: `YOUR_TYPESENSE_COLLECTION_NAME`,
+       locale,
+       legacy: false, // optional, set to true for fumadocs-ui version < 16.6.0
+       client,
+     });
 
-    return (
-      <SearchDialog
-        search={search}
-        onSearchChange={setSearch}
-        isLoading={query.isLoading}
-        {...props}
-      >
-        <SearchDialogOverlay />
-        <SearchDialogContent>
-          <SearchDialogHeader>
-            <SearchDialogIcon />
-            <SearchDialogInput />
-            <SearchDialogClose />
-          </SearchDialogHeader>
-          <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
-          <SearchDialogFooter>
-            <div className="w-full text-right text-xs text-fd-muted-foreground">
-              <a href="https://typesense.org" rel="noreferrer noopener" target="_blank">
-                Search powered by Typesense
-              </a>
-            </div>
-          </SearchDialogFooter>
-        </SearchDialogContent>
-      </SearchDialog>
-    );
-  }
-  ```
+     return (
+       <SearchDialog
+         search={search}
+         onSearchChange={setSearch}
+         isLoading={query.isLoading}
+         {...props}
+       >
+         <SearchDialogOverlay />
+         <SearchDialogContent>
+           <SearchDialogHeader>
+             <SearchDialogIcon />
+             <SearchDialogInput />
+             <SearchDialogClose />
+           </SearchDialogHeader>
+           <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+           <SearchDialogFooter>
+             <div className="w-full text-right text-xs text-fd-muted-foreground">
+               <a href="https://typesense.org" rel="noreferrer noopener" target="_blank">
+                 Search powered by Typesense
+               </a>
+             </div>
+           </SearchDialogFooter>
+         </SearchDialogContent>
+       </SearchDialog>
+     );
+   }
+   ```
 
 ### Replace Search Dialog [#replace-search-dialog]
 
@@ -11324,17 +11401,14 @@ To integrate with Fumadocs, add the following to your `content-collections.ts`.
 
 ```ts title="content-collections.ts"
 import { defineCollection, defineConfig } from '@content-collections/core';
-import {
-  frontmatterSchema,
-  metaSchema,
-  transformMDX,
-} from '@fumadocs/content-collections/configuration';
+import { transformMDX } from '@fumadocs/content-collections/configuration';
+import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
 
 const docs = defineCollection({
   name: 'docs',
   directory: 'content/docs',
   include: '**/*.mdx',
-  schema: frontmatterSchema,
+  schema: pageSchema,
   transform: transformMDX,
 });
 
@@ -12557,8 +12631,8 @@ const vfile = await compile('...', {
 
 Placeholders let you keep certain MDX components in the stringified output as special tokens instead of dropping or inlining them. That way you can:
 
-. Rehydrate those tokens later via `renderPlaceholder()`.
-. Generate a better Markdown representation with runtime data.
+1. Rehydrate those tokens later via `renderPlaceholder()`.
+2. Generate a better Markdown representation with runtime data.
 
 ### Using `mdxAsPlaceholder` [#using-mdxasplaceholder]
 
@@ -14475,17 +14549,17 @@ The Mixedbread Integration uses vector search to provide semantic search capabil
 
 ### Get your API Key [#get-your-api-key]
 
-. Sign up at [Mixedbread](https://platform.mixedbread.com)
-. Navigate to [API Keys](https://platform.mixedbread.com/platform?next=api-keys)
-. Create a new API key and store it in your environment variables
+1. Sign up at [Mixedbread](https://platform.mixedbread.com)
+2. Navigate to [API Keys](https://platform.mixedbread.com/platform?next=api-keys)
+3. Create a new API key and store it in your environment variables
 
 ### Create a Store [#create-a-store]
 
 To sync your documentation, you'll need to create a store:
 
-. Go to the [Stores](https://platform.mixedbread.com/platform?next=stores) in your Mixedbread dashboard
-. Create a new store for your documentation
-. Copy the store ID
+1. Go to the [Stores](https://platform.mixedbread.com/platform?next=stores) in your Mixedbread dashboard
+2. Create a new store for your documentation
+3. Copy the store ID
 
 ### Sync Documentation [#sync-documentation]
 
@@ -14642,221 +14716,221 @@ To begin, create an account on Orama Cloud.
 
 REST API integration requires your docs to upload the indexes.
 
-. Create a new project with **REST API** data source on Orama Cloud dashboard.
+1. Create a new project with **REST API** data source on Orama Cloud dashboard.
 
-  Store your credentials in environment variables, for example:
+   Store your credentials in environment variables, for example:
 
-  ```dotenv
-  NEXT_PUBLIC_ORAMA_DATASOURCE_ID="Rest API data source ID"
-  NEXT_PUBLIC_ORAMA_PROJECT_ID="project ID"
-  NEXT_PUBLIC_ORAMA_API_KEY="public API key"
+   ```dotenv
+   NEXT_PUBLIC_ORAMA_DATASOURCE_ID="Rest API data source ID"
+   NEXT_PUBLIC_ORAMA_PROJECT_ID="project ID"
+   NEXT_PUBLIC_ORAMA_API_KEY="public API key"
 
-  ORAMA_PRIVATE_API_KEY="private API key"
-  ```
+   ORAMA_PRIVATE_API_KEY="private API key"
+   ```
 
-. Export the search indexes by pre-rendering a static route.
+2. Export the search indexes by pre-rendering a static route.
 
-  ```ts title="lib/export-search-indexes.ts"
-  import { source } from '@/lib/source';
-  import type { OramaDocument } from 'fumadocs-core/search/orama-cloud';
+   ```ts title="lib/export-search-indexes.ts"
+   import { source } from '@/lib/source';
+   import type { OramaDocument } from 'fumadocs-core/search/orama-cloud';
 
-  export async function exportSearchIndexes() {
-    return source.getPages().map((page) => {
-      return {
-        id: page.url,
-        structured: page.data.structuredData,
-        url: page.url,
-        title: page.data.title,
-        description: page.data.description,
-      } satisfies OramaDocument;
-    });
-  }
-  ```
+   export async function exportSearchIndexes() {
+     return source.getPages().map((page) => {
+       return {
+         id: page.url,
+         structured: page.data.structuredData,
+         url: page.url,
+         title: page.data.title,
+         description: page.data.description,
+       } satisfies OramaDocument;
+     });
+   }
+   ```
 
-  <CodeBlockTabs defaultValue="Next.js">
-    <CodeBlockTabsList>
-      <CodeBlockTabsTrigger value="Next.js">
-        Next.js
-      </CodeBlockTabsTrigger>
+   <CodeBlockTabs defaultValue="Next.js">
+     <CodeBlockTabsList>
+       <CodeBlockTabsTrigger value="Next.js">
+         Next.js
+       </CodeBlockTabsTrigger>
 
-      <CodeBlockTabsTrigger value="React Router">
-        React Router
-      </CodeBlockTabsTrigger>
+       <CodeBlockTabsTrigger value="React Router">
+         React Router
+       </CodeBlockTabsTrigger>
 
-      <CodeBlockTabsTrigger value="Tanstack Start">
-        Tanstack Start
-      </CodeBlockTabsTrigger>
+       <CodeBlockTabsTrigger value="Tanstack Start">
+         Tanstack Start
+       </CodeBlockTabsTrigger>
 
-      <CodeBlockTabsTrigger value="Waku">
-        Waku
-      </CodeBlockTabsTrigger>
-    </CodeBlockTabsList>
+       <CodeBlockTabsTrigger value="Waku">
+         Waku
+       </CodeBlockTabsTrigger>
+     </CodeBlockTabsList>
 
-    <CodeBlockTab value="Next.js">
-      ```ts  title="app/static.json/route.ts"
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="Next.js">
+       ```ts  title="app/static.json/route.ts"
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export const revalidate = false;
+       export const revalidate = false;
 
-      export async function GET() {
-        return Response.json(await exportSearchIndexes());
-      }
-      ```
-    </CodeBlockTab>
+       export async function GET() {
+         return Response.json(await exportSearchIndexes());
+       }
+       ```
+     </CodeBlockTab>
 
-    <CodeBlockTab value="React Router">
-      ```ts  title="app/routes/static.ts"
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="React Router">
+       ```ts  title="app/routes/static.ts"
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export async function loader() {
-        return Response.json(await exportSearchIndexes());
-      }
-      ```
+       export async function loader() {
+         return Response.json(await exportSearchIndexes());
+       }
+       ```
 
-      ```ts  title="app/routes.ts"
-      import { route, type RouteConfig } from '@react-router/dev/routes';
+       ```ts  title="app/routes.ts"
+       import { route, type RouteConfig } from '@react-router/dev/routes';
 
-      export default [
-        // [!code ++]
-        route('static.json', 'routes/static.ts'),
-      ] satisfies RouteConfig;
-      ```
-    </CodeBlockTab>
+       export default [
+         // [!code ++]
+         route('static.json', 'routes/static.ts'),
+       ] satisfies RouteConfig;
+       ```
+     </CodeBlockTab>
 
-    <CodeBlockTab value="Tanstack Start">
-      ```ts  title="src/routes/static[.]json.ts"
-      import { createFileRoute } from '@tanstack/react-router';
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="Tanstack Start">
+       ```ts  title="src/routes/static[.]json.ts"
+       import { createFileRoute } from '@tanstack/react-router';
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export const Route = createFileRoute('/static.json')({
-        server: {
-          handlers: {
-            GET: async () => Response.json(await exportSearchIndexes()),
-          },
-        },
-      });
-      ```
+       export const Route = createFileRoute('/static.json')({
+         server: {
+           handlers: {
+             GET: async () => Response.json(await exportSearchIndexes()),
+           },
+         },
+       });
+       ```
 
-      ```ts  title="vite.config.ts"
-      import { tanstackStart } from '@tanstack/react-start/plugin/vite';
-      import { defineConfig } from 'vite';
+       ```ts  title="vite.config.ts"
+       import { tanstackStart } from '@tanstack/react-start/plugin/vite';
+       import { defineConfig } from 'vite';
 
-      export default defineConfig({
-        plugins: [
-          // ...
-          tanstackStart({
-            prerender: {
-              enabled: true,
-            },
-            // [!code ++] pre-render the static file
-            pages: [{ path: '/static.json' }],
-          }),
-        ],
-      });
-      ```
-    </CodeBlockTab>
+       export default defineConfig({
+         plugins: [
+           // ...
+           tanstackStart({
+             prerender: {
+               enabled: true,
+             },
+             // [!code ++] pre-render the static file
+             pages: [{ path: '/static.json' }],
+           }),
+         ],
+       });
+       ```
+     </CodeBlockTab>
 
-    <CodeBlockTab value="Waku">
-      ```ts  title="pages/_api/static.json.ts"
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="Waku">
+       ```ts  title="pages/_api/static.json.ts"
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export async function GET() {
-        return Response.json(await exportSearchIndexes());
-      }
+       export async function GET() {
+         return Response.json(await exportSearchIndexes());
+       }
 
-      export const getConfig = () => ({
-        render: 'static',
-      });
-      ```
-    </CodeBlockTab>
-  </CodeBlockTabs>
+       export const getConfig = () => ({
+         render: 'static',
+       });
+       ```
+     </CodeBlockTab>
+   </CodeBlockTabs>
 
-. Create a script to sync search indexes.
+3. Create a script to sync search indexes.
 
-  ```ts title="scripts/sync-content.ts"
-  import { sync, type OramaDocument } from 'fumadocs-core/search/orama-cloud';
-  import * as fs from 'node:fs/promises';
-  import { OramaCloud } from '@orama/core';
+   ```ts title="scripts/sync-content.ts"
+   import { sync, type OramaDocument } from 'fumadocs-core/search/orama-cloud';
+   import * as fs from 'node:fs/promises';
+   import { OramaCloud } from '@orama/core';
 
-  const filePath = '<see below>';
+   const filePath = '<see below>';
 
-  async function main() {
-    const orama = new OramaCloud({
-      projectId: process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID,
-      apiKey: process.env.ORAMA_PRIVATE_API_KEY,
-    });
+   async function main() {
+     const orama = new OramaCloud({
+       projectId: process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID,
+       apiKey: process.env.ORAMA_PRIVATE_API_KEY,
+     });
 
-    const content = await fs.readFile(filePath);
-    const records = JSON.parse(content.toString()) as OramaDocument[];
+     const content = await fs.readFile(filePath);
+     const records = JSON.parse(content.toString()) as OramaDocument[];
 
-    await sync(orama, {
-      index: process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID,
-      documents: records,
-    });
+     await sync(orama, {
+       index: process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID,
+       documents: records,
+     });
 
-    console.log(`search updated: ${records.length} records`);
-  }
+     console.log(`search updated: ${records.length} records`);
+   }
 
-  void main();
-  ```
+   void main();
+   ```
 
-  `filePath` refers to the path of pre-rendered `static.json`, choose one according to your setup:
+   `filePath` refers to the path of pre-rendered `static.json`, choose one according to your setup:
 
-  <section id="static-route-output">
-    <CodeBlockTabs defaultValue="Next.js">
-      <CodeBlockTabsList>
-        <CodeBlockTabsTrigger value="Next.js">
-          Next.js
-        </CodeBlockTabsTrigger>
+   <section id="static-route-output">
+     <CodeBlockTabs defaultValue="Next.js">
+       <CodeBlockTabsList>
+         <CodeBlockTabsTrigger value="Next.js">
+           Next.js
+         </CodeBlockTabsTrigger>
 
-        <CodeBlockTabsTrigger value="Tanstack Start">
-          Tanstack Start
-        </CodeBlockTabsTrigger>
+         <CodeBlockTabsTrigger value="Tanstack Start">
+           Tanstack Start
+         </CodeBlockTabsTrigger>
 
-        <CodeBlockTabsTrigger value="React Router">
-          React Router
-        </CodeBlockTabsTrigger>
+         <CodeBlockTabsTrigger value="React Router">
+           React Router
+         </CodeBlockTabsTrigger>
 
-        <CodeBlockTabsTrigger value="Waku">
-          Waku
-        </CodeBlockTabsTrigger>
-      </CodeBlockTabsList>
+         <CodeBlockTabsTrigger value="Waku">
+           Waku
+         </CodeBlockTabsTrigger>
+       </CodeBlockTabsList>
 
-      <CodeBlockTab value="Next.js">
-        ```ts
-        const filePath = '.next/server/app/static.json.body';
-        ```
-      </CodeBlockTab>
+       <CodeBlockTab value="Next.js">
+         ```ts
+         const filePath = '.next/server/app/static.json.body';
+         ```
+       </CodeBlockTab>
 
-      <CodeBlockTab value="Tanstack Start">
-        ```ts
-        const filePath = '.output/public/static.json';
-        ```
-      </CodeBlockTab>
+       <CodeBlockTab value="Tanstack Start">
+         ```ts
+         const filePath = '.output/public/static.json';
+         ```
+       </CodeBlockTab>
 
-      <CodeBlockTab value="React Router">
-        ```ts
-        const filePath = 'build/client/static.json';
-        ```
-      </CodeBlockTab>
+       <CodeBlockTab value="React Router">
+         ```ts
+         const filePath = 'build/client/static.json';
+         ```
+       </CodeBlockTab>
 
-      <CodeBlockTab value="Waku">
-        ```ts
-        const filePath = 'dist/public/static.json';
-        ```
-      </CodeBlockTab>
-    </CodeBlockTabs>
-  </section>
+       <CodeBlockTab value="Waku">
+         ```ts
+         const filePath = 'dist/public/static.json';
+         ```
+       </CodeBlockTab>
+     </CodeBlockTabs>
+   </section>
 
-. Run the script after production build, make sure the environment variables are available (e.g. Bun reads from `.env` files):
+4. Run the script after production build, make sure the environment variables are available (e.g. Bun reads from `.env` files):
 
-  ```json title="package.json"
-  {
-    "scripts": {
-      "build": "... && bun scripts/sync-content.ts"
-    }
-  }
-  ```
+   ```json title="package.json"
+   {
+     "scripts": {
+       "build": "... && bun scripts/sync-content.ts"
+     }
+   }
+   ```
 
 ### Search Client [#search-client]
 
@@ -14888,8 +14962,8 @@ To search documents on the client side, consider:
 
 ## Web Crawler [#web-crawler]
 
-. Create a Crawler data source from dashboard, and configure it correctly with the "Documentation" preset.
-. Copy the credentials from dashboard.
+1. Create a Crawler data source from dashboard, and configure it correctly with the "Documentation" preset.
+2. Copy the credentials from dashboard.
 
 ### Search Client [#search-client-1]
 
@@ -15938,9 +16012,9 @@ export default function CustomSearchDialog(props: SharedProps) {
 }
 ```
 
-. Replace `apiKey` and `datasetId` with your desired values.
+1. Replace `apiKey` and `datasetId` with your desired values.
 
-. Replace the default search dialog with your new one.
+2. Replace the default search dialog with your new one.
 
 ### Search Client [#search-client]
 
@@ -17434,12 +17508,11 @@ Use Fumadocs MDX with Vite
       ```ts  title="vite.config.ts"
       import { defineConfig } from 'vite';
       import mdx from 'fumadocs-mdx/vite';
-      import * as MdxConfig from './source.config';
 
       export default defineConfig({
         plugins: [
           // [!code ++]
-          mdx(MdxConfig),
+          mdx(),
           // ...
         ],
       });
@@ -17450,15 +17523,13 @@ Use Fumadocs MDX with Vite
       ```ts  title="waku.config.ts"
       import { type Config, defineConfig } from 'waku/config';
       import mdx from 'fumadocs-mdx/vite';
-      import * as MdxConfig from './source.config.js';
       import type { UserConfig } from 'vite';
 
       export default defineConfig({
         vite: {
           plugins: [
             // [!code ++]
-            mdx(MdxConfig),
-            tsconfigPaths(),
+            mdx(),
           ],
           resolve: {
             tsconfigPaths: true,
@@ -18039,15 +18110,6 @@ Use it in MDX files or as a normal React component.
       &#x22;deprecated&#x22;: false
     },
     {
-      &#x22;name&#x22;: &#x22;type&#x22;,
-      &#x22;description&#x22;: &#x22;&#x22;,
-      &#x22;tags&#x22;: [],
-      &#x22;type&#x22;: &#x22;\&#x22;single\&#x22; | \&#x22;multiple\&#x22;&#x22;,
-      &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
-      &#x22;required&#x22;: true,
-      &#x22;deprecated&#x22;: false
-    },
-    {
       &#x22;name&#x22;: &#x22;disabled&#x22;,
       &#x22;description&#x22;: &#x22;Whether or not an accordion is disabled from user interaction.&#x22;,
       &#x22;tags&#x22;: [
@@ -18059,6 +18121,15 @@ Use it in MDX files or as a normal React component.
       &#x22;type&#x22;: &#x22;boolean | undefined&#x22;,
       &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
       &#x22;required&#x22;: false,
+      &#x22;deprecated&#x22;: false
+    },
+    {
+      &#x22;name&#x22;: &#x22;type&#x22;,
+      &#x22;description&#x22;: &#x22;&#x22;,
+      &#x22;tags&#x22;: [],
+      &#x22;type&#x22;: &#x22;\&#x22;single\&#x22; | \&#x22;multiple\&#x22;&#x22;,
+      &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
+      &#x22;required&#x22;: true,
       &#x22;deprecated&#x22;: false
     },
     {
@@ -18098,15 +18169,6 @@ Use it in MDX files or as a normal React component.
       &#x22;deprecated&#x22;: false
     },
     {
-      &#x22;name&#x22;: &#x22;value&#x22;,
-      &#x22;description&#x22;: &#x22;&#x22;,
-      &#x22;tags&#x22;: [],
-      &#x22;type&#x22;: &#x22;string | undefined&#x22;,
-      &#x22;simplifiedType&#x22;: &#x22;string&#x22;,
-      &#x22;required&#x22;: false,
-      &#x22;deprecated&#x22;: false
-    },
-    {
       &#x22;name&#x22;: &#x22;disabled&#x22;,
       &#x22;description&#x22;: &#x22;Whether or not an accordion item is disabled from user interaction.&#x22;,
       &#x22;tags&#x22;: [
@@ -18117,6 +18179,15 @@ Use it in MDX files or as a normal React component.
       ],
       &#x22;type&#x22;: &#x22;boolean | undefined&#x22;,
       &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
+      &#x22;required&#x22;: false,
+      &#x22;deprecated&#x22;: false
+    },
+    {
+      &#x22;name&#x22;: &#x22;value&#x22;,
+      &#x22;description&#x22;: &#x22;&#x22;,
+      &#x22;tags&#x22;: [],
+      &#x22;type&#x22;: &#x22;string | undefined&#x22;,
+      &#x22;simplifiedType&#x22;: &#x22;string&#x22;,
       &#x22;required&#x22;: false,
       &#x22;deprecated&#x22;: false
     }
@@ -22164,9 +22235,9 @@ const docs = localMd({
 
 The recommended integration is:
 
-. Create `localMd({ dir })` for your content directory.
-. Pass `docs.dynamicSource()` to `dynamicLoader()`.
-. Read the source in your route/layout and render it with Fumadocs UI.
+1. Create `localMd({ dir })` for your content directory.
+2. Pass `docs.dynamicSource()` to `dynamicLoader()`.
+3. Read the source in your route/layout and render it with Fumadocs UI.
 
 For example, in a docs layout:
 
@@ -22427,7 +22498,7 @@ const serverLoader = createServerFn({
     const { serialize } = await page.data.load();
 
     return {
-      frontmatter: { ...page.data.frontmatter, _openapi: null },
+      frontmatter: page.data.frontmatter,
       // [!code highlight] pass it to payload
       render: serialize(),
       // ...
@@ -22469,7 +22540,7 @@ You can think it as a `next-mdx-remote` with built-in plugins for Fumadocs.
   The Passed MDX content must be trusted as it allows code execution by default.
 </Callout>
 
-### Setup [#setup]
+## Setup [#setup]
 
 <CodeBlockTabs defaultValue="npm" groupId="package-manager">
   <CodeBlockTabsList>
@@ -22518,7 +22589,10 @@ You can think it as a `next-mdx-remote` with built-in plugins for Fumadocs.
 The main feature it offers is the MDX Compiler, it can compile MDX content to JSX nodes.
 Since it doesn't use a bundler, there's some limitations:
 
+* Images have to be optimized at runtime.
 * No imports and exports in MDX files.
+
+### With RSC [#with-rsc]
 
 It's compatible with Server Components. For example:
 
@@ -22532,16 +22606,15 @@ const compiler = createCompiler({
   // options
 });
 
-export default async function Page({ params }: { params: { slug?: string[] } }) {
-  const page = getPage(params.slug);
-  const compiled = await compiler.compile({
+export default async function Page({ params }: PageProps<'/docs/[[...slug]]'>) {
+  const { slug } = await params;
+  const page = getPage(slug);
+  const { toc, body: MdxContent } = await compiler.compile({
     source: page.content,
   });
 
-  const MdxContent = compiled.body;
-
   return (
-    <DocsPage toc={compiled.toc}>
+    <DocsPage toc={toc}>
       <DocsBody>
         <MdxContent components={getMDXComponents()} />
       </DocsBody>
@@ -22550,12 +22623,370 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
 }
 ```
 
+### Without RSC [#without-rsc]
+
+Without Server Components, you can enable `skipRender` and pass the compiled code to client instead:
+
+```tsx
+import { createCompiler } from '@fumadocs/mdx-remote';
+import { executeMdxSync } from '@fumadocs/mdx-remote/client';
+import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/docs/page';
+import { getPage } from './my-content-source';
+import { useMemo } from 'react';
+import { getMDXComponents } from '@/components/mdx';
+
+const compiler = createCompiler({
+  // options
+});
+
+// e.g. where you generate loader data
+async function serverPayload(slugs?: string[]) {
+  const page = getPage(slugs);
+  const { compiled, frontmatter } = await compiler.compile({
+    source: page.content,
+    skipRender: true,
+  });
+
+  return { compiled, frontmatter };
+}
+
+function Page() {
+  // read compiled code from server payload
+  const { compiled } = useLoaderData();
+  const { default: MdxContent, toc } = useMemo(() => executeMdxSync(compiled), [compiled]);
+
+  return (
+    <DocsPage toc={toc}>
+      <DocsBody>
+        <MdxContent components={getMDXComponents()} />
+      </DocsBody>
+    </DocsPage>
+  );
+}
+```
+
+> The `frontmatter` property returned by `compile()` is not validated, you may use a library like `zod` to validate its data type.
+
 ### Images [#images]
 
 On serverless platforms like Vercel, the original `public` folder (including static assets like images) will be removed after production build.
 The MDX compiler might no longer be able to access local images in `public`.
 
 When referencing images, make sure to use a URL.
+
+
+# Fumadocs (Framework Mode): Sanity
+URL: /docs/integrations/content/sanity
+Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/sanity.mdx
+
+Official integration for Sanity.
+        
+
+
+## Overview [#overview]
+
+Fumadocs provide an official integration to simplify setup for Sanity CMS, it brings native live preview experience without compromise on performance.
+
+> You can see our [Sanity Example](https://github.com/fuma-nama/fumadocs-sanity) on GitHub.
+
+## Setup [#setup]
+
+Assume you already have [Sanity](https://sanity.io/docs/getting-started) configured according to their docs.
+
+<div className="fd-steps">
+  <div className="fd-step">
+    ### Data Types [#data-types-step]
+
+    Run the following command to initialize content types.
+
+    <CodeBlockTabs defaultValue="npm" groupId="package-manager">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="npm">
+          npm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="pnpm">
+          pnpm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="yarn">
+          yarn
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="bun">
+          bun
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="npm">
+        ```bash
+        npx @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="pnpm">
+        ```bash
+        pnpm dlx @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="yarn">
+        ```bash
+        yarn dlx @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="bun">
+        ```bash
+        bun x @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+
+    > Or you can run `npx @fumadocs/cli add` and browse additional Sanity presets to install.
+
+    Register the installed types:
+
+    <CodeBlockTabs defaultValue="schemaTypes/index.ts">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="schemaTypes/index.ts">
+          schemaTypes/index.ts
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="components/sanity.ts">
+          components/sanity.ts
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="schemaTypes/index.ts">
+        ```ts
+        import { docsType, blockContent, callout, card, cards } from '@/lib/sanity/base';
+
+        // [!code ++]
+        export const schemaTypes = [blockContent, callout, card, cards, docsType];
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="components/sanity.ts">
+        ```tsx
+        import {
+          PortableText,
+          type PortableTextProps,
+          type PortableTextReactComponents,
+        } from '@portabletext/react';
+        // the installed components
+        import { baseBlocks, baseComponents, baseMarks } from './base';
+
+        const components: Partial<PortableTextReactComponents> = {
+          block: {
+            // [!code ++]
+            ...baseBlocks,
+          },
+          marks: {
+            // [!code ++]
+            ...baseMarks,
+          },
+          types: {
+            // [!code ++]
+            ...baseComponents,
+          },
+        };
+
+        export function CustomPortableText(props: PortableTextProps) {
+          return <PortableText {...props} components={{ ...components, ...props.components }} />;
+        }
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+  </div>
+
+  <div className="fd-step">
+    ### Content Loader [#content-loader-step]
+
+    Install the integration:
+
+    <CodeBlockTabs defaultValue="npm" groupId="package-manager">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="npm">
+          npm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="pnpm">
+          pnpm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="yarn">
+          yarn
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="bun">
+          bun
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="npm">
+        ```bash
+        npm i @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="pnpm">
+        ```bash
+        pnpm add @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="yarn">
+        ```bash
+        yarn add @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="bun">
+        ```bash
+        bun add @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+
+    <CodeBlockTabs defaultValue="Next.js (live preview)">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="Next.js (live preview)">
+          Next.js (live preview)
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="Others">
+          Others
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="Next.js (live preview)">
+        ```ts title="lib/source.ts" 
+        import { dynamicLoader } from 'fumadocs-core/source/dynamic';
+        import { createSanitySource } from '@fumadocs/sanity';
+        // the live preview client
+        import { sanityFetch } from '@/sanity/lib/live';
+        // the generated types
+        import type { Docs } from '@/sanity/types';
+        import { draftMode } from 'next/headers';
+
+        const source = dynamicLoader(
+          createSanitySource<Docs>({
+            sanityFetch,
+            docType: 'docs',
+          }),
+          {
+            baseUrl: '/docs',
+          },
+        );
+
+        export async function getSource() {
+          const { isEnabled } = await draftMode();
+
+          if (isEnabled) source.revalidate();
+          return source.get();
+        }
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="Others">
+        ```ts title="lib/source.ts" 
+        import { dynamicLoader } from 'fumadocs-core/source/dynamic';
+        import { createSanitySource } from '@fumadocs/sanity';
+        // the Sanity client
+        import { client } from '@/sanity/lib/client';
+        // the generated types
+        import type { Docs } from '@/sanity/types';
+
+        const source = dynamicLoader(
+          createSanitySource<Docs>({
+            client,
+            docType: 'docs',
+          }),
+          {
+            baseUrl: '/docs',
+          },
+        );
+
+        export async function getSource() {
+          return source.get();
+        }
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+
+    Now update references to your `source` with the `getSource()` function like:
+
+    ```tsx
+    import { getSource } from '@/lib/source';
+    import { CustomPortableText } from '@/components/sanity';
+    import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+
+    // [!code highlight]
+    const source = await getSource();
+
+    const page = source.getPage(['...']);
+
+    // basic info
+    console.log(page.data.title, page.data.description);
+
+    // [!code highlight] load full info
+    const { renderToc, body } = await page.data.load();
+
+    // to render docs page content:
+    return (
+      // `renderToc()` to render TOC items on server
+      <DocsPage toc={renderToc({ render: (body) => <CustomPortableText value={body} /> })}>
+        <DocsTitle>{page.data.title}</DocsTitle>
+        <DocsDescription>{page.data.description}</DocsDescription>
+        <DocsBody>
+          <CustomPortableText value={body!} />
+        </DocsBody>
+      </DocsPage>
+    );
+    ```
+
+    If you are not using React Server Components, `renderToc` can be imported separately:
+
+    ```tsx
+    import { getSource } from '@/lib/source';
+    import { renderToc } from '@fumadocs/sanity/client';
+    import { CustomPortableText } from '@/components/sanity';
+    import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+
+    // where you return server payload
+    export async function serverPayload(slugs: string[]) {
+      const source = await getSource();
+      const page = source.getPage(slugs);
+      if (!page) throw new Error('not found');
+
+      const { title, description, _toc, body } = await page.data.load();
+      return { title, description, toc: _toc, body };
+    }
+
+    export function Page() {
+      // receive server payload
+      const { toc, body, title, description } = useLoaderData();
+
+      return (
+        <DocsPage toc={renderToc({ toc, render: (body) => <CustomPortableText value={body} /> })}>
+          <DocsTitle>{title}</DocsTitle>
+          <DocsDescription>{description}</DocsDescription>
+          <DocsBody>
+            <CustomPortableText value={body!} />
+          </DocsBody>
+        </DocsPage>
+      );
+    }
+    ```
+  </div>
+
+  <div className="fd-step">
+    ### Done [#done-step]
+
+    Create documents under the `docs` type in your studio editor, new content will be displayed in the docs route.
+  </div>
+</div>
 
 
 # Fumadocs (Framework Mode): Obsidian
@@ -24771,8 +25202,8 @@ Install the required packages.
         return {
           type: 'docs',
           path: page.path,
-          markdownUrl: getPageMarkdownUrl(page).url,
           pageTree,
+          // ...
         };
       });
 
@@ -25403,13 +25834,23 @@ Access content in Node.js runtime.
 Make sure to run the script under ESM environment.
 
 ```js title="scripts/example.js"
-import { register } from 'node:module';
+import { register } from 'fumadocs-mdx/node';
 
-register('fumadocs-mdx/node/loader', import.meta.url);
+// register the Node.js loader
+register();
 
 // accessing content
 const { source } = await import('./lib/source');
 console.log(source.getPages());
+```
+
+The `register()` function accepts options:
+
+```ts
+register({
+  configPath: '...',
+  // ...
+});
 ```
 
 
