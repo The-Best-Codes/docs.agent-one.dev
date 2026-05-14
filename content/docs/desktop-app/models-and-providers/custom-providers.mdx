@@ -1,0 +1,46 @@
+---
+title: Custom Providers
+description: Add your own OpenAI-compatible providers to AgentOne.
+---
+
+Custom providers are for services that are not already built into AgentOne.
+
+## Add A Custom Provider
+
+1. Open `Settings` -> `Providers`.
+2. In `Custom Providers`, click `Add Provider`.
+3. Choose `OpenAI Compatible`.
+4. Fill in:
+   - `Name`
+   - `Base URL`
+   - optional `API Key`
+   - optional custom headers
+   - one or more models
+5. Click `Add Provider`.
+
+## Model Requirement
+
+The add-provider dialog requires at least one model before the provider can be created.
+
+## Auto-Fetch Models
+
+If the provider supports a compatible `/v1/models` endpoint, click `Auto` in the model list to fetch available models.
+
+## Edit Or Delete Later
+
+After creation, you can:
+
+- rename the provider
+- change its base URL
+- update headers or API key
+- add or delete models
+- toggle it on or off
+- `Delete Provider`
+
+## Good Fit For Custom Providers
+
+- self-hosted inference endpoints
+- smaller AI providers with OpenAI-compatible APIs
+- internal company gateways
+
+If you need step-by-step help, see the broader [Custom Providers](/docs/guides/providers/custom) guide.

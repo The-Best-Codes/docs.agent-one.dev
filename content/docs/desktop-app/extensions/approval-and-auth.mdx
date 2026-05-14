@@ -1,0 +1,45 @@
+---
+title: Approval and Authentication
+description: Control extension approvals and connect extensions that require authentication.
+---
+
+AgentOne gives you approval controls at both the built-in tool level and the extension level.
+
+## Default Approval For Extensions
+
+Each installed extension can use `Require Approval By Default`.
+
+When enabled, AgentOne asks before tools from that extension run.
+
+## Per-Tool Approvals
+
+For installed MCP extensions, the `Advanced` view includes `Per-tool approvals`.
+
+This lets you override the default approval behavior for individual tools exposed by that extension.
+
+## Extension Status
+
+Installed extensions can show states such as:
+
+- loading
+- enabled
+- disabled
+- error
+- auth required
+
+## Connect And Disconnect
+
+Some HTTP extensions support authentication.
+
+In the advanced view, AgentOne can show:
+
+- `Connect`
+- `Disconnect`
+- `Connected`
+- `No authorization required`
+
+If an extension needs sign-in for full access, connect it from the advanced panel.
+
+## Debug Info
+
+Some installed registry extensions also expose `Debug info` in the advanced panel. This is useful when you are troubleshooting an install or comparing registry data with what the app detected.

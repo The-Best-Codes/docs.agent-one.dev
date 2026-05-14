@@ -1,0 +1,13 @@
+{
+  "title": "Desktop App",
+  "pages": [
+    "getting-started",
+    "chats",
+    "models-and-providers",
+    "extensions",
+    "settings",
+    "account-and-sync",
+    "shortcuts-and-links",
+    "troubleshooting"
+  ]
+}

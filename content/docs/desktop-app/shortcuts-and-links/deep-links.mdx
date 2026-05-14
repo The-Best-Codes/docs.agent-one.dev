@@ -1,0 +1,40 @@
+---
+title: Deep Links
+description: Open AgentOne with supported `agent-one://` deep links.
+---
+
+AgentOne registers the `agent-one://` URL scheme.
+
+## Supported Deep Links
+
+### New Chat
+
+Use the `new-chat` deep link to open a new chat, optionally with a pre-filled first message.
+
+Example:
+
+```text
+agent-one://new-chat?v=1&message=Summarize%20this%20project
+```
+
+This opens a fresh chat and pre-fills the composer.
+
+### MCP Install
+
+Use the `mcp/install` deep link to open the custom extension flow with pre-filled values.
+
+Example shape:
+
+```text
+agent-one://mcp/install?v=1&name=Example%20Server&config=%7B...%7D
+```
+
+When AgentOne receives that link, it opens `Settings` -> `Extensions` and pre-fills the add-custom-extension dialog.
+
+## Version Parameter
+
+Deep links generally use a `v` parameter so the app can validate the link format.
+
+## Safety
+
+AgentOne does not silently install extensions from deep links. You still need to review the details and confirm the install.

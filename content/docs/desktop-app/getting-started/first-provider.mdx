@@ -1,0 +1,52 @@
+---
+title: Connect Your First Provider
+description: Enable your first model provider so AgentOne can respond to chats.
+---
+
+AgentOne needs at least one enabled model provider before it can answer messages.
+
+## Your Options
+
+You can start with any of these:
+
+- A built-in cloud provider such as OpenAI, Anthropic, Google, Groq, or Mistral
+- A built-in local provider such as Ollama or LM Studio
+- A custom OpenAI-compatible provider
+
+## Quickest Setup Paths
+
+### Option 1: Use a built-in cloud provider
+
+1. Open `Settings`.
+2. Click `Providers`.
+3. Expand a provider under `Built-in Providers`.
+4. Toggle it on.
+5. Paste your API key.
+6. Save the key.
+
+### Option 2: Use Ollama or LM Studio
+
+1. Make sure the local runtime is already installed and running.
+2. Open `Settings` -> `Providers`.
+3. Find the provider under `Local Providers`.
+4. Keep it enabled.
+5. Confirm the `Base URL` is correct.
+6. Wait for models to auto-detect, or click `Auto` in the Models section.
+
+### Option 3: Add a custom provider
+
+1. Open `Settings` -> `Providers`.
+2. In `Custom Providers`, click `Add Provider`.
+3. Choose `OpenAI Compatible`.
+4. Enter a name, base URL, optional API key, and one or more models.
+5. Click `Add Provider`.
+
+## How To Tell It Worked
+
+After setup:
+
+- the provider stays enabled
+- at least one model appears in the model selector in chat
+- the composer no longer shows the no-model warning
+
+For full provider setup details, continue to [Models & Providers](/docs/desktop-app/models-and-providers).
