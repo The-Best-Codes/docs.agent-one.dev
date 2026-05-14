@@ -73,6 +73,7 @@ export function MarkdownCopyButton({
 export function ViewOptionsPopover({
   markdownUrl,
   githubUrl,
+  localFilePath,
   ...props
 }: ComponentProps<typeof PopoverTrigger> & {
   /**
@@ -84,6 +85,12 @@ export function ViewOptionsPopover({
    * Source file URL on GitHub
    */
   githubUrl?: string;
+
+  /**
+   * Absolute filesystem path to the source file. Used to provide an
+   * "Open in Zed" option in development.
+   */
+  localFilePath?: string;
 }) {
   const pathname = usePathname();
   const items = useMemo(() => {
@@ -92,6 +99,7 @@ export function ViewOptionsPopover({
         ? pathname
         : new URL(pathname, window.location.origin);
     const q = `Read ${pageUrl}, I want to ask questions about it.`;
+    const isDev = process.env.NODE_ENV === "development";
 
     return [
       {
@@ -99,43 +107,39 @@ export function ViewOptionsPopover({
         href: `agent-one://new-chat?v=1&message=${encodeURIComponent(q)}`,
         icon: (
           <svg
-            width="192"
-            height="192"
-            viewBox="0 0 128 128"
+            viewBox="456 156 288 288"
             xmlns="http://www.w3.org/2000/svg"
-            shapeRendering="crispEdges"
+            fill="currentColor"
           >
             <title>AgentOne</title>
-            <rect width="128" height="128" rx="28" ry="28" fill="#FFFFFF" />
-
-            <g transform="translate(-4.25, 0)">
-              <g
-                className="letter-A"
-                fill="none"
-                stroke="#000000"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M 36 89 V 39 H 64 V 89 M 36 64 H 64" />
-              </g>
-              <g className="letter-I" transform="translate(58, 34) scale(2.5)">
-                <g
-                  fill="none"
-                  stroke="#000000"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1" />
-                  <path d="M7 22h1a4 4 0 0 0 4-4v-1" />
-                  <path d="M7 2h1a4 4 0 0 1 4 4v1" />
-                </g>
-              </g>
-            </g>
+            <path
+              d="M 480 180 L 660 180 L 720 240 L 720 420 L 660 420 L 600 360 L 540 360 L 480 420 L 480 180 Z M 600 360 L 660 360 L 660 240 L 540 240 L 540 300 L 600 300 L 600 360 Z"
+              fillRule="evenodd"
+              stroke="none"
+            />
           </svg>
         ),
       },
+      isDev &&
+        localFilePath && {
+          title: "Open in Zed",
+          href: `zed://file${localFilePath}`,
+          icon: (
+            <svg
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Zed</title>
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M8.4375 5.625C6.8842 5.625 5.625 6.8842 5.625 8.4375V70.3125H0V8.4375C0 3.7776 3.7776 0 8.4375 0H83.7925C87.551 0 89.4333 4.5442 86.7756 7.20186L40.3642 53.6133H53.4375V47.8125H59.0625V55.0195C59.0625 57.3495 57.1737 59.2383 54.8438 59.2383H34.7392L25.0712 68.9062H68.9062V33.75H74.5312V68.9062C74.5312 72.0128 72.0128 74.5312 68.9062 74.5312H19.4462L9.60248 84.375H81.5625C83.1158 84.375 84.375 83.1158 84.375 81.5625V19.6875H90V81.5625C90 86.2224 86.2224 90 81.5625 90H6.20749C2.44898 90 0.566723 85.4558 3.22438 82.7981L49.46 36.5625H36.5625V42.1875H30.9375V35.1562C30.9375 32.8263 32.8263 30.9375 35.1562 30.9375H55.085L64.9288 21.0938H21.0938V56.25H15.4688V21.0938C15.4688 17.9871 17.9871 15.4688 21.0938 15.4688H70.5538L80.3975 5.625H8.4375Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
       githubUrl && {
         title: "Open in GitHub",
         href: githubUrl,
