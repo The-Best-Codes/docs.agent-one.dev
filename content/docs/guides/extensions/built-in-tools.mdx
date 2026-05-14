@@ -1,0 +1,68 @@
+---
+title: Built-in Tools
+description: Configure the built-in tools that ship with AgentOne and understand what each one does.
+---
+
+AgentOne ships with a set of built-in tools that appear under the `Built-in extensions` card in `Settings` -> `Extensions`. These tools are always available - no install or registry access needed - and most are enabled by default.
+
+## The Built-in Tools
+
+### Current date and time
+
+Gives the model access to the current date and time. Useful for any task where the model needs to be aware of when "today" is - generating reports, scheduling suggestions, or time-aware summaries. You can configure whether it reports in **UTC** or local time.
+
+### Pause
+
+Inserts a deliberate pause into the model's execution. Useful in long agentic workflows when you want the model to stop and wait rather than continue immediately. You can set minimum and maximum pause duration values.
+
+### Browse
+
+Opens a URL and returns its content to the model. Useful when you want the model to read a specific page rather than search for it. You can configure the maximum number of URLs the tool fetches in a single call and the default maximum content length returned.
+
+### Search the web
+
+Performs a web search and returns results to the model. The model can use this to find current information, look up documentation, or research a topic. Configurable options include concurrency, maximum results per query, and maximum pages fetched.
+
+### Edit file
+
+Reads and modifies a file on disk. The model can use this to apply targeted edits to code or text files during agentic workflows.
+
+### Create file
+
+Creates a new file at a specified path with provided content. Often used alongside other file tools in coding or writing workflows.
+
+### Delete file
+
+Deletes a file at a specified path. Because this is irreversible, you may want to enable `Require Approval` for this tool.
+
+### View file
+
+Reads a file and returns its contents to the model. You can configure the default maximum number of characters returned to keep responses manageable.
+
+### Run command
+
+Executes a shell command on your machine and returns the output to the model. This is a powerful tool - use `Require Approval` to be prompted before any command runs. You can configure the default timeout for command execution.
+
+### Spawn subagent
+
+Delegates a focused task to a subagent with its own context window. Useful for long-form or multi-step work where separating concerns into parallel or sequential sub-tasks improves results. Subagents cannot spawn their own subagents.
+
+## Per-Tool Controls
+
+For every built-in tool you can:
+
+- **Enable or disable** it - disabled tools are never offered to the model.
+- **Set Require Approval** - when on, AgentOne shows a confirmation dialog before running the tool, letting you review what it is about to do.
+- **Adjust tool-specific configuration** - each tool with configurable options exposes those settings inline.
+
+## Resetting to Defaults
+
+A reset button at the bottom of the built-in tools card restores all built-in tool settings to their defaults. This does not affect installed MCP extensions.
+
+## Safety Recommendations
+
+For tools that make irreversible changes - `Delete file`, `Run command`, `Edit file`, `Create file` - consider enabling `Require Approval` so you can review each action before it happens. For read-only tools like `View file`, `Browse`, and `Search the web`, approval is usually not necessary.
+
+See [Approval and Auth](/docs/guides/extensions/approval-and-auth) for more on how approvals work across both built-in tools and installed extensions.
+
+{/* Screenshot placeholder: Built-in extensions card expanded with Run command tool showing Require Approval toggle enabled, and the tool-specific timeout configuration visible. */}

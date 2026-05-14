@@ -1,79 +1,95 @@
 ---
 title: Chat Settings
-description: Control markdown rendering, notifications, action rows, submit behavior, streaming, and titles.
+description: Control markdown rendering, notifications, action rows, submit behavior, streaming, and chat titles.
 ---
 
-The `Chats` settings section controls how conversations behave.
+The `Chats` section in `Settings` controls how conversations behave from input to output. These are global defaults - some can be overridden per-chat (like the submit key) while others affect all chats.
 
 ## Chat Behavior
 
 ### Markdown Rendering
 
-Choose whether markdown renders in:
+Controls which messages render markdown formatting:
 
-- `All messages`
-- `User messages only`
-- `Assistant messages only`
-- `No messages`
+- **All messages** - both your messages and assistant responses use markdown rendering.
+- **User messages only** - only your messages are rendered as markdown.
+- **Assistant messages only** (default for most users) - only assistant responses render markdown.
+- **No messages** - all messages display as plain text.
+
+Turn off markdown rendering for assistant messages if you are working with a model that produces a lot of raw text and the formatting feels distracting.
 
 ### Completion Notification
 
-Choose:
+Choose when AgentOne shows a desktop notification when a response finishes:
 
-- `Always`
-- `When window unfocused`
-- `Never`
+- **Always** - notify on every completed response.
+- **When window unfocused** - notify only when AgentOne is not the active window. This is useful when you submit a long task and switch to another app while waiting.
+- **Never** - no notifications.
+
+Note that OS-level notification permissions must be granted for notifications to appear. See [Notifications and Updates Troubleshooting](/docs/desktop-app/troubleshooting/notifications-and-updates) if notifications are not appearing.
 
 ### Message Action Row
 
-Choose:
+Controls when the per-message action buttons (copy, edit, regenerate, branch) are visible:
 
-- `Show on hover`
-- `Always show`
-- `Never show`
+- **Show on hover** - appears when you mouse over a message.
+- **Always show** - permanently visible on every message.
+- **Never show** - hidden from the normal row.
+
+See [Message Actions](/docs/desktop-app/chats/message-actions) for what each action does.
 
 ### Submit Key
 
-Choose:
+Choose how you send messages:
 
-- `Enter`
-- `Ctrl + Enter`
+- **Enter** - press Enter to send, Shift+Enter for a newline.
+- **Ctrl+Enter** - press Ctrl+Enter to send, Enter for a newline.
 
-### Other Toggles
+If you often write multi-line prompts, `Ctrl+Enter` prevents accidental sends.
 
-- `Regenerate on Save`
-- `Always Show Stop Button`
-- `Chat Status Indicators`
+### Regenerate on Save
 
-## Streaming Experience
+Sets the default state of the **Regenerate when Saved** toggle that appears when editing a message. When this is on, saving a message edit automatically triggers a new response from that point in the conversation. See [Edit Messages](/docs/desktop-app/chats/editing-messages).
+
+### Always Show Stop Button
+
+When enabled, the stop button appears in the composer immediately after you submit a message - even during the brief moment before the model starts streaming. Useful if you frequently want to cancel responses right away.
+
+### Chat Status Indicators
+
+Shows or hides the small status indicator icons on chat rows in the sidebar while a response is generating.
+
+## Streaming
 
 ### Smooth Stream
 
-Enables a more fluid text streaming experience.
+Enables a smoother, more fluid text streaming animation. If disabled, text appears in larger chunks as it arrives.
 
 ### Experimental Throttle
 
-Adds a configurable throttle delay to streaming.
-
-If enabled, you can set a `Throttle Value` in milliseconds.
+Adds a configurable delay between streaming updates. Enable this if streaming feels too fast to read or causes high CPU usage on your machine. When enabled, a **Throttle Value** field appears where you can set the delay in milliseconds.
 
 ## Chat Titles
 
-AgentOne can generate titles in different ways.
+Controls how AgentOne names new chats automatically.
 
 ### Generation Method
 
-Choose:
+- **AI generated** - the model summarizes the first exchange and generates a title. Produces the most descriptive titles but requires a model call.
+- **First user message** - uses the text of your first message as the title, truncated to the character limit.
+- **First assistant message** - uses the beginning of the model's first response.
+- **Custom phrase** - uses a fixed phrase you specify for every new chat.
 
-- `AI generated`
-- `First user message`
-- `First assistant message`
-- `Custom phrase`
+### Character Limit
 
-Depending on the method, you may also see:
+Applies to AI-generated and message-based title methods. Titles longer than this limit are truncated.
 
-- `Character Limit`
-- `Custom Phrase`
-- `Fallback Phrase`
+### Custom Phrase and Fallback Phrase
 
-These settings affect how new chat titles are generated and how title generation falls back when needed.
+When using `Custom phrase`, the **Custom Phrase** field sets the title for every new chat. The **Fallback Phrase** is used when the primary method fails (for example, if the AI title generation call times out).
+
+## Related
+
+- [Appearance](/docs/desktop-app/settings/appearance) - visual customization including markdown highlighting.
+- [Message Actions](/docs/desktop-app/chats/message-actions) - the action row this section configures.
+- [Edit Messages](/docs/desktop-app/chats/editing-messages) - how Regenerate on Save works.

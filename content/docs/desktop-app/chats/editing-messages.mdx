@@ -1,28 +1,40 @@
 ---
 title: Edit Messages
-description: Edit existing messages and control whether AgentOne regenerates after saving.
+description: Edit any message in a conversation and optionally regenerate from that point.
 ---
 
-AgentOne lets you edit existing messages directly in the conversation.
+AgentOne lets you edit any message in the conversation - both user messages and assistant messages - directly from the chat view. This is useful for correcting a prompt, adjusting phrasing, or manually fixing an assistant response.
 
-## Editing A User Message
+## Editing a User Message
 
-When editing a user message, you can:
+1. Hover over a user message to reveal the [message action row](/docs/desktop-app/chats/message-actions).
+2. Click **Edit message** (pencil icon).
+3. Modify the text in the inline editor.
+4. Choose whether to enable **Regenerate when Saved**.
+5. Click **Save** to apply, or **Cancel** to discard.
 
-- change the message text
-- click `Save`
-- choose whether to use `Regenerate when Saved`
+### Regenerate when Saved
 
-If regeneration is enabled, AgentOne updates the conversation from that point forward.
+When this toggle is on, AgentOne discards all messages after the edited message and generates a fresh response from the updated context. This is the most common use case - you changed your prompt and want a new answer.
 
-## Editing An Assistant Message
+When it is off, the edit is saved as-is without triggering a new response. The conversation history reflects your change, but the subsequent messages are left in place. This can be useful for manually correcting a typo in your own message without invalidating a useful answer.
 
-Assistant messages can also be opened in the editor and saved.
+The default state of this toggle is controlled by `Settings` -> `Chats` -> `Regenerate on Save`.
 
-## Canceling An Edit
+## Editing an Assistant Message
 
-Click `Cancel` to discard your changes.
+Assistant messages can also be edited. Open the editor the same way - hover to see the action row, then click the edit icon.
 
-## Default Behavior
+Editing an assistant message and saving **without** regeneration replaces the stored content with whatever you typed. This is useful if you want to clean up or annotate the response for your own reference.
 
-The default for regeneration-after-save is controlled by `Settings` -> `Chats` -> `Regenerate on Save`.
+If you save **with** regeneration, AgentOne discards the assistant message and asks the model for a new one.
+
+## Canceling
+
+Click **Cancel** at any point in the editor to discard your changes. The original message is preserved unchanged.
+
+## Related
+
+- [Message Actions](/docs/desktop-app/chats/message-actions) - all per-message actions including regenerate and branch.
+- [Branch Conversations](/docs/desktop-app/chats/branching-conversations) - fork the chat instead of editing in place.
+- [Chat Settings](/docs/desktop-app/settings/chat-settings) - set the default for Regenerate on Save.

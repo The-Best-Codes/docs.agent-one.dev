@@ -1,64 +1,64 @@
 ---
 title: Chat Sidebar
-description: Use the sidebar to create, open, search, and manage chats.
+description: Use the sidebar to create, navigate, search, and manage your chats in AgentOne.
 ---
 
-The sidebar is the main navigation area for your conversations.
+The sidebar is the navigation hub on the left side of the [desktop layout](/docs/desktop-app/getting-started/desktop-layout). Every chat you have ever started lives here, organized with the most recent at the top.
 
-## What You Can Do From The Sidebar
+{/* Screenshot placeholder: sidebar showing a list of recent chats with titles, one selected chat highlighted, and the New Chat button and Settings button visible. */}
 
-- click `New Chat`
-- browse recent chats
-- search chats
-- open chat actions from the `...` menu
-- open `Settings`
+## Creating Chats
 
-## Collapsing The Sidebar
+Click **New Chat** at the top of the sidebar, or press `Ctrl+N` from anywhere in the app, to open a fresh conversation. The new chat becomes active immediately.
 
-Use `Ctrl+B` to toggle the sidebar.
+## Browsing Chat History
 
-When collapsed, AgentOne still shows quick buttons for:
+The sidebar lists your chats in reverse chronological order. Each row shows:
 
-- open or close sidebar
-- `Search chats`
-- `New chat`
+- The **chat title** (auto-generated from the conversation, or set manually).
+- A **status indicator** while a response is in progress.
+- A **branch icon** if the chat was created by branching from another conversation. See [Branch Conversations](/docs/desktop-app/chats/branching-conversations).
+- A **search snippet** when you are viewing content search results.
 
-You can choose whether those collapsed buttons appear in a `Row` or `Column` layout in `Settings` -> `Appearance` -> `Collapsed Sidebar Layout`.
+Clicking a chat opens it in the main area.
 
-## Chat List Details
+## Per-Chat Actions
 
-Each row can show:
+Every chat row has a `...` menu (also accessible by right-clicking the row). The menu includes:
 
-- the chat title
-- a status indicator
-- a branch icon for branched chats
-- a search snippet when you are viewing content search results
-
-## Per-Chat Menu
-
-Open the `...` menu on a chat to access:
-
-- `Change Title`
-- `Export Chat`
-- `Delete Chat`
-- `Select Chat`
-
-You can also right-click a chat to open the same actions.
+- **Change Title** - rename the chat to whatever you want.
+- **Export Chat** - download the chat as a JSON file. See [Exports and Deletion](/docs/desktop-app/chats/exports-and-deletion).
+- **Delete Chat** - permanently remove the chat.
+- **Select Chat** - enter selection mode for this chat.
 
 ## Selection Mode
 
-Selection mode lets you manage multiple chats at once.
+Selection mode lets you manage multiple chats at once. Enter it by choosing **Select Chat** from the `...` menu, or by Shift-clicking any chat row.
 
-You can enter it by:
+While in selection mode you can:
 
-- choosing `Select Chat` from a chat menu
-- Shift-clicking a chat
+- **Select All** or **Deselect All** with one click.
+- **Bulk export** - download all selected chats as a single JSON file.
+- **Bulk delete** - delete all selected chats at once (with a confirmation prompt).
 
-While in selection mode, you can:
+Exit selection mode by clicking the cancel button or pressing Escape.
 
-- `Select All`
-- `Deselect All`
-- bulk export
-- bulk delete
+{/* Screenshot placeholder: sidebar in selection mode showing several selected chats (checkmarks), the Select All button, bulk export, and bulk delete controls at the bottom. */}
 
-{/* Screenshot placeholder: sidebar in selection mode showing multiple selected chats, Select All, export, and delete controls. */}
+## Collapsing the Sidebar
+
+Press `Ctrl+B` to collapse the sidebar. When collapsed, AgentOne shows a compact strip of icon buttons - enough to open the sidebar, search, or start a new chat without needing the full sidebar open.
+
+Whether those buttons appear in a **Row** or **Column** layout is configurable in `Settings` -> `Appearance` -> `Collapsed Sidebar Layout`.
+
+On narrower windows, the sidebar becomes a drawer instead of a pinned panel, so it does not crowd the chat area.
+
+## Opening Settings
+
+The **Settings** button at the bottom of the sidebar opens the settings view. You can also reach it with `Ctrl+,`.
+
+## Related
+
+- [Search Chats](/docs/desktop-app/chats/searching-chats) - find chats by title or message content.
+- [Exports and Deletion](/docs/desktop-app/chats/exports-and-deletion) - export and delete chats individually or in bulk.
+- [Keyboard Shortcuts](/docs/desktop-app/shortcuts-and-links/keyboard-shortcuts) - all sidebar-relevant shortcuts.

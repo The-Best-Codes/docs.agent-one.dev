@@ -1,31 +1,45 @@
 ---
 title: Sign In and Plan
-description: Sign in to AgentOne, view your current plan, and manage billing from the app.
+description: Sign in to AgentOne, view your plan details, and manage billing from the app.
 ---
 
-When you sign in, AgentOne can show account-based features in the `Plan & Usage` card.
+The `Account` section in `Settings` shows your sign-in status, plan information, and access controls. If you skipped signing in during [onboarding](/docs/desktop-app/getting-started/onboarding), you can sign in from here at any time.
 
-## What You Can See
+## Signing In
 
-- your current plan name
-- renewal date for an active subscription
-- credit usage progress
-- remaining credits for the current period
+Click **Sign In** in the Account section. AgentOne opens the sign-in flow in a browser window. After completing it, the app refreshes and loads your account information.
+
+If you do not have an AgentOne account yet, you can create one during the sign-in flow.
+
+## Plan and Usage
+
+Once signed in, the **Plan & Usage** card shows:
+
+- Your current plan name (for example, Free, Pro, or a team plan).
+- Renewal date for active subscriptions.
+- Credit usage progress for the current billing period.
+- Remaining credits.
+
+This is especially useful for understanding how much of your AgentOne-hosted model quota remains. If you are exclusively using [your own API keys with built-in or custom providers](/docs/guides/providers/built-in-providers), this section is less relevant since your usage is tracked directly by those providers.
 
 ## Account Actions
 
-Depending on your account state, AgentOne can show:
+Depending on your account and plan state, AgentOne may show buttons for:
 
-- `Upgrade your Plan`
-- `Manage Billing`
-- `Account Dashboard`
+- **Upgrade your Plan** - links to the plan selection page.
+- **Manage Billing** - opens the billing portal.
+- **Account Dashboard** - opens your account overview.
 
-## If You Are Not Signed In
+## Hiding AgentOne Models
 
-The app shows a free-state message and prompts you to sign in to load subscription details.
+In the **Sync & Access** card, signed-in users can toggle **Hide AgentOne models** to remove AgentOne-hosted models from the [model selector](/docs/guides/providers/model-selector). This is useful if you prefer to work exclusively with providers you manage yourself and want to keep the model list clean.
 
-## Hide AgentOne Models
+## Signing Out
 
-In the `Sync & Access` card, signed-in users can toggle `Hide AgentOne models` to remove AgentOne-hosted models from the model selector.
+Signing out removes your account session from the app. Your locally stored providers, API keys, and chats are not affected - they stay on your device.
 
-This setting is only useful if you are signed in and eligible to see those models in the first place.
+## Related
+
+- [Sync Settings](/docs/desktop-app/account-and-sync/sync-settings) - what gets synced when you are signed in.
+- [Profile and Instructions](/docs/desktop-app/account-and-sync/profile-and-instructions) - set your name and AI instructions.
+- [Onboarding](/docs/desktop-app/getting-started/onboarding) - how the sign-in choice works during first run.

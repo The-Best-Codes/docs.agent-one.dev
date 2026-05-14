@@ -1,0 +1,61 @@
+---
+title: Groq
+description: Connect Groq's fast inference models to AgentOne with your API key.
+---
+
+Groq offers extremely fast inference for open-source models using custom LPU hardware. AgentOne includes Groq as a built-in provider.
+
+## Getting a Groq API Key
+
+<Steps>
+<Step>
+### Sign in to GroqCloud
+
+Go to [console.groq.com](https://console.groq.com) and sign in or create a free account.
+
+</Step>
+<Step>
+### Create an API Key
+
+In the sidebar, click **API Keys**, then click **Create API Key**. Give it a name and copy the key.
+
+</Step>
+</Steps>
+
+<Callout title="Free tier available" type="info">
+  Groq offers a free tier with rate limits. Check
+  [console.groq.com/docs/rate-limits](https://console.groq.com/docs/rate-limits)
+  for current limits.
+</Callout>
+
+## Connecting Groq in AgentOne
+
+<Steps>
+<Step>
+### Open Provider Settings
+
+In AgentOne, click `Settings` -> `Providers`.
+
+</Step>
+<Step>
+### Find and Enable Groq
+
+Under `Built-in Providers`, locate **Groq**, expand it, and toggle the enable switch on.
+
+</Step>
+<Step>
+### Paste Your Key
+
+Paste your API key and click save.
+
+</Step>
+</Steps>
+
+Groq models (Llama, Mistral, Gemma, and others) appear in the [model selector](/docs/guides/providers/model-selector) after saving.
+
+## Troubleshooting
+
+- **Rate limit errors**: Groq's free tier has strict per-minute limits. Wait a moment and retry, or check your usage at the console.
+- **Model unavailable**: Groq's available model list changes as they update their hardware. Check [console.groq.com/docs/models](https://console.groq.com/docs/models) for the current list.
+
+For more, see [Providers and Models Troubleshooting](/docs/desktop-app/troubleshooting/providers-and-models).

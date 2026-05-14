@@ -3,7 +3,7 @@ URL: /docs/comparisons
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/comparisons.mdx
 
 How is Fumadocs different from other existing frameworks?
-        
+
 
 
 ## Nextra [#nextra]
@@ -78,7 +78,7 @@ URL: /docs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/index.mdx
 
 Getting Started with Fumadocs
-        
+
 
 
 
@@ -402,7 +402,7 @@ URL: /docs/navigation
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/navigation.mdx
 
 Configure navigation in your Fumadocs app.
-        
+
 
 
 
@@ -472,7 +472,7 @@ URL: /docs/page-conventions
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/page-conventions.mdx
 
 A shared convention for organizing your documents
-        
+
 
 
 > This guide only applies for content sources that uses `loader()` API, such as **Fumadocs MDX**.
@@ -708,7 +708,7 @@ URL: /docs/what-is-fumadocs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/what-is-fumadocs.mdx
 
 Introducing Fumadocs, a docs framework that you can break.
-        
+
 
 
 The **Fumadocs** framework refers to a combination of UI + Core + Content Source, Fumadocs is more of a mental framework and each layer can be a library on its own.
@@ -734,7 +734,7 @@ For Next.js developers, you are still using features of App Router, like **Stati
 
 The only thing Fumadocs UI (the default theme) offers is **User Interface**. The UI is opinionated for bringing better mobile responsiveness and user experience.
 
-Instead, we follow a much more flexible approach inspired by Shadcn UI — [Fumadocs CLI](/docs/cli), allowing you to "fork" a part of Fumadocs UI, and fully customize it.
+Instead, we follow a much more flexible approach inspired by Shadcn UI - [Fumadocs CLI](/docs/cli), allowing you to "fork" a part of Fumadocs UI, and fully customize it.
 
 ### Server-first Approach [#server-first-approach]
 
@@ -785,7 +785,7 @@ URL: /docs/cli/create-fumadocs-app
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/create-fumadocs-app.mdx
 
 The CLI to create new Fumadocs apps
-        
+
 
 
 ## Overview [#overview]
@@ -852,7 +852,7 @@ URL: /docs/cli
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/index.mdx
 
 The CLI tool that automates setups and installs components.
-        
+
 
 
 ## Installation [#installation]
@@ -1225,7 +1225,7 @@ URL: /docs/cli/preview
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/preview.mdx
 
 A light tool to view Markdown files.
-        
+
 
 
 ## Introduction [#introduction]
@@ -1378,7 +1378,7 @@ URL: /docs/headless
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/index.mdx
 
 Getting started with core library
-        
+
 
 
 ## What is this? [#what-is-this]
@@ -1530,7 +1530,7 @@ URL: /docs/headless/page-conventions
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/page-conventions.mdx
 
 Customize generated page slugs and page tree.
-        
+
 
 
 > This guide only applies for content sources that uses `loader()` API, such as **Fumadocs MDX**.
@@ -1766,7 +1766,7 @@ URL: /docs/headless/page-tree
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/page-tree.mdx
 
 The structure of page tree.
-        
+
 
 
 Page tree is a tree structure that describes all navigation links, with other items like separator and folders.
@@ -2138,7 +2138,7 @@ URL: /docs/mdx/async
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/async.mdx
 
 Configure lazy loading on collection outputs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -2330,7 +2330,7 @@ URL: /docs/mdx/collections
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/collections.mdx
 
 Collection of content data for your app
-        
+
 
 
 ## Define Collections [#define-collections]
@@ -2745,7 +2745,7 @@ URL: /docs/mdx/global
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/global.mdx
 
 Customize Fumadocs MDX
-        
+
 
 
 ## Global Options [#global-options]
@@ -2844,7 +2844,7 @@ URL: /docs/mdx/include
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/include.mdx
 
 Reuse content from other files.
-        
+
 
 
 ## Usage [#usage]
@@ -3141,7 +3141,7 @@ URL: /docs/mdx
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/index.mdx
 
 Introducing Fumadocs MDX, the official content source of Fumadocs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -3266,7 +3266,7 @@ URL: /docs/mdx/last-modified
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/last-modified.mdx
 
 Output the last modified time of a document
-        
+
 
 
 ## Usage [#usage]
@@ -3309,7 +3309,7 @@ URL: /docs/mdx/mdx
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/mdx.mdx
 
 Customize the default configurations for MDX processor.
-        
+
 
 
 Fumadocs MDX provides MDX presets to simplify configurations of features like **syntax highlighting**.
@@ -3485,7 +3485,7 @@ URL: /docs/mdx/performance
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/performance.mdx
 
 The performance of Fumadocs MDX
-        
+
 
 
 
@@ -3554,7 +3554,7 @@ URL: /docs/mdx/typegen
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/typegen.mdx
 
 Generate types without running dev/build server
-        
+
 
 
 ### Overview [#overview]
@@ -3626,7 +3626,7 @@ URL: /docs/mdx/workspace
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/workspace.mdx
 
 Use Fumadocs MDX in multiple workspace.
-        
+
 
 
 ## Overview [#overview]
@@ -3732,7 +3732,7 @@ URL: /docs/openapi
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/openapi/index.mdx
 
 View the Scalar Galaxy example OpenAPI schema.
-        
+
 
 
 # Fumadocs UI (the default theme of Fumadocs): Component Library
@@ -3740,7 +3740,7 @@ URL: /docs/ui/component-library
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/component-library.mdx
 
 The underlying headless component library.
-        
+
 
 
 ## Overview [#overview]
@@ -3775,7 +3775,7 @@ URL: /docs/ui
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/index.mdx
 
 The default theme of Fumadocs
-        
+
 
 
 **Fumadocs UI** offers a beautifully designed theme for documentation sites.
@@ -3794,7 +3794,7 @@ URL: /docs/ui/search
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/search.mdx
 
 The UI for document search
-        
+
 
 
 ## Overview [#overview]
@@ -4003,7 +4003,7 @@ URL: /docs/ui/theme
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/theme.mdx
 
 Add Theme to Fumadocs UI
-        
+
 
 
 
@@ -4224,7 +4224,7 @@ URL: /docs/ui/translations
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/translations.mdx
 
 Adding Translations to UI
-        
+
 
 
 ## Overview [#overview]
@@ -4266,7 +4266,7 @@ URL: /docs/deploying
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/deploying/index.mdx
 
 Deploy your Fumadocs app
-        
+
 
 
 ## Overview [#overview]
@@ -4368,7 +4368,7 @@ URL: /docs/deploying/static
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/deploying/static.mdx
 
 Output static website with Fumadocs.
-        
+
 
 
 ## Setup [#setup]
@@ -4495,7 +4495,7 @@ URL: /docs/guides/access-control
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/access-control.mdx
 
 Limit the access of content.
-        
+
 
 
 ## Overview [#overview]
@@ -4621,7 +4621,7 @@ URL: /docs/guides/customize-ui
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/customize-ui.mdx
 
 A complete guide on how to customize Fumadocs UI.
-        
+
 
 
 ## Introduction [#introduction]
@@ -4775,7 +4775,7 @@ URL: /docs/guides/export-epub
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/export-epub.mdx
 
 Export your documentation to EPUB format for e-readers
-        
+
 
 
 ## Introduction [#introduction]
@@ -4947,9 +4947,9 @@ const buffer = await exportEpub({
 
 Images in your MDX are resolved automatically:
 
-* **Relative paths** (e.g. `./image.png`) — resolved relative to the page file
-* **Public paths** (e.g. `/og.png`) — resolved from the `public` directory
-* **Remote URLs** (e.g. `https://...`) — embedded as-is
+* **Relative paths** (e.g. `./image.png`) - resolved relative to the page file
+* **Public paths** (e.g. `/og.png`) - resolved from the `public` directory
+* **Remote URLs** (e.g. `https://...`) - embedded as-is
 
 
 # Fumadocs (Framework Mode): Export PDF
@@ -4957,7 +4957,7 @@ URL: /docs/guides/export-pdf
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/export-pdf.mdx
 
 Export docs pages as PDF documents
-        
+
 
 
 ## Overview [#overview]
@@ -5063,7 +5063,7 @@ URL: /docs/guides
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/index.mdx
 
 Useful guides for extending Fumadocs.
-        
+
 
 
 <DocsCategory />
@@ -5074,7 +5074,7 @@ URL: /docs/guides/rss
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/rss.mdx
 
 Generate a RSS feed for your docs/blog.
-        
+
 
 
 ## Setup [#setup]
@@ -5210,7 +5210,7 @@ URL: /docs/integrations/feedback
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/feedback.mdx
 
 Receive feedback from your users
-        
+
 
 
 ## Overview [#overview]
@@ -5525,7 +5525,7 @@ URL: /docs/integrations/llms
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/llms.mdx
 
 Integrate AI functionality to Fumadocs.
-        
+
 
 
 
@@ -6185,7 +6185,7 @@ URL: /docs/integrations/validate-links
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/validate-links.mdx
 
 Ensure your links are correct.
-        
+
 
 
 ## Setup [#setup]
@@ -6274,7 +6274,7 @@ URL: /docs/internationalization
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/index.mdx
 
 Support multiple languages in your documentation
-        
+
 
 
 ## Overview [#overview]
@@ -6292,7 +6292,7 @@ URL: /docs/internationalization/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/next.mdx
 
 Support i18n routing on your Next.js + Fumadocs app
-        
+
 
 
 <Callout title="New to Next.js?">
@@ -6589,7 +6589,7 @@ URL: /docs/internationalization/react-router
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/react-router.mdx
 
 Support i18n routing on your React Router + Fumadocs app.
-        
+
 
 
 ## Setup [#setup]
@@ -6855,7 +6855,7 @@ URL: /docs/internationalization/tanstack-start
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/tanstack-start.mdx
 
 Support i18n routing on your Tanstack Start + Fumadocs app.
-        
+
 
 
 ## Setup [#setup]
@@ -7102,7 +7102,7 @@ URL: /docs/manual-installation
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/index.mdx
 
 Add Fumadocs to existing projects.
-        
+
 
 
 # Fumadocs (Framework Mode): Next.js
@@ -7110,7 +7110,7 @@ URL: /docs/manual-installation/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/next.mdx
 
 Setup Fumadocs on Next.js.
-        
+
 
 
 ## Prerequisite [#prerequisite]
@@ -7488,7 +7488,7 @@ URL: /docs/manual-installation/react-router
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/react-router.mdx
 
 Setup Fumadocs on React Router.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -7747,7 +7747,7 @@ URL: /docs/manual-installation/tanstack-start
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/tanstack-start.mdx
 
 Setup Fumadocs on Tanstack Start.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -8017,7 +8017,7 @@ URL: /docs/manual-installation/waku
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/waku.mdx
 
 Setup Fumadocs on Waku.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -8300,7 +8300,7 @@ URL: /docs/markdown
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/index.mdx
 
 How to write documents
-        
+
 
 
 
@@ -8409,7 +8409,7 @@ import { HomeIcon } from 'lucide-react';
   </Card>
 
   <Card title="href is optional">
-    Learn more about 
+    Learn more about
 
     `fetch`
 
@@ -8565,7 +8565,7 @@ Show line numbers, it also works with Twoslash and other transformers.
   </CodeBlockTab>
 
   <CodeBlockTab value="Output">
-    ```ts twoslash lineNumbers 
+    ```ts twoslash lineNumbers
     const a = 'Hello World';
     //    ^?
     console.log(a); // [!code highlight]
@@ -8599,7 +8599,7 @@ You can set the initial value of line numbers.
   </CodeBlockTab>
 
   <CodeBlockTab value="Output">
-    ```js lineNumbers=4 
+    ```js lineNumbers=4
     function main() {
       console.log('starts from 4');
 
@@ -8723,7 +8723,7 @@ console.log('B');
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Tab 1">
-    ```ts  
+    ```ts
     console.log('A');
     ```
   </CodeBlockTab>
@@ -8749,7 +8749,7 @@ Another group:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Tab 1">
-    ```ts  
+    ```ts
     console.log('A');
     ```
   </CodeBlockTab>
@@ -8974,7 +8974,7 @@ URL: /docs/markdown/math
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/math.mdx
 
 Writing math equations in Markdown/MDX.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -9035,7 +9035,7 @@ Add the required remark/rehype plugins, the code might be vary depending on your
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import rehypeKatex from 'rehype-katex';
     import remarkMath from 'remark-math';
     import { defineConfig } from 'fumadocs-mdx/config';
@@ -9097,7 +9097,7 @@ URL: /docs/markdown/mermaid
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/mermaid.mdx
 
 Rendering diagrams in your docs
-        
+
 
 
 ## Setup [#setup]
@@ -9414,7 +9414,7 @@ URL: /docs/markdown/twoslash
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/twoslash.mdx
 
 Use Typescript Twoslash in your docs
-        
+
 
 
 ## Usage [#usage]
@@ -9589,7 +9589,7 @@ URL: /docs/search/algolia
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/algolia.mdx
 
 Using Algolia with Fumadocs UI.
-        
+
 
 
 ## Overview [#overview]
@@ -9789,7 +9789,7 @@ URL: /docs/search/custom
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/custom.mdx
 
 For other search solutions.
-        
+
 
 
 ## Overview [#overview]
@@ -9993,7 +9993,7 @@ URL: /docs/search/flexsearch
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/flexsearch.mdx
 
 A fast & minimal search engine.
-        
+
 
 
 ## Overview [#overview]
@@ -10221,7 +10221,7 @@ URL: /docs/search
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/index.mdx
 
 Implement document search in your docs
-        
+
 
 
 ## Search UI [#search-ui]
@@ -10247,7 +10247,7 @@ URL: /docs/search/mixedbread
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/mixedbread.mdx
 
 Using Mixedbread with Fumadocs UI.
-        
+
 
 
 ## Setup [#setup]
@@ -10432,7 +10432,7 @@ URL: /docs/search/orama-cloud
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/orama-cloud.mdx
 
 Using Orama Cloud with Fumadocs UI.
-        
+
 
 
 ## Setup [#setup]
@@ -10579,7 +10579,7 @@ URL: /docs/search/orama
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/orama.mdx
 
 The default search engine powered by Orama.
-        
+
 
 
 ## Overview [#overview]
@@ -10860,7 +10860,7 @@ URL: /docs/search/typesense
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/typesense.mdx
 
 Using Typesense with Fumadocs UI.
-        
+
 
 
 > This is a community-maintained integration.
@@ -11055,7 +11055,7 @@ URL: /docs/headless/components/breadcrumb
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/breadcrumb.mdx
 
 The navigation component at the top of the screen
-        
+
 
 
 A hook for implementing Breadcrumb in your documentation. It returns breadcrumb items for a page based on the given page tree.
@@ -11155,7 +11155,7 @@ URL: /docs/headless/components
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/index.mdx
 
 Blocks for your docs
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Link
@@ -11163,7 +11163,7 @@ URL: /docs/headless/components/link
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/link.mdx
 
 A Link component that handles external links
-        
+
 
 
 A component that wraps the Link component of your React framework (e.g. `next/link`) and automatically handles external links in the document.\~
@@ -11201,7 +11201,7 @@ URL: /docs/headless/components/toc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/toc.mdx
 
 Table of Contents
-        
+
 
 
 A Table of Contents with active anchor observer and auto scroll.
@@ -11342,7 +11342,7 @@ URL: /docs/headless/content-collections
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/content-collections/index.mdx
 
 Use Content Collections for Fumadocs
-        
+
 
 
 [Content Collections](https://www.content-collections.dev) is a library that transforms your content into type-safe data collections.
@@ -11505,7 +11505,7 @@ URL: /docs/headless/internationalization/config
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/internationalization/config.mdx
 
 Shared i18n configuration
-        
+
 
 
 <Callout title="Core API Only">
@@ -11597,7 +11597,7 @@ URL: /docs/headless/internationalization/middleware
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/internationalization/middleware.mdx
 
 Next.js proxy for implementing i18n routing
-        
+
 
 
 ## Setup [#setup]
@@ -11626,7 +11626,7 @@ URL: /docs/headless/mdx/headings
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/headings.mdx
 
 Process headings from your document
-        
+
 
 
 ## Remark Heading [#remark-heading]
@@ -11762,7 +11762,7 @@ URL: /docs/headless/mdx
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/index.mdx
 
 Useful remark & rehype plugins for your docs.
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Package Install
@@ -11770,7 +11770,7 @@ URL: /docs/headless/mdx/install
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/install.mdx
 
 Generate code blocks for installing packages
-        
+
 
 
 <Callout type="warn" title="Deprecated">
@@ -11839,7 +11839,7 @@ Add the remark plugin.
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { remarkInstall } from 'fumadocs-docgen';
     import { defineConfig } from 'fumadocs-mdx/config';
 
@@ -11973,7 +11973,7 @@ When using with Fumadocs UI, you can enable persistence with the `persist` optio
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { remarkInstall } from 'fumadocs-docgen';
     import { defineConfig } from 'fumadocs-mdx/config';
 
@@ -12023,7 +12023,7 @@ URL: /docs/headless/mdx/rehype-code
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/rehype-code.mdx
 
 Code syntax highlighter
-        
+
 
 
 A wrapper of [`@shikijs/rehype`](https://shiki.style/packages/rehype), the syntax highlighter used by Fumadocs.
@@ -12210,7 +12210,7 @@ URL: /docs/headless/mdx/remark-admonition
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-admonition.mdx
 
 Use Admonition in Fumadocs
-        
+
 
 
 In Docusaurus, there's an [Admonition syntax](https://docusaurus.io/docs/markdown-features/admonitions).
@@ -12279,7 +12279,7 @@ Configure both plugins in your config.
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import remarkDirective from 'remark-directive';
     import { remarkDirectiveAdmonition } from 'fumadocs-core/mdx-plugins';
     import { defineConfig } from 'fumadocs-mdx/config';
@@ -12375,7 +12375,7 @@ URL: /docs/headless/mdx/remark-image
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-image.mdx
 
 Adding size attributes to images.
-        
+
 
 
 This plugin adds `width` and `height` attributes to your image elements, which is needed for Image Optimization on Next.js and some other frameworks.
@@ -12579,7 +12579,7 @@ URL: /docs/headless/mdx/remark-llms
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-llms.mdx
 
 Generate markdown for LLM consumption with customizable placeholders
-        
+
 
 
 The `remarkLLMs` plugin stringifies the processed Markdown AST to plain Markdown, the output is generated as an ESM export. This is useful for feeding content to LLMs, search indexing, or other text-based processing.
@@ -13016,7 +13016,7 @@ URL: /docs/headless/mdx/remark-mdx-files
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-mdx-files.mdx
 
 Generate files from codeblocks.
-        
+
 
 
 ## Introduction [#introduction]
@@ -13098,7 +13098,7 @@ URL: /docs/headless/mdx/remark-npm
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-npm.mdx
 
 Generate code blocks for package managers
-        
+
 
 
 ## Usage [#usage]
@@ -13128,7 +13128,7 @@ Add the remark plugin.
   </CodeBlockTab>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { defineConfig } from 'fumadocs-mdx/config';
 
     export default defineConfig({
@@ -13289,7 +13289,7 @@ When using with Fumadocs UI, you can enable persist the selected value with the 
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { defineConfig } from 'fumadocs-mdx/config';
 
     export default defineConfig({
@@ -13330,7 +13330,7 @@ URL: /docs/headless/mdx/remark-steps
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-steps.mdx
 
 Generate steps from headings
-        
+
 
 
 ## Usage [#usage]
@@ -13360,7 +13360,7 @@ Add the remark plugin.
   </CodeBlockTab>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { defineConfig } from 'fumadocs-mdx/config';
     import { remarkSteps } from 'fumadocs-core/mdx-plugins/remark-steps';
 
@@ -13436,7 +13436,7 @@ URL: /docs/headless/mdx/remark-ts2js
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-ts2js.mdx
 
 A remark plugin to transform TypeScript codeblocks into two tabs of codeblock with its JavaScript variant.
-        
+
 
 
 ## Usage [#usage]
@@ -13517,7 +13517,7 @@ Add the remark plugin:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { remarkTypeScriptToJavaScript } from 'fumadocs-docgen/remark-ts2js';
     import { defineConfig } from 'fumadocs-mdx/config';
 
@@ -13608,7 +13608,7 @@ URL: /docs/headless/mdx/structure
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/structure.mdx
 
 Extract information from your documents, useful for implementing document search
-        
+
 
 
 ## Usage [#usage]
@@ -13784,7 +13784,7 @@ URL: /docs/headless/search/algolia
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/algolia.mdx
 
 Integrate Algolia Search with Fumadocs
-        
+
 
 
 <Callout title="Notice">
@@ -14145,7 +14145,7 @@ URL: /docs/headless/search/flexsearch
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/flexsearch.mdx
 
 Fast & minimal document search
-        
+
 
 
 ## Setup [#setup]
@@ -14484,7 +14484,7 @@ Flexsearch doesn't require configurations to work for other languages, but you c
   </CodeBlockTabsList>
 
   <CodeBlockTab value="From Source">
-    ```ts title="app/api/search/route.ts" 
+    ```ts title="app/api/search/route.ts"
     import { source } from '@/lib/source';
     import { flexsearchFromSource } from 'fumadocs-core/search/flexsearch';
     import { Charset } from 'flexsearch';
@@ -14530,7 +14530,7 @@ URL: /docs/headless/search
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/index.mdx
 
 Configure Search in Fumadocs
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Mixedbread
@@ -14538,7 +14538,7 @@ URL: /docs/headless/search/mixedbread
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/mixedbread.mdx
 
 Integrate Mixedbread Search with Fumadocs
-        
+
 
 
 ## Introduction [#introduction]
@@ -14707,7 +14707,7 @@ URL: /docs/headless/search/orama-cloud
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/orama-cloud.mdx
 
 Integrate with Orama Cloud
-        
+
 
 
 To begin, create an account on Orama Cloud.
@@ -14996,7 +14996,7 @@ URL: /docs/headless/search/orama
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/orama.mdx
 
 Built-in document search of Fumadocs
-        
+
 
 
 Fumadocs supports document search with Orama, It is the default but also the recommended option since it can be self-hosted and totally free.
@@ -15511,7 +15511,7 @@ Make sure your language is on the Orama [Supported Languages](https://docs.orama
   </CodeBlockTabsList>
 
   <CodeBlockTab value="From Source">
-    ```ts title="app/api/search/route.ts" 
+    ```ts title="app/api/search/route.ts"
     import { source } from '@/lib/source';
     import { createFromSource } from 'fumadocs-core/search/server';
 
@@ -15632,7 +15632,7 @@ Chinese and Japanese require additional configurations:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="createFromSource">
-    ```ts title="app/api/search/route.ts" 
+    ```ts title="app/api/search/route.ts"
     import { source } from '@/lib/source';
     import { createFromSource } from 'fumadocs-core/search/server';
     import { createTokenizer } from '@orama/tokenizers/mandarin';
@@ -15719,7 +15719,7 @@ URL: /docs/headless/search/trieve
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/trieve.mdx
 
 Integrate Trieve Search with Fumadocs
-        
+
 
 
 > This is a community maintained integration.
@@ -16108,7 +16108,7 @@ URL: /docs/headless/search/typesense
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/typesense.mdx
 
 Integrate Typesense Search with Fumadocs
-        
+
 
 
 > This is a community-maintained integration.
@@ -16505,7 +16505,7 @@ URL: /docs/headless/source-api
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/source-api/index.mdx
 
 Turn content sources into a unified interface
-        
+
 
 
 ## What it does? [#what-it-does]
@@ -16779,7 +16779,7 @@ URL: /docs/headless/source-api/plugins
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/source-api/plugins.mdx
 
 Extend Loader API
-        
+
 
 
 ## Overview [#overview]
@@ -16905,7 +16905,7 @@ URL: /docs/headless/source-api/source
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/source-api/source.mdx
 
 Setup sources for Loader API
-        
+
 
 
 ## Overview [#overview]
@@ -17031,7 +17031,7 @@ URL: /docs/headless/utils/get-toc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/get-toc.mdx
 
 Parse Table of contents from markdown/mdx content
-        
+
 
 
 Parse Table of contents from markdown/mdx content.
@@ -17058,7 +17058,7 @@ URL: /docs/headless/utils/git-last-edit
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/git-last-edit.mdx
 
 Get the last edit time of a file in Github repository
-        
+
 
 
 ## Usage [#usage]
@@ -17123,7 +17123,7 @@ URL: /docs/headless/utils
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/index.mdx
 
 Utilities to provide extra functionality to your docs
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Negotiation
@@ -17131,7 +17131,7 @@ URL: /docs/headless/utils/negotiation
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/negotiation.mdx
 
 Tiny wrapper for negotiation features.
-        
+
 
 
 ## Overview [#overview]
@@ -17169,7 +17169,7 @@ URL: /docs/headless/utils/page-tree
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/page-tree.mdx
 
 Common utilities to interact with page tree.
-        
+
 
 
 ## Usage [#usage]
@@ -17216,7 +17216,7 @@ URL: /docs/headless/utils/shiki
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/shiki.mdx
 
 Manage the Shiki instances.
-        
+
 
 
 ## Overview [#overview]
@@ -17283,7 +17283,7 @@ URL: /docs/mdx/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/next.mdx
 
 Use Fumadocs MDX with Next.js
-        
+
 
 
 ## Setup [#setup]
@@ -17429,7 +17429,7 @@ URL: /docs/mdx/vite
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/vite.mdx
 
 Use Fumadocs MDX with Vite
-        
+
 
 
 ## Setup [#setup]
@@ -17592,7 +17592,7 @@ URL: /docs/mdx/entry/browser
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/browser.mdx
 
 Access collections from browser/client environment.
-        
+
 
 
 ## Usage [#usage]
@@ -17738,7 +17738,7 @@ URL: /docs/mdx/entry/dynamic
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/dynamic.mdx
 
 Accessing your collections with on-demand compilation.
-        
+
 
 
 ## Usage [#usage]
@@ -17792,7 +17792,7 @@ URL: /docs/mdx/entry/import
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/import.mdx
 
 Importing MDX files directly.
-        
+
 
 
 ## Introduction [#introduction]
@@ -17921,7 +17921,7 @@ URL: /docs/mdx/entry
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/index.mdx
 
 Access collection outputs from entry files.
-        
+
 
 
 ## Overview [#overview]
@@ -17954,7 +17954,7 @@ URL: /docs/mdx/entry/server
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/server.mdx
 
 Accessing collection outputs from server.
-        
+
 
 
 ## Usage [#usage]
@@ -18037,7 +18037,7 @@ URL: /docs/ui/components/accordion
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/accordion.mdx
 
 Add Accordions to your documentation
-        
+
 
 
 <Installation name="accordion" />
@@ -18217,7 +18217,7 @@ URL: /docs/ui/components/auto-type-table
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/auto-type-table.mdx
 
 Auto-generated type table
-        
+
 
 
 <Wrapper>
@@ -18530,7 +18530,7 @@ URL: /docs/ui/components/banner
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/banner.mdx
 
 Add a banner to your site
-        
+
 
 
 <Installation name="banner" />
@@ -18610,7 +18610,7 @@ URL: /docs/ui/components/codeblock
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/codeblock.mdx
 
 Displaying Shiki highlighted code blocks
-        
+
 
 
 <Wrapper>
@@ -18695,7 +18695,7 @@ URL: /docs/ui/components/dynamic-codeblock
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/dynamic-codeblock.mdx
 
 A codeblock that also highlights code
-        
+
 
 
 ## Usage [#usage]
@@ -18771,7 +18771,7 @@ URL: /docs/ui/components/files
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/files.mdx
 
 Display file structure in your documentation
-        
+
 
 
 <Installation name="files" />
@@ -18921,7 +18921,7 @@ URL: /docs/ui/components/github-info
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/github-info.mdx
 
 Display your GitHub repository information
-        
+
 
 
 <Installation name="github-info" />
@@ -18975,7 +18975,7 @@ URL: /docs/ui/components/graph-view
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/graph-view.mdx
 
 A graph of all pages.
-        
+
 
 
 
@@ -19069,7 +19069,7 @@ URL: /docs/ui/components/image-zoom
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/image-zoom.mdx
 
 Allow zoom-in images in your documentation
-        
+
 
 
 <Installation name="image-zoom" />
@@ -19109,7 +19109,7 @@ URL: /docs/ui/components
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/index.mdx
 
 Additional components to improve your docs
-        
+
 
 
 ## Overview [#overview]
@@ -19163,7 +19163,7 @@ URL: /docs/ui/components/inline-toc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/inline-toc.mdx
 
 Add Inline TOC into your documentation
-        
+
 
 
 <Installation name="inline-toc" />
@@ -19268,7 +19268,7 @@ URL: /docs/ui/components/steps
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/steps.mdx
 
 Adding steps to your docs
-        
+
 
 
 <Installation name="steps" />
@@ -19327,7 +19327,7 @@ URL: /docs/ui/components/tabs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/tabs.mdx
 
 A Tabs component built with Radix UI, with additional features such as persistent and shared value.
-        
+
 
 
 
@@ -19532,7 +19532,7 @@ URL: /docs/ui/components/type-table
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/type-table.mdx
 
 A table for documenting types
-        
+
 
 
 <Installation name="type-table" />
@@ -19679,7 +19679,7 @@ URL: /docs/ui/layouts/docs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/docs.mdx
 
 The layout of documentation
-        
+
 
 
 
@@ -20242,7 +20242,7 @@ URL: /docs/ui/layouts/flux
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/flux.mdx
 
 An aggressively minimal layout for docs
-        
+
 
 
 
@@ -20299,7 +20299,7 @@ URL: /docs/ui/layouts/home-layout
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/home-layout.mdx
 
 Shared layout for other pages
-        
+
 
 
 
@@ -20332,7 +20332,7 @@ URL: /docs/ui/layouts
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/index.mdx
 
 A list of layout components.
-        
+
 
 
 ## Overview [#overview]
@@ -20513,7 +20513,7 @@ URL: /docs/ui/layouts/links
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/links.mdx
 
 Navigation configurations on all layouts.
-        
+
 
 
 
@@ -20789,7 +20789,7 @@ URL: /docs/ui/layouts/nav
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/nav.mdx
 
 Navbar/header configurations.
-        
+
 
 
 ## Configurations [#configurations]
@@ -21056,7 +21056,7 @@ URL: /docs/ui/layouts/notebook
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/notebook.mdx
 
 A compact version of Docs Layout
-        
+
 
 
 
@@ -21162,7 +21162,7 @@ URL: /docs/ui/layouts/page
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/page.mdx
 
 A page in your documentation
-        
+
 
 
 Page is the base element of a documentation, it includes Table of contents,
@@ -21186,7 +21186,7 @@ Import it according to your layout.
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Docs Layout">
-    ```tsx title="page.tsx" 
+    ```tsx title="page.tsx"
     import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/layouts/docs/page';
 
     <DocsPage>
@@ -21201,7 +21201,7 @@ Import it according to your layout.
   </CodeBlockTab>
 
   <CodeBlockTab value="Notebook Layout">
-    ```tsx title="page.tsx" 
+    ```tsx title="page.tsx"
     import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/layouts/notebook/page';
 
     <DocsPage>
@@ -21820,7 +21820,7 @@ URL: /docs/ui/layouts/root-provider
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/root-provider.mdx
 
 The context provider of Fumadocs UI.
-        
+
 
 
 The context provider of all the components, including `next-themes` and [`<FrameworkProvider />`](/docs/headless#installation). It should be located at the root layout.
@@ -21961,7 +21961,7 @@ URL: /docs/integrations/content/custom
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/custom.mdx
 
 Build your own content source for Fumadocs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22102,7 +22102,7 @@ URL: /docs/integrations/content
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/index.mdx
 
 Integrate different content sources with Fumadocs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22126,7 +22126,7 @@ URL: /docs/integrations/content/local-md
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/local-md.mdx
 
 Content source for local Markdown content.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22528,7 +22528,7 @@ URL: /docs/integrations/content/mdx-remote
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/mdx-remote.mdx
 
 Compiled Markdown/MDX content on demand.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22680,7 +22680,7 @@ URL: /docs/integrations/content/sanity
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/sanity.mdx
 
 Official integration for Sanity.
-        
+
 
 
 ## Overview [#overview]
@@ -22861,7 +22861,7 @@ Assume you already have [Sanity](https://sanity.io/docs/getting-started) configu
       </CodeBlockTabsList>
 
       <CodeBlockTab value="Next.js (live preview)">
-        ```ts title="lib/source.ts" 
+        ```ts title="lib/source.ts"
         import { dynamicLoader } from 'fumadocs-core/source/dynamic';
         import { createSanitySource } from '@fumadocs/sanity';
         // the live preview client
@@ -22890,7 +22890,7 @@ Assume you already have [Sanity](https://sanity.io/docs/getting-started) configu
       </CodeBlockTab>
 
       <CodeBlockTab value="Others">
-        ```ts title="lib/source.ts" 
+        ```ts title="lib/source.ts"
         import { dynamicLoader } from 'fumadocs-core/source/dynamic';
         import { createSanitySource } from '@fumadocs/sanity';
         // the Sanity client
@@ -22994,7 +22994,7 @@ URL: /docs/integrations/obsidian
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/(docgen)/obsidian.mdx
 
 Render your Obsidian vaults in Fumadocs.
-        
+
 
 
 <Callout type="warn" title="Experimental">
@@ -23107,7 +23107,7 @@ URL: /docs/integrations/python
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/(docgen)/python.mdx
 
 Generate docs from Python
-        
+
 
 
 <Callout type="warn" title="Experimental">
@@ -23243,7 +23243,7 @@ URL: /docs/integrations/typescript
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/(docgen)/typescript.mdx
 
 Generate docs from Typescript definitions
-        
+
 
 
 ## Usage [#usage]
@@ -23312,7 +23312,7 @@ You can use it as a remark plugin:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import {
       remarkAutoTypeTable,
       createGenerator,
@@ -23436,7 +23436,7 @@ URL: /docs/integrations/og
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/og/index.mdx
 
 Generate dynamic preview image for docs pages
-        
+
 
 
 
@@ -23453,7 +23453,7 @@ URL: /docs/integrations/og/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/og/next.mdx
 
 Usage with Next.js Metadata API.
-        
+
 
 
 > Make sure to read their [Metadata section](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) for the fundamentals of Metadata API.
@@ -23607,7 +23607,7 @@ URL: /docs/integrations/og/takumi
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/og/takumi.mdx
 
 Integrate Takumi for framework agnostic and fast metadata image generation.
-        
+
 
 
 ## Installation [#installation]
@@ -23678,7 +23678,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Next.js">
-    ```ts title="next.config.ts" 
+    ```ts title="next.config.ts"
     import type { NextConfig } from 'next';
 
     const config: NextConfig = {
@@ -23689,7 +23689,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTab>
 
   <CodeBlockTab value="Nitro / TanStack Start">
-    ```ts title="vite.config.ts" 
+    ```ts title="vite.config.ts"
     import { defineConfig } from 'vite';
     // [!code ++]
     import takumiPackageJson from '@takumi-rs/core/package.json' with { type: 'json' };
@@ -23707,7 +23707,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTab>
 
   <CodeBlockTab value="Vite">
-    ```ts title="vite.config.ts" 
+    ```ts title="vite.config.ts"
     import { defineConfig } from 'vite';
 
     export default defineConfig({
@@ -23720,7 +23720,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTab>
 
   <CodeBlockTab value="Waku">
-    ```ts title="waku.config.ts" 
+    ```ts title="waku.config.ts"
     import { defineConfig } from 'waku/config';
 
     export default defineConfig({
@@ -24012,7 +24012,7 @@ URL: /docs/integrations/openapi/api-page
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/api-page.mdx
 
 The component for rendering OpenAPI docs content
-        
+
 
 
 ## Overview [#overview]
@@ -24257,7 +24257,7 @@ URL: /docs/integrations/openapi/generate-files
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/generate-files.mdx
 
 Generate pages from OpenAPI schema.
-        
+
 
 
 The `generateFiles()` function generates MDX files for API documentation.
@@ -24284,7 +24284,7 @@ void generateFiles({
 Customize the content of pages, default to `operation`.
 
 <Callout>
-  Operation refers to an API endpoint with specific method like 
+  Operation refers to an API endpoint with specific method like
 
   `/api/weather:GET`
 
@@ -24508,7 +24508,7 @@ URL: /docs/integrations/openapi
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/index.mdx
 
 Generating docs for OpenAPI schema
-        
+
 
 
 <Callout type="warning" title="This guide is for RSC environment">
@@ -24813,7 +24813,7 @@ URL: /docs/integrations/openapi/server
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/server.mdx
 
 The OpenAPI server instance.
-        
+
 
 
 ## OpenAPI Server [#openapi-server]
@@ -24910,7 +24910,7 @@ URL: /docs/integrations/openapi/without-rsc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/without-rsc.mdx
 
 Setup guide for non-RSC environments.
-        
+
 
 
 ## Setup [#setup]
@@ -25253,7 +25253,7 @@ URL: /docs/integrations/story
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/story/index.mdx
 
 Display components with controls.
-        
+
 
 
 
@@ -25348,7 +25348,7 @@ URL: /docs/integrations/story/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/story/next.mdx
 
 Configure Fumadocs Story on Next.js.
-        
+
 
 
 ## Installation [#installation]
@@ -25490,7 +25490,7 @@ URL: /docs/integrations/story/vite
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/story/vite.mdx
 
 Configure Fumadocs Story for Vite-based frameworks.
-        
+
 
 
 ## Installation [#installation]
@@ -25699,7 +25699,7 @@ Now you can render the story like:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="From Instance">
-    ```mdx title="index.mdx" 
+    ```mdx title="index.mdx"
     import { storyClient } from '@/components/my-component.story.client';
 
     <storyClient.WithControl />
@@ -25707,7 +25707,7 @@ Now you can render the story like:
   </CodeBlockTab>
 
   <CodeBlockTab value="From Payload Name">
-    ```mdx title="index.mdx" 
+    ```mdx title="index.mdx"
     import { StoryWithControl } from '@fumadocs/story/client';
 
     <StoryWithControl name="callout" />
@@ -25721,7 +25721,7 @@ URL: /docs/mdx/loader/bun
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/loader/bun.mdx
 
 Access content in Bun.
-        
+
 
 
 ## Setup [#setup]
@@ -25777,7 +25777,7 @@ or you are using Vite, which defaults to generating code with Vite-specific APIs
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Next.js">
-    ```ts title="preload.ts" 
+    ```ts title="preload.ts"
     import { postInstall } from 'fumadocs-mdx/next';
 
     await postInstall({ configPath: 'source.config.ts' });
@@ -25785,7 +25785,7 @@ or you are using Vite, which defaults to generating code with Vite-specific APIs
   </CodeBlockTab>
 
   <CodeBlockTab value="Vite">
-    ```ts title="preload.ts" 
+    ```ts title="preload.ts"
     import { postInstall } from 'fumadocs-mdx/vite';
 
     await postInstall({
@@ -25804,7 +25804,7 @@ URL: /docs/mdx/loader
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/loader/index.mdx
 
 Fumadocs MDX loader integration.
-        
+
 
 
 ## Introduction [#introduction]
@@ -25826,7 +25826,7 @@ URL: /docs/mdx/loader/node
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/loader/node.mdx
 
 Access content in Node.js runtime.
-        
+
 
 
 ## Setup [#setup]
@@ -25852,25 +25852,3 @@ register({
   // ...
 });
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,61 +1,65 @@
 ---
 title: Your First Chat
-description: Start a chat, pick a model, attach files, and send your first message.
+description: Start a chat, pick a model, attach files, send your first message, and explore the composer.
 ---
 
-Once a provider is available, you are ready to chat.
+Once a [provider is set up](/docs/desktop-app/getting-started/first-provider) and at least one model is available, you are ready to chat.
 
-## Start A New Chat
+{/* Screenshot placeholder: main chat window with the empty-state greeting visible, the model selector at the bottom showing a selected model, and the composer input focused. */}
 
-- Click `New Chat` in the sidebar
-- Or use `Ctrl+N`
+## Start a New Chat
 
-If there are no messages yet, AgentOne shows an empty-state greeting such as `What's on your mind?`, `Ask me anything.`, or `Ready when you are.`
+Click **New Chat** in the sidebar or press `Ctrl+N`. AgentOne opens a fresh conversation with an empty-state greeting such as `What's on your mind?` or `Ask me anything.`
 
-## Pick A Model
+## Pick a Model
 
-At the bottom of the chat window, use the model selector to choose a model.
+At the bottom of the chat window, the [model selector](/docs/guides/providers/model-selector) shows the currently active provider and model. Click it to open the full model list, which is grouped by provider. Type in the search field to filter quickly.
 
-The selector groups models by provider, so you can quickly switch between providers and local runtimes.
+The model you choose applies to this chat. You can switch models at any point in the conversation - changes take effect on the next message you send.
 
-## Write Your Message
+## Write and Send Your Message
 
-Type in the chat box labeled with the placeholder `Ask anything...`
+Type in the `Ask anything...` input field. By default, pressing `Enter` sends the message. If you prefer `Ctrl+Enter`, change this in `Settings` -> `Chats` -> `Submit Key`.
 
-Depending on your settings, you can send with:
-
-- `Enter`
-- `Ctrl + Enter`
+AgentOne streams the response token by token so you can start reading immediately. A stop button appears in the composer while the model is generating - click it to interrupt the response at any time.
 
 ## Attach Files
 
-You can add files in several ways:
+The composer supports several ways to add files to your message:
 
-- Click the paperclip button
-- Drag files into the composer
-- Paste files from the clipboard
+- **Paperclip button** - click it to open a file picker.
+- **Drag and drop** - drag files from your file manager directly onto the composer. A drop target labeled `Drop files or chats to attach` appears when you hover.
+- **Paste** - paste an image or file from your clipboard.
 
-You can also drag an existing chat from the sidebar into the composer. AgentOne converts that chat into an attached file so the current conversation can reference it.
+You can also drag an existing chat from the sidebar into the composer. AgentOne exports that chat into an attachment so the current conversation can reference it - useful when you want context from a previous conversation without switching away.
 
-## Stop A Response
+For more detail on supported file types and attachment behavior, see [Attachments](/docs/desktop-app/chats/attachments).
 
-When the model is responding, the send button changes into a stop button.
+## Tune the Chat
 
-If `Always Show Stop Button` is enabled in chat settings, the stop button appears immediately after you submit a message.
+Next to the model selector is the **model config button**. Click it to open the [Model Config](/docs/guides/providers/model-config) panel where you can adjust:
 
-## Tune The Current Chat
+- **Temperature** - randomness of the output.
+- **Max Tokens** - cap on response length.
+- **Top P, Top K** - alternative sampling controls.
+- **Max Steps** - relevant for [extension](/docs/guides/extensions)-heavy workflows.
+- And more.
 
-Next to the model selector is the model configuration button. You can adjust values such as:
+These settings apply only to the current chat and do not affect other conversations.
 
-- Temperature
-- Top P
-- Top K
-- Frequency Penalty
-- Presence Penalty
-- Max Steps
-- Max Tokens
-- Seed
+## Message Actions
 
-These settings apply to the current chat.
+After the model responds, hover over any message to see the action row:
 
-{/* Screenshot placeholder: chat composer with model selector open, model config button visible, and a file attachment already added. */}
+- **Copy message** - copies the message content.
+- **Regenerate response** - generates a fresh answer from the same conversation state.
+- **Edit message** - edit any user message and optionally regenerate from that point.
+- **Branch conversation** - fork the chat at that message into a new conversation.
+
+See [Message Actions](/docs/desktop-app/chats/message-actions) for full details.
+
+## What Comes Next
+
+- [Search Chats](/docs/desktop-app/chats/searching-chats) - find any past conversation.
+- [Extensions](/docs/guides/extensions) - give the model tools like web search, file editing, and command execution.
+- [Settings](/docs/desktop-app/settings) - customize how the app looks and behaves.

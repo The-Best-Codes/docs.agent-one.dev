@@ -1,29 +1,36 @@
 ---
 title: Profile and Instructions
-description: Set your name and add global AI instructions for AgentOne.
+description: Set your display name and add global AI instructions that apply to every conversation.
 ---
 
-The `Profile & Instructions` card lets you personalize how AgentOne addresses you and responds.
+The **Profile & Instructions** card in `Settings` -> `Account` lets you personalize how AgentOne addresses you and how the AI responds across all your chats.
 
 ## Your Name
 
-The `Your Name` field controls the name AgentOne uses when referring to you.
+The **Your Name** field sets the name AgentOne uses when it refers to you in conversation. This is the same name you set during [onboarding](/docs/desktop-app/getting-started/onboarding) and can be updated here at any time.
+
+The name is stored locally and, if [sync is enabled](/docs/desktop-app/account-and-sync/sync-settings), synchronized across your signed-in devices.
 
 ## AI Instructions
 
-Use `AI Instructions` to add global guidance that AgentOne appends to its system prompt.
+The **AI Instructions** field lets you add a persistent system-level instruction that AgentOne prepends to every conversation. Think of it as a standing note to the AI about how you want it to behave.
 
-Examples:
+Useful things to put here:
 
-- ask for concise answers
-- prefer British English
-- request a specific writing style
-- tell AgentOne how to format code explanations
+- **Tone preferences**: "Respond concisely. Avoid unnecessary preamble."
+- **Language preferences**: "Use British English spelling."
+- **Formatting preferences**: "Always use fenced code blocks for code. Never use inline code for multi-line snippets."
+- **Domain context**: "I am a backend developer working primarily in Go and PostgreSQL."
+- **Response style**: "When I ask for an explanation, assume I have intermediate knowledge - no need to explain basic concepts."
 
-## Character Limit
+These instructions apply globally to every new chat. For one-off instructions that only apply to a specific conversation, put them in the message or the chat itself rather than here.
 
-The instructions field has a character limit and shows a live character count in the UI.
+### Character Limit
 
-## When To Use This
+The instructions field has a character limit. A live character count is shown below the field so you can see how much space you have used. Keep instructions focused - longer is not always better, since overly long system prompts can sometimes reduce model effectiveness.
 
-Use account-level AI instructions for stable preferences that should apply broadly, not for one-off requests that belong inside a single chat.
+## Related
+
+- [Sign In and Plan](/docs/desktop-app/account-and-sync/sign-in-and-plan) - account status and plan details.
+- [Sync Settings](/docs/desktop-app/account-and-sync/sync-settings) - sync your settings including name across devices.
+- [Onboarding](/docs/desktop-app/getting-started/onboarding) - where your name is first set.

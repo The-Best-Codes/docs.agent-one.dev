@@ -1,0 +1,50 @@
+---
+title: Model Metadata
+description: Understand the metadata fields AgentOne stores for each model and why they matter.
+---
+
+Every model in AgentOne - whether from a built-in provider, a local provider, or a custom provider - has a set of metadata fields. These fields control how the model appears in the UI and which features are offered when it is selected.
+
+You edit or override these fields when adding a custom model or using `Add Model Override` on a built-in provider. See [Built-in Providers](/docs/guides/providers/built-in-providers) and [Custom Providers](/docs/guides/providers/custom) for where to find those controls.
+
+## Fields
+
+### Model ID
+
+The exact identifier the provider uses for this model in API requests. This must match what the provider's API expects - for example `gpt-4o`, `claude-opus-4-5`, or `gemma3:12b`. Getting this wrong causes API errors.
+
+### Display Name
+
+The human-readable label shown in the [model selector](/docs/guides/providers/model-selector) and throughout the app. This can be anything you find useful - it is never sent to the provider. If left blank, AgentOne falls back to the Model ID.
+
+### Context Window
+
+The total number of tokens the model can consider in a single request, counting both the prompt (including message history and system instructions) and the response. AgentOne displays this value in informational UI. It does not enforce truncation on your behalf - that is the provider's responsibility - but having accurate metadata helps you understand the model's limits.
+
+### Max Output Tokens
+
+The maximum number of tokens the model can generate in a single response. This is informational metadata separate from the [Max Tokens setting in Model Config](/docs/guides/providers/model-config#max-tokens), which is a per-request cap you set yourself.
+
+### Supports Text
+
+Whether this model should be treated as capable of normal text conversation. Disabling this would hide the model from text chat contexts. Nearly all models should have this enabled.
+
+### Supports Tools
+
+Whether this model should be treated as tool-capable. When enabled, AgentOne allows [extensions](/docs/guides/extensions) to offer tools to this model during a chat. Disable it for models you know do not support function calling, so AgentOne does not send a tool schema that the model would ignore or mishandle.
+
+### Supports Images
+
+Whether this model should be treated as capable of processing image attachments. When enabled, users can attach images in chats using this model and the image data is included in the request. Disable it for text-only models.
+
+## Why Accurate Metadata Matters
+
+AgentOne uses these flags to decide what to offer in the UI. If `Supports Tools` is off, extensions are not injected for that model. If `Supports Images` is off, the image attachment pathway is not used. Incorrect metadata can cause subtle misbehavior - either features being silently hidden or the API receiving parameters it cannot handle.
+
+For built-in models, AgentOne maintains metadata based on publicly available information. If a model's capabilities change (for example, a previously text-only model gains tool support in an update), you can add a model override to correct the flags without waiting for an app update. See [Built-in Providers](/docs/guides/providers/built-in-providers#model-overrides).
+
+## Related
+
+- [Model Config](/docs/guides/providers/model-config) - per-chat inference parameters like temperature and max tokens.
+- [Model Selector](/docs/guides/providers/model-selector) - where display names and grouping are visible to users.
+- [Extensions](/docs/guides/extensions) - tools that require `Supports Tools` to be enabled.

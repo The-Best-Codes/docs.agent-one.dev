@@ -1,0 +1,73 @@
+---
+title: OpenAI
+description: Connect OpenAI models to AgentOne with your API key.
+---
+
+OpenAI is the maker of the GPT model family. AgentOne includes OpenAI as a built-in provider, so all you need is an API key.
+
+## Getting an OpenAI API Key
+
+<Steps>
+<Step>
+### Sign in to OpenAI
+
+Go to [platform.openai.com](https://platform.openai.com) and sign in or create an account.
+
+</Step>
+<Step>
+### Open the API Keys page
+
+In the left sidebar, click **API keys**, then click **Create new secret key**. Give it a name you will recognize (for example, "AgentOne").
+
+</Step>
+<Step>
+### Copy the Key
+
+OpenAI shows the key only once. Copy it immediately and keep it somewhere safe - you cannot view it again after closing the dialog.
+
+</Step>
+</Steps>
+
+<Callout title="Billing required" type="info">
+  OpenAI requires a funded account or active subscription to use API keys. The
+  playground and API are separate from a ChatGPT subscription - you may need to
+  add credits at
+  [platform.openai.com/settings/organization/billing](https://platform.openai.com/settings/organization/billing).
+</Callout>
+
+## Connecting OpenAI in AgentOne
+
+<Steps>
+<Step>
+### Open Provider Settings
+
+In AgentOne, click `Settings` -> `Providers`.
+
+</Step>
+<Step>
+### Find and Enable OpenAI
+
+Under `Built-in Providers`, locate **OpenAI**, expand it, and toggle the enable switch on.
+
+</Step>
+<Step>
+### Paste Your Key
+
+Paste your API key into the `API Key` field and click the save button.
+
+</Step>
+</Steps>
+
+Once saved, OpenAI models such as GPT-4o appear in the [model selector](/docs/guides/providers/model-selector) in chat.
+
+## Available Models
+
+AgentOne's built-in model list includes the major GPT-4o and o-series models. If OpenAI releases a new model that is not yet in the list, you can add it manually using `Add Model Override`. See [Built-in Providers](/docs/guides/providers/built-in-providers#model-overrides) for how.
+
+## Troubleshooting
+
+- **401 Unauthorized**: the API key is wrong or was not saved. Re-paste and save again.
+- **429 Too Many Requests / quota error**: you have hit your usage limit. Check billing at platform.openai.com.
+- **Model not showing**: confirm the provider is enabled and has at least one model entry.
+
+For more help, see [Providers and Models Troubleshooting](/docs/desktop-app/troubleshooting/providers-and-models).

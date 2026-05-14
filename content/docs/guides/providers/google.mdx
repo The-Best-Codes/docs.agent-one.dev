@@ -1,0 +1,72 @@
+---
+title: Google Gemini
+description: Connect Google Gemini models to AgentOne with your API key.
+---
+
+Google makes the Gemini family of models. AgentOne includes Google as a built-in provider.
+
+## Getting a Google AI API Key
+
+<Steps>
+<Step>
+### Open Google AI Studio
+
+Go to [aistudio.google.com](https://aistudio.google.com) and sign in with a Google account.
+
+</Step>
+<Step>
+### Create an API Key
+
+Click **Get API key** in the left sidebar, then click **Create API key**. You can create the key in a new or existing Google Cloud project.
+
+</Step>
+<Step>
+### Copy the Key
+
+Copy the API key from the dialog.
+
+</Step>
+</Steps>
+
+<Callout title="Free tier available" type="info">
+  Google AI Studio offers a free tier for the Gemini API. Check
+  [ai.google.dev/pricing](https://ai.google.dev/pricing) for current limits and
+  paid tier pricing.
+</Callout>
+
+## Connecting Google in AgentOne
+
+<Steps>
+<Step>
+### Open Provider Settings
+
+In AgentOne, click `Settings` -> `Providers`.
+
+</Step>
+<Step>
+### Find and Enable Google
+
+Under `Built-in Providers`, locate **Google**, expand it, and toggle the enable switch on.
+
+</Step>
+<Step>
+### Paste Your Key
+
+Paste your API key and click save.
+
+</Step>
+</Steps>
+
+Gemini models appear in the [model selector](/docs/guides/providers/model-selector) after saving.
+
+## Available Models
+
+AgentOne includes the major Gemini 1.5 and Gemini 2.x models. For models released after the app's built-in list, use `Add Model Override`. See [Built-in Providers](/docs/guides/providers/built-in-providers#model-overrides).
+
+## Troubleshooting
+
+- **API key not valid**: confirm you copied the full key from AI Studio.
+- **Model not found**: some Gemini models have regional restrictions. Check the model's availability in your region at [ai.google.dev](https://ai.google.dev).
+- **Image not working**: confirm the selected Gemini model supports images. See [Model Metadata](/docs/guides/providers/model-metadata#supports-images).
+
+For more, see [Providers and Models Troubleshooting](/docs/desktop-app/troubleshooting/providers-and-models).

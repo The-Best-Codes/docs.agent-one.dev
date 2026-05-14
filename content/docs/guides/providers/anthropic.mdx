@@ -1,0 +1,72 @@
+---
+title: Anthropic
+description: Connect Anthropic Claude models to AgentOne with your API key.
+---
+
+Anthropic makes the Claude family of models. AgentOne includes Anthropic as a built-in provider.
+
+## Getting an Anthropic API Key
+
+<Steps>
+<Step>
+### Sign in to Anthropic Console
+
+Go to [console.anthropic.com](https://console.anthropic.com) and sign in or create an account.
+
+</Step>
+<Step>
+### Open API Keys
+
+In the left sidebar, click **API Keys**, then click **Create Key**. Give it a name such as "AgentOne".
+
+</Step>
+<Step>
+### Copy the Key
+
+Copy the key immediately. Anthropic only shows the full key value once.
+
+</Step>
+</Steps>
+
+<Callout title="Billing required" type="info">
+  Anthropic requires a funded account to use the API beyond the free tier. Add
+  credits at
+  [console.anthropic.com/settings/billing](https://console.anthropic.com/settings/billing).
+</Callout>
+
+## Connecting Anthropic in AgentOne
+
+<Steps>
+<Step>
+### Open Provider Settings
+
+In AgentOne, click `Settings` -> `Providers`.
+
+</Step>
+<Step>
+### Find and Enable Anthropic
+
+Under `Built-in Providers`, locate **Anthropic**, expand it, and toggle the enable switch on.
+
+</Step>
+<Step>
+### Paste Your Key
+
+Paste your API key into the `API Key` field and click save.
+
+</Step>
+</Steps>
+
+Claude models appear in the [model selector](/docs/guides/providers/model-selector) immediately after saving.
+
+## Available Models
+
+AgentOne's built-in list covers the major Claude 3 and Claude 4 series models. If Anthropic releases a new model before AgentOne's list is updated, you can register it via `Add Model Override` in the provider settings. See [Built-in Providers](/docs/guides/providers/built-in-providers#model-overrides).
+
+## Troubleshooting
+
+- **401 error**: double-check your API key and save again.
+- **Credit balance errors**: top up your Anthropic balance at the console.
+- **Tool calls failing**: verify the selected Claude model supports tools. See [Model Metadata](/docs/guides/providers/model-metadata#supports-tools).
+
+For more, see [Providers and Models Troubleshooting](/docs/desktop-app/troubleshooting/providers-and-models).

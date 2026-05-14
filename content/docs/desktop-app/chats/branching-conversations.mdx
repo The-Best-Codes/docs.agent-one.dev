@@ -1,21 +1,34 @@
 ---
 title: Branch Conversations
-description: Create a new chat branch from an existing message.
+description: Fork a conversation at any message to explore different directions without losing the original.
 ---
 
-Branching lets you fork a conversation from a specific point instead of continuing the original thread.
+Branching lets you fork a conversation from a specific point. The original chat stays exactly as it was - you get a new, independent chat that starts with the same context up to and including the message you branched from.
 
-## How To Branch
+## How to Branch
 
-1. Open the message action row for a message.
-2. Click `Branch conversation`.
+1. Hover over any message in the chat to reveal the [message action row](/docs/desktop-app/chats/message-actions).
+2. Click **Branch conversation**.
 
-AgentOne creates a new chat using that message as the branching point.
+AgentOne creates a new chat containing all messages up to and including the one you branched from, opens it, and adds a branch icon to both the original and the new chat in the sidebar.
 
-## Why Branching Is Useful
+{/* Screenshot placeholder: sidebar showing an original chat and a branched chat below it with a branch icon, both visible in the recent chats list. */}
 
-- explore a different idea without disturbing the original chat
-- test another prompt direction
-- compare two solutions from the same earlier context
+## Why Branch Instead of Edit?
 
-Branched chats show a branch icon in the sidebar so they are easy to spot later.
+Branching and editing both let you explore alternate paths, but they serve different purposes:
+
+- **Edit a message** when you want to correct something and continue in the same chat thread. The edit replaces the original message in place.
+- **Branch** when you want to try a completely different direction while keeping the original thread intact and unmodified. After branching you have two separate chats, and you can freely continue both.
+
+Branching is especially useful when you have invested significant context in a long conversation and want to test an alternate prompt, a different framing of a question, or a different model without risking the original work.
+
+## Finding Branched Chats
+
+Branched chats appear in the sidebar with a branch icon next to their title. They are otherwise full chats - you can rename them, export them, delete them, and continue the conversation just like any other chat.
+
+## Related
+
+- [Message Actions](/docs/desktop-app/chats/message-actions) - the full set of per-message actions.
+- [Edit Messages](/docs/desktop-app/chats/editing-messages) - modify messages in place with optional regeneration.
+- [Chat Sidebar](/docs/desktop-app/chats/chat-sidebar) - navigate between chats including branched ones.

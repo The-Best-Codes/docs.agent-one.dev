@@ -1,0 +1,36 @@
+---
+title: Dangling Extensions
+description: Find and remove extension entries that no longer match known registry records.
+---
+
+Over time, especially if you have installed and uninstalled registry extensions across multiple app versions, you may end up with **dangling extensions** - entries in AgentOne's extension list that no longer cleanly correspond to a current registry record.
+
+This can happen when:
+
+- A registry extension was renamed or re-identified between versions.
+- An extension was partially uninstalled or its registry entry was removed.
+- You migrated settings from an older version of AgentOne.
+
+Dangling entries are harmless in most cases, but they can clutter your extensions list and occasionally cause confusing load errors.
+
+## Finding Dangling Extensions
+
+1. Open `Settings` -> `Extensions`.
+2. Click the filter menu (the funnel icon).
+3. Choose **Find dangling extensions**.
+
+AgentOne scans your installed extensions and highlights any entries that do not match a known registry record.
+
+## Cleaning Them Up
+
+From the dangling extensions view, you can:
+
+- **Remove one at a time** - useful if you want to inspect each entry before deleting.
+- **Remove all** - clears every dangling entry in one action.
+
+Removing a dangling entry deletes AgentOne's configuration record for it. It does not uninstall any underlying tool or package from your system.
+
+## Related
+
+- [Extension Registry](/docs/guides/extensions/extension-registry) - browse current registry entries.
+- [Extensions Troubleshooting](/docs/desktop-app/troubleshooting/extensions) - fix other common extension issues.

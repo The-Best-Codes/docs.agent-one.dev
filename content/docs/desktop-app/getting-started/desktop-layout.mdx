@@ -1,54 +1,68 @@
 ---
 title: Desktop Layout
-description: Learn where the main areas of the AgentOne desktop app are.
+description: Learn where the main areas of the AgentOne desktop app are and what each one contains.
 ---
 
-The desktop app has three main areas.
+The AgentOne desktop app has three main areas: the **sidebar**, the **main chat area**, and the **composer**. Understanding where everything lives makes navigating the app much faster.
+
+{/* Screenshot placeholder: full app window with the three main areas annotated - sidebar on the left, main chat area in the center, and composer at the bottom. */}
 
 ## Sidebar
 
-The sidebar is where you:
+The sidebar runs along the left side of the app. It is your navigation hub for everything chat-related.
 
-- create a new chat
-- search chats
-- browse chat history
-- open `Settings`
+From the sidebar you can:
 
-You can also collapse the sidebar with `Ctrl+B`.
+- Click **New Chat** (or press `Ctrl+N`) to start a fresh conversation.
+- Browse your recent chat history, organized by recency.
+- Search chats by title or message content with the search button or `Ctrl+K`.
+- Open the **Settings** panel from the bottom of the sidebar.
+
+Each chat row shows its title and, when applicable, a status indicator or branch icon. Right-clicking a chat (or clicking its `...` menu) gives you actions like rename, export, and delete.
+
+For full details on working with the sidebar and managing chats, see [Chat Sidebar](/docs/desktop-app/chats/chat-sidebar).
+
+### Collapsing the Sidebar
+
+Press `Ctrl+B` to collapse the sidebar. When collapsed, a small set of icon buttons stays visible so you can still create new chats and search without opening the sidebar. You can choose whether these buttons appear in a row or column in `Settings` -> `Appearance` -> `Collapsed Sidebar Layout`.
+
+On narrower windows, the sidebar becomes a drawer that slides in when needed rather than staying pinned.
 
 ## Main Chat Area
 
-The center area shows:
+The center of the app is where your conversation lives. It shows:
 
-- the current conversation
-- streaming responses
-- tool activity
-- message actions such as copy, edit, branch, and regenerate
+- The full message history for the current chat, scrollable from top to bottom.
+- **Streaming responses** as the model generates them, with a stop button to interrupt.
+- **Tool activity** - when an [extension](/docs/guides/extensions) runs during a response, its actions appear inline as collapsible items so you can see exactly what the model did.
+- **Message action rows** - hover over a message (or always show them, depending on your settings) to access copy, edit, branch, and regenerate actions. See [Message Actions](/docs/desktop-app/chats/message-actions).
 
 ## Composer
 
-The composer sits at the bottom of the chat view. It includes:
+The composer sits at the bottom of the chat area. It is where you type messages and configure the current chat. It contains:
 
-- the message input
-- attachment controls
-- the model selector
-- the model config button
-- send or stop controls
+- **Message input** - type your message here. The placeholder says `Ask anything...`. Press your configured submit key (`Enter` or `Ctrl+Enter`) to send.
+- **Attachment button** - click the paperclip icon to attach files, or drag files directly into the composer. See [Attachments](/docs/desktop-app/chats/attachments).
+- **Model selector** - the pill-shaped button showing the current provider and model name. Click it to switch models. See [Model Selector](/docs/guides/providers/model-selector).
+- **Model config button** - next to the model selector. Click it to adjust temperature, max tokens, and other per-chat parameters. See [Model Config](/docs/guides/providers/model-config).
+- **Send / Stop button** - sends your message when idle; turns into a stop button during generation.
 
-## Settings Area
+## Settings
 
-When you open `Settings`, AgentOne shows a separate settings view with these sections:
+Clicking **Settings** in the sidebar opens the settings view. It is organized into sections:
 
-- `Account`
-- `Appearance`
-- `Chats`
-- `Extensions`
-- `Performance`
-- `Providers`
-- `Help & Updates`
+| Section          | What it controls                                  |
+| ---------------- | ------------------------------------------------- |
+| `Account`        | Sign-in, plan, sync, name, and AI instructions    |
+| `Appearance`     | Theme, colors, font, input style, sidebar layout  |
+| `Chats`          | Notifications, submit key, streaming, chat titles |
+| `Extensions`     | Built-in tools and MCP server management          |
+| `Performance`    | Rendering limits and virtualization               |
+| `Providers`      | Cloud, local, and custom provider setup           |
+| `Help & Updates` | App version, updates, help links, analytics       |
 
-## Mobile-Sized Windows
+See [Settings](/docs/desktop-app/settings) for the full breakdown of each section.
 
-On smaller windows, the sidebar opens as a drawer instead of staying pinned to the left.
+## Keyboard Shortcuts
 
-This keeps the chat view usable even in narrower layouts.
+You can navigate the entire app without touching the mouse. See [Keyboard Shortcuts](/docs/desktop-app/shortcuts-and-links/keyboard-shortcuts) for the full list.

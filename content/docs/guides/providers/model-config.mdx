@@ -1,0 +1,58 @@
+---
+title: Model Config
+description: Adjust per-chat model parameters like temperature, max tokens, and sampling settings.
+---
+
+The `Model Config` panel lets you fine-tune how the active model behaves for the current chat. You open it by clicking the config button next to the [model selector](/docs/guides/providers/model-selector) in the composer.
+
+Changes made here are **per-chat** - they do not affect other conversations or global defaults.
+
+## Available Parameters
+
+### Temperature
+
+Controls how random or deterministic the model's output is. Lower values (closer to 0) make responses more focused and predictable. Higher values make them more varied and creative. A value around `0.7` is a common starting point for general conversation; lower values like `0.2` suit factual or code tasks.
+
+### Top P
+
+An alternative sampling strategy to temperature, sometimes called nucleus sampling. The model considers only the smallest set of tokens whose cumulative probability adds up to `Top P`. Setting it to `0.9` means the model samples from the top 90% of likely tokens. Most providers recommend adjusting either temperature or Top P, not both at once.
+
+### Top K
+
+Limits sampling to the top K most likely tokens at each step. Useful on providers and models that support it. A value of `40` is a common default.
+
+### Frequency Penalty
+
+Discourages the model from repeating the same tokens that have already appeared in the output. A small positive value (e.g., `0.1`–`0.5`) reduces repetitive phrasing. Set to `0` to disable.
+
+### Presence Penalty
+
+Encourages the model to introduce new topics by penalizing tokens that have already appeared at all, regardless of frequency. Useful when you want more varied, exploratory answers.
+
+### Max Steps
+
+The maximum number of tool-use steps the model is allowed to take before the response ends. This is most relevant for [extension](/docs/guides/extensions)-heavy workflows where the model loops through multiple tool calls. Raising it allows longer agentic runs; lowering it keeps things tighter.
+
+### Max Tokens
+
+Sets a hard cap on the number of tokens the model generates in a single response. Leave it empty to use the model's default. Set it explicitly when you want to prevent very long responses or stay within a cost budget.
+
+### Seed
+
+A fixed seed makes generation deterministic - the same prompt with the same seed should produce the same output. Useful for debugging or reproducibility testing. Not all providers honor this parameter.
+
+## The Indicator Dot
+
+When any parameter has been changed from its default, a small indicator dot appears on the config button. This is a visual reminder that the current chat has non-default settings.
+
+To reset everything back to defaults, open the panel and click the reset button.
+
+## Leaving Fields Empty
+
+Leaving a field blank tells AgentOne to defer to the model or provider default for that parameter. This is the recommended approach unless you have a specific reason to change a value - provider-side defaults are usually tuned well for each model.
+
+## Related
+
+- [Model Selector](/docs/guides/providers/model-selector) - switch the active model for this chat.
+- [Model Metadata](/docs/guides/providers/model-metadata) - understand context window, output limits, and capability flags.
+- [Chat Settings](/docs/desktop-app/settings/chat-settings) - global chat behavior like streaming and submit key.

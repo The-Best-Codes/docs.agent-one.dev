@@ -1,0 +1,64 @@
+---
+title: Extensions
+description: Use built-in tools, install registry extensions, and add custom MCP servers in AgentOne.
+---
+
+AgentOne uses the term **extensions** for two distinct things that both add capabilities to the AI:
+
+- **Built-in tools** - a curated set of tools that ship with the app (file operations, web search, command execution, and more).
+- **MCP servers** - external Model Context Protocol servers you install from the registry or add yourself.
+
+Both types are managed from `Settings` -> `Extensions`.
+
+<Callout title="Extensions are in beta" type="warning">
+  The app labels extensions as beta. Some behavior may still change between
+  releases.
+</Callout>
+
+## Topics
+
+<Cards>
+  <Card href="/docs/guides/extensions/built-in-tools" title="Built-in Tools">
+    Enable built-in tools and configure how each one behaves.
+  </Card>
+  <Card
+    href="/docs/guides/extensions/extension-registry"
+    title="Extension Registry"
+  >
+    Search, filter, and browse installable extensions from the registry.
+  </Card>
+  <Card
+    href="/docs/guides/extensions/install-extension"
+    title="Install Extensions"
+  >
+    Install registry extensions and review their configuration before enabling.
+  </Card>
+  <Card
+    href="/docs/guides/extensions/custom-mcp-servers"
+    title="Custom MCP Servers"
+  >
+    Add your own STDIO or HTTP MCP servers.
+  </Card>
+  <Card
+    href="/docs/guides/extensions/approval-and-auth"
+    title="Approval & Auth"
+  >
+    Control per-tool approvals and connect HTTP extensions that require sign-in.
+  </Card>
+  <Card
+    href="/docs/guides/extensions/dangling-extensions"
+    title="Dangling Extensions"
+  >
+    Find and remove extensions that no longer map to registry entries.
+  </Card>
+</Cards>
+
+## How Extensions Appear in a Chat
+
+When a model that [supports tools](/docs/guides/providers/model-metadata#supports-tools) is selected, enabled extensions offer their tools to the model during the conversation. The model can then call those tools as part of its response - for example, searching the web, reading a file, or running a shell command.
+
+Tool calls appear inline in the chat as collapsible activity items so you can see exactly what the model did. If [approval is required](/docs/guides/extensions/approval-and-auth) for a tool, AgentOne pauses and asks before running it.
+
+## Related Guides
+
+For specific real-world MCP server examples, see the [Custom Extensions guides](/docs/guides/custom-extensions) which walk through installing Smithery, Canva, and filesystem servers step by step.

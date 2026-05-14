@@ -1,41 +1,48 @@
 ---
 title: Message Actions
-description: Use copy, edit, branch, and regenerate actions on chat messages.
+description: Copy, edit, regenerate, and branch conversations from any message in AgentOne.
 ---
 
-Each message can show an action row depending on your `Message Action Row` setting.
+Every message in a chat - both yours and the model's - can be acted on directly. The **message action row** appears on hover (or always, depending on your settings) and gives you a set of quick actions without needing to navigate away.
 
-The available actions include:
+{/* Screenshot placeholder: a chat with a user message and an assistant message, both showing the action row with Copy, Edit, Branch, and Regenerate buttons. */}
 
-- `Copy message`
-- `Branch conversation`
-- `Regenerate response`
-- `Edit message`
+## Showing the Action Row
 
-## Copy Message
+By default, the action row appears when you hover over a message. You can change this behavior in `Settings` -> `Chats` -> `Message Action Row`:
 
-Use this when you want the message contents in your clipboard.
+- **Show on hover** (default) - the row appears when the mouse is over the message.
+- **Always show** - the row is permanently visible for every message.
+- **Never show** - the row is hidden. The underlying actions still work where the UI exposes them in other ways (for example, the edit pencil icon still appears on focus for some message types).
 
-## Regenerate Response
+## Available Actions
 
-Use this on assistant output when you want a fresh answer from the current conversation state.
+### Copy Message
 
-## Edit Message
+Copies the full text of the message to your clipboard. For assistant messages, this copies the raw markdown content.
 
-When you edit a user message, AgentOne lets you save the change and optionally regenerate afterward.
+### Edit Message
 
-The edit menu includes `Regenerate when Saved`.
+Opens the message text in an inline editor. You can change the content and then:
 
-Whether that option is enabled by default is controlled by `Settings` -> `Chats` -> `Regenerate on Save`.
+- Click **Save** to apply the change.
+- Toggle **Regenerate when Saved** to control whether AgentOne regenerates the conversation from that point after saving.
+- Click **Cancel** to discard changes.
 
-## Visibility Of The Action Row
+Whether **Regenerate when Saved** is on or off by default is controlled by `Settings` -> `Chats` -> `Regenerate on Save`. See [Edit Messages](/docs/desktop-app/chats/editing-messages) for more.
 
-In `Settings` -> `Chats` -> `Message Action Row`, you can choose:
+Both user messages and assistant messages can be edited. Editing an assistant message and saving without regeneration replaces the stored content but does not send anything new to the model.
 
-- `Show on hover`
-- `Always show`
-- `Never show`
+### Regenerate Response
 
-If you choose `Never show`, the actions are hidden from the normal row even though the underlying features still exist where the UI exposes them elsewhere.
+Available on assistant messages. Sends the current conversation state back to the model and asks for a new response from that point, discarding the previous assistant message. Useful when you are unhappy with an answer and want a fresh attempt.
 
-{/* Screenshot placeholder: assistant and user messages with the action row visible, including Copy message, Branch conversation, Regenerate response, and Edit message. */}
+### Branch Conversation
+
+Creates a new chat that starts from this message's context. The original chat is unchanged. See [Branch Conversations](/docs/desktop-app/chats/branching-conversations) for the full explanation of when and why to branch.
+
+## Related
+
+- [Editing Messages](/docs/desktop-app/chats/editing-messages) - full detail on the edit flow and the regenerate-on-save setting.
+- [Branch Conversations](/docs/desktop-app/chats/branching-conversations) - fork a chat to explore a different direction.
+- [Chat Settings](/docs/desktop-app/settings/chat-settings) - configure action row visibility and default regenerate behavior.

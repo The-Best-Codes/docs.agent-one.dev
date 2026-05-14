@@ -1,28 +1,47 @@
 ---
 title: Performance
-description: Tune rendering limits, virtualization, and extension runtime settings.
+description: Tune rendering limits, virtualization, and extension loading to keep AgentOne fast.
 ---
 
-The `Performance` settings section helps you manage large chats and heavier extension setups.
+The `Performance` section in `Settings` gives you controls for managing AgentOne's behavior when working with large chats or many extensions. Most users will never need to change these defaults, but they are useful when you notice slow rendering or high memory use.
 
 ## Rendering Limits
 
-You can set:
+AgentOne switches to a more performance-friendly rendering mode for content that exceeds these limits. Reducing the limits makes the app faster in long conversations with large outputs; increasing them lets you see more content before truncation.
 
-- `Max Message Length`
-- `Max Codeblock Characters`
-- `Max Tool Result Characters`
+### Max Message Length
 
-These values decide when AgentOne switches to more performance-friendly rendering behavior.
+The maximum number of characters AgentOne renders in a single message before applying truncation or lazy loading. Very long assistant responses (for example, generated code files) can cause layout slowdowns without this limit.
+
+### Max Codeblock Characters
+
+The maximum number of characters rendered inside a single code block. Large code outputs in long chats are the most common cause of sluggishness, and this setting is the most impactful for rendering performance.
+
+### Max Tool Result Characters
+
+The maximum number of characters rendered in a tool result (the output of an [extension](/docs/guides/extensions) tool call). Tool calls that return large data - for example, a file view or a web page fetch - can produce very long outputs. Reducing this limit keeps those inline without affecting the model's actual context.
 
 ## Chat Virtualization
 
-Use `Virtualize Chat Messages` when you want better performance in large conversations.
+### Virtualize Chat Messages
 
-If enabled, you can also set `Message Count Threshold`, which controls how many messages a chat needs before virtualization turns on.
+When enabled, AgentOne renders only the messages currently visible in the viewport and recycles DOM nodes as you scroll. This dramatically reduces memory use and improves scroll performance in very long chats.
+
+Virtualization is off by default because it can occasionally affect layout in edge cases. Turn it on if you regularly work with chats that have hundreds of messages.
+
+### Message Count Threshold
+
+The number of messages a chat must have before virtualization activates (when **Virtualize Chat Messages** is enabled). Setting this to `50` means short chats render normally and virtualization only kicks in for long ones.
 
 ## Extension Runtime
 
-`MCP Parallel Load Limit` controls how many MCP servers AgentOne loads at the same time.
+### MCP Parallel Load Limit
 
-If you use many extensions, this setting can help balance startup behavior.
+Controls how many MCP servers AgentOne starts simultaneously at launch. If you have many [extensions](/docs/guides/extensions) installed, a higher limit means faster overall startup but more CPU and memory usage during the load phase. A lower limit staggers the startup at the cost of some extensions taking longer to become available.
+
+The default is a moderate value suitable for most setups with a handful of extensions. Raise it if you have many extensions and your hardware can handle the burst; lower it if you notice high CPU spikes when the app opens.
+
+## Related
+
+- [Extensions](/docs/guides/extensions) - manage installed MCP servers.
+- [Chat Settings](/docs/desktop-app/settings/chat-settings) - streaming throttle and other chat behavior tuning.
