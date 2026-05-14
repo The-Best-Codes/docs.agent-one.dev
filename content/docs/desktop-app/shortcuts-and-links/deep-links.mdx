@@ -1,0 +1,67 @@
+---
+title: Deep Links
+description: Open AgentOne chats and extension installs from URLs using the agent-one:// scheme.
+---
+
+AgentOne registers the `agent-one://` URL scheme on your system. This means any application - a browser, a README file, a script, or another app - can open AgentOne and pre-fill specific flows by constructing the right URL.
+
+## Supported Deep Links
+
+### New Chat
+
+Opens AgentOne and starts a new chat, optionally with a pre-filled message in the composer.
+
+```text
+agent-one://new-chat?v=1&message=Your%20message%20here
+```
+
+Parameters:
+
+| Parameter | Required | Description                                   |
+| --------- | -------- | --------------------------------------------- |
+| `v`       | Yes      | Link version. Must be `1`.                    |
+| `message` | No       | URL-encoded text to pre-fill in the composer. |
+
+When AgentOne receives this link, it creates a new chat and populates the composer input with the decoded message. The message is not sent automatically - you still press send.
+
+### MCP Install
+
+Opens the custom extension install dialog with fields pre-filled from the link.
+
+```text
+agent-one://mcp/install?v=1&name=My%20Server&config=%7B...%7D
+```
+
+Parameters:
+
+| Parameter | Required | Description                                           |
+| --------- | -------- | ----------------------------------------------------- |
+| `v`       | Yes      | Link version. Must be `1`.                            |
+| `name`    | Yes      | URL-encoded display name for the extension.           |
+| `config`  | Yes      | URL-encoded JSON configuration object for the server. |
+
+When AgentOne receives this link, it opens `Settings` -> `Extensions` and pre-fills the **Add Custom** dialog. A warning banner appears reminding you to review the details before installing.
+
+## The `v` Parameter
+
+Both link types require a `v` (version) parameter. This lets AgentOne validate that the link format is one it understands. Currently the only supported value is `1`.
+
+## Safety
+
+AgentOne never installs extensions or sends messages automatically from deep links. Every deep link that triggers an install opens a review dialog, and new-chat links pre-fill but do not auto-send. You are always in control of the final action.
+
+## Creating Deep Links
+
+If you are a developer or tool author and want to generate links that open AgentOne, construct the URL following the patterns above. URL-encode all parameter values, especially the `message` and `config` fields.
+
+Example in JavaScript:
+
+```js
+const message = encodeURIComponent("Summarize this project for me");
+const link = `agent-one://new-chat?v=1&message=${message}`;
+```
+
+## Related
+
+- [Custom MCP Servers](/docs/guides/custom-extensions) - the install dialog that MCP deep links open.
+- [Keyboard Shortcuts](/docs/desktop-app/shortcuts-and-links/keyboard-shortcuts) - for in-app navigation shortcuts.

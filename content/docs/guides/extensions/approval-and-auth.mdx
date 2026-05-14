@@ -1,0 +1,71 @@
+---
+title: Approval and Authentication
+description: Control when AgentOne asks before running extension tools, and connect extensions that require authentication.
+---
+
+AgentOne gives you granular control over when tools run automatically versus when you need to explicitly approve them. This is especially important for tools that make changes to your files, run commands, or interact with external services.
+
+## Default Approval for an Extension
+
+Every installed extension - whether from the registry or added as a custom server - has a **Requires Approval by default** toggle. When enabled, AgentOne pauses before running any tool from that extension and asks you to confirm.
+
+This setting is the top-level switch for the extension. You can set it:
+
+- During installation (registry extensions and custom extensions both offer this in the install/add dialog).
+- After installation, from the extension's **Advanced** panel.
+
+## Per-Tool Approval Overrides
+
+The per-extension toggle controls the default, but you can override it for individual tools using **Per-tool approvals** in the Advanced panel. This means you can:
+
+- Approve by default for the whole extension, but skip approval for one low-risk tool (such as `read-only` operations).
+- Not require approval by default, but require it for one specific high-risk tool (such as one that deletes data).
+
+Per-tool settings take precedence over the extension-level default.
+
+## How Approval Works in a Chat
+
+When a tool requires approval and the model tries to call it, AgentOne pauses the response and shows an approval prompt inline in the chat. The prompt shows the tool name and the arguments the model wants to pass. You can:
+
+- **Approve** - the tool runs and the model continues from the result.
+- **Reject** - the model is told the tool call was rejected and may try a different approach.
+
+The conversation does not proceed past the approval point until you respond.
+
+## Extension Status Indicators
+
+Installed extensions can show these status states in the Extensions settings page:
+
+| Status        | Meaning                                              |
+| ------------- | ---------------------------------------------------- |
+| Loading       | The server is starting up.                           |
+| Enabled       | Connected and tools are available.                   |
+| Disabled      | Manually turned off.                                 |
+| Error         | Failed to start or connect.                          |
+| Auth required | The server needs sign-in before tools are available. |
+
+## Connect and Disconnect (HTTP Extensions)
+
+Some HTTP extensions - typically those that connect to external services like GitHub, Notion, or Google Drive - require authentication before their tools are available. These show a **Connect** button in the Advanced panel.
+
+To authenticate:
+
+1. Open `Settings` -> `Extensions`.
+2. Find the extension and click **Advanced**.
+3. Click **Connect**.
+4. Complete the sign-in flow in the browser window that opens.
+
+After connecting, the status changes to **Connected** and the extension's tools become available in chat. You can disconnect at any time by clicking **Disconnect** in the same panel.
+
+Extensions that do not need authentication show **No authorization required** in the Advanced panel.
+
+## Debug Info
+
+Some registry-installed extensions expose a **Debug info** section in the Advanced panel. This shows raw information about what the server reported during connection - useful when troubleshooting a broken install or comparing the registry metadata with what the app detected.
+
+## Related
+
+- [Built-in Tools](/docs/guides/extensions/built-in-tools) - approval controls for the tools that ship with AgentOne.
+- [Install Extensions](/docs/guides/extensions/install-extension) - set approval defaults at install time.
+- [Custom MCP Servers](/docs/guides/custom-extensions) - approval options when adding a server manually.
+- [Extensions Troubleshooting](/docs/desktop-app/troubleshooting/extensions) - fix auth and approval issues.

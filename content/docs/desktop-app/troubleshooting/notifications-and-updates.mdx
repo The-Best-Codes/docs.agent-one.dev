@@ -1,0 +1,28 @@
+---
+title: Notifications and Updates Troubleshooting
+description: Fix completion notifications and desktop app update problems.
+---
+
+## Completion Notifications Are Not Appearing
+
+Check these things:
+
+- `Settings` -> `Chats` -> `Completion Notification` is not set to `Never`
+- your operating system has allowed notifications for AgentOne
+- if you chose `When window unfocused`, the app window is actually unfocused when the response finishes
+
+AgentOne requests notification permission when needed, but OS-level settings can still block notifications.
+
+## Update Check Says Automatic Updates Are Disabled
+
+Some installs are managed by an external software manager. In that case, update AgentOne using that external system instead of the in-app updater.
+
+## Update Download Or Install Fails
+
+- click `Try Again`
+- confirm you have network access
+- if your platform is externally managed, use your package manager instead
+
+## No Release Notes Dialog Appeared
+
+The `What's New` dialog only appears when the app has release notes for the current version and the version is newer than the last one you dismissed.

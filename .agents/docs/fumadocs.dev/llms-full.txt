@@ -3,7 +3,7 @@ URL: /docs/comparisons
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/comparisons.mdx
 
 How is Fumadocs different from other existing frameworks?
-        
+
 
 
 ## Nextra [#nextra]
@@ -78,7 +78,7 @@ URL: /docs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/index.mdx
 
 Getting Started with Fumadocs
-        
+
 
 
 
@@ -402,7 +402,7 @@ URL: /docs/navigation
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/navigation.mdx
 
 Configure navigation in your Fumadocs app.
-        
+
 
 
 
@@ -472,7 +472,7 @@ URL: /docs/page-conventions
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/page-conventions.mdx
 
 A shared convention for organizing your documents
-        
+
 
 
 > This guide only applies for content sources that uses `loader()` API, such as **Fumadocs MDX**.
@@ -708,7 +708,7 @@ URL: /docs/what-is-fumadocs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/what-is-fumadocs.mdx
 
 Introducing Fumadocs, a docs framework that you can break.
-        
+
 
 
 The **Fumadocs** framework refers to a combination of UI + Core + Content Source, Fumadocs is more of a mental framework and each layer can be a library on its own.
@@ -734,7 +734,7 @@ For Next.js developers, you are still using features of App Router, like **Stati
 
 The only thing Fumadocs UI (the default theme) offers is **User Interface**. The UI is opinionated for bringing better mobile responsiveness and user experience.
 
-Instead, we follow a much more flexible approach inspired by Shadcn UI — [Fumadocs CLI](/docs/cli), allowing you to "fork" a part of Fumadocs UI, and fully customize it.
+Instead, we follow a much more flexible approach inspired by Shadcn UI - [Fumadocs CLI](/docs/cli), allowing you to "fork" a part of Fumadocs UI, and fully customize it.
 
 ### Server-first Approach [#server-first-approach]
 
@@ -785,7 +785,7 @@ URL: /docs/cli/create-fumadocs-app
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/create-fumadocs-app.mdx
 
 The CLI to create new Fumadocs apps
-        
+
 
 
 ## Overview [#overview]
@@ -852,7 +852,7 @@ URL: /docs/cli
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/index.mdx
 
 The CLI tool that automates setups and installs components.
-        
+
 
 
 ## Installation [#installation]
@@ -1220,17 +1220,17 @@ export default (
 ```
 
 
-# Fumadocs CLI (the CLI tool for automating Fumadocs apps): Fumapress
-URL: /docs/cli/press
-Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/press.mdx
+# Fumadocs CLI (the CLI tool for automating Fumadocs apps): Preview
+URL: /docs/cli/preview
+Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/cli/preview.mdx
 
 A light tool to view Markdown files.
-        
+
 
 
 ## Introduction [#introduction]
 
-Fumapress allows you to view Markdown files with Fumadocs, it is useful for reading skills files & notes.
+`fumadocs-preview` allows you to view Markdown files with Fumadocs, it is useful for reading skills files & notes.
 
 Run the command under your project directory.
 
@@ -1255,25 +1255,25 @@ Run the command under your project directory.
 
   <CodeBlockTab value="npm">
     ```bash
-    npx fumapress dir/to/content
+    npx fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="pnpm">
     ```bash
-    pnpm dlx fumapress dir/to/content
+    pnpm dlx fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="yarn">
     ```bash
-    yarn dlx fumapress dir/to/content
+    yarn dlx fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="bun">
     ```bash
-    bun x fumapress dir/to/content
+    bun x fumadocs-preview dir/to/content
     ```
   </CodeBlockTab>
 </CodeBlockTabs>
@@ -1303,25 +1303,25 @@ For other configurations, you can install it locally:
 
   <CodeBlockTab value="npm">
     ```bash
-    npm install fumapress -D
+    npm install fumadocs-preview -D
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="pnpm">
     ```bash
-    pnpm add fumapress -D
+    pnpm add fumadocs-preview -D
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="yarn">
     ```bash
-    yarn add fumapress --dev
+    yarn add fumadocs-preview --dev
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="bun">
     ```bash
-    bun add fumapress --dev
+    bun add fumadocs-preview --dev
     ```
   </CodeBlockTab>
 </CodeBlockTabs>
@@ -1349,25 +1349,25 @@ Then init the config file:
 
   <CodeBlockTab value="npm">
     ```bash
-    npx fumapress init
+    npx fumadocs-preview init
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="pnpm">
     ```bash
-    pnpm dlx fumapress init
+    pnpm dlx fumadocs-preview init
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="yarn">
     ```bash
-    yarn dlx fumapress init
+    yarn dlx fumadocs-preview init
     ```
   </CodeBlockTab>
 
   <CodeBlockTab value="bun">
     ```bash
-    bun x fumapress init
+    bun x fumadocs-preview init
     ```
   </CodeBlockTab>
 </CodeBlockTabs>
@@ -1378,7 +1378,7 @@ URL: /docs/headless
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/index.mdx
 
 Getting started with core library
-        
+
 
 
 ## What is this? [#what-is-this]
@@ -1530,7 +1530,7 @@ URL: /docs/headless/page-conventions
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/page-conventions.mdx
 
 Customize generated page slugs and page tree.
-        
+
 
 
 > This guide only applies for content sources that uses `loader()` API, such as **Fumadocs MDX**.
@@ -1766,7 +1766,7 @@ URL: /docs/headless/page-tree
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/page-tree.mdx
 
 The structure of page tree.
-        
+
 
 
 Page tree is a tree structure that describes all navigation links, with other items like separator and folders.
@@ -2138,7 +2138,7 @@ URL: /docs/mdx/async
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/async.mdx
 
 Configure lazy loading on collection outputs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -2330,7 +2330,7 @@ URL: /docs/mdx/collections
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/collections.mdx
 
 Collection of content data for your app
-        
+
 
 
 ## Define Collections [#define-collections]
@@ -2745,7 +2745,7 @@ URL: /docs/mdx/global
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/global.mdx
 
 Customize Fumadocs MDX
-        
+
 
 
 ## Global Options [#global-options]
@@ -2844,7 +2844,7 @@ URL: /docs/mdx/include
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/include.mdx
 
 Reuse content from other files.
-        
+
 
 
 ## Usage [#usage]
@@ -3141,7 +3141,7 @@ URL: /docs/mdx
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/index.mdx
 
 Introducing Fumadocs MDX, the official content source of Fumadocs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -3266,7 +3266,7 @@ URL: /docs/mdx/last-modified
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/last-modified.mdx
 
 Output the last modified time of a document
-        
+
 
 
 ## Usage [#usage]
@@ -3309,7 +3309,7 @@ URL: /docs/mdx/mdx
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/mdx.mdx
 
 Customize the default configurations for MDX processor.
-        
+
 
 
 Fumadocs MDX provides MDX presets to simplify configurations of features like **syntax highlighting**.
@@ -3485,7 +3485,7 @@ URL: /docs/mdx/performance
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/performance.mdx
 
 The performance of Fumadocs MDX
-        
+
 
 
 
@@ -3554,7 +3554,7 @@ URL: /docs/mdx/typegen
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/typegen.mdx
 
 Generate types without running dev/build server
-        
+
 
 
 ### Overview [#overview]
@@ -3626,7 +3626,7 @@ URL: /docs/mdx/workspace
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/workspace.mdx
 
 Use Fumadocs MDX in multiple workspace.
-        
+
 
 
 ## Overview [#overview]
@@ -3732,7 +3732,7 @@ URL: /docs/openapi
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/openapi/index.mdx
 
 View the Scalar Galaxy example OpenAPI schema.
-        
+
 
 
 # Fumadocs UI (the default theme of Fumadocs): Component Library
@@ -3740,7 +3740,7 @@ URL: /docs/ui/component-library
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/component-library.mdx
 
 The underlying headless component library.
-        
+
 
 
 ## Overview [#overview]
@@ -3775,7 +3775,7 @@ URL: /docs/ui
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/index.mdx
 
 The default theme of Fumadocs
-        
+
 
 
 **Fumadocs UI** offers a beautifully designed theme for documentation sites.
@@ -3794,7 +3794,7 @@ URL: /docs/ui/search
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/search.mdx
 
 The UI for document search
-        
+
 
 
 ## Overview [#overview]
@@ -4003,7 +4003,7 @@ URL: /docs/ui/theme
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/theme.mdx
 
 Add Theme to Fumadocs UI
-        
+
 
 
 
@@ -4224,7 +4224,7 @@ URL: /docs/ui/translations
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/translations.mdx
 
 Adding Translations to UI
-        
+
 
 
 ## Overview [#overview]
@@ -4266,7 +4266,7 @@ URL: /docs/deploying
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/deploying/index.mdx
 
 Deploy your Fumadocs app
-        
+
 
 
 ## Overview [#overview]
@@ -4368,7 +4368,7 @@ URL: /docs/deploying/static
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/deploying/static.mdx
 
 Output static website with Fumadocs.
-        
+
 
 
 ## Setup [#setup]
@@ -4495,7 +4495,7 @@ URL: /docs/guides/access-control
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/access-control.mdx
 
 Limit the access of content.
-        
+
 
 
 ## Overview [#overview]
@@ -4621,7 +4621,7 @@ URL: /docs/guides/customize-ui
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/customize-ui.mdx
 
 A complete guide on how to customize Fumadocs UI.
-        
+
 
 
 ## Introduction [#introduction]
@@ -4654,7 +4654,7 @@ While Fumadocs UI itself has many designs around flexibility & backward compatib
     </DocsLayout>
     ```
 
-    Detailed documentations for each component are in the [Fumadocs UI](/docs/ui) section, you can take it as a reference.
+    Detailed documentation for each component is in the [Fumadocs UI](/docs/ui) section, you can take it as a reference.
 
     Most options support passing JSX elements to allow your own components.
     This approach should suffice most use cases, such as adding sections below table of contents or in sidebar.
@@ -4775,7 +4775,7 @@ URL: /docs/guides/export-epub
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/export-epub.mdx
 
 Export your documentation to EPUB format for e-readers
-        
+
 
 
 ## Introduction [#introduction]
@@ -4947,9 +4947,9 @@ const buffer = await exportEpub({
 
 Images in your MDX are resolved automatically:
 
-* **Relative paths** (e.g. `./image.png`) — resolved relative to the page file
-* **Public paths** (e.g. `/og.png`) — resolved from the `public` directory
-* **Remote URLs** (e.g. `https://...`) — embedded as-is
+* **Relative paths** (e.g. `./image.png`) - resolved relative to the page file
+* **Public paths** (e.g. `/og.png`) - resolved from the `public` directory
+* **Remote URLs** (e.g. `https://...`) - embedded as-is
 
 
 # Fumadocs (Framework Mode): Export PDF
@@ -4957,7 +4957,7 @@ URL: /docs/guides/export-pdf
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/export-pdf.mdx
 
 Export docs pages as PDF documents
-        
+
 
 
 ## Overview [#overview]
@@ -5063,7 +5063,7 @@ URL: /docs/guides
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/index.mdx
 
 Useful guides for extending Fumadocs.
-        
+
 
 
 <DocsCategory />
@@ -5074,7 +5074,7 @@ URL: /docs/guides/rss
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/guides/rss.mdx
 
 Generate a RSS feed for your docs/blog.
-        
+
 
 
 ## Setup [#setup]
@@ -5210,7 +5210,7 @@ URL: /docs/integrations/feedback
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/feedback.mdx
 
 Receive feedback from your users
-        
+
 
 
 ## Overview [#overview]
@@ -5274,7 +5274,6 @@ To create a page-level feedback UI, add the `<Feedback />` component to your doc
 ```tsx
 import { DocsPage } from 'fumadocs-ui/layout/docs/page';
 import { Feedback } from '@/components/feedback/client';
-import posthog from 'posthog-js';
 
 export default async function Page() {
   return (
@@ -5284,7 +5283,7 @@ export default async function Page() {
         onSendAction={async (feedback) => {
           'use server';
 
-          await posthog.capture('on_rate_docs', feedback);
+          console.log(feedback);
         }}
       />
     </DocsPage>
@@ -5299,55 +5298,58 @@ For example, to report user feedback as a `on_rate_docs` event on PostHog.
 
 ### Feedback Block [#feedback-block]
 
-You can also configure block-level feedback (e.g. a feedback popover for each paragraph).
+You can also configure block-level feedback (e.g. a feedback popover as user select text).
 
-Add the `remark-feedback-block` Remark plugin:
+Add the `remark-block-id` Remark plugin:
 
 ```tsx title="source.config.ts (Fumadocs MDX)"
 import {
-  remarkFeedbackBlock,
-  type RemarkFeedbackBlockOptions,
-} from 'fumadocs-core/mdx-plugins/remark-feedback-block';
+  remarkBlockId,
+  type RemarkBlockIdOptions,
+} from 'fumadocs-core/mdx-plugins/remark-block-id';
 import { defineConfig } from 'fumadocs-mdx/config';
 
-const feedbackOptions: RemarkFeedbackBlockOptions = {
-  // other options:
+const blockIdOptions: RemarkBlockIdOptions = {
+  addDataAttribute: 'feedback',
 };
 
 export default defineConfig({
   mdxOptions: {
     remarkPlugins: [
       // [!code ++]
-      [remarkFeedbackBlock, feedbackOptions],
+      [remarkBlockId, blockIdOptions],
     ],
   },
 });
 ```
 
-Then, define the `FeedbackBlock` MDX component:
+Then, wrap your page content under the `FeedbackText` component:
 
-```tsx title="components/mdx.tsx"
-import { FeedbackBlock } from '@/components/feedback/client';
-import defaultComponents from 'fumadocs-ui/mdx';
-import type { MDXComponents } from 'mdx/types';
+```tsx
+import { DocsPage } from 'fumadocs-ui/layout/docs/page';
+import { FeedbackText } from '@/components/feedback/client';
 
-export function getMDXComponents(components?: MDXComponents) {
-  return {
-    ...defaultComponents,
-    FeedbackBlock: ({ children, ...rest }) => (
-      <FeedbackBlock {...rest} onSendAction={onBlockFeedbackAction}>
-        {children}
-      </FeedbackBlock>
-    ),
-    ...components,
-  } satisfies MDXComponents;
+export default async function Page() {
+  return (
+    <DocsPage>
+      <FeedbackText
+        onSendAction={async (feedback) => {
+          'use server';
+
+          console.log(feedback);
+        }}
+      >
+        {/* the content of page */}
+      </FeedbackText>
+    </DocsPage>
+  );
 }
 ```
 
 * `onSendAction`: fired when user submit feedback.
 
 <Callout type="info" title="Good to know">
-  `remark-feedback-block` generates a block ID from its content and order in the page, hence it is also possible to track the blocks from 3rd party services.
+  `remark-block-id` generates a block ID from its content and order in the page, hence it is also possible to track the blocks from 3rd party services.
 </Callout>
 
 ### Integrating with GitHub Discussion [#integrating-with-github-discussion]
@@ -5432,8 +5434,10 @@ async function getFeedbackDestination() {
 export async function onPageFeedbackAction(feedback: PageFeedback): Promise<ActionResponse> {
   'use server';
   feedback = pageFeedback.parse(feedback);
+  const url = new URL(feedback.url);
+
   return createDiscussionThread(
-    feedback.url,
+    url.pathname,
     `[${feedback.opinion}] ${feedback.message}\n\n> Forwarded from user feedback.`,
   );
 }
@@ -5441,9 +5445,12 @@ export async function onPageFeedbackAction(feedback: PageFeedback): Promise<Acti
 export async function onBlockFeedbackAction(feedback: BlockFeedback): Promise<ActionResponse> {
   'use server';
   feedback = blockFeedback.parse(feedback);
+  const url = new URL(feedback.url);
+  url.hash = feedback.blockId;
+
   return createDiscussionThread(
-    feedback.url,
-    `> ${feedback.blockBody ?? feedback.blockId}\n\n${feedback.message}\n\n> Forwarded from user feedback.`,
+    url.pathname,
+    `> ${feedback.blockBody}\n\n${feedback.message}\n\n> [Forwarded from user feedback](${url.href}).`,
   );
 }
 
@@ -5457,22 +5464,20 @@ async function createDiscussionThread(pageId: string, body: string) {
   if (!category) throw new Error(`Please create a "${DocsCategory}" category in GitHub Discussion`);
 
   const title = `Feedback for ${pageId}`;
-  const {
+  const queryResult: {
     search: {
-      nodes: [discussion],
-    },
-  }: {
-    search: {
-      nodes: { id: string; url: string }[];
+      nodes: { id: string; title: string; url: string }[];
     };
   } = await octokit.graphql(`
           query {
-            search(type: DISCUSSION, query: ${JSON.stringify(`${title} in:title repo:${owner}/${repo} author:@me`)}, first: 1) {
+            search(type: DISCUSSION, query: ${JSON.stringify(`"${title}" in:title repo:${owner}/${repo} author:@me`)}, first: 10) {
               nodes {
-                ... on Discussion { id, url }
+                ... on Discussion { id, title, url }
               }
             }
           }`);
+
+  const discussion = queryResult.search.nodes.find((item) => item.title === title);
 
   if (discussion) {
     const result: {
@@ -5491,7 +5496,9 @@ async function createDiscussionThread(pageId: string, body: string) {
     };
   } else {
     const result: {
-      discussion: { id: string; url: string };
+      createDiscussion: {
+        discussion: { id: string; url: string };
+      };
     } = await octokit.graphql(`
             mutation {
               createDiscussion(input: { repositoryId: "${destination.id}", categoryId: "${category.id}", body: ${JSON.stringify(body)}, title: ${JSON.stringify(title)} }) {
@@ -5500,17 +5507,17 @@ async function createDiscussionThread(pageId: string, body: string) {
             }`);
 
     return {
-      githubUrl: result.discussion.url,
+      githubUrl: result.createDiscussion.discussion.url,
     };
   }
 }
 
 ```
 
-. Create your own GitHub App and obtain its app ID and private key.
-. Fill required environment variables.
-. Replace constants like `owner`, `repo`, and `DocsCategory`.
-. Use the `onPageFeedbackAction` & `onBlockFeedbackAction` in your feedback components.
+1. Create your own GitHub App and obtain its app ID and private key.
+2. Fill required environment variables.
+3. Replace constants like `owner`, `repo`, and `DocsCategory`.
+4. Use the `onPageFeedbackAction` & `onBlockFeedbackAction` in your feedback components.
 
 
 # Fumadocs (Framework Mode): AI & LLMs
@@ -5518,7 +5525,7 @@ URL: /docs/integrations/llms
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/llms.mdx
 
 Integrate AI functionality to Fumadocs.
-        
+
 
 
 
@@ -5757,11 +5764,9 @@ A version of docs for AIs to read.
   </CodeBlockTab>
 </CodeBlockTabs>
 
-### `*.mdx` [#mdx-extension]
+### `*.md` [#md-extension]
 
-Allow AI agents to get the content of a page as Markdown/MDX, by appending `.mdx` to the end of path.
-
-Make a route handler to return page content, and a middleware to point to it:
+Allow AI agents to get the content of a page as Markdown/MDX, by appending `.md` to the end of path.
 
 <CodeBlockTabs defaultValue="Next.js">
   <CodeBlockTabsList>
@@ -5811,7 +5816,7 @@ Make a route handler to return page content, and a middleware to point to it:
       async rewrites() {
         return [
           {
-            source: '/docs/:path*.mdx',
+            source: '/docs/:path*.md',
             destination: '/llms.mdx/docs/:path*',
           },
         ];
@@ -5855,7 +5860,7 @@ Make a route handler to return page content, and a middleware to point to it:
     import type { Route } from './+types/root';
 
     // [!code ++:20]
-    const { rewrite: rewriteLLM } = rewritePath('/docs{/*path}.mdx', '/llms.mdx/docs{/*path}');
+    const { rewrite: rewriteLLM } = rewritePath('/docs{/*path}.md', '/llms.mdx/docs{/*path}');
     const serverMiddleware: Route.MiddlewareFunction = async ({ request }, next) => {
       const url = new URL(request.url);
       const path = rewriteLLM(url.pathname);
@@ -5880,16 +5885,43 @@ Make a route handler to return page content, and a middleware to point to it:
   </CodeBlockTab>
 
   <CodeBlockTab value="Tanstack Start">
-    ```ts  title="src/routes/llms[.]mdx.docs.$.ts"
+    ```ts  title="lib/source.ts"
+    // create the following utils:
+
+    export function markdownPathToSlugs(segs: string[]) {
+      if (segs.length === 0) return [];
+
+      const out = [...segs];
+      out[out.length - 1] = out[out.length - 1].replace(/\.md$/, '');
+      if (out.length === 1 && out[0] === 'index') out.pop();
+      return out;
+    }
+
+    export function slugsToMarkdownPath(slugs: string[]) {
+      const segments = [...slugs];
+      if (segments.length === 0) {
+        segments.push('index.md');
+      } else {
+        segments[segments.length - 1] += '.md';
+      }
+
+      return {
+        segments,
+        url: `/docs/${segments.join('/')}`,
+      };
+    }
+    ```
+
+    ```ts  title="src/routes/docs/{$}[.]md.ts"
     import { createFileRoute, notFound } from '@tanstack/react-router';
-    import { source } from '@/lib/source';
+    import { source, markdownPathToSlugs } from '@/lib/source';
     import { getLLMText } from '@/lib/get-llm-text';
 
-    export const Route = createFileRoute('/llms.mdx/docs/$')({
+    export const Route = createFileRoute('/docs/{$}.md')({
       server: {
         handlers: {
           GET: async ({ params }) => {
-            const slugs = params._splat?.split('/') ?? [];
+            const slugs = markdownPathToSlugs(params._splat?.split('/') ?? []);
             const page = source.getPage(slugs);
             if (!page) throw notFound();
 
@@ -5901,31 +5933,6 @@ Make a route handler to return page content, and a middleware to point to it:
           },
         },
       },
-    });
-    ```
-
-    ```ts  title="src/start.ts"
-    import { createMiddleware, createStart } from '@tanstack/react-start';
-    import { rewritePath } from 'fumadocs-core/negotiation';
-    import { redirect } from '@tanstack/react-router';
-
-    const { rewrite: rewriteLLM } = rewritePath('/docs{/*path}.mdx', '/llms.mdx/docs{/*path}');
-
-    const llmMiddleware = createMiddleware().server(({ next, request }) => {
-      const url = new URL(request.url);
-      const path = rewriteLLM(url.pathname);
-
-      if (path) {
-        throw redirect(new URL(path, url));
-      }
-
-      return next();
-    });
-
-    export const startInstance = createStart(() => {
-      return {
-        requestMiddleware: [llmMiddleware],
-      };
     });
     ```
   </CodeBlockTab>
@@ -5956,7 +5963,7 @@ export default function proxy(request: NextRequest) {
 
 ### Page Actions [#page-actions]
 
-Common page actions for AI, require [`*.mdx`](#mdx-extension) to be implemented first.
+Common page actions for AI, require [`*.md`](#md-extension) to be implemented first.
 
 <img alt="AI Page Actions" src="__img0" />
 
@@ -6008,6 +6015,7 @@ Use it in your docs page like:
 
 ```tsx title="app/docs/[[...slug]]/page.tsx"
 // URL to fetch Markdown content, only need to append .mdx to URL if you have `*.mdx` configured.
+// Use .md instead for the Tanstack Start example above.
 const markdownUrl = `${page.url}.mdx`
 
 <div className="flex flex-row gap-2 items-center border-b pt-2 pb-6">
@@ -6139,6 +6147,7 @@ Add the component & trigger to docs layout:
 
 ```tsx
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+// import the installed components, e.g.
 import { AISearch, AISearchPanel, AISearchTrigger } from '@/components/ai/search';
 import { MessageCircleIcon } from 'lucide-react';
 // or import your own button styles
@@ -6176,7 +6185,7 @@ URL: /docs/integrations/validate-links
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/validate-links.mdx
 
 Ensure your links are correct.
-        
+
 
 
 ## Setup [#setup]
@@ -6265,7 +6274,7 @@ URL: /docs/internationalization
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/index.mdx
 
 Support multiple languages in your documentation
-        
+
 
 
 ## Overview [#overview]
@@ -6283,7 +6292,7 @@ URL: /docs/internationalization/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/next.mdx
 
 Support i18n routing on your Next.js + Fumadocs app
-        
+
 
 
 <Callout title="New to Next.js?">
@@ -6580,7 +6589,7 @@ URL: /docs/internationalization/react-router
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/react-router.mdx
 
 Support i18n routing on your React Router + Fumadocs app.
-        
+
 
 
 ## Setup [#setup]
@@ -6846,7 +6855,7 @@ URL: /docs/internationalization/tanstack-start
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/internationalization/tanstack-start.mdx
 
 Support i18n routing on your Tanstack Start + Fumadocs app.
-        
+
 
 
 ## Setup [#setup]
@@ -7093,7 +7102,7 @@ URL: /docs/manual-installation
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/index.mdx
 
 Add Fumadocs to existing projects.
-        
+
 
 
 # Fumadocs (Framework Mode): Next.js
@@ -7101,7 +7110,7 @@ URL: /docs/manual-installation/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/next.mdx
 
 Setup Fumadocs on Next.js.
-        
+
 
 
 ## Prerequisite [#prerequisite]
@@ -7479,7 +7488,7 @@ URL: /docs/manual-installation/react-router
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/react-router.mdx
 
 Setup Fumadocs on React Router.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -7738,7 +7747,7 @@ URL: /docs/manual-installation/tanstack-start
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/tanstack-start.mdx
 
 Setup Fumadocs on Tanstack Start.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -8008,7 +8017,7 @@ URL: /docs/manual-installation/waku
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/manual-installation/waku.mdx
 
 Setup Fumadocs on Waku.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -8291,7 +8300,7 @@ URL: /docs/markdown
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/index.mdx
 
 How to write documents
-        
+
 
 
 
@@ -8400,7 +8409,7 @@ import { HomeIcon } from 'lucide-react';
   </Card>
 
   <Card title="href is optional">
-    Learn more about 
+    Learn more about
 
     `fetch`
 
@@ -8556,7 +8565,7 @@ Show line numbers, it also works with Twoslash and other transformers.
   </CodeBlockTab>
 
   <CodeBlockTab value="Output">
-    ```ts twoslash lineNumbers 
+    ```ts twoslash lineNumbers
     const a = 'Hello World';
     //    ^?
     console.log(a); // [!code highlight]
@@ -8590,7 +8599,7 @@ You can set the initial value of line numbers.
   </CodeBlockTab>
 
   <CodeBlockTab value="Output">
-    ```js lineNumbers=4 
+    ```js lineNumbers=4
     function main() {
       console.log('starts from 4');
 
@@ -8690,6 +8699,70 @@ console.log('B');
   </CodeBlockTab>
 </CodeBlockTabs>
 
+To add a persist ID, define `tab-group` at the first codeblock:
+
+````mdx
+```ts tab="Tab 1" tab-group="my-custom-group"
+console.log('A');
+```
+
+```ts tab="Tab 2"
+console.log('B');
+```
+````
+
+<CodeBlockTabs defaultValue="Tab 1" groupId="my-custom-group">
+  <CodeBlockTabsList>
+    <CodeBlockTabsTrigger value="Tab 1">
+      Tab 1
+    </CodeBlockTabsTrigger>
+
+    <CodeBlockTabsTrigger value="Tab 2">
+      Tab 2
+    </CodeBlockTabsTrigger>
+  </CodeBlockTabsList>
+
+  <CodeBlockTab value="Tab 1">
+    ```ts
+    console.log('A');
+    ```
+  </CodeBlockTab>
+
+  <CodeBlockTab value="Tab 2">
+    ```ts
+    console.log('B');
+    ```
+  </CodeBlockTab>
+</CodeBlockTabs>
+
+Another group:
+
+<CodeBlockTabs defaultValue="Tab 1" groupId="my-custom-group">
+  <CodeBlockTabsList>
+    <CodeBlockTabsTrigger value="Tab 1">
+      Tab 1
+    </CodeBlockTabsTrigger>
+
+    <CodeBlockTabsTrigger value="Tab 2">
+      Tab 2
+    </CodeBlockTabsTrigger>
+  </CodeBlockTabsList>
+
+  <CodeBlockTab value="Tab 1">
+    ```ts
+    console.log('A');
+    ```
+  </CodeBlockTab>
+
+  <CodeBlockTab value="Tab 2">
+    ```ts
+    console.log('B');
+    ```
+  </CodeBlockTab>
+</CodeBlockTabs>
+
+#### MDX in Tab Groups [#mdx-in-tab-groups]
+
 While disabled by default, you use MDX in tab values by configuring the remark plugin:
 
 <CodeBlockTabs defaultValue="Fumadocs MDX">
@@ -8749,11 +8822,15 @@ console.log('B');
 <CodeBlockTabs defaultValue="<Building /> Tab 1">
   <CodeBlockTabsList>
     <CodeBlockTabsTrigger value="<Building /> Tab 1">
-      <Building /> Tab 1
+      <Building />
+
+       Tab 1
     </CodeBlockTabsTrigger>
 
     <CodeBlockTabsTrigger value="<Rocket /> Tab 2">
-      <Rocket /> Tab 2
+      <Rocket />
+
+       Tab 2
     </CodeBlockTabsTrigger>
   </CodeBlockTabsList>
 
@@ -8897,7 +8974,7 @@ URL: /docs/markdown/math
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/math.mdx
 
 Writing math equations in Markdown/MDX.
-        
+
 
 
 ## Getting Started [#getting-started]
@@ -8958,7 +9035,7 @@ Add the required remark/rehype plugins, the code might be vary depending on your
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import rehypeKatex from 'rehype-katex';
     import remarkMath from 'remark-math';
     import { defineConfig } from 'fumadocs-mdx/config';
@@ -9020,7 +9097,7 @@ URL: /docs/markdown/mermaid
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/mermaid.mdx
 
 Rendering diagrams in your docs
-        
+
 
 
 ## Setup [#setup]
@@ -9337,7 +9414,7 @@ URL: /docs/markdown/twoslash
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/markdown/twoslash.mdx
 
 Use Typescript Twoslash in your docs
-        
+
 
 
 ## Usage [#usage]
@@ -9512,7 +9589,7 @@ URL: /docs/search/algolia
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/algolia.mdx
 
 Using Algolia with Fumadocs UI.
-        
+
 
 
 ## Overview [#overview]
@@ -9712,7 +9789,7 @@ URL: /docs/search/custom
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/custom.mdx
 
 For other search solutions.
-        
+
 
 
 ## Overview [#overview]
@@ -9916,7 +9993,7 @@ URL: /docs/search/flexsearch
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/flexsearch.mdx
 
 A fast & minimal search engine.
-        
+
 
 
 ## Overview [#overview]
@@ -10144,7 +10221,7 @@ URL: /docs/search
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/index.mdx
 
 Implement document search in your docs
-        
+
 
 
 ## Search UI [#search-ui]
@@ -10170,66 +10247,66 @@ URL: /docs/search/mixedbread
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/mixedbread.mdx
 
 Using Mixedbread with Fumadocs UI.
-        
+
 
 
 ## Setup [#setup]
 
-. Integrate [Mixedbread Search](/docs/headless/search/mixedbread).
+1. Integrate [Mixedbread Search](/docs/headless/search/mixedbread).
 
-. Create a search dialog component.
+2. Create a search dialog component.
 
-  ```tsx title="components/search.tsx"
-  'use client';
+   ```tsx title="components/search.tsx"
+   'use client';
 
-  import {
-    SearchDialog,
-    SearchDialogClose,
-    SearchDialogContent,
-    SearchDialogFooter,
-    SearchDialogHeader,
-    SearchDialogIcon,
-    SearchDialogInput,
-    SearchDialogList,
-    SearchDialogOverlay,
-    type SharedProps,
-  } from 'fumadocs-ui/components/dialog/search';
-  import { useDocsSearch } from 'fumadocs-core/search/client';
-  import { useI18n } from 'fumadocs-ui/contexts/i18n';
+   import {
+     SearchDialog,
+     SearchDialogClose,
+     SearchDialogContent,
+     SearchDialogFooter,
+     SearchDialogHeader,
+     SearchDialogIcon,
+     SearchDialogInput,
+     SearchDialogList,
+     SearchDialogOverlay,
+     type SharedProps,
+   } from 'fumadocs-ui/components/dialog/search';
+   import { useDocsSearch } from 'fumadocs-core/search/client';
+   import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
-  export default function CustomSearchDialog(props: SharedProps) {
-    const { locale } = useI18n(); // (optional) for i18n
-    const { search, setSearch, query } = useDocsSearch({
-      type: 'fetch',
-      api: '/api/search',
-      locale,
-    });
+   export default function CustomSearchDialog(props: SharedProps) {
+     const { locale } = useI18n(); // (optional) for i18n
+     const { search, setSearch, query } = useDocsSearch({
+       type: 'fetch',
+       api: '/api/search',
+       locale,
+     });
 
-    return (
-      <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
-        <SearchDialogOverlay />
-        <SearchDialogContent>
-          <SearchDialogHeader>
-            <SearchDialogIcon />
-            <SearchDialogInput />
-            <SearchDialogClose />
-          </SearchDialogHeader>
-          <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
-          <SearchDialogFooter>
-            <a
-              href="https://mixedbread.com"
-              rel="noreferrer noopener"
-              className="ms-auto text-xs text-fd-muted-foreground"
-            >
-              Search powered by Mixedbread
-            </a>
-          </SearchDialogFooter>
-        </SearchDialogContent>
-      </SearchDialog>
-    );
-  }
+     return (
+       <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
+         <SearchDialogOverlay />
+         <SearchDialogContent>
+           <SearchDialogHeader>
+             <SearchDialogIcon />
+             <SearchDialogInput />
+             <SearchDialogClose />
+           </SearchDialogHeader>
+           <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+           <SearchDialogFooter>
+             <a
+               href="https://mixedbread.com"
+               rel="noreferrer noopener"
+               className="ms-auto text-xs text-fd-muted-foreground"
+             >
+               Search powered by Mixedbread
+             </a>
+           </SearchDialogFooter>
+         </SearchDialogContent>
+       </SearchDialog>
+     );
+   }
 
-  ```
+   ```
 
 ### Replace Search Dialog [#replace-search-dialog]
 
@@ -10355,72 +10432,72 @@ URL: /docs/search/orama-cloud
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/orama-cloud.mdx
 
 Using Orama Cloud with Fumadocs UI.
-        
+
 
 
 ## Setup [#setup]
 
-. Integrate [Orama Cloud](/docs/headless/search/orama-cloud).
+1. Integrate [Orama Cloud](/docs/headless/search/orama-cloud).
 
-. Create a search dialog, replace `endpoint` and `api_key` with your desired values.
+2. Create a search dialog, replace `endpoint` and `api_key` with your desired values.
 
-  ```tsx title="components/search.tsx"
-  'use client';
+   ```tsx title="components/search.tsx"
+   'use client';
 
-  import {
-    SearchDialog,
-    SearchDialogClose,
-    SearchDialogContent,
-    SearchDialogFooter,
-    SearchDialogHeader,
-    SearchDialogIcon,
-    SearchDialogInput,
-    SearchDialogList,
-    SearchDialogOverlay,
-    type SharedProps,
-  } from 'fumadocs-ui/components/dialog/search';
-  import { useDocsSearch } from 'fumadocs-core/search/client';
-  import { OramaCloud } from '@orama/core';
-  import { useI18n } from 'fumadocs-ui/contexts/i18n';
+   import {
+     SearchDialog,
+     SearchDialogClose,
+     SearchDialogContent,
+     SearchDialogFooter,
+     SearchDialogHeader,
+     SearchDialogIcon,
+     SearchDialogInput,
+     SearchDialogList,
+     SearchDialogOverlay,
+     type SharedProps,
+   } from 'fumadocs-ui/components/dialog/search';
+   import { useDocsSearch } from 'fumadocs-core/search/client';
+   import { OramaCloud } from '@orama/core';
+   import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
-  const client = new OramaCloud({
-    projectId: '',
-    apiKey: '',
-  });
+   const client = new OramaCloud({
+     projectId: '',
+     apiKey: '',
+   });
 
-  export default function CustomSearchDialog(props: SharedProps) {
-    const { locale } = useI18n(); // (optional) for i18n
-    const { search, setSearch, query } = useDocsSearch({
-      type: 'orama-cloud',
-      client,
-      locale,
-    });
+   export default function CustomSearchDialog(props: SharedProps) {
+     const { locale } = useI18n(); // (optional) for i18n
+     const { search, setSearch, query } = useDocsSearch({
+       type: 'orama-cloud',
+       client,
+       locale,
+     });
 
-    return (
-      <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
-        <SearchDialogOverlay />
-        <SearchDialogContent>
-          <SearchDialogHeader>
-            <SearchDialogIcon />
-            <SearchDialogInput />
-            <SearchDialogClose />
-          </SearchDialogHeader>
-          <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
-          <SearchDialogFooter>
-            <a
-              href="https://orama.com"
-              rel="noreferrer noopener"
-              className="ms-auto text-xs text-fd-muted-foreground"
-            >
-              Search powered by Orama
-            </a>
-          </SearchDialogFooter>
-        </SearchDialogContent>
-      </SearchDialog>
-    );
-  }
+     return (
+       <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
+         <SearchDialogOverlay />
+         <SearchDialogContent>
+           <SearchDialogHeader>
+             <SearchDialogIcon />
+             <SearchDialogInput />
+             <SearchDialogClose />
+           </SearchDialogHeader>
+           <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+           <SearchDialogFooter>
+             <a
+               href="https://orama.com"
+               rel="noreferrer noopener"
+               className="ms-auto text-xs text-fd-muted-foreground"
+             >
+               Search powered by Orama
+             </a>
+           </SearchDialogFooter>
+         </SearchDialogContent>
+       </SearchDialog>
+     );
+   }
 
-  ```
+   ```
 
 ### Replace Search Dialog [#replace-search-dialog]
 
@@ -10502,7 +10579,7 @@ URL: /docs/search/orama
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/orama.mdx
 
 The default search engine powered by Orama.
-        
+
 
 
 ## Overview [#overview]
@@ -10783,76 +10860,76 @@ URL: /docs/search/typesense
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/search/typesense.mdx
 
 Using Typesense with Fumadocs UI.
-        
+
 
 
 > This is a community-maintained integration.
 
 ## Setup [#setup]
 
-. Integrate [Typesense Search](/docs/headless/search/typesense).
+1. Integrate [Typesense Search](/docs/headless/search/typesense).
 
-. Create a search dialog component.
+2. Create a search dialog component.
 
-  ```tsx title="components/search.tsx"
-  'use client';
-  import {
-    SearchDialog,
-    SearchDialogClose,
-    SearchDialogContent,
-    SearchDialogFooter,
-    SearchDialogHeader,
-    SearchDialogIcon,
-    SearchDialogInput,
-    SearchDialogList,
-    SearchDialogOverlay,
-    type SharedProps,
-  } from 'fumadocs-ui/components/dialog/search';
-  import { useI18n } from 'fumadocs-ui/contexts/i18n';
-  import { Client } from 'typesense';
-  import { useTypesenseSearch } from 'typesense-fumadocs-adapter/client';
+   ```tsx title="components/search.tsx"
+   'use client';
+   import {
+     SearchDialog,
+     SearchDialogClose,
+     SearchDialogContent,
+     SearchDialogFooter,
+     SearchDialogHeader,
+     SearchDialogIcon,
+     SearchDialogInput,
+     SearchDialogList,
+     SearchDialogOverlay,
+     type SharedProps,
+   } from 'fumadocs-ui/components/dialog/search';
+   import { useI18n } from 'fumadocs-ui/contexts/i18n';
+   import { Client } from 'typesense';
+   import { useTypesenseSearch } from 'typesense-fumadocs-adapter/client';
 
-  const client = new Client({
-    nodes: [{ url: 'YOUR_TYPESENSE_SERVER_URL' }],
-    apiKey: 'YOUR_TYPESENSE_SEARCH_ONLY_API_KEY',
-  });
+   const client = new Client({
+     nodes: [{ url: 'YOUR_TYPESENSE_SERVER_URL' }],
+     apiKey: 'YOUR_TYPESENSE_SEARCH_ONLY_API_KEY',
+   });
 
-  export default function TypesenseSearchDialog(props: SharedProps) {
-    const { locale } = useI18n(); // optional
-    const { search, setSearch, query } = useTypesenseSearch({
-      typesenseCollectionName: `YOUR_TYPESENSE_COLLECTION_NAME`,
-      locale,
-      legacy: false, // optional, set to true for fumadocs-ui version < 16.6.0
-      client,
-    });
+   export default function TypesenseSearchDialog(props: SharedProps) {
+     const { locale } = useI18n(); // optional
+     const { search, setSearch, query } = useTypesenseSearch({
+       typesenseCollectionName: `YOUR_TYPESENSE_COLLECTION_NAME`,
+       locale,
+       legacy: false, // optional, set to true for fumadocs-ui version < 16.6.0
+       client,
+     });
 
-    return (
-      <SearchDialog
-        search={search}
-        onSearchChange={setSearch}
-        isLoading={query.isLoading}
-        {...props}
-      >
-        <SearchDialogOverlay />
-        <SearchDialogContent>
-          <SearchDialogHeader>
-            <SearchDialogIcon />
-            <SearchDialogInput />
-            <SearchDialogClose />
-          </SearchDialogHeader>
-          <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
-          <SearchDialogFooter>
-            <div className="w-full text-right text-xs text-fd-muted-foreground">
-              <a href="https://typesense.org" rel="noreferrer noopener" target="_blank">
-                Search powered by Typesense
-              </a>
-            </div>
-          </SearchDialogFooter>
-        </SearchDialogContent>
-      </SearchDialog>
-    );
-  }
-  ```
+     return (
+       <SearchDialog
+         search={search}
+         onSearchChange={setSearch}
+         isLoading={query.isLoading}
+         {...props}
+       >
+         <SearchDialogOverlay />
+         <SearchDialogContent>
+           <SearchDialogHeader>
+             <SearchDialogIcon />
+             <SearchDialogInput />
+             <SearchDialogClose />
+           </SearchDialogHeader>
+           <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+           <SearchDialogFooter>
+             <div className="w-full text-right text-xs text-fd-muted-foreground">
+               <a href="https://typesense.org" rel="noreferrer noopener" target="_blank">
+                 Search powered by Typesense
+               </a>
+             </div>
+           </SearchDialogFooter>
+         </SearchDialogContent>
+       </SearchDialog>
+     );
+   }
+   ```
 
 ### Replace Search Dialog [#replace-search-dialog]
 
@@ -10978,7 +11055,7 @@ URL: /docs/headless/components/breadcrumb
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/breadcrumb.mdx
 
 The navigation component at the top of the screen
-        
+
 
 
 A hook for implementing Breadcrumb in your documentation. It returns breadcrumb items for a page based on the given page tree.
@@ -11078,7 +11155,7 @@ URL: /docs/headless/components
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/index.mdx
 
 Blocks for your docs
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Link
@@ -11086,7 +11163,7 @@ URL: /docs/headless/components/link
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/link.mdx
 
 A Link component that handles external links
-        
+
 
 
 A component that wraps the Link component of your React framework (e.g. `next/link`) and automatically handles external links in the document.\~
@@ -11124,7 +11201,7 @@ URL: /docs/headless/components/toc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/components/toc.mdx
 
 Table of Contents
-        
+
 
 
 A Table of Contents with active anchor observer and auto scroll.
@@ -11265,7 +11342,7 @@ URL: /docs/headless/content-collections
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/content-collections/index.mdx
 
 Use Content Collections for Fumadocs
-        
+
 
 
 [Content Collections](https://www.content-collections.dev) is a library that transforms your content into type-safe data collections.
@@ -11324,17 +11401,14 @@ To integrate with Fumadocs, add the following to your `content-collections.ts`.
 
 ```ts title="content-collections.ts"
 import { defineCollection, defineConfig } from '@content-collections/core';
-import {
-  frontmatterSchema,
-  metaSchema,
-  transformMDX,
-} from '@fumadocs/content-collections/configuration';
+import { transformMDX } from '@fumadocs/content-collections/configuration';
+import { metaSchema, pageSchema } from 'fumadocs-core/source/schema';
 
 const docs = defineCollection({
   name: 'docs',
   directory: 'content/docs',
   include: '**/*.mdx',
-  schema: frontmatterSchema,
+  schema: pageSchema,
   transform: transformMDX,
 });
 
@@ -11431,7 +11505,7 @@ URL: /docs/headless/internationalization/config
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/internationalization/config.mdx
 
 Shared i18n configuration
-        
+
 
 
 <Callout title="Core API Only">
@@ -11523,7 +11597,7 @@ URL: /docs/headless/internationalization/middleware
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/internationalization/middleware.mdx
 
 Next.js proxy for implementing i18n routing
-        
+
 
 
 ## Setup [#setup]
@@ -11552,7 +11626,7 @@ URL: /docs/headless/mdx/headings
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/headings.mdx
 
 Process headings from your document
-        
+
 
 
 ## Remark Heading [#remark-heading]
@@ -11688,7 +11762,7 @@ URL: /docs/headless/mdx
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/index.mdx
 
 Useful remark & rehype plugins for your docs.
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Package Install
@@ -11696,7 +11770,7 @@ URL: /docs/headless/mdx/install
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/install.mdx
 
 Generate code blocks for installing packages
-        
+
 
 
 <Callout type="warn" title="Deprecated">
@@ -11765,7 +11839,7 @@ Add the remark plugin.
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { remarkInstall } from 'fumadocs-docgen';
     import { defineConfig } from 'fumadocs-mdx/config';
 
@@ -11899,7 +11973,7 @@ When using with Fumadocs UI, you can enable persistence with the `persist` optio
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { remarkInstall } from 'fumadocs-docgen';
     import { defineConfig } from 'fumadocs-mdx/config';
 
@@ -11949,7 +12023,7 @@ URL: /docs/headless/mdx/rehype-code
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/rehype-code.mdx
 
 Code syntax highlighter
-        
+
 
 
 A wrapper of [`@shikijs/rehype`](https://shiki.style/packages/rehype), the syntax highlighter used by Fumadocs.
@@ -12136,7 +12210,7 @@ URL: /docs/headless/mdx/remark-admonition
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-admonition.mdx
 
 Use Admonition in Fumadocs
-        
+
 
 
 In Docusaurus, there's an [Admonition syntax](https://docusaurus.io/docs/markdown-features/admonitions).
@@ -12205,7 +12279,7 @@ Configure both plugins in your config.
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import remarkDirective from 'remark-directive';
     import { remarkDirectiveAdmonition } from 'fumadocs-core/mdx-plugins';
     import { defineConfig } from 'fumadocs-mdx/config';
@@ -12301,7 +12375,7 @@ URL: /docs/headless/mdx/remark-image
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-image.mdx
 
 Adding size attributes to images.
-        
+
 
 
 This plugin adds `width` and `height` attributes to your image elements, which is needed for Image Optimization on Next.js and some other frameworks.
@@ -12505,7 +12579,7 @@ URL: /docs/headless/mdx/remark-llms
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-llms.mdx
 
 Generate markdown for LLM consumption with customizable placeholders
-        
+
 
 
 The `remarkLLMs` plugin stringifies the processed Markdown AST to plain Markdown, the output is generated as an ESM export. This is useful for feeding content to LLMs, search indexing, or other text-based processing.
@@ -12557,8 +12631,8 @@ const vfile = await compile('...', {
 
 Placeholders let you keep certain MDX components in the stringified output as special tokens instead of dropping or inlining them. That way you can:
 
-. Rehydrate those tokens later via `renderPlaceholder()`.
-. Generate a better Markdown representation with runtime data.
+1. Rehydrate those tokens later via `renderPlaceholder()`.
+2. Generate a better Markdown representation with runtime data.
 
 ### Using `mdxAsPlaceholder` [#using-mdxasplaceholder]
 
@@ -12942,7 +13016,7 @@ URL: /docs/headless/mdx/remark-mdx-files
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-mdx-files.mdx
 
 Generate files from codeblocks.
-        
+
 
 
 ## Introduction [#introduction]
@@ -13024,7 +13098,7 @@ URL: /docs/headless/mdx/remark-npm
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-npm.mdx
 
 Generate code blocks for package managers
-        
+
 
 
 ## Usage [#usage]
@@ -13054,7 +13128,7 @@ Add the remark plugin.
   </CodeBlockTab>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { defineConfig } from 'fumadocs-mdx/config';
 
     export default defineConfig({
@@ -13215,7 +13289,7 @@ When using with Fumadocs UI, you can enable persist the selected value with the 
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { defineConfig } from 'fumadocs-mdx/config';
 
     export default defineConfig({
@@ -13256,7 +13330,7 @@ URL: /docs/headless/mdx/remark-steps
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-steps.mdx
 
 Generate steps from headings
-        
+
 
 
 ## Usage [#usage]
@@ -13286,7 +13360,7 @@ Add the remark plugin.
   </CodeBlockTab>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { defineConfig } from 'fumadocs-mdx/config';
     import { remarkSteps } from 'fumadocs-core/mdx-plugins/remark-steps';
 
@@ -13362,7 +13436,7 @@ URL: /docs/headless/mdx/remark-ts2js
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/remark-ts2js.mdx
 
 A remark plugin to transform TypeScript codeblocks into two tabs of codeblock with its JavaScript variant.
-        
+
 
 
 ## Usage [#usage]
@@ -13443,7 +13517,7 @@ Add the remark plugin:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import { remarkTypeScriptToJavaScript } from 'fumadocs-docgen/remark-ts2js';
     import { defineConfig } from 'fumadocs-mdx/config';
 
@@ -13534,7 +13608,7 @@ URL: /docs/headless/mdx/structure
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/mdx/structure.mdx
 
 Extract information from your documents, useful for implementing document search
-        
+
 
 
 ## Usage [#usage]
@@ -13710,7 +13784,7 @@ URL: /docs/headless/search/algolia
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/algolia.mdx
 
 Integrate Algolia Search with Fumadocs
-        
+
 
 
 <Callout title="Notice">
@@ -14071,7 +14145,7 @@ URL: /docs/headless/search/flexsearch
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/flexsearch.mdx
 
 Fast & minimal document search
-        
+
 
 
 ## Setup [#setup]
@@ -14410,7 +14484,7 @@ Flexsearch doesn't require configurations to work for other languages, but you c
   </CodeBlockTabsList>
 
   <CodeBlockTab value="From Source">
-    ```ts title="app/api/search/route.ts" 
+    ```ts title="app/api/search/route.ts"
     import { source } from '@/lib/source';
     import { flexsearchFromSource } from 'fumadocs-core/search/flexsearch';
     import { Charset } from 'flexsearch';
@@ -14456,7 +14530,7 @@ URL: /docs/headless/search
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/index.mdx
 
 Configure Search in Fumadocs
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Mixedbread
@@ -14464,7 +14538,7 @@ URL: /docs/headless/search/mixedbread
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/mixedbread.mdx
 
 Integrate Mixedbread Search with Fumadocs
-        
+
 
 
 ## Introduction [#introduction]
@@ -14475,17 +14549,17 @@ The Mixedbread Integration uses vector search to provide semantic search capabil
 
 ### Get your API Key [#get-your-api-key]
 
-. Sign up at [Mixedbread](https://platform.mixedbread.com)
-. Navigate to [API Keys](https://platform.mixedbread.com/platform?next=api-keys)
-. Create a new API key and store it in your environment variables
+1. Sign up at [Mixedbread](https://platform.mixedbread.com)
+2. Navigate to [API Keys](https://platform.mixedbread.com/platform?next=api-keys)
+3. Create a new API key and store it in your environment variables
 
 ### Create a Store [#create-a-store]
 
 To sync your documentation, you'll need to create a store:
 
-. Go to the [Stores](https://platform.mixedbread.com/platform?next=stores) in your Mixedbread dashboard
-. Create a new store for your documentation
-. Copy the store ID
+1. Go to the [Stores](https://platform.mixedbread.com/platform?next=stores) in your Mixedbread dashboard
+2. Create a new store for your documentation
+3. Copy the store ID
 
 ### Sync Documentation [#sync-documentation]
 
@@ -14633,7 +14707,7 @@ URL: /docs/headless/search/orama-cloud
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/orama-cloud.mdx
 
 Integrate with Orama Cloud
-        
+
 
 
 To begin, create an account on Orama Cloud.
@@ -14642,221 +14716,221 @@ To begin, create an account on Orama Cloud.
 
 REST API integration requires your docs to upload the indexes.
 
-. Create a new project with **REST API** data source on Orama Cloud dashboard.
+1. Create a new project with **REST API** data source on Orama Cloud dashboard.
 
-  Store your credentials in environment variables, for example:
+   Store your credentials in environment variables, for example:
 
-  ```dotenv
-  NEXT_PUBLIC_ORAMA_DATASOURCE_ID="Rest API data source ID"
-  NEXT_PUBLIC_ORAMA_PROJECT_ID="project ID"
-  NEXT_PUBLIC_ORAMA_API_KEY="public API key"
+   ```dotenv
+   NEXT_PUBLIC_ORAMA_DATASOURCE_ID="Rest API data source ID"
+   NEXT_PUBLIC_ORAMA_PROJECT_ID="project ID"
+   NEXT_PUBLIC_ORAMA_API_KEY="public API key"
 
-  ORAMA_PRIVATE_API_KEY="private API key"
-  ```
+   ORAMA_PRIVATE_API_KEY="private API key"
+   ```
 
-. Export the search indexes by pre-rendering a static route.
+2. Export the search indexes by pre-rendering a static route.
 
-  ```ts title="lib/export-search-indexes.ts"
-  import { source } from '@/lib/source';
-  import type { OramaDocument } from 'fumadocs-core/search/orama-cloud';
+   ```ts title="lib/export-search-indexes.ts"
+   import { source } from '@/lib/source';
+   import type { OramaDocument } from 'fumadocs-core/search/orama-cloud';
 
-  export async function exportSearchIndexes() {
-    return source.getPages().map((page) => {
-      return {
-        id: page.url,
-        structured: page.data.structuredData,
-        url: page.url,
-        title: page.data.title,
-        description: page.data.description,
-      } satisfies OramaDocument;
-    });
-  }
-  ```
+   export async function exportSearchIndexes() {
+     return source.getPages().map((page) => {
+       return {
+         id: page.url,
+         structured: page.data.structuredData,
+         url: page.url,
+         title: page.data.title,
+         description: page.data.description,
+       } satisfies OramaDocument;
+     });
+   }
+   ```
 
-  <CodeBlockTabs defaultValue="Next.js">
-    <CodeBlockTabsList>
-      <CodeBlockTabsTrigger value="Next.js">
-        Next.js
-      </CodeBlockTabsTrigger>
+   <CodeBlockTabs defaultValue="Next.js">
+     <CodeBlockTabsList>
+       <CodeBlockTabsTrigger value="Next.js">
+         Next.js
+       </CodeBlockTabsTrigger>
 
-      <CodeBlockTabsTrigger value="React Router">
-        React Router
-      </CodeBlockTabsTrigger>
+       <CodeBlockTabsTrigger value="React Router">
+         React Router
+       </CodeBlockTabsTrigger>
 
-      <CodeBlockTabsTrigger value="Tanstack Start">
-        Tanstack Start
-      </CodeBlockTabsTrigger>
+       <CodeBlockTabsTrigger value="Tanstack Start">
+         Tanstack Start
+       </CodeBlockTabsTrigger>
 
-      <CodeBlockTabsTrigger value="Waku">
-        Waku
-      </CodeBlockTabsTrigger>
-    </CodeBlockTabsList>
+       <CodeBlockTabsTrigger value="Waku">
+         Waku
+       </CodeBlockTabsTrigger>
+     </CodeBlockTabsList>
 
-    <CodeBlockTab value="Next.js">
-      ```ts  title="app/static.json/route.ts"
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="Next.js">
+       ```ts  title="app/static.json/route.ts"
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export const revalidate = false;
+       export const revalidate = false;
 
-      export async function GET() {
-        return Response.json(await exportSearchIndexes());
-      }
-      ```
-    </CodeBlockTab>
+       export async function GET() {
+         return Response.json(await exportSearchIndexes());
+       }
+       ```
+     </CodeBlockTab>
 
-    <CodeBlockTab value="React Router">
-      ```ts  title="app/routes/static.ts"
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="React Router">
+       ```ts  title="app/routes/static.ts"
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export async function loader() {
-        return Response.json(await exportSearchIndexes());
-      }
-      ```
+       export async function loader() {
+         return Response.json(await exportSearchIndexes());
+       }
+       ```
 
-      ```ts  title="app/routes.ts"
-      import { route, type RouteConfig } from '@react-router/dev/routes';
+       ```ts  title="app/routes.ts"
+       import { route, type RouteConfig } from '@react-router/dev/routes';
 
-      export default [
-        // [!code ++]
-        route('static.json', 'routes/static.ts'),
-      ] satisfies RouteConfig;
-      ```
-    </CodeBlockTab>
+       export default [
+         // [!code ++]
+         route('static.json', 'routes/static.ts'),
+       ] satisfies RouteConfig;
+       ```
+     </CodeBlockTab>
 
-    <CodeBlockTab value="Tanstack Start">
-      ```ts  title="src/routes/static[.]json.ts"
-      import { createFileRoute } from '@tanstack/react-router';
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="Tanstack Start">
+       ```ts  title="src/routes/static[.]json.ts"
+       import { createFileRoute } from '@tanstack/react-router';
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export const Route = createFileRoute('/static.json')({
-        server: {
-          handlers: {
-            GET: async () => Response.json(await exportSearchIndexes()),
-          },
-        },
-      });
-      ```
+       export const Route = createFileRoute('/static.json')({
+         server: {
+           handlers: {
+             GET: async () => Response.json(await exportSearchIndexes()),
+           },
+         },
+       });
+       ```
 
-      ```ts  title="vite.config.ts"
-      import { tanstackStart } from '@tanstack/react-start/plugin/vite';
-      import { defineConfig } from 'vite';
+       ```ts  title="vite.config.ts"
+       import { tanstackStart } from '@tanstack/react-start/plugin/vite';
+       import { defineConfig } from 'vite';
 
-      export default defineConfig({
-        plugins: [
-          // ...
-          tanstackStart({
-            prerender: {
-              enabled: true,
-            },
-            // [!code ++] pre-render the static file
-            pages: [{ path: '/static.json' }],
-          }),
-        ],
-      });
-      ```
-    </CodeBlockTab>
+       export default defineConfig({
+         plugins: [
+           // ...
+           tanstackStart({
+             prerender: {
+               enabled: true,
+             },
+             // [!code ++] pre-render the static file
+             pages: [{ path: '/static.json' }],
+           }),
+         ],
+       });
+       ```
+     </CodeBlockTab>
 
-    <CodeBlockTab value="Waku">
-      ```ts  title="pages/_api/static.json.ts"
-      import { exportSearchIndexes } from '@/lib/export-search-indexes';
+     <CodeBlockTab value="Waku">
+       ```ts  title="pages/_api/static.json.ts"
+       import { exportSearchIndexes } from '@/lib/export-search-indexes';
 
-      export async function GET() {
-        return Response.json(await exportSearchIndexes());
-      }
+       export async function GET() {
+         return Response.json(await exportSearchIndexes());
+       }
 
-      export const getConfig = () => ({
-        render: 'static',
-      });
-      ```
-    </CodeBlockTab>
-  </CodeBlockTabs>
+       export const getConfig = () => ({
+         render: 'static',
+       });
+       ```
+     </CodeBlockTab>
+   </CodeBlockTabs>
 
-. Create a script to sync search indexes.
+3. Create a script to sync search indexes.
 
-  ```ts title="scripts/sync-content.ts"
-  import { sync, type OramaDocument } from 'fumadocs-core/search/orama-cloud';
-  import * as fs from 'node:fs/promises';
-  import { OramaCloud } from '@orama/core';
+   ```ts title="scripts/sync-content.ts"
+   import { sync, type OramaDocument } from 'fumadocs-core/search/orama-cloud';
+   import * as fs from 'node:fs/promises';
+   import { OramaCloud } from '@orama/core';
 
-  const filePath = '<see below>';
+   const filePath = '<see below>';
 
-  async function main() {
-    const orama = new OramaCloud({
-      projectId: process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID,
-      apiKey: process.env.ORAMA_PRIVATE_API_KEY,
-    });
+   async function main() {
+     const orama = new OramaCloud({
+       projectId: process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID,
+       apiKey: process.env.ORAMA_PRIVATE_API_KEY,
+     });
 
-    const content = await fs.readFile(filePath);
-    const records = JSON.parse(content.toString()) as OramaDocument[];
+     const content = await fs.readFile(filePath);
+     const records = JSON.parse(content.toString()) as OramaDocument[];
 
-    await sync(orama, {
-      index: process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID,
-      documents: records,
-    });
+     await sync(orama, {
+       index: process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID,
+       documents: records,
+     });
 
-    console.log(`search updated: ${records.length} records`);
-  }
+     console.log(`search updated: ${records.length} records`);
+   }
 
-  void main();
-  ```
+   void main();
+   ```
 
-  `filePath` refers to the path of pre-rendered `static.json`, choose one according to your setup:
+   `filePath` refers to the path of pre-rendered `static.json`, choose one according to your setup:
 
-  <section id="static-route-output">
-    <CodeBlockTabs defaultValue="Next.js">
-      <CodeBlockTabsList>
-        <CodeBlockTabsTrigger value="Next.js">
-          Next.js
-        </CodeBlockTabsTrigger>
+   <section id="static-route-output">
+     <CodeBlockTabs defaultValue="Next.js">
+       <CodeBlockTabsList>
+         <CodeBlockTabsTrigger value="Next.js">
+           Next.js
+         </CodeBlockTabsTrigger>
 
-        <CodeBlockTabsTrigger value="Tanstack Start">
-          Tanstack Start
-        </CodeBlockTabsTrigger>
+         <CodeBlockTabsTrigger value="Tanstack Start">
+           Tanstack Start
+         </CodeBlockTabsTrigger>
 
-        <CodeBlockTabsTrigger value="React Router">
-          React Router
-        </CodeBlockTabsTrigger>
+         <CodeBlockTabsTrigger value="React Router">
+           React Router
+         </CodeBlockTabsTrigger>
 
-        <CodeBlockTabsTrigger value="Waku">
-          Waku
-        </CodeBlockTabsTrigger>
-      </CodeBlockTabsList>
+         <CodeBlockTabsTrigger value="Waku">
+           Waku
+         </CodeBlockTabsTrigger>
+       </CodeBlockTabsList>
 
-      <CodeBlockTab value="Next.js">
-        ```ts
-        const filePath = '.next/server/app/static.json.body';
-        ```
-      </CodeBlockTab>
+       <CodeBlockTab value="Next.js">
+         ```ts
+         const filePath = '.next/server/app/static.json.body';
+         ```
+       </CodeBlockTab>
 
-      <CodeBlockTab value="Tanstack Start">
-        ```ts
-        const filePath = '.output/public/static.json';
-        ```
-      </CodeBlockTab>
+       <CodeBlockTab value="Tanstack Start">
+         ```ts
+         const filePath = '.output/public/static.json';
+         ```
+       </CodeBlockTab>
 
-      <CodeBlockTab value="React Router">
-        ```ts
-        const filePath = 'build/client/static.json';
-        ```
-      </CodeBlockTab>
+       <CodeBlockTab value="React Router">
+         ```ts
+         const filePath = 'build/client/static.json';
+         ```
+       </CodeBlockTab>
 
-      <CodeBlockTab value="Waku">
-        ```ts
-        const filePath = 'dist/public/static.json';
-        ```
-      </CodeBlockTab>
-    </CodeBlockTabs>
-  </section>
+       <CodeBlockTab value="Waku">
+         ```ts
+         const filePath = 'dist/public/static.json';
+         ```
+       </CodeBlockTab>
+     </CodeBlockTabs>
+   </section>
 
-. Run the script after production build, make sure the environment variables are available (e.g. Bun reads from `.env` files):
+4. Run the script after production build, make sure the environment variables are available (e.g. Bun reads from `.env` files):
 
-  ```json title="package.json"
-  {
-    "scripts": {
-      "build": "... && bun scripts/sync-content.ts"
-    }
-  }
-  ```
+   ```json title="package.json"
+   {
+     "scripts": {
+       "build": "... && bun scripts/sync-content.ts"
+     }
+   }
+   ```
 
 ### Search Client [#search-client]
 
@@ -14888,8 +14962,8 @@ To search documents on the client side, consider:
 
 ## Web Crawler [#web-crawler]
 
-. Create a Crawler data source from dashboard, and configure it correctly with the "Documentation" preset.
-. Copy the credentials from dashboard.
+1. Create a Crawler data source from dashboard, and configure it correctly with the "Documentation" preset.
+2. Copy the credentials from dashboard.
 
 ### Search Client [#search-client-1]
 
@@ -14922,7 +14996,7 @@ URL: /docs/headless/search/orama
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/orama.mdx
 
 Built-in document search of Fumadocs
-        
+
 
 
 Fumadocs supports document search with Orama, It is the default but also the recommended option since it can be self-hosted and totally free.
@@ -15437,7 +15511,7 @@ Make sure your language is on the Orama [Supported Languages](https://docs.orama
   </CodeBlockTabsList>
 
   <CodeBlockTab value="From Source">
-    ```ts title="app/api/search/route.ts" 
+    ```ts title="app/api/search/route.ts"
     import { source } from '@/lib/source';
     import { createFromSource } from 'fumadocs-core/search/server';
 
@@ -15558,7 +15632,7 @@ Chinese and Japanese require additional configurations:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="createFromSource">
-    ```ts title="app/api/search/route.ts" 
+    ```ts title="app/api/search/route.ts"
     import { source } from '@/lib/source';
     import { createFromSource } from 'fumadocs-core/search/server';
     import { createTokenizer } from '@orama/tokenizers/mandarin';
@@ -15645,7 +15719,7 @@ URL: /docs/headless/search/trieve
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/trieve.mdx
 
 Integrate Trieve Search with Fumadocs
-        
+
 
 
 > This is a community maintained integration.
@@ -15938,9 +16012,9 @@ export default function CustomSearchDialog(props: SharedProps) {
 }
 ```
 
-. Replace `apiKey` and `datasetId` with your desired values.
+1. Replace `apiKey` and `datasetId` with your desired values.
 
-. Replace the default search dialog with your new one.
+2. Replace the default search dialog with your new one.
 
 ### Search Client [#search-client]
 
@@ -16034,7 +16108,7 @@ URL: /docs/headless/search/typesense
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/search/typesense.mdx
 
 Integrate Typesense Search with Fumadocs
-        
+
 
 
 > This is a community-maintained integration.
@@ -16431,7 +16505,7 @@ URL: /docs/headless/source-api
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/source-api/index.mdx
 
 Turn content sources into a unified interface
-        
+
 
 
 ## What it does? [#what-it-does]
@@ -16705,7 +16779,7 @@ URL: /docs/headless/source-api/plugins
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/source-api/plugins.mdx
 
 Extend Loader API
-        
+
 
 
 ## Overview [#overview]
@@ -16831,7 +16905,7 @@ URL: /docs/headless/source-api/source
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/source-api/source.mdx
 
 Setup sources for Loader API
-        
+
 
 
 ## Overview [#overview]
@@ -16957,7 +17031,7 @@ URL: /docs/headless/utils/get-toc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/get-toc.mdx
 
 Parse Table of contents from markdown/mdx content
-        
+
 
 
 Parse Table of contents from markdown/mdx content.
@@ -16984,7 +17058,7 @@ URL: /docs/headless/utils/git-last-edit
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/git-last-edit.mdx
 
 Get the last edit time of a file in Github repository
-        
+
 
 
 ## Usage [#usage]
@@ -17049,7 +17123,7 @@ URL: /docs/headless/utils
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/index.mdx
 
 Utilities to provide extra functionality to your docs
-        
+
 
 
 # Fumadocs Core (the core library of Fumadocs): Negotiation
@@ -17057,7 +17131,7 @@ URL: /docs/headless/utils/negotiation
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/negotiation.mdx
 
 Tiny wrapper for negotiation features.
-        
+
 
 
 ## Overview [#overview]
@@ -17095,7 +17169,7 @@ URL: /docs/headless/utils/page-tree
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/page-tree.mdx
 
 Common utilities to interact with page tree.
-        
+
 
 
 ## Usage [#usage]
@@ -17142,7 +17216,7 @@ URL: /docs/headless/utils/shiki
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/headless/utils/shiki.mdx
 
 Manage the Shiki instances.
-        
+
 
 
 ## Overview [#overview]
@@ -17209,7 +17283,7 @@ URL: /docs/mdx/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/next.mdx
 
 Use Fumadocs MDX with Next.js
-        
+
 
 
 ## Setup [#setup]
@@ -17355,7 +17429,7 @@ URL: /docs/mdx/vite
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/vite.mdx
 
 Use Fumadocs MDX with Vite
-        
+
 
 
 ## Setup [#setup]
@@ -17434,12 +17508,11 @@ Use Fumadocs MDX with Vite
       ```ts  title="vite.config.ts"
       import { defineConfig } from 'vite';
       import mdx from 'fumadocs-mdx/vite';
-      import * as MdxConfig from './source.config';
 
       export default defineConfig({
         plugins: [
           // [!code ++]
-          mdx(MdxConfig),
+          mdx(),
           // ...
         ],
       });
@@ -17450,15 +17523,13 @@ Use Fumadocs MDX with Vite
       ```ts  title="waku.config.ts"
       import { type Config, defineConfig } from 'waku/config';
       import mdx from 'fumadocs-mdx/vite';
-      import * as MdxConfig from './source.config.js';
       import type { UserConfig } from 'vite';
 
       export default defineConfig({
         vite: {
           plugins: [
             // [!code ++]
-            mdx(MdxConfig),
-            tsconfigPaths(),
+            mdx(),
           ],
           resolve: {
             tsconfigPaths: true,
@@ -17521,7 +17592,7 @@ URL: /docs/mdx/entry/browser
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/browser.mdx
 
 Access collections from browser/client environment.
-        
+
 
 
 ## Usage [#usage]
@@ -17667,7 +17738,7 @@ URL: /docs/mdx/entry/dynamic
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/dynamic.mdx
 
 Accessing your collections with on-demand compilation.
-        
+
 
 
 ## Usage [#usage]
@@ -17721,7 +17792,7 @@ URL: /docs/mdx/entry/import
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/import.mdx
 
 Importing MDX files directly.
-        
+
 
 
 ## Introduction [#introduction]
@@ -17850,7 +17921,7 @@ URL: /docs/mdx/entry
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/index.mdx
 
 Access collection outputs from entry files.
-        
+
 
 
 ## Overview [#overview]
@@ -17883,7 +17954,7 @@ URL: /docs/mdx/entry/server
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/entry/server.mdx
 
 Accessing collection outputs from server.
-        
+
 
 
 ## Usage [#usage]
@@ -17966,7 +18037,7 @@ URL: /docs/ui/components/accordion
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/accordion.mdx
 
 Add Accordions to your documentation
-        
+
 
 
 <Installation name="accordion" />
@@ -18039,15 +18110,6 @@ Use it in MDX files or as a normal React component.
       &#x22;deprecated&#x22;: false
     },
     {
-      &#x22;name&#x22;: &#x22;type&#x22;,
-      &#x22;description&#x22;: &#x22;&#x22;,
-      &#x22;tags&#x22;: [],
-      &#x22;type&#x22;: &#x22;\&#x22;single\&#x22; | \&#x22;multiple\&#x22;&#x22;,
-      &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
-      &#x22;required&#x22;: true,
-      &#x22;deprecated&#x22;: false
-    },
-    {
       &#x22;name&#x22;: &#x22;disabled&#x22;,
       &#x22;description&#x22;: &#x22;Whether or not an accordion is disabled from user interaction.&#x22;,
       &#x22;tags&#x22;: [
@@ -18059,6 +18121,15 @@ Use it in MDX files or as a normal React component.
       &#x22;type&#x22;: &#x22;boolean | undefined&#x22;,
       &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
       &#x22;required&#x22;: false,
+      &#x22;deprecated&#x22;: false
+    },
+    {
+      &#x22;name&#x22;: &#x22;type&#x22;,
+      &#x22;description&#x22;: &#x22;&#x22;,
+      &#x22;tags&#x22;: [],
+      &#x22;type&#x22;: &#x22;\&#x22;single\&#x22; | \&#x22;multiple\&#x22;&#x22;,
+      &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
+      &#x22;required&#x22;: true,
       &#x22;deprecated&#x22;: false
     },
     {
@@ -18098,15 +18169,6 @@ Use it in MDX files or as a normal React component.
       &#x22;deprecated&#x22;: false
     },
     {
-      &#x22;name&#x22;: &#x22;value&#x22;,
-      &#x22;description&#x22;: &#x22;&#x22;,
-      &#x22;tags&#x22;: [],
-      &#x22;type&#x22;: &#x22;string | undefined&#x22;,
-      &#x22;simplifiedType&#x22;: &#x22;string&#x22;,
-      &#x22;required&#x22;: false,
-      &#x22;deprecated&#x22;: false
-    },
-    {
       &#x22;name&#x22;: &#x22;disabled&#x22;,
       &#x22;description&#x22;: &#x22;Whether or not an accordion item is disabled from user interaction.&#x22;,
       &#x22;tags&#x22;: [
@@ -18117,6 +18179,15 @@ Use it in MDX files or as a normal React component.
       ],
       &#x22;type&#x22;: &#x22;boolean | undefined&#x22;,
       &#x22;simplifiedType&#x22;: &#x22;union&#x22;,
+      &#x22;required&#x22;: false,
+      &#x22;deprecated&#x22;: false
+    },
+    {
+      &#x22;name&#x22;: &#x22;value&#x22;,
+      &#x22;description&#x22;: &#x22;&#x22;,
+      &#x22;tags&#x22;: [],
+      &#x22;type&#x22;: &#x22;string | undefined&#x22;,
+      &#x22;simplifiedType&#x22;: &#x22;string&#x22;,
       &#x22;required&#x22;: false,
       &#x22;deprecated&#x22;: false
     }
@@ -18146,7 +18217,7 @@ URL: /docs/ui/components/auto-type-table
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/auto-type-table.mdx
 
 Auto-generated type table
-        
+
 
 
 <Wrapper>
@@ -18459,7 +18530,7 @@ URL: /docs/ui/components/banner
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/banner.mdx
 
 Add a banner to your site
-        
+
 
 
 <Installation name="banner" />
@@ -18539,7 +18610,7 @@ URL: /docs/ui/components/codeblock
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/codeblock.mdx
 
 Displaying Shiki highlighted code blocks
-        
+
 
 
 <Wrapper>
@@ -18624,7 +18695,7 @@ URL: /docs/ui/components/dynamic-codeblock
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/dynamic-codeblock.mdx
 
 A codeblock that also highlights code
-        
+
 
 
 ## Usage [#usage]
@@ -18700,7 +18771,7 @@ URL: /docs/ui/components/files
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/files.mdx
 
 Display file structure in your documentation
-        
+
 
 
 <Installation name="files" />
@@ -18850,7 +18921,7 @@ URL: /docs/ui/components/github-info
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/github-info.mdx
 
 Display your GitHub repository information
-        
+
 
 
 <Installation name="github-info" />
@@ -18904,7 +18975,7 @@ URL: /docs/ui/components/graph-view
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/graph-view.mdx
 
 A graph of all pages.
-        
+
 
 
 
@@ -18998,7 +19069,7 @@ URL: /docs/ui/components/image-zoom
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/image-zoom.mdx
 
 Allow zoom-in images in your documentation
-        
+
 
 
 <Installation name="image-zoom" />
@@ -19038,7 +19109,7 @@ URL: /docs/ui/components
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/index.mdx
 
 Additional components to improve your docs
-        
+
 
 
 ## Overview [#overview]
@@ -19092,7 +19163,7 @@ URL: /docs/ui/components/inline-toc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/inline-toc.mdx
 
 Add Inline TOC into your documentation
-        
+
 
 
 <Installation name="inline-toc" />
@@ -19197,7 +19268,7 @@ URL: /docs/ui/components/steps
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/steps.mdx
 
 Adding steps to your docs
-        
+
 
 
 <Installation name="steps" />
@@ -19256,7 +19327,7 @@ URL: /docs/ui/components/tabs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/tabs.mdx
 
 A Tabs component built with Radix UI, with additional features such as persistent and shared value.
-        
+
 
 
 
@@ -19461,7 +19532,7 @@ URL: /docs/ui/components/type-table
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/components/type-table.mdx
 
 A table for documenting types
-        
+
 
 
 <Installation name="type-table" />
@@ -19608,7 +19679,7 @@ URL: /docs/ui/layouts/docs
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/docs.mdx
 
 The layout of documentation
-        
+
 
 
 
@@ -20171,7 +20242,7 @@ URL: /docs/ui/layouts/flux
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/flux.mdx
 
 An aggressively minimal layout for docs
-        
+
 
 
 
@@ -20228,7 +20299,7 @@ URL: /docs/ui/layouts/home-layout
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/home-layout.mdx
 
 Shared layout for other pages
-        
+
 
 
 
@@ -20261,7 +20332,7 @@ URL: /docs/ui/layouts
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/index.mdx
 
 A list of layout components.
-        
+
 
 
 ## Overview [#overview]
@@ -20442,7 +20513,7 @@ URL: /docs/ui/layouts/links
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/links.mdx
 
 Navigation configurations on all layouts.
-        
+
 
 
 
@@ -20718,7 +20789,7 @@ URL: /docs/ui/layouts/nav
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/nav.mdx
 
 Navbar/header configurations.
-        
+
 
 
 ## Configurations [#configurations]
@@ -20985,7 +21056,7 @@ URL: /docs/ui/layouts/notebook
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/notebook.mdx
 
 A compact version of Docs Layout
-        
+
 
 
 
@@ -21091,7 +21162,7 @@ URL: /docs/ui/layouts/page
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/page.mdx
 
 A page in your documentation
-        
+
 
 
 Page is the base element of a documentation, it includes Table of contents,
@@ -21115,7 +21186,7 @@ Import it according to your layout.
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Docs Layout">
-    ```tsx title="page.tsx" 
+    ```tsx title="page.tsx"
     import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/layouts/docs/page';
 
     <DocsPage>
@@ -21130,7 +21201,7 @@ Import it according to your layout.
   </CodeBlockTab>
 
   <CodeBlockTab value="Notebook Layout">
-    ```tsx title="page.tsx" 
+    ```tsx title="page.tsx"
     import { DocsPage, DocsDescription, DocsTitle, DocsBody } from 'fumadocs-ui/layouts/notebook/page';
 
     <DocsPage>
@@ -21749,7 +21820,7 @@ URL: /docs/ui/layouts/root-provider
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/layouts/root-provider.mdx
 
 The context provider of Fumadocs UI.
-        
+
 
 
 The context provider of all the components, including `next-themes` and [`<FrameworkProvider />`](/docs/headless#installation). It should be located at the root layout.
@@ -21890,7 +21961,7 @@ URL: /docs/integrations/content/custom
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/custom.mdx
 
 Build your own content source for Fumadocs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22031,7 +22102,7 @@ URL: /docs/integrations/content
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/index.mdx
 
 Integrate different content sources with Fumadocs.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22055,7 +22126,7 @@ URL: /docs/integrations/content/local-md
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/local-md.mdx
 
 Content source for local Markdown content.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22164,9 +22235,9 @@ const docs = localMd({
 
 The recommended integration is:
 
-. Create `localMd({ dir })` for your content directory.
-. Pass `docs.dynamicSource()` to `dynamicLoader()`.
-. Read the source in your route/layout and render it with Fumadocs UI.
+1. Create `localMd({ dir })` for your content directory.
+2. Pass `docs.dynamicSource()` to `dynamicLoader()`.
+3. Read the source in your route/layout and render it with Fumadocs UI.
 
 For example, in a docs layout:
 
@@ -22427,7 +22498,7 @@ const serverLoader = createServerFn({
     const { serialize } = await page.data.load();
 
     return {
-      frontmatter: { ...page.data.frontmatter, _openapi: null },
+      frontmatter: page.data.frontmatter,
       // [!code highlight] pass it to payload
       render: serialize(),
       // ...
@@ -22457,7 +22528,7 @@ URL: /docs/integrations/content/mdx-remote
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/mdx-remote.mdx
 
 Compiled Markdown/MDX content on demand.
-        
+
 
 
 ## Introduction [#introduction]
@@ -22469,7 +22540,7 @@ You can think it as a `next-mdx-remote` with built-in plugins for Fumadocs.
   The Passed MDX content must be trusted as it allows code execution by default.
 </Callout>
 
-### Setup [#setup]
+## Setup [#setup]
 
 <CodeBlockTabs defaultValue="npm" groupId="package-manager">
   <CodeBlockTabsList>
@@ -22518,7 +22589,10 @@ You can think it as a `next-mdx-remote` with built-in plugins for Fumadocs.
 The main feature it offers is the MDX Compiler, it can compile MDX content to JSX nodes.
 Since it doesn't use a bundler, there's some limitations:
 
+* Images have to be optimized at runtime.
 * No imports and exports in MDX files.
+
+### With RSC [#with-rsc]
 
 It's compatible with Server Components. For example:
 
@@ -22532,16 +22606,15 @@ const compiler = createCompiler({
   // options
 });
 
-export default async function Page({ params }: { params: { slug?: string[] } }) {
-  const page = getPage(params.slug);
-  const compiled = await compiler.compile({
+export default async function Page({ params }: PageProps<'/docs/[[...slug]]'>) {
+  const { slug } = await params;
+  const page = getPage(slug);
+  const { toc, body: MdxContent } = await compiler.compile({
     source: page.content,
   });
 
-  const MdxContent = compiled.body;
-
   return (
-    <DocsPage toc={compiled.toc}>
+    <DocsPage toc={toc}>
       <DocsBody>
         <MdxContent components={getMDXComponents()} />
       </DocsBody>
@@ -22549,6 +22622,50 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
   );
 }
 ```
+
+### Without RSC [#without-rsc]
+
+Without Server Components, you can enable `skipRender` and pass the compiled code to client instead:
+
+```tsx
+import { createCompiler } from '@fumadocs/mdx-remote';
+import { executeMdxSync } from '@fumadocs/mdx-remote/client';
+import { DocsBody, DocsPage } from 'fumadocs-ui/layouts/docs/page';
+import { getPage } from './my-content-source';
+import { useMemo } from 'react';
+import { getMDXComponents } from '@/components/mdx';
+
+const compiler = createCompiler({
+  // options
+});
+
+// e.g. where you generate loader data
+async function serverPayload(slugs?: string[]) {
+  const page = getPage(slugs);
+  const { compiled, frontmatter } = await compiler.compile({
+    source: page.content,
+    skipRender: true,
+  });
+
+  return { compiled, frontmatter };
+}
+
+function Page() {
+  // read compiled code from server payload
+  const { compiled } = useLoaderData();
+  const { default: MdxContent, toc } = useMemo(() => executeMdxSync(compiled), [compiled]);
+
+  return (
+    <DocsPage toc={toc}>
+      <DocsBody>
+        <MdxContent components={getMDXComponents()} />
+      </DocsBody>
+    </DocsPage>
+  );
+}
+```
+
+> The `frontmatter` property returned by `compile()` is not validated, you may use a library like `zod` to validate its data type.
 
 ### Images [#images]
 
@@ -22558,12 +22675,326 @@ The MDX compiler might no longer be able to access local images in `public`.
 When referencing images, make sure to use a URL.
 
 
+# Fumadocs (Framework Mode): Sanity
+URL: /docs/integrations/content/sanity
+Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/content/sanity.mdx
+
+Official integration for Sanity.
+
+
+
+## Overview [#overview]
+
+Fumadocs provide an official integration to simplify setup for Sanity CMS, it brings native live preview experience without compromise on performance.
+
+> You can see our [Sanity Example](https://github.com/fuma-nama/fumadocs-sanity) on GitHub.
+
+## Setup [#setup]
+
+Assume you already have [Sanity](https://sanity.io/docs/getting-started) configured according to their docs.
+
+<div className="fd-steps">
+  <div className="fd-step">
+    ### Data Types [#data-types-step]
+
+    Run the following command to initialize content types.
+
+    <CodeBlockTabs defaultValue="npm" groupId="package-manager">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="npm">
+          npm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="pnpm">
+          pnpm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="yarn">
+          yarn
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="bun">
+          bun
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="npm">
+        ```bash
+        npx @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="pnpm">
+        ```bash
+        pnpm dlx @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="yarn">
+        ```bash
+        yarn dlx @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="bun">
+        ```bash
+        bun x @fumadocs/cli add fumadocs/sanity/base
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+
+    > Or you can run `npx @fumadocs/cli add` and browse additional Sanity presets to install.
+
+    Register the installed types:
+
+    <CodeBlockTabs defaultValue="schemaTypes/index.ts">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="schemaTypes/index.ts">
+          schemaTypes/index.ts
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="components/sanity.ts">
+          components/sanity.ts
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="schemaTypes/index.ts">
+        ```ts
+        import { docsType, blockContent, callout, card, cards } from '@/lib/sanity/base';
+
+        // [!code ++]
+        export const schemaTypes = [blockContent, callout, card, cards, docsType];
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="components/sanity.ts">
+        ```tsx
+        import {
+          PortableText,
+          type PortableTextProps,
+          type PortableTextReactComponents,
+        } from '@portabletext/react';
+        // the installed components
+        import { baseBlocks, baseComponents, baseMarks } from './base';
+
+        const components: Partial<PortableTextReactComponents> = {
+          block: {
+            // [!code ++]
+            ...baseBlocks,
+          },
+          marks: {
+            // [!code ++]
+            ...baseMarks,
+          },
+          types: {
+            // [!code ++]
+            ...baseComponents,
+          },
+        };
+
+        export function CustomPortableText(props: PortableTextProps) {
+          return <PortableText {...props} components={{ ...components, ...props.components }} />;
+        }
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+  </div>
+
+  <div className="fd-step">
+    ### Content Loader [#content-loader-step]
+
+    Install the integration:
+
+    <CodeBlockTabs defaultValue="npm" groupId="package-manager">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="npm">
+          npm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="pnpm">
+          pnpm
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="yarn">
+          yarn
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="bun">
+          bun
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="npm">
+        ```bash
+        npm i @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="pnpm">
+        ```bash
+        pnpm add @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="yarn">
+        ```bash
+        yarn add @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="bun">
+        ```bash
+        bun add @fumadocs/sanity
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+
+    <CodeBlockTabs defaultValue="Next.js (live preview)">
+      <CodeBlockTabsList>
+        <CodeBlockTabsTrigger value="Next.js (live preview)">
+          Next.js (live preview)
+        </CodeBlockTabsTrigger>
+
+        <CodeBlockTabsTrigger value="Others">
+          Others
+        </CodeBlockTabsTrigger>
+      </CodeBlockTabsList>
+
+      <CodeBlockTab value="Next.js (live preview)">
+        ```ts title="lib/source.ts"
+        import { dynamicLoader } from 'fumadocs-core/source/dynamic';
+        import { createSanitySource } from '@fumadocs/sanity';
+        // the live preview client
+        import { sanityFetch } from '@/sanity/lib/live';
+        // the generated types
+        import type { Docs } from '@/sanity/types';
+        import { draftMode } from 'next/headers';
+
+        const source = dynamicLoader(
+          createSanitySource<Docs>({
+            sanityFetch,
+            docType: 'docs',
+          }),
+          {
+            baseUrl: '/docs',
+          },
+        );
+
+        export async function getSource() {
+          const { isEnabled } = await draftMode();
+
+          if (isEnabled) source.revalidate();
+          return source.get();
+        }
+        ```
+      </CodeBlockTab>
+
+      <CodeBlockTab value="Others">
+        ```ts title="lib/source.ts"
+        import { dynamicLoader } from 'fumadocs-core/source/dynamic';
+        import { createSanitySource } from '@fumadocs/sanity';
+        // the Sanity client
+        import { client } from '@/sanity/lib/client';
+        // the generated types
+        import type { Docs } from '@/sanity/types';
+
+        const source = dynamicLoader(
+          createSanitySource<Docs>({
+            client,
+            docType: 'docs',
+          }),
+          {
+            baseUrl: '/docs',
+          },
+        );
+
+        export async function getSource() {
+          return source.get();
+        }
+        ```
+      </CodeBlockTab>
+    </CodeBlockTabs>
+
+    Now update references to your `source` with the `getSource()` function like:
+
+    ```tsx
+    import { getSource } from '@/lib/source';
+    import { CustomPortableText } from '@/components/sanity';
+    import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+
+    // [!code highlight]
+    const source = await getSource();
+
+    const page = source.getPage(['...']);
+
+    // basic info
+    console.log(page.data.title, page.data.description);
+
+    // [!code highlight] load full info
+    const { renderToc, body } = await page.data.load();
+
+    // to render docs page content:
+    return (
+      // `renderToc()` to render TOC items on server
+      <DocsPage toc={renderToc({ render: (body) => <CustomPortableText value={body} /> })}>
+        <DocsTitle>{page.data.title}</DocsTitle>
+        <DocsDescription>{page.data.description}</DocsDescription>
+        <DocsBody>
+          <CustomPortableText value={body!} />
+        </DocsBody>
+      </DocsPage>
+    );
+    ```
+
+    If you are not using React Server Components, `renderToc` can be imported separately:
+
+    ```tsx
+    import { getSource } from '@/lib/source';
+    import { renderToc } from '@fumadocs/sanity/client';
+    import { CustomPortableText } from '@/components/sanity';
+    import { DocsPage, DocsBody, DocsDescription, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+
+    // where you return server payload
+    export async function serverPayload(slugs: string[]) {
+      const source = await getSource();
+      const page = source.getPage(slugs);
+      if (!page) throw new Error('not found');
+
+      const { title, description, _toc, body } = await page.data.load();
+      return { title, description, toc: _toc, body };
+    }
+
+    export function Page() {
+      // receive server payload
+      const { toc, body, title, description } = useLoaderData();
+
+      return (
+        <DocsPage toc={renderToc({ toc, render: (body) => <CustomPortableText value={body} /> })}>
+          <DocsTitle>{title}</DocsTitle>
+          <DocsDescription>{description}</DocsDescription>
+          <DocsBody>
+            <CustomPortableText value={body!} />
+          </DocsBody>
+        </DocsPage>
+      );
+    }
+    ```
+  </div>
+
+  <div className="fd-step">
+    ### Done [#done-step]
+
+    Create documents under the `docs` type in your studio editor, new content will be displayed in the docs route.
+  </div>
+</div>
+
+
 # Fumadocs (Framework Mode): Obsidian
 URL: /docs/integrations/obsidian
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/(docgen)/obsidian.mdx
 
 Render your Obsidian vaults in Fumadocs.
-        
+
 
 
 <Callout type="warn" title="Experimental">
@@ -22676,7 +23107,7 @@ URL: /docs/integrations/python
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/(docgen)/python.mdx
 
 Generate docs from Python
-        
+
 
 
 <Callout type="warn" title="Experimental">
@@ -22812,7 +23243,7 @@ URL: /docs/integrations/typescript
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/(docgen)/typescript.mdx
 
 Generate docs from Typescript definitions
-        
+
 
 
 ## Usage [#usage]
@@ -22881,7 +23312,7 @@ You can use it as a remark plugin:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Fumadocs MDX">
-    ```ts title="source.config.ts" 
+    ```ts title="source.config.ts"
     import {
       remarkAutoTypeTable,
       createGenerator,
@@ -23005,7 +23436,7 @@ URL: /docs/integrations/og
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/og/index.mdx
 
 Generate dynamic preview image for docs pages
-        
+
 
 
 
@@ -23022,7 +23453,7 @@ URL: /docs/integrations/og/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/og/next.mdx
 
 Usage with Next.js Metadata API.
-        
+
 
 
 > Make sure to read their [Metadata section](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) for the fundamentals of Metadata API.
@@ -23176,7 +23607,7 @@ URL: /docs/integrations/og/takumi
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/og/takumi.mdx
 
 Integrate Takumi for framework agnostic and fast metadata image generation.
-        
+
 
 
 ## Installation [#installation]
@@ -23247,7 +23678,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Next.js">
-    ```ts title="next.config.ts" 
+    ```ts title="next.config.ts"
     import type { NextConfig } from 'next';
 
     const config: NextConfig = {
@@ -23258,7 +23689,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTab>
 
   <CodeBlockTab value="Nitro / TanStack Start">
-    ```ts title="vite.config.ts" 
+    ```ts title="vite.config.ts"
     import { defineConfig } from 'vite';
     // [!code ++]
     import takumiPackageJson from '@takumi-rs/core/package.json' with { type: 'json' };
@@ -23276,7 +23707,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTab>
 
   <CodeBlockTab value="Vite">
-    ```ts title="vite.config.ts" 
+    ```ts title="vite.config.ts"
     import { defineConfig } from 'vite';
 
     export default defineConfig({
@@ -23289,7 +23720,7 @@ Make sure to add `@takumi-rs/image-response` to `serverExternalPackages` (Next.j
   </CodeBlockTab>
 
   <CodeBlockTab value="Waku">
-    ```ts title="waku.config.ts" 
+    ```ts title="waku.config.ts"
     import { defineConfig } from 'waku/config';
 
     export default defineConfig({
@@ -23581,7 +24012,7 @@ URL: /docs/integrations/openapi/api-page
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/api-page.mdx
 
 The component for rendering OpenAPI docs content
-        
+
 
 
 ## Overview [#overview]
@@ -23826,7 +24257,7 @@ URL: /docs/integrations/openapi/generate-files
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/generate-files.mdx
 
 Generate pages from OpenAPI schema.
-        
+
 
 
 The `generateFiles()` function generates MDX files for API documentation.
@@ -23853,7 +24284,7 @@ void generateFiles({
 Customize the content of pages, default to `operation`.
 
 <Callout>
-  Operation refers to an API endpoint with specific method like 
+  Operation refers to an API endpoint with specific method like
 
   `/api/weather:GET`
 
@@ -24077,7 +24508,7 @@ URL: /docs/integrations/openapi
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/index.mdx
 
 Generating docs for OpenAPI schema
-        
+
 
 
 <Callout type="warning" title="This guide is for RSC environment">
@@ -24382,7 +24813,7 @@ URL: /docs/integrations/openapi/server
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/server.mdx
 
 The OpenAPI server instance.
-        
+
 
 
 ## OpenAPI Server [#openapi-server]
@@ -24479,7 +24910,7 @@ URL: /docs/integrations/openapi/without-rsc
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/openapi/without-rsc.mdx
 
 Setup guide for non-RSC environments.
-        
+
 
 
 ## Setup [#setup]
@@ -24771,8 +25202,8 @@ Install the required packages.
         return {
           type: 'docs',
           path: page.path,
-          markdownUrl: getPageMarkdownUrl(page).url,
           pageTree,
+          // ...
         };
       });
 
@@ -24822,7 +25253,7 @@ URL: /docs/integrations/story
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/story/index.mdx
 
 Display components with controls.
-        
+
 
 
 
@@ -24917,7 +25348,7 @@ URL: /docs/integrations/story/next
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/story/next.mdx
 
 Configure Fumadocs Story on Next.js.
-        
+
 
 
 ## Installation [#installation]
@@ -25059,7 +25490,7 @@ URL: /docs/integrations/story/vite
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/(framework)/integrations/story/vite.mdx
 
 Configure Fumadocs Story for Vite-based frameworks.
-        
+
 
 
 ## Installation [#installation]
@@ -25268,7 +25699,7 @@ Now you can render the story like:
   </CodeBlockTabsList>
 
   <CodeBlockTab value="From Instance">
-    ```mdx title="index.mdx" 
+    ```mdx title="index.mdx"
     import { storyClient } from '@/components/my-component.story.client';
 
     <storyClient.WithControl />
@@ -25276,7 +25707,7 @@ Now you can render the story like:
   </CodeBlockTab>
 
   <CodeBlockTab value="From Payload Name">
-    ```mdx title="index.mdx" 
+    ```mdx title="index.mdx"
     import { StoryWithControl } from '@fumadocs/story/client';
 
     <StoryWithControl name="callout" />
@@ -25290,7 +25721,7 @@ URL: /docs/mdx/loader/bun
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/loader/bun.mdx
 
 Access content in Bun.
-        
+
 
 
 ## Setup [#setup]
@@ -25346,7 +25777,7 @@ or you are using Vite, which defaults to generating code with Vite-specific APIs
   </CodeBlockTabsList>
 
   <CodeBlockTab value="Next.js">
-    ```ts title="preload.ts" 
+    ```ts title="preload.ts"
     import { postInstall } from 'fumadocs-mdx/next';
 
     await postInstall({ configPath: 'source.config.ts' });
@@ -25354,7 +25785,7 @@ or you are using Vite, which defaults to generating code with Vite-specific APIs
   </CodeBlockTab>
 
   <CodeBlockTab value="Vite">
-    ```ts title="preload.ts" 
+    ```ts title="preload.ts"
     import { postInstall } from 'fumadocs-mdx/vite';
 
     await postInstall({
@@ -25373,7 +25804,7 @@ URL: /docs/mdx/loader
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/loader/index.mdx
 
 Fumadocs MDX loader integration.
-        
+
 
 
 ## Introduction [#introduction]
@@ -25395,7 +25826,7 @@ URL: /docs/mdx/loader/node
 Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/mdx/(integrations)/loader/node.mdx
 
 Access content in Node.js runtime.
-        
+
 
 
 ## Setup [#setup]
@@ -25403,33 +25834,21 @@ Access content in Node.js runtime.
 Make sure to run the script under ESM environment.
 
 ```js title="scripts/example.js"
-import { register } from 'node:module';
+import { register } from 'fumadocs-mdx/node';
 
-register('fumadocs-mdx/node/loader', import.meta.url);
+// register the Node.js loader
+register();
 
 // accessing content
 const { source } = await import('./lib/source');
 console.log(source.getPages());
 ```
 
+The `register()` function accepts options:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```ts
+register({
+  configPath: '...',
+  // ...
+});
+```

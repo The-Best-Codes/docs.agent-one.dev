@@ -1,0 +1,36 @@
+---
+title: Extensions Troubleshooting
+description: Fix common issues with built-in tools, registry installs, and custom MCP servers.
+---
+
+## Extension Does Not Load
+
+- make sure it is enabled
+- open `Advanced` and check the status line
+- review command, URL, headers, or environment variables
+- increase timeout if startup is slow
+
+## Extension Shows Auth Problems
+
+If the status suggests authentication is required:
+
+- open `Advanced`
+- click `Connect`
+- complete the sign-in flow
+
+## Extension Installs But No Tools Appear
+
+- wait for loading to finish
+- confirm the extension really exposes tools
+- check `Per-tool approvals` after the tool list loads
+- resolve any server error shown in the status area
+
+## Custom STDIO Server Does Not Start
+
+- verify the command is valid
+- confirm required dependencies are installed on your system
+- add required environment variables if the server expects them
+
+## Too Many Old Or Broken Entries
+
+Use `Find dangling extensions` from the filter menu to remove stale entries.

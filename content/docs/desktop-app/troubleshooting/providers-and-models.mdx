@@ -1,0 +1,33 @@
+---
+title: Providers and Models Troubleshooting
+description: Resolve common provider, API key, and model availability issues.
+---
+
+## No Model Selected Or No Models Available
+
+Check these first:
+
+- at least one provider is enabled
+- the provider actually has one or more configured models
+- your API key has been saved if the provider needs one
+- local runtimes such as Ollama or LM Studio are running if you are using local providers
+
+## Built-In Provider Is Enabled But Still Not Working
+
+- verify the API key is correct
+- save the key again if you are not sure it was stored
+- check whether you added custom headers that may be interfering
+
+## Local Provider Models Are Missing
+
+- confirm the local runtime is running
+- confirm the `Base URL` is correct
+- click `Auto` in the provider's model list
+- add a model manually if auto-detection fails
+
+## Custom Provider Auto-Detection Fails
+
+- verify the base URL includes the correct `/v1` path if required
+- verify the endpoint really exposes a compatible `/v1/models` route
+- check API key and custom headers
+- add models manually as a fallback

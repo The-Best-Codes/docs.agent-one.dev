@@ -1,6 +1,6 @@
 ---
 title: Local LLMs with Ollama
-description: Add an Ollama provider to AgentOne to run open-source models locally
+description: Use AgentOne's built-in Ollama provider to run open-source models locally
 ---
 
 ## What is Ollama?
@@ -12,7 +12,7 @@ description: Add an Ollama provider to AgentOne to run open-source models locall
 - **Avoid API costs** from cloud providers
 - **Experiment with different models** easily
 
-AgentOne can connect to Ollama running locally as a custom provider, so you can chat with models like Gemma, Mistral, Llama, Qwen, and others right from AgentOne.
+AgentOne includes a built-in Ollama provider, so you can chat with models like Gemma, Mistral, Llama, and Qwen right from the app without setting up a custom provider first.
 
 ## Install Ollama and Download a Model
 
@@ -64,9 +64,9 @@ On macOS and Linux, the server should be running by default. Try opening http://
   `mistral`, `qwen`).
 </Callout>
 
-## Add Ollama as a Custom Provider in AgentOne
+## Use the Built-in Ollama Provider in AgentOne
 
-Now let's import the Ollama model to AgentOne by adding it as a [provider](/docs/guides/providers).
+Now let's enable Ollama in AgentOne.
 
 <Steps>
 <Step>
@@ -76,27 +76,27 @@ In AgentOne, click `Settings` in the bottom left of the sidebar, then click `Pro
 
 </Step>
 <Step>
-  ### Add Custom Provider
+  ### Find Ollama Under Local Providers
 
-Click `Add Provider` and select `OpenAI Compatible`.
+Scroll to the `Local Providers` section and expand `Ollama`.
 
 </Step>
 <Step>
-  ### Fill in the Details
+  ### Confirm the Base URL
 
-Enter:
+By default, Ollama uses:
 
-- **Name**: `Ollama` (or whatever you prefer)
-- **Base URL**: `http://localhost:11434/v1`
-- **API Key**: Leave blank (Ollama doesn't require one)
+- **Base URL**: `http://127.0.0.1:11434/v1`
 
-![Ollama custom provider setup](/images/docs/guides/providers/ollama-setup.png)
+  AgentOne already creates this built-in provider for you, so you do not need to add it manually.
+
+  {/* Screenshot placeholder: Providers settings page with Local Providers expanded and Ollama visible, showing the built-in Ollama entry and its base URL. */}
 
 </Step>
 <Step>
   #### Auto-Detect Models
 
-Scroll to the **Models** section and click the `Auto` button. AgentOne will query Ollama and find your Gemma 4 model.
+In the `Models` section, click the `Auto` button. AgentOne will query your Ollama server and find available models.
 
 If auto-detection succeeds, you'll see `gemma4:e4b` in your model list. Done!
 
@@ -109,24 +109,24 @@ If auto-detection fails, click `Add Model` and enter:
 - **Model ID**: `gemma4:e4b`
 - **Display Name**: `Gemma 4 (4B)` (or whatever you prefer)
 
-Leave **Supports Tools** and **Supports Images** checked.
+  Leave the capability toggles at their defaults unless you know the model should behave differently.
 
 </Step>
 <Step>
-  #### Save
+  #### Keep Ollama Enabled
 
-Click `Add Provider` to save. Ollama will now appear in your providers list and Gemma 4 will be available in the model selector.
+Make sure the Ollama provider's switch is enabled. Once a model is listed there, it becomes available in AgentOne's model selector.
 
 </Step>
 </Steps>
 
 ## Use Gemma in AgentOne
 
-Your Ollama provider is ready! You can now:
+Your Ollama provider is ready. You can now:
 
 - **Toggle it on/off** with the provider switch
 - **Switch to Gemma 4** in the model selector
-- **Chat normally.** It's just like using a cloud provider, but locally.
+- **Chat normally** just like you would with a cloud provider, but locally.
 
 <Callout title="First request might be slow">
   The first time you chat with Gemma, it may take a few seconds to load into
@@ -138,7 +138,7 @@ Your Ollama provider is ready! You can now:
 ### Ollama isn't responding
 
 - Make sure Ollama is running (check System Preferences on macOS or Services on Windows/Linux)
-- Verify the base URL is `http://localhost:11434/v1` with `/v1` at the end and `http` instead of `https`
+- Verify the base URL is `http://127.0.0.1:11434/v1` with `/v1` at the end and `http` instead of `https`
 
 ### Model loading is slow
 
@@ -147,6 +147,6 @@ Your Ollama provider is ready! You can now:
 
 ### Want to try other models?
 
-Visit the [Ollama library](https://ollama.com/library), run `ollama pull <model-name>`, and add it to AgentOne.
+Visit the [Ollama library](https://ollama.com/library), run `ollama pull <model-name>`, then click `Auto` again or add the model manually in the built-in Ollama provider.
 
 For help, reach out on the [AgentOne Forum](https://forum.agent-one.dev) or [Discord](https://www.agent-one.dev/discord).

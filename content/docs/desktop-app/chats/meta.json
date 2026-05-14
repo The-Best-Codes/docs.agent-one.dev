@@ -1,0 +1,12 @@
+{
+  "title": "Chats",
+  "pages": [
+    "chat-sidebar",
+    "searching-chats",
+    "attachments",
+    "message-actions",
+    "branching-conversations",
+    "editing-messages",
+    "exports-and-deletion"
+  ]
+}

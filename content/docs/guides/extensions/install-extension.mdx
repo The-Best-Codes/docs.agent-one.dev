@@ -1,0 +1,71 @@
+---
+title: Install Extensions
+description: Install registry extensions and review their detected configuration before enabling them.
+---
+
+Registry extensions are MCP servers curated by AgentOne and available directly from `Settings` -> `Extensions`. Installing from the registry is the easiest path - AgentOne detects the server's command, transport type, and required configuration for you.
+
+## Installation Steps
+
+<Steps>
+<Step>
+### Find the Extension
+
+Open `Settings` -> `Extensions`. Use the search field to find the extension by name or keywords. Browse the [registry](/docs/guides/extensions/extension-registry) to discover what is available.
+
+</Step>
+<Step>
+### Click Install
+
+Click the **Install** button on the extension row. AgentOne opens the install dialog.
+
+</Step>
+<Step>
+### Review the Configuration
+
+The install dialog shows everything AgentOne has detected for this extension:
+
+- **Transport type** - `STDIO (Local)` or `HTTP (Remote)`.
+- **Command or URL** - the command AgentOne will run, or the remote URL it will connect to.
+- **Timeout** - how long AgentOne waits for the server to start or respond before marking it as failed.
+- **Approval default** - whether tool calls from this extension require your confirmation before running.
+- **Detected configuration fields** - any inputs the extension requires, such as API keys or directory paths.
+
+Review these carefully, especially if the extension requires an API key or access to sensitive paths on your machine.
+
+</Step>
+<Step>
+### Fill in Required Fields
+
+If the dialog shows required configuration fields (common for extensions that connect to external services), fill them in. For example, a GitHub extension would need your GitHub personal access token.
+
+</Step>
+<Step>
+### Confirm Installation
+
+Click **Install** to finish. The extension is added, enabled, and starts loading immediately.
+
+</Step>
+</Steps>
+
+<Callout title="AgentOne never installs silently" type="info">
+  You always see the install dialog before an extension is added. This is true
+  both for manual registry installs and for installs triggered by a [deep
+  link](/docs/desktop-app/shortcuts-and-links/deep-links).
+</Callout>
+
+## After Installation
+
+Once installed, the extension row shows a status indicator (loading, enabled, or error) and gains an **Advanced** button. If you need to change any configuration, open Advanced to edit timeout, approval defaults, or per-tool overrides.
+
+If the extension requires authentication (common for HTTP extensions that connect to external services), open Advanced and click **Connect**. See [Approval and Auth](/docs/guides/extensions/approval-and-auth) for details.
+
+## Uninstalling
+
+Click the **Uninstall** button on the extension row, or open Advanced and use the remove option there. Uninstalling removes the extension entry but does not uninstall the underlying tool from your system (for example, an `npx`-based STDIO server).
+
+## Related
+
+- [Extension Registry](/docs/guides/extensions/extension-registry) - browse and filter available extensions.
+- [Custom MCP Servers](/docs/guides/custom-extensions) - add servers that are not in the registry.
+- [Approval and Auth](/docs/guides/extensions/approval-and-auth) - manage approvals and connect authenticated extensions.

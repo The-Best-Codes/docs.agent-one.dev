@@ -14,6 +14,7 @@ import {
 import type { Metadata } from "next";
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import { gitConfig } from "@/lib/layout.shared";
+import path from "node:path";
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
@@ -39,6 +40,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         <ViewOptionsPopover
           markdownUrl={`${page.url}.mdx`}
           githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
+          localFilePath={
+            process.env.NODE_ENV === "development"
+              ? path.join(process.cwd(), "content/docs", page.path)
+              : undefined
+          }
         />
       </div>
       <DocsBody>

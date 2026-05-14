@@ -1,0 +1,68 @@
+---
+title: Onboarding
+description: Walk through the first-run AgentOne onboarding flow step by step.
+---
+
+The first time you open AgentOne, you go through a short onboarding flow. It takes under two minutes and sets up the two things the app needs to function: your name and at least one model provider.
+
+{/* Screenshot placeholder: onboarding splash screen with the AgentOne logo and a Get Started button. */}
+
+## Step 1: Splash Screen
+
+AgentOne opens with a splash screen and a **Get Started** button. Click it to begin.
+
+## Step 2: Choose Your Name
+
+AgentOne asks **"What should I call you?"**
+
+Enter the name you want AgentOne to use when it addresses you. This is stored locally and can be changed later in `Settings` -> `Account` -> `Profile & Instructions`. It is also used as the default display name when you sign in.
+
+## Step 3: Account or API Keys
+
+This is the most important choice in onboarding. You have two paths:
+
+### Sign in with an AgentOne account
+
+Signing in gives you access to account-based features:
+
+- **AgentOne models** - hosted models you can use without managing API keys yourself.
+- **Settings sync** - keep your preferences in sync across multiple devices.
+- **Billing and plan management** - view your usage and manage your subscription from inside the app.
+
+If you choose this path, the app walks you through sign-in or account creation before continuing.
+
+### Continue without an account
+
+If you prefer to bring your own API keys, choose **"Or continue without an account"**. AgentOne takes you directly to the provider setup step so you can enable your own providers.
+
+In this mode, your API keys are stored encrypted on your device only - they are never sent to AgentOne's servers. You can still sign in later from `Settings` -> `Account` if you change your mind.
+
+## Step 4: Provider Setup
+
+If you chose the bring-your-own-key path (or if your account does not include hosted models), onboarding shows you the same provider controls that live in `Settings` -> `Providers`. You can enable a built-in cloud provider, configure a local provider like Ollama, or add a custom provider.
+
+You need at least one enabled provider with at least one model before onboarding lets you continue. For a detailed guide to each provider type, see:
+
+- [Built-in Providers](/docs/guides/providers/built-in-providers) - OpenAI, Anthropic, Google, and more.
+- [Local Providers](/docs/guides/providers/local-providers) - Ollama and LM Studio.
+- [Custom Providers](/docs/guides/providers/custom) - any OpenAI-compatible endpoint.
+
+## Step 5: Welcome Screen
+
+The final screen confirms setup is complete and offers three options:
+
+- **Launch AgentOne** - go to the main chat screen.
+- **Browse Documentation** - open the docs site (you are here!).
+- **Take the Tutorial** - marked as coming soon.
+
+Click **Launch AgentOne** to open the app.
+
+## After Onboarding
+
+Onboarding only runs once. After you complete it, you go directly to the main chat interface on every subsequent launch. You can revisit and change any of the settings from onboarding at any time:
+
+- **Name**: `Settings` -> `Account` -> `Profile & Instructions`
+- **Providers**: `Settings` -> `Providers`
+- **Account**: `Settings` -> `Account`
+
+{/* Screenshot placeholder: final welcome screen showing the Launch AgentOne, Browse Documentation, and Take the Tutorial buttons. */}

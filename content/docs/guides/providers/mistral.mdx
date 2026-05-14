@@ -1,0 +1,60 @@
+---
+title: Mistral
+description: Connect Mistral AI models to AgentOne with your API key.
+---
+
+Mistral AI makes efficient open-weight models available through their API. AgentOne includes Mistral as a built-in provider.
+
+## Getting a Mistral API Key
+
+<Steps>
+<Step>
+### Sign in to La Plateforme
+
+Go to [console.mistral.ai](https://console.mistral.ai) and sign in or create an account.
+
+</Step>
+<Step>
+### Create an API Key
+
+In the left sidebar, click **API Keys**, then click **Create new key**. Copy the key - it is only shown once.
+
+</Step>
+</Steps>
+
+<Callout title="Billing required" type="info">
+  Mistral's API requires a paid account. Add billing at
+  [console.mistral.ai/billing](https://console.mistral.ai/billing).
+</Callout>
+
+## Connecting Mistral in AgentOne
+
+<Steps>
+<Step>
+### Open Provider Settings
+
+In AgentOne, click `Settings` -> `Providers`.
+
+</Step>
+<Step>
+### Find and Enable Mistral
+
+Under `Built-in Providers`, locate **Mistral**, expand it, and toggle the enable switch on.
+
+</Step>
+<Step>
+### Paste Your Key
+
+Paste your API key and click save.
+
+</Step>
+</Steps>
+
+Mistral models appear in the [model selector](/docs/guides/providers/model-selector) after saving.
+
+## Troubleshooting
+
+- **401 error**: re-paste and save the key.
+- **Model not available**: confirm the model name against [docs.mistral.ai/getting-started/models/models_overview](https://docs.mistral.ai/getting-started/models/models_overview/).
+
+For more, see [Providers and Models Troubleshooting](/docs/desktop-app/troubleshooting/providers-and-models).

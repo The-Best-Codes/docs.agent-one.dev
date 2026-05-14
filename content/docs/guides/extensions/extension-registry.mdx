@@ -1,0 +1,51 @@
+---
+title: Extension Registry
+description: Browse, search, install, and manage extensions from the AgentOne extension registry.
+---
+
+The extension registry is a curated catalogue of MCP servers that AgentOne knows how to install and configure. You access it from `Settings` -> `Extensions`.
+
+## Browsing the Registry
+
+The registry page lists available extensions with the following information for each:
+
+- **Name and description** - what the extension does.
+- **Version** - the version AgentOne will install.
+- **Icon and category badges** - a quick visual indicator of the extension's purpose.
+- **Connection type** - whether the server runs on your device (STDIO) or connects to a remote service (HTTP).
+- **Website link** - a link to the extension's own documentation or homepage.
+
+Without any filters applied, the list is sorted to show built-in extensions first, then installed extensions, then everything else.
+
+## Search and Filters
+
+Use the search field to filter by name or keywords. The filter menu adds:
+
+- **Show only installed** - narrows the list to extensions you have already installed.
+- **Connection type filter** - `Runs on this device` (STDIO) or `Connects online` (HTTP).
+
+These filters can be combined with a search query.
+
+## Install Status
+
+Each extension row shows its current status:
+
+- No badge - not installed.
+- Installed and showing a status indicator - enabled, loading, disabled, or error.
+
+If an extension shows `Unsupported`, AgentOne cannot install it from the available registry data. This typically means the server requires a transport type or configuration format that AgentOne does not yet support.
+
+## Advanced View
+
+Installed extensions gain an **Advanced** button. The advanced panel exposes:
+
+- Current load status and any error messages.
+- [Per-tool approval overrides](/docs/guides/extensions/approval-and-auth#per-tool-approvals).
+- [Auth connection controls](/docs/guides/extensions/approval-and-auth#connect-and-disconnect) for HTTP extensions that require sign-in.
+- Debug information for some registry extensions, useful when troubleshooting.
+
+## Related
+
+- [Install Extensions](/docs/guides/extensions/install-extension) - step-by-step installation flow.
+- [Approval and Auth](/docs/guides/extensions/approval-and-auth) - how approval and authentication work.
+- [Dangling Extensions](/docs/guides/extensions/dangling-extensions) - cleaning up stale registry entries.
