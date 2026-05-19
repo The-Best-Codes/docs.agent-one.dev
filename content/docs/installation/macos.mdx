@@ -113,7 +113,7 @@ There are two primary ways to install AgentOne on macOS. We recommend installing
     
     Open the downloaded `.dmg` file, drag `AgentOne.app` into `Applications`, then open AgentOne from your `Applications` folder.
     
-    If macOS blocks the app from opening, see the [Troubleshooting](#troubleshooting) section below.
+    If macOS blocks the app from opening or says the file is damaged, see the [Troubleshooting](#troubleshooting) section below.
   
 </Step>
 </Steps>
@@ -124,28 +124,10 @@ There are two primary ways to install AgentOne on macOS. We recommend installing
 
 This is a normal macOS warning shown the first time you open many apps downloaded outside the App Store. If you downloaded AgentOne from `agent-one.dev` or the official GitHub releases page, click `Open`.
 
-### "AgentOne.app" cannot be opened because the developer cannot be verified
-
-macOS Gatekeeper may block new or newly updated apps until you explicitly allow them.
-
-To resolve the issue, follow these steps:
-
-1. Double-click `AgentOne.app` once so macOS shows the warning.
-2. Open `System Settings`.
-3. Go to `Privacy & Security`.
-4. Scroll down to the `Security` section.
-5. Click `Open Anyway` for AgentOne.
-6. Confirm by clicking `Open`.
-
-Apple notes that the `Open Anyway` button is only available for about one hour after you try opening the app.
-
-### "Apple could not verify \"AgentOne.app\" is free of malware"
-
-This is another version of the same Gatekeeper warning. Follow the steps in ["AgentOne.app" cannot be opened because the developer cannot be verified](#agentoneapp-cannot-be-opened-because-the-developer-cannot-be-verified).
-
 ### "AgentOne.app" is damaged and can't be opened
 
-This warning can appear even when the app itself is fine. If you downloaded AgentOne from `agent-one.dev` or the official GitHub releases page, try these steps.
+This is a common macOS Gatekeeper message for apps downloaded outside the App Store. To fix this, first try to go to System Settings > Privacy & Security and click 'Open Anyway' next to the security warning.
+If that doesn't work, try these steps.
 
 1. Delete the old `.dmg` file and delete `AgentOne.app` from your `Applications` folder if it is already there.
 2. Download a fresh copy of the correct macOS version.
@@ -172,6 +154,25 @@ What this command does: it removes the macOS quarantine flag from the app so mac
 </Callout>
 
 If you still see the same message after doing this, [join our Discord server for live support](https://www.agent-one.dev/discord).
+
+### "AgentOne.app" cannot be opened because the developer cannot be verified
+
+macOS Gatekeeper may block new or newly updated apps until you explicitly allow them.
+
+To resolve the issue, follow these steps:
+
+1. Double-click `AgentOne.app` once so macOS shows the warning.
+2. Open `System Settings`.
+3. Go to `Privacy & Security`.
+4. Scroll down to the `Security` section.
+5. Click `Open Anyway` for AgentOne.
+6. Confirm by clicking `Open`.
+
+Apple notes that the `Open Anyway` button is only available for about one hour after you try opening the app.
+
+### "Apple could not verify \"AgentOne.app\" is free of malware"
+
+This is another version of the same Gatekeeper warning. Follow the steps in ["AgentOne.app" cannot be opened because the developer cannot be verified](#agentoneapp-cannot-be-opened-because-the-developer-cannot-be-verified).
 
 ### The app says it is from an unidentified developer or an unknown developer
 
