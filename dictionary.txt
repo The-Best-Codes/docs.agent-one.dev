@@ -11,3 +11,9 @@ webui
 paru
 appimage
 Snapcraft
+xattr
+aistudio
+llms
+lmstudio
+GGUF
+Plateforme

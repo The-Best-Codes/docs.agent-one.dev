@@ -1,9 +1,15 @@
-root_dir = "/home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev"
+root_dir = "."
 index_files = ["index.mdx"]
 fallback_extensions = ["mdx"]
 include_fragments = "anchor-only"
+exclude_loopback = true
+exclude = [
+  "^https://canva\\.com/?$",
+  "^https://console\\.mistral\\.ai/?$",
+  "^https://platform\\.openai\\.com/?$",
+]
 
 remap = [
-  "^file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/docs/ file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/content/docs/",
-  "^file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/images/ file:///home/bestcodes/Documents/GitHub/The-Best-Codes/docs.agent-one.dev/public/images/"
+  "^file://(.*/docs.agent-one.dev)/docs/ file://$1/content/docs/",
+  "^file://(.*/docs.agent-one.dev)/images/ file://$1/public/images/",
 ]
