@@ -1,0 +1,43 @@
+---
+title: Memory
+description: Store persistent facts about yourself that the AI remembers across all your conversations.
+---
+
+AgentOne can remember things about you across chat sessions. Memories are short, concise facts that the AI sees as context in every conversation - so you do not have to repeat yourself.
+
+## How Memory Works
+
+Memories are stored as a list of short text entries. Each entry is a single fact or preference, like "I prefer concise technical answers" or "I work primarily in Go and PostgreSQL."
+
+When you start a new chat, the AI reads your current memories and takes them into account when responding. You never have to re-explain the same preferences.
+
+## Managing Memories
+
+You can view and edit memories in `Settings` -> `Account` -> **Profile & Instructions** -> **Memory**.
+
+From there you can:
+
+- **Add** a new memory entry by clicking the `+` button.
+- **Edit** any existing memory entry by typing in its field.
+- **Delete** a memory entry by clicking the `x` button next to it.
+
+### Limits
+
+- **100 entries maximum** across all memories.
+- **500 characters per entry**. A character counter shows how much space you have left.
+
+## The Memory AI Tool
+
+The AI can also manage memories automatically. When the **Memory** built-in tool is enabled (it is on by default), the model can add, remove, or replace memory entries during a conversation.
+
+For example, if you say "I prefer British English spelling," the model can store that as a memory entry so it remembers in future chats. You can disable or require approval for this tool in `Settings` -> `Extensions` -> **Built-in extensions**.
+
+## Sync
+
+If you have [settings sync](/docs/desktop-app/account-and-sync/sync-settings) enabled, your memories are synchronized across all your signed-in devices.
+
+## Related
+
+- [Profile & Instructions](/docs/desktop-app/account-and-sync/profile-and-instructions) - manage memory alongside your name and AI instructions.
+- [Built-in Tools](/docs/guides/extensions/built-in-tools) - the Memory tool and other built-in tools.
+- [Sync Settings](/docs/desktop-app/account-and-sync/sync-settings) - sync memories across devices.

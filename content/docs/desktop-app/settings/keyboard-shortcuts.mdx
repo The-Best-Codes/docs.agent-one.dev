@@ -1,0 +1,48 @@
+---
+title: Keyboard Shortcuts
+description: Customize keybindings for common actions in AgentOne.
+---
+
+The `Keyboard Shortcuts` section in `Settings` lets you rebind, disable, or tweak every keyboard shortcut in AgentOne.
+
+## Customizing a Shortcut
+
+Each shortcut shows its current keybinding and has two buttons:
+
+- **Edit** (pencil icon) - opens the shortcut editor where you can press a new key combination to rebind it.
+- **Reset** (restore icon) - restores the shortcut to its default binding. Greyed out when already using the default.
+
+### Shortcut Editor
+
+When editing a shortcut, the dialog captures the next key combination you press. You can set any single modifier+key combination (for example, `Ctrl+Shift+M`).
+
+The editor also lets you toggle:
+
+- **Activate in input fields** - when on, this shortcut works even when you are typing in a text field. Off by default.
+- **Prevent default browser behavior** - when on, AgentOne intercepts the key combination before the desktop app performs the default action. On by default.
+
+### Conflicts
+
+If you set a shortcut that another action already uses, a warning appears in the editor. You can still save the new binding - the conflict is a reminder, not a blocker. The most recently saved binding wins.
+
+## The Shortcuts
+
+| Action                | Default  | Description                                                                                          |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| Open Settings         | `Ctrl+,` | Opens the settings panel from anywhere in the app.                                                   |
+| New Chat              | `Ctrl+N` | Creates a new empty chat and focuses the input.                                                      |
+| Focus Chat Search     | `Ctrl+K` | Focuses the sidebar search when open; opens the full-screen search dialog when sidebar is collapsed. |
+| Toggle Sidebar        | `Ctrl+B` | Collapses or expands the sidebar.                                                                    |
+| Focus Main Chat Input | `Ctrl+L` | Moves keyboard focus to the chat composer.                                                           |
+
+## Activate Shortcuts in Input Fields
+
+A global toggle at the top of the section controls whether shortcuts fire when you are typing in any text field. When enabled, you can use `Ctrl+N` to start a new chat even while composing a message. Each shortcut also has its own per-shortcut override.
+
+This is separate from the **Submit Key** setting in [Chat Settings](/docs/desktop-app/settings/chat-settings), which controls how Enter and Ctrl+Enter behave in the chat composer.
+
+## Related
+
+- [Keyboard Shortcuts (Overview)](/docs/desktop-app/shortcuts-and-links/keyboard-shortcuts) - the full list of default shortcuts.
+- [Deep Links](/docs/desktop-app/shortcuts-and-links/deep-links) - open chats and extension installs from URLs.
+- [Chat Settings](/docs/desktop-app/settings/chat-settings) - configure the submit key behavior.

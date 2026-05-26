@@ -47,6 +47,10 @@ Executes a shell command on your machine and returns the output to the model. Th
 
 Delegates a focused task to a subagent with its own context window. Useful for long-form or multi-step work where separating concerns into parallel or sequential sub-tasks improves results. Subagents cannot spawn their own subagents.
 
+### Memory
+
+Manages long-term memory entries that persist across chat sessions. The model can add, remove, or replace memory entries automatically. When enabled (default), the model can remember facts about you between conversations without you repeating yourself. See [Memory](/docs/desktop-app/chats/memory) for more.
+
 ## Per-Tool Controls
 
 For every built-in tool you can:
@@ -61,7 +65,7 @@ A reset button at the bottom of the built-in tools card restores all built-in to
 
 ## Safety Recommendations
 
-For tools that make irreversible changes - `Delete file`, `Run command`, `Edit file`, `Create file` - consider enabling `Require Approval` so you can review each action before it happens. For read-only tools like `View file`, `Browse`, and `Search the web`, approval is usually not necessary.
+For tools that make irreversible changes - `Delete file`, `Run command`, `Edit file`, `Create file` - consider enabling `Require Approval` so you can review each action before it happens. `Memory` can also benefit from approval if you want to review what the model wants to remember. For read-only tools like `View file`, `Browse`, and `Search the web`, approval is usually not necessary.
 
 See [Approval and Auth](/docs/guides/extensions/approval-and-auth) for more on how approvals work across both built-in tools and installed extensions.
 

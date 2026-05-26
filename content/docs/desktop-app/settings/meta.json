@@ -1,4 +1,10 @@
 {
   "title": "Settings",
-  "pages": ["appearance", "chat-settings", "performance", "help-and-updates"]
+  "pages": [
+    "appearance",
+    "chat-settings",
+    "keyboard-shortcuts",
+    "performance",
+    "help-and-updates"
+  ]
 }
