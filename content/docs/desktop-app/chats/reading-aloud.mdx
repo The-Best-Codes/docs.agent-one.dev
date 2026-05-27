@@ -1,0 +1,54 @@
+---
+title: Reading Aloud
+description: Have AgentOne read messages out loud using text-to-speech.
+---
+
+AgentOne can read assistant messages out loud. You pick a voice provider, configure how it sounds, then tap the speaker icon on any response to hear it.
+
+## How It Works
+
+The read aloud button appears on every assistant message when a text-to-speech provider is configured. Click it and AgentOne streams the message through your speakers. Click it again or tap the stop button to interrupt.
+
+Reading aloud uses its own API keys and provider selection - it's separate from the provider you use for chat.
+
+## Setting It Up
+
+1. Open `Settings` -> `Providers`.
+2. Scroll to the `Text-to-Speech Providers` card.
+3. Choose a provider from the dropdown.
+4. Pick a voice model.
+5. Enter the provider's API key.
+6. Adjust the voice settings to your liking.
+
+Once a provider and API key are saved, the speaker icon shows up on assistant messages.
+
+### Supported Providers
+
+| Provider   | What You Get                                                                                                           |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------- |
+| OpenAI     | TTS models (`tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`). 13 voices, speech rate, and instructions for how it should sound. |
+| ElevenLabs | ElevenLabs voice models. Voice ID, speech rate, language code, stability, style, and speaker boost.                    |
+| LMNT       | Lightning-fast speech models (`aurora`, `blizzard`). Voice, language, speed, and conversational mode.                  |
+| Hume       | Expressive speech with a single model. Voice ID, speed, and instructions for how it should sound.                      |
+
+Each provider needs its own API key, stored the same way as chat provider keys.
+
+### Voice Settings
+
+The options available depend on which provider you pick:
+
+- **Speech Rate** - how fast the voice reads. Available on all providers.
+- **Voice** - which voice to use. OpenAI has a preset list; ElevenLabs, LMNT, and Hume use voice IDs from their platforms.
+- **Instructions** (OpenAI, Hume) - tell the voice how to sound, like "Speak casually" or "Emphasize technical terms."
+- **Stability / Style / Voice Match** (ElevenLabs) - fine-tune the delivery.
+
+## Using It
+
+Once configured, hover over any assistant message and click the speaker icon. The icon changes to a stop button while audio is playing. Click it again to stop.
+
+Reading aloud stops automatically when the message finishes. You can start reading a different message while another is playing - it stops the first one and starts the new one.
+
+## Related
+
+- [Message Actions](/docs/desktop-app/chats/message-actions) - the full set of per-message actions.
+- [Built-in Providers](/docs/guides/providers/built-in-providers) - how chat provider keys work the same way.
