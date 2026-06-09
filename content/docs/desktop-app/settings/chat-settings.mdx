@@ -68,6 +68,12 @@ Controls how chats are ordered in the sidebar:
 
 ## Streaming
 
+### Extract Reasoning from Think Tags
+
+When enabled (default), `<think>...</think>` blocks emitted by reasoning models like DeepSeek are automatically stripped from the response text and displayed as a collapsible reasoning section in the chat UI. This keeps the main response clean while still letting you inspect the model's chain of thought.
+
+This setting does not apply to past messages or models that do not emit reasoning tags.
+
 ### Smooth Stream
 
 Enables a smoother, more fluid text streaming animation. If disabled, text appears in larger chunks as it arrives.
