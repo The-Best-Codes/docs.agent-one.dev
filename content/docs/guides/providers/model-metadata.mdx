@@ -37,9 +37,17 @@ Whether this model should be treated as tool-capable. When enabled, AgentOne all
 
 Whether this model should be treated as capable of processing image attachments. When enabled, users can attach images in chats using this model and the image data is included in the request. Disable it for text-only models.
 
+### Supports Attachments
+
+Whether the model accepts non-image file attachments. This controls the **Attachments** badge and filter in the model selector.
+
+### Supports Reasoning
+
+Whether the model offers reasoning capabilities. This controls the **Reasoning** badge and filter in the model selector.
+
 ## Why Accurate Metadata Matters
 
-AgentOne uses these flags to decide what to offer in the UI. If `Supports Tools` is off, extensions are not injected for that model. If `Supports Images` is off, the image attachment pathway is not used. Incorrect metadata can cause subtle misbehavior - either features being silently hidden or the API receiving parameters it cannot handle.
+AgentOne uses these flags to decide what to offer in the UI. If `Supports Tools` is off, select `Disable` under [Tool Behavior](/docs/guides/providers/model-config#tool-behavior) to use the model without injecting extensions. If `Supports Images` or `Supports Attachments` is off, the corresponding attachment pathway is not used. Incorrect metadata can cause subtle misbehavior - either features being silently hidden or the API receiving parameters it cannot handle.
 
 For built-in models, AgentOne maintains metadata based on publicly available information. If a model's capabilities change (for example, a previously text-only model gains tool support in an update), you can add a model override to correct the flags without waiting for an app update. See [Built-in Providers](/docs/guides/providers/built-in-providers#model-overrides).
 

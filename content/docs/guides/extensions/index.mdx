@@ -56,6 +56,16 @@ When a model that [supports tools](/docs/guides/providers/model-metadata#support
 
 Tool calls appear inline in the chat as collapsible activity items so you can see exactly what the model did. If [approval is required](/docs/guides/extensions/approval-and-auth) for a tool, AgentOne pauses and asks before running it.
 
+## MCP Apps (Beta)
+
+Extensions that support MCP Apps can render interactive interfaces directly in a chat. An app may appear:
+
+- **inline** with the extension's tool activity
+- in an **Expanded extension view**
+- in a **picture-in-picture** window
+
+Expanded and picture-in-picture views can be closed to return to the conversation. AgentOne passes the current light or dark theme, locale, platform, available display modes, and container size to compatible apps so they can fit the desktop UI. MCP Apps run in a sandboxed frame.
+
 ## Related Guides
 
 For specific real-world MCP server examples, see the [Custom Extensions guides](/docs/guides/custom-extensions) which walk through installing Smithery, Canva, and filesystem servers step by step.

@@ -7,6 +7,25 @@ The `Model Config` panel lets you fine-tune how the active model behaves for the
 
 Changes made here are **per-chat** - they do not affect other conversations or global defaults.
 
+## Tool Behavior
+
+`Tool Behavior` controls which tools the active chat can use and when AgentOne asks for approval:
+
+| Mode        | Behavior                                                                         |
+| ----------- | -------------------------------------------------------------------------------- |
+| **Default** | Uses enabled tools and asks only when a tool's approval setting requires it.     |
+| **Ask**     | Asks for your approval before every tool call.                                   |
+| **YOLO**    | Runs tools without approval. Use with caution, especially with write operations. |
+| **Disable** | Makes no tools available to the model.                                           |
+
+`Default` remains the default mode. Select `Disable` when you want a tool-free chat or need to use a model that does not support tool calling. Tool-dependent controls become unavailable in that mode.
+
+<Callout title="YOLO bypasses approval settings" type="warning">
+  YOLO runs tools without showing the approval checks configured for built-in or
+  installed extensions. Only use it when you trust the model, prompt, and tools
+  available to the chat.
+</Callout>
+
 ## Available Parameters
 
 ### Temperature

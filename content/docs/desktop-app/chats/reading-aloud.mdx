@@ -24,12 +24,13 @@ Once a provider and API key are saved, the speaker icon shows up on assistant me
 
 ### Supported Providers
 
-| Provider   | What You Get                                                                                                           |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------- |
-| OpenAI     | TTS models (`tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`). 13 voices, speech rate, and instructions for how it should sound. |
-| ElevenLabs | ElevenLabs voice models. Voice ID, speech rate, language code, stability, style, and speaker boost.                    |
-| LMNT       | Lightning-fast speech models (`aurora`, `blizzard`). Voice, language, speed, and conversational mode.                  |
-| Hume       | Expressive speech with a single model. Voice ID, speed, and instructions for how it should sound.                      |
+| Provider      | What You Get                                                                                                           |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| OpenAI        | TTS models (`tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`). 13 voices, speech rate, and instructions for how it should sound. |
+| Google Gemini | Gemini TTS preview models, 30 preset voices, and speech rate. The default voice is `Kore`.                             |
+| ElevenLabs    | ElevenLabs voice models. Voice ID, speech rate, language code, stability, style, and speaker boost.                    |
+| LMNT          | Lightning-fast speech models (`aurora`, `blizzard`). Voice, language, speed, and conversational mode.                  |
+| Hume          | Expressive speech with a single model. Voice ID, speed, and instructions for how it should sound.                      |
 
 Each provider needs its own API key, stored the same way as chat provider keys.
 
@@ -38,7 +39,7 @@ Each provider needs its own API key, stored the same way as chat provider keys.
 The options available depend on which provider you pick:
 
 - **Speech Rate** - how fast the voice reads. Available on all providers.
-- **Voice** - which voice to use. OpenAI has a preset list; ElevenLabs, LMNT, and Hume use voice IDs from their platforms.
+- **Voice** - which voice to use. OpenAI and Google Gemini have preset lists; ElevenLabs, LMNT, and Hume use voice IDs from their platforms.
 - **Instructions** (OpenAI, Hume) - tell the voice how to sound, like "Speak casually" or "Emphasize technical terms."
 - **Stability / Style / Voice Match** (ElevenLabs) - fine-tune the delivery.
 

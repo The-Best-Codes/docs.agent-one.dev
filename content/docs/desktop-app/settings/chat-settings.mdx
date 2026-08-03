@@ -13,10 +13,14 @@ Controls which messages render markdown formatting:
 
 - **All messages** - both your messages and assistant responses use markdown rendering.
 - **User messages only** - only your messages are rendered as markdown.
-- **Assistant messages only** (default for most users) - only assistant responses render markdown.
+- **Assistant messages only** - only assistant responses render markdown.
 - **No messages** - all messages display as plain text.
 
 Turn off markdown rendering for assistant messages if you are working with a model that produces a lot of raw text and the formatting feels distracting.
+
+### Fix Streaming Markdown
+
+When enabled (default), AgentOne repairs incomplete formatting while a response is still streaming. Disable it if you prefer to see the provider's raw partial markdown or want to remove its small rendering overhead.
 
 ### Completion Notification
 
@@ -54,6 +58,14 @@ Sets the default state of the **Regenerate when Saved** toggle that appears when
 ### Always Show Stop Button
 
 When enabled, the stop button appears in the composer immediately after you submit a message - even during the brief moment before the model starts streaming. Useful if you frequently want to cancel responses right away.
+
+### Chat Scroll to Bottom Button
+
+Shows a button that quickly returns you to the latest message when you have scrolled up. It is enabled by default.
+
+### Message Navigation Rail
+
+Shows message previews on the right side of chats and lets you jump directly to a message. The rail marks messages currently in view, is enabled by default, and stays hidden in the compact layout.
 
 ### Chat Status Indicators
 

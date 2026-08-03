@@ -18,3 +18,8 @@ lmstudio
 GGUF
 Plateforme
 LMNT
+Airforce
+LLMTR
+Qiniu
+Sakana
+Kore

@@ -7,7 +7,7 @@ AgentOne gives you granular control over when tools run automatically versus whe
 
 ## Default Approval for an Extension
 
-Every installed extension - whether from the registry or added as a custom server - has a **Requires Approval by default** toggle. When enabled, AgentOne pauses before running any tool from that extension and asks you to confirm.
+Every installed extension - whether from the registry or added as a custom server - has a **Require Approval By Default** toggle. When enabled, AgentOne pauses before running any tool from that extension and asks you to confirm.
 
 This setting is the top-level switch for the extension. You can set it:
 
@@ -22,6 +22,8 @@ The per-extension toggle controls the default, but you can override it for indiv
 - Not require approval by default, but require it for one specific high-risk tool (such as one that deletes data).
 
 Per-tool settings take precedence over the extension-level default.
+
+The per-chat [Tool Behavior](/docs/guides/providers/model-config#tool-behavior) can temporarily override these rules. `Ask` requires approval for every tool, while `YOLO` bypasses every approval check.
 
 ## How Approval Works in a Chat
 
@@ -58,6 +60,14 @@ To authenticate:
 After connecting, the status changes to **Connected** and the extension's tools become available in chat. You can disconnect at any time by clicking **Disconnect** in the same panel.
 
 Extensions that do not need authentication show **No authorization required** in the Advanced panel.
+
+## Saving Advanced Changes
+
+Changes in an extension's **Advanced** panel are kept as a draft. Click **Save** to apply them, or **Cancel** to discard them. Changing or disabling an extension also dismisses login prompts for that server.
+
+## Restarting an Extension
+
+An installed, enabled extension shows a **Restart** action when it is connected and not already starting. Use it after changing external credentials or when the server is running but no longer responding. Restarting reconnects the server without uninstalling it.
 
 ## Debug Info
 

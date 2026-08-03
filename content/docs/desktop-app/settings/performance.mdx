@@ -25,13 +25,13 @@ The maximum number of characters rendered in a tool result (the output of an [ex
 
 ### Virtualize Chat Messages
 
-When enabled, AgentOne renders only the messages currently visible in the viewport and recycles DOM nodes as you scroll. This dramatically reduces memory use and improves scroll performance in very long chats.
+AgentOne can render only the messages around the visible viewport instead of keeping every message mounted. This dramatically reduces memory use and improves scroll performance in long chats.
 
-Virtualization is off by default because it can occasionally affect layout in edge cases. Turn it on if you regularly work with chats that have hundreds of messages.
+The default mode enables virtualization after a message-count threshold. You can change the mode if you prefer to always or never virtualize chats.
 
 ### Message Count Threshold
 
-The number of messages a chat must have before virtualization activates (when **Virtualize Chat Messages** is enabled). Setting this to `50` means short chats render normally and virtualization only kicks in for long ones.
+The number of messages a chat must have before virtualization activates in threshold mode. The default is `20`, so shorter chats render normally while longer chats switch automatically.
 
 ## Extension Runtime
 

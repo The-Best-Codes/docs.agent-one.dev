@@ -17,7 +17,7 @@ Inserts a deliberate pause into the model's execution. Useful in long agentic wo
 
 ### Browse
 
-Opens a URL and returns its content to the model. Useful when you want the model to read a specific page rather than search for it. You can configure the maximum number of URLs the tool fetches in a single call and the default maximum content length returned.
+Opens one or more URLs and returns their content to the model. Useful when you want the model to read specific pages rather than search for them. Its chat activity shows each URL's loading status and result. If you cancel the operation, you can still expand it to see which URLs the model intended to browse. You can configure the maximum number of URLs the tool fetches in a single call and the default maximum content length returned.
 
 ### Search the web
 
@@ -51,6 +51,16 @@ Delegates a focused task to a subagent with its own context window. Useful for l
 
 Manages long-term memory entries that persist across chat sessions. The model can add, remove, or replace memory entries automatically. When enabled (default), the model can remember facts about you between conversations without you repeating yourself. See [Memory](/docs/desktop-app/chats/memory) for more.
 
+### Wikipedia
+
+Searches and reads Wikipedia directly. This built-in extension is currently beta and is useful for encyclopedia-style lookups without a general web search.
+
+### Settings tools
+
+The `List settings`, `Get setting`, and `Update setting` tools let AgentOne inspect supported app preferences and, with approval, change them for you. Listing and reading settings do not require approval by default; updating a setting does.
+
+For example, you could ask AgentOne to change its theme color, improve its performance, and more.
+
 ## Per-Tool Controls
 
 For every built-in tool you can:
@@ -65,7 +75,7 @@ A reset button at the bottom of the built-in tools card restores all built-in to
 
 ## Safety Recommendations
 
-For tools that make irreversible changes - `Delete file`, `Run command`, `Edit file`, `Create file` - consider enabling `Require Approval` so you can review each action before it happens. `Memory` can also benefit from approval if you want to review what the model wants to remember. For read-only tools like `View file`, `Browse`, and `Search the web`, approval is usually not necessary.
+For tools that make irreversible changes - `Delete file`, `Run command`, `Edit file`, `Create file`, and `Update setting` - consider enabling `Require Approval` so you can review each action before it happens. `Memory` can also benefit from approval if you want to review what the model wants to remember. For read-only tools like `View file`, `Browse`, `Wikipedia`, and `Search the web`, approval is usually not necessary.
 
 See [Approval and Auth](/docs/guides/extensions/approval-and-auth) for more on how approvals work across both built-in tools and installed extensions.
 
