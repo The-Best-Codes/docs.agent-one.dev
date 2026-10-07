@@ -1,0 +1,36 @@
+---
+title: "Manage installed extensions"
+description: "Change settings, disable servers, and recover entries missing from the registry."
+---
+
+Open **Browse Extensions** to manage this device's installed servers. Search and filters help narrow the catalog and installed entries.
+
+## Enable or disable
+
+Use an extension's switch to control whether its tools are available. Disabling keeps the configuration. It's useful when a server is unused, noisy, or failing, and you want to preserve its setup while diagnosing the problem.
+
+In Advanced, enablement changes are part of the draft and need **Save changes**. The main list's switch directly changes the installed server's enabled state.
+
+## Edit configuration
+
+Open **Advanced** to change the server name, command or URL, headers or environment variables, timeout, and approvals. Review the changes and save them. Cancel discards the draft.
+
+A wrong endpoint or command can prevent the tool list from loading. If you lose the list after an edit, check the connection details and error first.
+
+## Catalog changes
+
+The registry downloads separately and can change without an app release. An installed entry can remain even if its original registry entry disappears or no longer matches the available catalog.
+
+When AgentOne identifies those entries, it offers a way to review them. Keep a working server as a custom extension when appropriate, or remove it if you no longer need it. A missing catalog entry doesn't establish that its running server is broken.
+
+Refresh the extension list through [Help & Updates](/docs/settings/updates) when the catalog is stale or incomplete. The browser shows a limited first page, so search before assuming a server is absent.
+
+## Uninstall
+
+Choose **Uninstall** and review the confirmation. This removes the local server configuration and its availability in AgentOne. It doesn't undo completed service actions or delete chats where the extension was used.
+
+For OAuth servers, disconnect or revoke remote permissions separately when needed. See [authentication and approvals](/docs/extensions/authentication-and-approvals).
+
+## Keep a setup record
+
+Before switching computers, note the server's documentation, runtime requirements, endpoint or command, and required variable names. Transfer credentials using your usual secure method rather than a public docs snippet or chat export. Then configure and test the extension on the new device.

@@ -1,0 +1,60 @@
+---
+title: "Control tool approvals"
+description: "Understand per-tool settings, chat overrides, and pending requests."
+---
+
+Approvals let you review a proposed action before AgentOne runs it. They apply to built-in tools and extension tools. Authentication controls access to a service; approval controls whether a particular action runs.
+
+## Choose the behavior for a chat
+
+Open the sliders button beside the model and choose **Tool Behavior**:
+
+- **Per-tool approval:** follow each tool's configured requirement.
+- **Always ask:** request approval for every tool call.
+- **YOLO (auto-run):** run available tools without asking.
+- **No tools:** keep tools unavailable for this chat.
+
+YOLO overrides approval requirements for available tools. If those tools can write files, execute commands, or change a connected service, those actions can happen without another prompt. Choose it only when that behavior fits the task and the access you've configured.
+
+No tools is useful for a text-only conversation or for isolating a provider problem. It doesn't uninstall extensions or erase their configuration.
+
+## Built-in defaults
+
+Under Per-tool approval, the shipped defaults ask before creating, editing, or deleting files; executing commands; starting a subagent; changing settings; and creating, changing, or deleting schedules.
+
+Read-only tools such as viewing files, searching the web, reading settings, and listing schedules don't require approval by default. The memory tool also doesn't require approval by default. You can change a tool's requirement in **Tools**.
+
+<AnnotatedScreenshot
+  name="tool-approval"
+  alt="Edit file tool configuration with Require Approval turned on."
+  crop={[1040, 675, 825, 355]}
+  points={[
+    {
+      x: 1710,
+      y: 870,
+      label:
+        "Require Approval applies to this tool under Per-tool approval behavior.",
+    },
+  ]}
+  caption="Example: Edit file requires approval by default."
+/>
+
+## Extension defaults and overrides
+
+Open **Browse Extensions → Advanced** for an installed server. **Require Approval By Default** sets its baseline. Expand **Per-tool approvals** to override that baseline for individual tools.
+
+The tool list appears only after an enabled server has loaded successfully. If the server is off, connecting, or in error, resolve that state before configuring tool-specific overrides.
+
+If a tool's setting matches the server default, it follows that default. A differing setting overrides it. The chat's Always ask or YOLO behavior can then override how those tools are handled during that conversation.
+
+## Respond to a request
+
+Read the tool name and arguments. Check the path, command, account, recipients, or other details the tool intends to use. Approve the request to run it, or reject it if the action doesn't match your intent. Tell the agent how to proceed after a rejection if another approach is needed.
+
+Tool arguments and results can contain content from another service. Treat that content as material to evaluate, not as instructions you automatically have to follow.
+
+## Scheduled work and subagents
+
+Approvals can pause a scheduled run while you're away. Test the complete task before relying on unattended execution. Don't disable approvals merely to hide an unresolved setup problem.
+
+A subagent can itself request approvals for its tools. Open its expanded work to respond to pending requests. See [subagents](/docs/tools/subagents) and [scheduled agents](/docs/scheduled-agents) for the rest of those workflows.

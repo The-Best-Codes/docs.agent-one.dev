@@ -1,0 +1,44 @@
+---
+title: "Fix model and provider problems"
+description: "Recover missing lists, connection failures, unsupported input, and interrupted responses."
+---
+
+## Models are missing
+
+Check **Providers**: the provider must be enabled, its credentials must be available when required, and its configured model list must be usable. Check the downloaded model catalog and any manually configured model IDs.
+
+Open **Help & Updates** and check the **model list**. A fresh 1.1.1 installation downloads it separately. Restore connectivity and download/update the list if it is missing.
+
+For local providers, start the server and use **Auto**. A saved model entry can remain visible when the server is offline. Custom providers need explicit model entries.
+
+## Authentication or account error
+
+Read the provider name in the error. For AgentOne, check the desktop account and credits. For another provider, verify the API key, API billing, permissions, and model access in that provider's account.
+
+A consumer chat subscription isn't always an API entitlement. Don't troubleshoot an external provider's key by changing your AgentOne subscription.
+
+If keys don't persist across launches, check operating-system credential-storage errors and include the OS and installation method in your support report. Don't paste the key into the report.
+
+## Connection refused or network failure
+
+For Ollama, test `http://127.0.0.1:11434/v1/models`. For LM Studio, test `http://127.0.0.1:1234/v1/models`, adjusted for its actual port. Check that the server is running and the base URL includes the documented `/v1` path.
+
+For remote providers, check network access, endpoint spelling, required headers, and service status. A timeout can be a provider or model-loading issue; increasing a timeout isn't a substitute for checking the endpoint.
+
+## Model not found
+
+Copy the exact model ID from the provider's API or documentation. Check account access and whether the provider retired or renamed that model. Update the downloaded catalog or correct the manual entry.
+
+## Unsupported parameter, tools, or attachment
+
+Reset [generation settings](/docs/models/configuration) and test text with No tools. Some models reject temperature, penalties, or other sampling options.
+
+If text works, test the supported capability separately. Check [model metadata](/docs/models/model-metadata) against the provider's actual capabilities. A capability checkbox can't add image, file, or tool support to an API.
+
+## Context too long
+
+Reduce files and pasted material, ask a narrower question, or start a new chat with a concise summary. Context includes previous messages, instructions, and tool results. Rendering limits don't increase the model's context capacity.
+
+## Response interrupted
+
+Fix the underlying error, then use [Resume](/docs/chat/steer-and-resume) when available. Regenerate when you want a fresh attempt from a specific message. Both can make additional requests, so avoid repeated retries without changing the cause.

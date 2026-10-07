@@ -1,0 +1,13 @@
+{
+  "title": "Models and providers",
+  "pages": [
+    "index",
+    "agentone",
+    "providers",
+    "ollama",
+    "lm-studio",
+    "custom-providers",
+    "model-metadata",
+    "configuration"
+  ]
+}

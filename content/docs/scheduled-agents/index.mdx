@@ -1,0 +1,32 @@
+---
+title: "Schedule an agent"
+description: "Run a recurring task on your computer and keep each result in its own chat."
+---
+
+Scheduled agents run a saved prompt on a recurring schedule. Each run starts a **new chat**, so you can inspect the result and tool work separately from earlier runs.
+
+Open **Scheduled Agents** from the sidebar. You can create a schedule through a conversation or enter it manually, then edit, pause, resume, or delete it from that page.
+
+## Where it runs
+
+Schedules belong to the device where you create them. The operating system launches AgentOne for the scheduled task; the app doesn't need to have its window open beforehand. This is desktop scheduling, so a powered-off computer can't perform the task at the scheduled time.
+
+A run may be delayed when your computer is asleep or unavailable. Behavior depends on the operating system and installation; don't rely on every missed occurrence being replayed. Keep the computer available when timing matters, and inspect the resulting chats after it returns.
+
+Your model connection, network, files, extensions, and service authorization must also be available on that device. A local model server needs to be running when the task needs it.
+
+## Model and tools
+
+The current schedule editor saves a title, cron schedule, and prompt. It doesn't offer a dedicated model or tool-configuration picker. New runs use the app's default setup for new chats, so check that setup before depending on a recurring task.
+
+Tool approvals still matter. A scheduled run can wait for approval instead of completing while you're away. Test the task with the same provider and tools, and review [approval behavior](/docs/tools/approvals).
+
+## Write a self-contained prompt
+
+Every run starts fresh. Include the sources, file paths, scope, and expected output in the saved prompt. A request like “do the same as yesterday” depends on context the new chat may not have.
+
+For example:
+
+> Check the official release pages for the three projects listed below. Summarize releases from the last 24 hours with links and dates. If nothing changed, say so. Don't edit files or publish anything.
+
+List the actual projects and URLs in the prompt. Follow [Create a scheduled agent](/docs/scheduled-agents/create) to set it up.

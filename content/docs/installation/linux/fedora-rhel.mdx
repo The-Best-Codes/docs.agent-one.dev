@@ -1,100 +1,18 @@
 ---
-title: Fedora & RHEL
-description: Step-by-step instructions for installing AgentOne on Fedora and RHEL using an .rpm package
+title: "Fedora and RHEL"
+description: "Install an RPM using your distribution package manager."
 ---
 
-<Callout>
-  Need help? [Join our Discord server.](https://www.agent-one.dev/discord)
-</Callout>
+Download an `.rpm` for your architecture from the [download page](https://www.agent-one.dev/download) or [release assets](https://github.com/AgentOne-Dev/agent-one-public/releases/latest).
 
-There are two primary ways to install AgentOne on Fedora and RHEL. We recommend installing from agent-one.dev.
+Open a terminal in the download folder and install the exact file:
 
-## Install from agent-one.dev
+```bash
+sudo dnf install ./AgentOne-VERSION-1.x86_64.rpm
+```
 
-<Steps>
-<Step>
+Replace the example filename with the one you downloaded. DNF resolves dependencies using your configured repositories.
 
-    ### Download the .rpm file
+Launch AgentOne from the application menu when installation finishes. Install newer RPMs using the same package manager so it can track the application and its dependencies.
 
-    Navigate to https://www.agent-one.dev/download in your browser. Make sure the `Linux` tab is selected, then download the `.rpm` file.
-
-</Step>
-<Step>
-
-    ### Install the package
-
-    Open a terminal and navigate to the directory where the file was downloaded (usually `~/Downloads`). Then run:
-
-    ```bash
-    sudo dnf install ./AgentOne-*.rpm
-    ```
-
-    Alternatively, you can use `rpm` directly:
-
-    ```bash
-    sudo rpm -i AgentOne-*.rpm
-    ```
-
-</Step>
-<Step>
-
-    ### Launch AgentOne
-
-    Once the installation is complete, you can launch AgentOne from your application menu or by running `agent-one` in your terminal.
-
-</Step>
-</Steps>
-
-## Install from GitHub Releases
-
-<Callout>
-  If you followed the steps in the [Install from
-  agent-one.dev](#install-from-agent-onedev) section, you can skip this section.
-</Callout>
-
-<Steps>
-<Step>
-
-    ### Find AgentOne on GitHub Releases
-
-    Open https://github.com/AgentOne-Dev/agent-one-public/releases.
-
-</Step>
-<Step>
-
-    ### Select the latest release
-
-    Usually, the latest release is the first release on the list. You'll see a green `Latest` badge next to the latest stable release. If the release has a `Pre-release` badge or title, don't use it unless you're a developer.
-
-    ![GitHub Releases page showing the latest release with a green "Latest" badge](/images/docs/installation/gh-releases/github-releases-latest.png)
-
-    Once you've found the latest release, click on its title (for example, `AgentOne 1.0.0`) to navigate to that release.
-
-</Step>
-<Step>
-
-    ### Download the .rpm file
-
-    Scroll to the bottom of the release page and expand the `Assets` accordion.
-    Look for a file named `AgentOne-x.x.x-1.x86_64.rpm` and click on it to download it.
-
-</Step>
-<Step>
-
-    ### Install the package
-
-    Open a terminal and navigate to the directory where the file was downloaded. Then run:
-
-    ```bash
-    sudo dnf install ./AgentOne-*.rpm
-    ```
-
-</Step>
-<Step>
-
-    ### Launch AgentOne
-
-    Once the installation is complete, you can launch AgentOne from your application menu or by running `agent-one` in your terminal.
-
-</Step>
-</Steps>
+Package compatibility depends on your distribution release and available dependencies. If installation fails, record the full error and your distribution version, then [ask for help](https://www.agent-one.dev/discord). Don't force an RPM past unresolved dependencies. Review the [other Linux formats](/docs/installation/linux) if needed.

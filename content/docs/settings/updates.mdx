@@ -1,0 +1,52 @@
+---
+title: "Updates and downloaded catalogs"
+description: "Check the app version, release notes, model list, and extension list separately."
+---
+
+Open **Configure AgentOne → Help & Updates**. The application and its model/extension catalogs update separately.
+
+<AnnotatedScreenshot
+  name="updates"
+  alt="Help and Updates showing app version and model and extension catalog update controls."
+  crop={[1020, 145, 1410, 1415]}
+  points={[
+    {
+      x: 2390,
+      y: 405,
+      label: "Check application updates and review the installed version.",
+    },
+    {
+      x: 2390,
+      y: 865,
+      label: "The model list has its own download and update controls.",
+    },
+    {
+      x: 2390,
+      y: 1350,
+      label: "The extension catalog is also downloaded separately.",
+    },
+  ]}
+  caption="Help & Updates in AgentOne 1.1.1. Catalog timestamps and states change as updates arrive."
+/>
+
+## App updates
+
+Check the displayed version and release notes. Use the available update control for your installation, or update through the Store/package manager you used. Direct releases, Microsoft Store, Snap, and community packages can have different publication times.
+
+For manual updates, close the old app and open the installed new copy. Don't remove application data as an ordinary update step. Export important chats before uninstalling or clearing data.
+
+## Model and extension lists
+
+Since 1.1.1, these lists aren't bundled with the app. AgentOne downloads them when first needed, saves them locally, and checks for updates periodically, including while the app remains open. The normal automatic interval is 24 hours.
+
+Use the controls here for a manual download or update. An initial internet connection is needed before a fresh installation has those catalog entries available. Your saved local configuration is separate from the downloaded catalog.
+
+An empty provider catalog can hide built-in models. An empty extension catalog can prevent discovery of registry entries. Check the appropriate list's status instead of assuming the app needs a reinstall.
+
+## Interrupted downloads
+
+Restore the network connection and use the list's download/update control again. Extension list updates support resuming interrupted work. Inspect the visible error if the operation repeatedly fails.
+
+Downloaded lists aren't the same as model weights, an extension runtime, or service authorization. Updating the model catalog doesn't download an Ollama model, and updating the extension catalog doesn't sign in to a service.
+
+For recovery steps, use [model troubleshooting](/docs/troubleshooting/models) or [extension troubleshooting](/docs/troubleshooting/extensions).

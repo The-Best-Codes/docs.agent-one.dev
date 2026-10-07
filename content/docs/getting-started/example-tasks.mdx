@@ -1,0 +1,42 @@
+---
+title: "Useful first tasks"
+description: "Practical prompts for writing, research, files, and recurring work."
+---
+
+A useful prompt tells the agent the goal, the material it should use, and what a finished result looks like. Add limits that matter: length, audience, folder, source dates, or whether it should make changes.
+
+## Work with text you already have
+
+> Rewrite the notes below as a friendly customer update. Explain what changed and what the customer should do next. Keep the meaning, use plain language, and keep it under 250 words.
+
+Paste the notes after your request. This works with a normal text model and doesn't need tools.
+
+## Understand a file
+
+> Summarize the attached report. Give me the main findings, the evidence behind them, and questions I should ask before making a decision. Refer to page numbers when you can.
+
+[Attach the file](/docs/chat/attachments) and choose a model that supports its format. If the provider rejects it, try text excerpts or a supported format rather than changing a capability checkbox and hoping it will work.
+
+## Research a current topic
+
+> Find the official documentation for these three tools and compare how they handle local data. Link the source for each claim. Tell me where the documentation leaves something unclear.
+
+Enable [web tools](/docs/tools/web) and use a model that supports tool calls. Open the sources yourself when a detail matters. A model's confident wording doesn't establish that a source supports it.
+
+## Work in a folder
+
+> Read the Markdown files in `/absolute/path/to/project`. Make a list of broken internal links. Show me the proposed fixes before editing any files.
+
+AgentOne's [file and command tools](/docs/tools/files-and-commands) work on the computer running the app. Use the real path for your operating system. Read tool requests before approving changes.
+
+## Use another service
+
+> Look up the project notes in my connected service and draft an update here. Include links to the original notes.
+
+Install an appropriate [extension](/docs/extensions/install), enable it, and connect the service account if needed. Describe whether you want a draft in the chat or an actual change in the service.
+
+## Repeat a task
+
+> Help me create a scheduled agent for weekdays at 8 AM. It should check the official release pages for these projects and summarize new releases with links. Ask me for the project list before creating the schedule.
+
+Read [scheduled agents](/docs/scheduled-agents) first. Write the final recurring prompt so it makes sense in a fresh chat, and keep the required provider and tools available on that device.

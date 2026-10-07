@@ -1,0 +1,31 @@
+---
+title: "Read answers aloud"
+description: "Configure a speech provider and play assistant responses."
+---
+
+AgentOne can read assistant text aloud using a configured text-to-speech provider. Speech setup is separate from the model you use to chat.
+
+## Set up speech
+
+1. Open **Configure AgentOne → Providers** and find **Text-to-Speech Providers**.
+2. Choose a supported provider: **OpenAI**, **ElevenLabs**, **Hume**, or **Google**.
+3. Enter the provider's speech API key and choose an available model and voice.
+4. Return to a conversation and use the read-aloud action on an assistant message containing text.
+
+The playback control appears when a speech provider is configured. It won't appear for an empty or tool-only answer. Use the playback control to stop audio when needed.
+
+## Understand the connection
+
+Your speech provider receives the answer text to generate audio. It may charge for speech separately from ordinary model calls. An AgentOne account or a chat-provider subscription doesn't automatically provide speech API access.
+
+Speech API keys are stored through the app's system credential storage. See [data and sync](/docs/account/data-and-sync) for the difference between local credentials and synchronized preferences.
+
+## Upgrading from an older version
+
+LMNT is no longer supported. Choose one of the current providers if it was selected previously. If a saved Google speech model fails after updating, reselect a current model from the available options; an older identifier may have been retired.
+
+## If playback fails
+
+Check the selected speech provider, its key, its model, and any account usage limits. Test a short assistant answer before trying a long one. If ordinary chat works but speech fails, troubleshoot the speech configuration rather than replacing your chat model.
+
+Include the speech provider, model, app version, and exact error when [asking for help](/docs/troubleshooting). Leave the API key out of screenshots and logs.

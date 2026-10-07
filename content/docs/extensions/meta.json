@@ -1,0 +1,11 @@
+{
+  "title": "Extensions",
+  "pages": [
+    "index",
+    "install",
+    "authentication-and-approvals",
+    "custom-http",
+    "custom-local",
+    "manage"
+  ]
+}

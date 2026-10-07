@@ -1,0 +1,37 @@
+---
+title: "Configure model metadata"
+description: "Use accurate IDs, capabilities, and limits for manually configured models."
+---
+
+Model metadata tells AgentOne how to represent and use a model. The downloaded directory supplies metadata for many models; local and custom entries may need your input.
+
+## Use the API model ID
+
+The model **ID** must match what the server accepts. A display name is only a readable label. Copy the ID from the provider's documentation or its model endpoint; preserve slashes, punctuation, and version suffixes.
+
+A provider prefix used internally by an app is not necessarily part of the provider's raw model ID. When adding a model, use the API's identifier rather than inventing an AgentOne-style prefix.
+
+## Describe capabilities accurately
+
+| Capability  | What it means                                                           |
+| ----------- | ----------------------------------------------------------------------- |
+| Tool use    | The model can return structured tool calls supported by the API         |
+| Image input | The model can accept image content                                      |
+| Attachments | The provider can accept the supported non-text input you intend to send |
+| Reasoning   | The model/API exposes compatible reasoning content                      |
+
+Enabling a checkbox doesn't change the model or unlock provider access. If a capability is marked incorrectly, the app can offer an action that the provider later rejects.
+
+Automatic discovery is useful for IDs, but a compatible `/models` response may not describe every capability or limit. Confirm those against the provider and model documentation.
+
+## Context and output limits
+
+The **context window** describes the total input/output capacity supported by the model. The **maximum output** describes how much the model can generate. Use the provider's documented values for that specific model and deployment.
+
+Don't confuse these with display thresholds in [Performance settings](/docs/settings/performance). Display thresholds affect rendering; they don't change what an API accepts.
+
+## Catalog overrides
+
+For a built-in provider, **Add Model Override** lets you add an exact model ID or override the metadata of an existing catalog model. Match the ID exactly when changing a catalog entry.
+
+If newly released models are missing, refresh the model list in [Help & Updates](/docs/settings/updates) before building an override. If only one entry needs fixing, make the smallest change and test it with a short prompt.

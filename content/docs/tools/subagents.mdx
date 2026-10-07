@@ -1,0 +1,34 @@
+---
+title: "Use a subagent"
+description: "Delegate a focused task and inspect its work from the main chat."
+---
+
+The Subagent tool lets the main agent delegate a focused task to another model run. It is useful when a larger request has a distinct piece of research or analysis that can be completed separately.
+
+Enable **Subagent** under **Tools** and use a model with tool support. Starting a subagent requires approval by default.
+
+## Give it a bounded task
+
+For example:
+
+> Have a subagent compare the installation prerequisites for these tools using their official docs. Ask it to return a short table with source links, then use that result in your recommendation.
+
+The main agent decides whether to call the tool. Merely asking for a subagent doesn't establish that one was started; look for its tool card.
+
+## What the subagent uses
+
+The subagent uses the main run's model and configuration, instructions, and available tools. It cannot start more subagents. Its model calls can add provider usage, and any external actions still depend on the tools and access you've made available.
+
+The subagent has its own task prompt and produces a result for the main agent. Treat the result as part of the evidence for the final answer, especially when it involves research or changes.
+
+## Watch progress and approvals
+
+Expand the subagent card to inspect its messages and tool work. Pending approvals inside the subagent need a response before those actions can continue. The main conversation can appear to be waiting while delegated work is paused.
+
+Tool approval behavior follows the configured run and tools. Read [the approval guide](/docs/tools/approvals) before assuming that delegated work always pauses for confirmation.
+
+## If it stalls
+
+Check the expanded card for a provider error, tool error, or pending approval. A task that's too broad can also consume its step budget without a useful conclusion. Try a narrower task with explicit sources and an expected output.
+
+Stopping the overall response doesn't undo actions that a subagent already completed. Check returned files and service results before retrying.

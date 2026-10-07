@@ -1,0 +1,66 @@
+---
+title: "Use tools"
+description: "Give AgentOne capabilities beyond generating text."
+---
+
+Tools let a model request actions such as searching the web, reading a file, running a command, or using a connected service. AgentOne runs available tools and puts their results back into the conversation.
+
+The selected model needs tool-calling support. A model can write about a task without being able to run a tool to complete it.
+
+## Built-in tools and extensions
+
+**Built-in tools** come with AgentOne. Configure them under **Configure AgentOne → Tools**. **Extensions** are MCP servers you install or add separately under **Browse Extensions**.
+
+<AnnotatedScreenshot
+  name="tools"
+  alt="Built-in Tools settings showing Web and Files tools with switches and settings buttons."
+  crop={[1020, 145, 1410, 1430]}
+  points={[
+    {
+      x: 2170,
+      y: 572,
+      label: "Enable or disable an individual built-in tool.",
+    },
+    {
+      x: 2280,
+      y: 572,
+      label:
+        "Open the tool settings for approval behavior and supported limits.",
+    },
+    {
+      x: 2350,
+      y: 572,
+      label: "Reset returns that tool's configuration to its defaults.",
+    },
+  ]}
+  caption="Built-in tools are configured separately from extensions."
+/>
+
+## Available kinds of work
+
+| Tool group       | Purpose                                                   |
+| ---------------- | --------------------------------------------------------- |
+| Web              | Search, fetch page content, and query Wikipedia           |
+| Files            | View, create, edit, and delete local files                |
+| Commands         | Run a shell command and inspect its output                |
+| Memory           | Add, remove, or replace concise persistent notes          |
+| Subagent         | Delegate a focused task to another model run              |
+| Settings         | Inspect or change supported app settings                  |
+| Scheduled agents | List, create, update, or delete recurring tasks           |
+| Utilities        | Get the date/time, wait, or describe the next tool action |
+
+The app includes switches for individual tools. Turn off a capability you don't want made available. Some tools also expose limits such as result length, URL count, or command timeout.
+
+## Approval and availability are separate
+
+A tool must be enabled to be offered to the model. If it's available, its approval configuration and the chat's **Tool Behavior** determine whether AgentOne asks before running it.
+
+[The approval guide](/docs/tools/approvals) explains the default requirements and per-chat overrides. Extension authentication is another separate step; a server can be installed but unable to call a service until you connect an account.
+
+## Write a task the tools can complete
+
+Name the files, sources, or service involved. Say what you want returned and whether changes should be made. For example:
+
+> Read these three files and list inconsistencies in the dates. Propose fixes here before editing them.
+
+Watch the tool cards for progress. If a tool fails, its result can explain why. A model's final claim that it finished is most useful when the returned files, links, or service results support it.

@@ -1,0 +1,40 @@
+---
+title: "Use LM Studio"
+description: "Start LM Studio\u2019s API server and select its model in AgentOne."
+---
+
+[LM Studio](https://lmstudio.ai) lets you download and serve models on your computer. AgentOne connects to its OpenAI-compatible endpoint.
+
+## Prepare LM Studio
+
+Install LM Studio, download a model that fits your device, and make it available to the server. Open LM Studio's **Developer** tab and start the API server. Its [server guide](https://lmstudio.ai/docs/developer/core/server) also documents the CLI option `lms server start`.
+
+Keep the server available while AgentOne uses it. Model loading and inference can take time, especially near your device's memory limits.
+
+## Configure AgentOne
+
+1. Open **Configure AgentOne → Providers**.
+2. Open **LM Studio** under local providers.
+3. Set the base URL to `http://127.0.0.1:1234/v1`, unless you changed the server's port.
+4. Use **Auto** to discover models or add the server's exact model ID.
+5. Save changes, turn the provider on, and select its model in chat.
+
+If you configured authentication or another endpoint, match that configuration using the provider's available headers or [a custom provider](/docs/models/custom-providers).
+
+## Verify the connection
+
+Try this read-only request:
+
+```bash
+curl http://127.0.0.1:1234/v1/models
+```
+
+A response confirms that the endpoint is reachable from your computer. It doesn't prove that every listed model is loaded, can fit in memory, or supports tools and files. Check those details in LM Studio.
+
+Then send a small text-only prompt from AgentOne. Add tools or attachments after basic chat succeeds.
+
+## If it doesn't work
+
+Match the actual server port and include `/v1` in the AgentOne base URL. Check that the server is running and the model can load. Look at both the AgentOne error and LM Studio's server logs.
+
+For capability errors, use [model metadata](/docs/models/model-metadata) and the model's documentation. Metadata describes capabilities; it doesn't add them. For more connection checks, see [model troubleshooting](/docs/troubleshooting/models).

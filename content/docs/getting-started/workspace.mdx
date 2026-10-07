@@ -1,0 +1,65 @@
+---
+title: "Find your way around"
+description: "Learn the chat controls, sidebar, settings, and navigation."
+---
+
+Most work starts in the chat window. The sidebar keeps your conversations and the three main configuration areas close by.
+
+<AnnotatedScreenshot
+  name="workspace"
+  alt="AgentOne chat window with the sidebar, attachment button, model selector, and model configuration."
+  crop={[0, 65, 2900, 1560]}
+  points={[
+    { x: 480, y: 182, label: "New Chat starts a separate conversation." },
+    { x: 460, y: 263, label: "Search chats and open search options." },
+    {
+      x: 470,
+      y: 1486,
+      label: "Open extensions, scheduled agents, or settings from the sidebar.",
+    },
+    { x: 1055, y: 1550, label: "Attach files to your next message." },
+    {
+      x: 2250,
+      y: 1550,
+      label:
+        "Choose the model, then use the adjacent sliders button to configure it.",
+    },
+  ]}
+  caption="The desktop chat layout. Colors, fonts, and background depend on your appearance settings."
+/>
+
+## The sidebar
+
+**New Chat** starts a fresh conversation. Chat titles appear below the search box. Select a title to reopen it; use its menu for actions such as renaming, exporting, and deleting.
+
+**Search chats…** helps you find a conversation. Its options control where the app searches. See [search and organization](/docs/chat/organize) for title searches, message searches, sorting, and date groups.
+
+At the bottom you'll find:
+
+- **Browse Extensions:** discover and configure external tools.
+- **Scheduled Agents:** create and manage recurring tasks.
+- **Configure AgentOne:** account, AI providers, appearance, chat behavior, built-in tools, performance, shortcuts, and updates.
+
+Close the sidebar using the button at its top. You can customize the [collapsed sidebar layout](/docs/settings/appearance). Use **Cmd+B** on macOS or **Ctrl+B** on Windows/Linux to toggle it.
+
+## The message box
+
+Type your prompt, attach files with the paperclip, choose a model, then send. The sliders button beside the model opens [model configuration](/docs/models/configuration), including tool approval behavior and generation settings.
+
+The button changes while a response is running. You can stop, resume an interrupted response, or send another message to redirect the model. See [stop, steer, and resume](/docs/chat/steer-and-resume).
+
+## Inside a conversation
+
+Answers can include formatted text, reasoning sections, files, and tool calls. Expand a tool card to inspect what was requested and what it returned. A pending approval needs your response before that action can run.
+
+Message action buttons let you copy text, edit a user message, branch from an assistant answer, or regenerate an answer. [The action guide](/docs/chat/edit-and-branch) explains which actions change the current conversation.
+
+Long conversations can show a navigation rail on the right. Use it to jump between messages and preview nearby content. It is hidden in compact layouts and conversations with only one user message. Turn it on or off in **Settings → Chats**.
+
+The usage display links to the Account tab when you're using AgentOne's built-in provider. Other providers have their own usage dashboards.
+
+## Settings and other pages
+
+**Configure AgentOne** normally opens the Account tab. Choose another tab from the settings navigation, then use **Back to Chat** to return. Extensions and scheduled agents have their own pages with a **Back** button.
+
+If a control looks different from a screenshot, check your app version under **Help & Updates**. These screenshots show 1.1.1 with a customized dark appearance.

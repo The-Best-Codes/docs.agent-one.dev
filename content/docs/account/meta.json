@@ -1,0 +1,10 @@
+{
+  "title": "Account and data",
+  "pages": [
+    "index",
+    "sign-in",
+    "credits-and-plans",
+    "data-and-sync",
+    "dashboard"
+  ]
+}

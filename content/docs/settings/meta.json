@@ -1,0 +1,12 @@
+{
+  "title": "Settings",
+  "pages": [
+    "index",
+    "appearance",
+    "chat-behavior",
+    "keyboard-shortcuts",
+    "performance",
+    "updates",
+    "deep-links"
+  ]
+}

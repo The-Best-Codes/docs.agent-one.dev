@@ -1,0 +1,45 @@
+---
+title: "Work with files and commands"
+description: "Read local material, review edits, and understand command controls."
+---
+
+These tools operate on the computer running AgentOne. They can access the files and programs available to the app's user, subject to operating-system and package restrictions.
+
+## Start with an exact path
+
+Give AgentOne an absolute path and a clear scope. For example:
+
+> Read the Markdown files in `/Users/me/Projects/example`. List outdated links and show proposed replacements before editing.
+
+On Windows, use the correct drive and folder path, such as `C:\Users\me\Documents\example`. A path on another device isn't accessible just because you use the same AgentOne account.
+
+## File tools
+
+**View file** reads file content, with a configurable character limit. **Create file**, **Edit file**, and **Delete file** modify the filesystem and require approval by default.
+
+Read the proposed path and content before approving. Keep a backup or use version control for material you want to be able to restore. Stopping the chat after an edit doesn't undo the edit.
+
+If only part of a file is shown, check the tool's read limit. If a file is missing or denied, verify its path, the app's access, and any sandbox restrictions from the installation method.
+
+## Command execution
+
+**Execute command** passes a command to the system shell. The tool can run scripts, build tools, and other installed programs. It requires approval by default.
+
+The tool card shows output while the command runs. Check standard output, errors, and the exit result before concluding that the task succeeded. The default timeout is 120 seconds, and command scrollback is limited by configuration.
+
+A long-running process can expose two distinct controls:
+
+- **Stop** requests that the process be terminated.
+- **Skip** lets the agent continue while the command can still be running.
+
+Skipping isn't the same as stopping. If a command has side effects, inspect whether it is still active before starting another attempt.
+
+## The app and your terminal can differ
+
+A GUI app may have a different executable search path or environment from your terminal. If `npx`, `node`, `python`, or another command isn't found, check where it is installed and use an absolute path when appropriate.
+
+The working directory and shell syntax also matter. Give the command an explicit path or directory when the task depends on it, and use commands appropriate for your operating system.
+
+## Diagnose one thing at a time
+
+Test reading a small known file before asking for a folder-wide edit. Test a simple command before a long script. If a tool request never starts, check [approvals](/docs/tools/approvals); if it starts and fails, inspect the returned error rather than repeatedly regenerating the model answer.

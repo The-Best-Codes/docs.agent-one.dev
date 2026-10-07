@@ -1,11 +1,16 @@
 {
   "title": "Documentation",
   "pages": [
-    "---Getting Started---",
     "index",
+    "getting-started",
     "installation",
-    "desktop-app",
-    "---Guides---",
-    "...guides"
+    "chat",
+    "models",
+    "tools",
+    "extensions",
+    "scheduled-agents",
+    "account",
+    "settings",
+    "troubleshooting"
   ]
 }

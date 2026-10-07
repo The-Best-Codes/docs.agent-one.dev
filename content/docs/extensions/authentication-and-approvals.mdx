@@ -1,0 +1,67 @@
+---
+title: "Authentication and approvals"
+description: "Connect a service account and choose how its tools are allowed to run."
+---
+
+Open **Browse Extensions → Advanced** on an installed extension. This view combines server status, approval controls, connection fields, and authentication for supported remote servers.
+
+<AnnotatedScreenshot
+  name="extension-details"
+  alt="Extension advanced configuration showing enablement, default approvals, per-tool approvals, and URL."
+  crop={[1060, 280, 780, 1135]}
+  points={[
+    {
+      x: 1810,
+      y: 481,
+      label:
+        "The server must be enabled to load tools and check its authorization.",
+    },
+    {
+      x: 1810,
+      y: 579,
+      label: "Set the baseline approval requirement for this server.",
+    },
+    {
+      x: 1810,
+      y: 688,
+      label: "Override the baseline for individual loaded tools.",
+    },
+    {
+      x: 1810,
+      y: 1085,
+      label:
+        "Authentication status is checked separately from installation and enablement.",
+    },
+  ]}
+  caption="A disabled remote extension. Enable it before expecting tool or authentication status."
+/>
+
+## Authentication states
+
+- **Enable server to see auth status:** the extension is off.
+- **Checking auth status…:** the app is discovering whether the server needs authentication.
+- **No authorization required:** no OAuth authorization is needed by the detected server.
+- **Connect your account for full access** or **Not connected:** use Connect if the server's supported sign-in flow is available.
+- **Connected:** the service account is connected; Disconnect removes that connection.
+
+Some servers require static credentials in headers or environment variables. Their authentication may not use this OAuth status display.
+
+## Connect a remote account
+
+Use **Connect**, complete the authorization in your browser, and return to AgentOne. Check the account and permissions the service asks you to grant. Then verify the Connected status and try a small tool request.
+
+If the browser doesn't return to the app, check the [desktop URL handler](/docs/settings/deep-links). If authorization succeeds but calls fail, confirm the connected account has access to the resource you're requesting.
+
+## Set approvals
+
+**Require Approval By Default** sets the server's baseline. **Per-tool approvals** lets you choose a different requirement for individual tools once the list has loaded.
+
+These are draft changes in Advanced. Use **Save changes** to apply them, or **Cancel** to discard them. The chat's [Tool Behavior](/docs/tools/approvals) can override whether approvals are requested.
+
+Authorization isn't approval for every future action. A connected account provides access; your configured approval behavior determines whether you review each requested action.
+
+## Disconnect or disable
+
+Disconnect removes the OAuth connection without uninstalling the extension. Turning the server off keeps its configuration but makes its tools unavailable. Uninstalling removes the local extension configuration.
+
+If you need to revoke service permissions fully, also check the service's own connected-app settings. Don't assume removing a local entry revokes an authorization held by the remote service.

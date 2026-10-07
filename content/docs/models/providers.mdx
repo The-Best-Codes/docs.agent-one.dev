@@ -1,0 +1,89 @@
+---
+title: "Connect an AI provider"
+description: "Enable a provider, save its API key, and check its models."
+---
+
+Open **Configure AgentOne → Providers**. Built-in providers have a switch in the list and a configuration dialog opened from the provider name or settings button. The app also has separate sections for local and custom providers.
+
+<AnnotatedScreenshot
+  name="providers"
+  alt="AI Providers settings with built-in provider switches and local providers."
+  crop={[1030, 105, 1410, 1480]}
+  points={[
+    {
+      x: 2385,
+      y: 382,
+      label: "The switch enables or disables a provider's models.",
+    },
+    {
+      x: 2220,
+      y: 382,
+      label:
+        "Open a provider's dialog to edit its key, headers, and model list.",
+    },
+    {
+      x: 2385,
+      y: 1438,
+      label: "Local providers are configured separately from cloud providers.",
+    },
+  ]}
+  caption="Enabling a provider and configuring its connection are separate steps."
+/>
+
+## 1. Get API access
+
+Use the provider's official developer console to create an API key with access to the models you want. Check whether API billing or credits need to be enabled. Consumer chat subscriptions and developer API accounts can have different entitlements.
+
+AgentOne includes integrations for providers such as OpenAI, Anthropic, Google Generative AI, Groq, Mistral, OpenRouter, and many others. Use the current list in the app rather than a fixed list of model names from an old guide.
+
+## 2. Configure the provider
+
+1. Open the provider's dialog.
+2. Paste the API key into **API Key**. The show/hide button lets you check the value locally; keep it hidden when sharing screenshots.
+3. Add **HTTP Headers** only if the provider or gateway requires them.
+4. Review **Models**, adding an exact model ID if it isn't already available.
+5. Choose **Save** after making changes. **Revert** discards unsaved changes.
+6. Make sure the provider's switch is on.
+
+<AnnotatedScreenshot
+  name="provider-dialog"
+  alt="Anthropic provider configuration with API Key, HTTP Headers, Models, and metadata overrides."
+  crop={[770, 215, 1360, 1260]}
+  points={[
+    {
+      x: 2030,
+      y: 450,
+      label:
+        "Enter the provider API key. The eye button controls its visibility.",
+    },
+    {
+      x: 2050,
+      y: 570,
+      label: "Optional request headers belong in HTTP Headers.",
+    },
+    {
+      x: 2050,
+      y: 805,
+      label: "Add models using the API's exact identifiers.",
+    },
+  ]}
+  caption="A provider dialog. Save and Revert appear when the configuration has unsaved changes."
+/>
+
+## 3. Test the connection
+
+Return to chat, choose one of the provider's models, and send a short text-only request. This tests credentials and model access with fewer variables than a file or tool-heavy task.
+
+If it fails, check the provider named in the error, the selected model ID, account billing, and any required headers. A saved key or enabled switch isn't proof that the provider accepted the request.
+
+## Catalog models and your own entries
+
+The model directory downloads separately from the app. Use **Add Model Override** to add an exact model ID or change metadata for a catalog model. An entry with the same ID overrides that model's metadata.
+
+Use [model metadata](/docs/models/model-metadata) when configuring capabilities and limits. Check [Help & Updates](/docs/settings/updates) to refresh catalog data without reinstalling the app.
+
+## Device setup
+
+Provider enablement, headers, custom models, and credentials need attention on each device. Don't expect settings sync to reproduce a provider connection. API keys use system credential storage; see [data and sync](/docs/account/data-and-sync).
+
+For a different base URL, use [custom providers](/docs/models/custom-providers). For localhost inference, use [Ollama](/docs/models/ollama) or [LM Studio](/docs/models/lm-studio).

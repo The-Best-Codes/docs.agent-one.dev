@@ -1,0 +1,30 @@
+---
+title: "Use AgentOne models"
+description: "Sign in and use the Default model with AgentOne credits."
+---
+
+AgentOne's built-in connection lets you start without creating a separate model-provider account or pasting an external API key.
+
+## Connect
+
+Open **Configure AgentOne → Account** and sign in. Return to chat, open the model selector, and choose **Default** under **AgentOne**. If the provider is hidden or disabled, check **Providers** and the available model choices.
+
+## How Default works
+
+Default uses AgentOne's model routing. The service can choose among available models and adjust routing as availability changes. Treat it as a managed model option rather than a promise to use one fixed model for every request.
+
+If you need a specific provider and model ID, [configure that provider directly](/docs/models/providers) and select its model instead.
+
+## Credits and usage
+
+Requests through AgentOne use your AgentOne credit allowance. A task with several model steps, retries, or subagents can make more than one request. Check usage in the app's Account tab and the [website dashboard](https://www.agent-one.dev/dashboard).
+
+Using your own external provider or a local model follows that connection's usage rules. It doesn't turn an external provider bill into an AgentOne credit charge. Speech and third-party extensions may also have separate costs.
+
+See [credits and plans](/docs/account/credits-and-plans) for account limits and subscription management.
+
+## If it doesn't work
+
+Check that you're signed in to the intended account and have credits available. If your desktop sign-in and website account don't match, correct the sign-in before troubleshooting the model.
+
+The model catalog needs an initial download. If Default doesn't appear, open **Help & Updates** and check the model list. If requests fail, include the provider name and exact error when [asking for help](/docs/troubleshooting/models).

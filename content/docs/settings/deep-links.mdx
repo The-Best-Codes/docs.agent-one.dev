@@ -1,0 +1,43 @@
+---
+title: "Desktop links"
+description: "Open a prepared chat or extension setup through agent-one:// links."
+---
+
+Desktop links let a browser or another application open AgentOne. Installation must register the `agent-one://` protocol. A browser may ask before opening the app.
+
+## Prepare a new chat
+
+The `new-chat` link uses version `v=1` and an optional URL-encoded `message`:
+
+```text
+agent-one://new-chat?v=1&message=Explain%20this%20in%20three%20sentences
+```
+
+It opens a new-chat view with the initial message in the composer. Review the text and model before sending. Opening the link doesn't itself send the prepared message.
+
+## Prepare an extension installation
+
+The `mcp/install` link accepts `name` and a URL-encoded JSON `config`. HTTP configuration uses `type: "http"` and `url`; STDIO configuration uses `command` and optional `args`. Include `v=1` in links you create.
+
+For example, the decoded HTTP configuration would be:
+
+```json
+{
+  "type": "http",
+  "url": "https://mcp.example.com/mcp"
+}
+```
+
+The link opens extension setup for review. Check the endpoint or local command before completing installation. Never include a secret in a shareable URL; URLs can appear in browser history or other records.
+
+For a STDIO link, command and arguments are combined into the setup command. Review quoting and paths for your operating system. Use [custom extension setup](/docs/extensions/custom-local) if the prepared command needs correction.
+
+## Scheduled links
+
+The `cron` link is used internally to launch a saved schedule by ID. It is tied to schedules on that device; it isn't a portable link that creates the same task elsewhere.
+
+## A link fails
+
+Check that AgentOne is installed, the scheme is registered, and the link uses a supported ID and version. Reinstalling from the same official package source can restore integration, but export important chats before removing app data.
+
+On Linux, standalone file execution may not register desktop URL handling. Consider the appropriate native package and verify your desktop session's handler. This also matters for sign-in and extension authorization callbacks.

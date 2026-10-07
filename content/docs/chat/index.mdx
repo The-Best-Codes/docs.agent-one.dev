@@ -1,0 +1,38 @@
+---
+title: "Work with chats"
+description: "Keep context, inspect tool work, and choose the right message action."
+---
+
+A chat holds the conversation for a task: your messages, the model's answers, and its tool calls. Reply in the same chat when the previous context matters. Start **New Chat** for an unrelated task.
+
+## Give the model enough context
+
+Explain what you want and attach or paste the material it needs. A useful request might be:
+
+> Compare the two attached proposals. Focus on delivery dates, responsibilities, and unanswered questions. Give me a table, then a short recommendation based only on the proposals.
+
+Models have a context limit. A long chat, large files, and large tool results all consume space. If the provider reports that the context is too long, reduce the input or start a new chat with a concise summary and the files you still need. Changing a display performance threshold won't increase the model's context window.
+
+## Read an answer and its tool work
+
+Expand reasoning or tool cards when you want more detail. A tool request describes an action; its result shows what the tool returned. An approval prompt means the agent is waiting for you. Read the requested path, command, URL, or service action before responding.
+
+Some providers separate reasoning from the final answer. Other models return thinking inside tags. AgentOne can optionally [extract think tags](/docs/settings/performance); this is a display compatibility setting, not a guarantee that a model exposes its internal reasoning.
+
+## Choose your next action
+
+| You want to…                                        | Use                                           |
+| --------------------------------------------------- | --------------------------------------------- |
+| Add context or ask a follow-up                      | Send another message                          |
+| Correct a user message                              | [Edit](/docs/chat/edit-and-branch)            |
+| Try the answer again                                | [Regenerate](/docs/chat/edit-and-branch)      |
+| Explore another direction and preserve the original | [Branch](/docs/chat/edit-and-branch)          |
+| Redirect a running answer                           | [Steer](/docs/chat/steer-and-resume)          |
+| Stop work or recover from an interruption           | [Stop or resume](/docs/chat/steer-and-resume) |
+| Keep a copy outside the app                         | [Export](/docs/chat/export-and-delete)        |
+
+## Find your place
+
+Use the navigation rail in a long chat to jump between messages. Its previews use response text when available, so reasoning doesn't obscure the answer preview. Use the jump-to-bottom control to return to the latest response when it is enabled in Chat settings.
+
+A draft's text survives switching chats while the app is open. It isn't a durable backup, and it doesn't include your attachments. Check the model, files, and draft before sending after switching conversations.

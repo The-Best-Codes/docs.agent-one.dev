@@ -1,0 +1,52 @@
+---
+title: "Configure a chat\u2019s model"
+description: "Choose tool behavior and tune generation settings deliberately."
+---
+
+Click the sliders button beside the model selector. The configuration applies to the current chat's model behavior; it doesn't create a different provider connection.
+
+<AnnotatedScreenshot
+  name="model-config"
+  alt="Model configuration menu with tool behavior and generation controls."
+  crop={[2050, 855, 570, 700]}
+  points={[
+    {
+      x: 2550,
+      y: 1075,
+      label: "Tool Behavior controls approval handling for this chat.",
+    },
+    {
+      x: 2550,
+      y: 1210,
+      label: "Leave sampling settings unset to use the provider's defaults.",
+    },
+  ]}
+  caption="Model configuration. Some controls depend on the selected model and provider."
+/>
+
+## Tool Behavior
+
+| Option                | Effect                                                   |
+| --------------------- | -------------------------------------------------------- |
+| **Per-tool approval** | Uses each enabled tool's configured approval requirement |
+| **Always ask**        | Asks before every tool call                              |
+| **YOLO (auto-run)**   | Runs available tools without approval prompts            |
+| **No tools**          | Doesn't expose tools to the model for this chat          |
+
+These settings affect available tools; they don't enable a disabled tool or give a model tool-calling support. Read [tool approvals](/docs/tools/approvals) before changing the behavior for file access, commands, or connected services.
+
+## Generation controls
+
+**Temperature** and **Top P** influence how the model samples text. **Top K**, frequency and presence penalties, and **Seed** are supported only by some providers and models. An unset value lets the provider use its default.
+
+Avoid changing several sampling settings at once. If a request begins failing after a change, reset the configuration and test again. Reasoning models may reject parameters that another model accepts.
+
+**Max tokens** limits generated output, subject to the provider's own limit. It doesn't enlarge the context window. If an answer is cut short, check both the configured limit and the provider's response.
+
+**Max steps** limits the number of steps in a model/tool sequence. A low value can stop a multi-step task before completion; a high value allows more work and potentially more usage. It doesn't guarantee success or cap every external side effect.
+
+## Resetting
+
+Use the reset control to return to defaults when diagnosing a provider error or when you no longer need a custom setting. A reset affects configuration; it doesn't undo tool actions or remove conversation messages.
+
+For scheduled runs, don't assume the editor saves a dedicated model configuration. See [scheduled-agent behavior](/docs/scheduled-agents) and test with the device's current model setup.

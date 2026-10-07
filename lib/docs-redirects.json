@@ -1,0 +1,292 @@
+[
+  {
+    "source": "/docs/desktop-app/account-and-sync",
+    "destination": "/docs/account",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/account-and-sync/profile-and-instructions",
+    "destination": "/docs/tools/memory",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/account-and-sync/sign-in-and-plan",
+    "destination": "/docs/account/sign-in",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/account-and-sync/sync-settings",
+    "destination": "/docs/account/data-and-sync",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/attachments",
+    "destination": "/docs/chat/attachments",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/branching-conversations",
+    "destination": "/docs/chat/edit-and-branch",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/chat-sidebar",
+    "destination": "/docs/chat/organize",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/editing-messages",
+    "destination": "/docs/chat/edit-and-branch",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/exports-and-deletion",
+    "destination": "/docs/chat/export-and-delete",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats",
+    "destination": "/docs/chat",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/memory",
+    "destination": "/docs/tools/memory",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/message-actions",
+    "destination": "/docs/chat/edit-and-branch",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/reading-aloud",
+    "destination": "/docs/chat/read-aloud",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/chats/searching-chats",
+    "destination": "/docs/chat/organize",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/getting-started/desktop-layout",
+    "destination": "/docs/getting-started/workspace",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/getting-started/first-provider",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/getting-started",
+    "destination": "/docs/getting-started/first-chat",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/getting-started/onboarding",
+    "destination": "/docs/getting-started/first-chat",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/getting-started/your-first-chat",
+    "destination": "/docs/getting-started/first-chat",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app",
+    "destination": "/docs/getting-started/workspace",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/settings/appearance",
+    "destination": "/docs/settings/appearance",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/settings/chat-settings",
+    "destination": "/docs/settings/chat-behavior",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/settings/help-and-updates",
+    "destination": "/docs/settings/updates",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/settings",
+    "destination": "/docs/settings",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/settings/keyboard-shortcuts",
+    "destination": "/docs/settings/keyboard-shortcuts",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/settings/performance",
+    "destination": "/docs/settings/performance",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/shortcuts-and-links/deep-links",
+    "destination": "/docs/settings/deep-links",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/shortcuts-and-links",
+    "destination": "/docs/settings/keyboard-shortcuts",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/shortcuts-and-links/keyboard-shortcuts",
+    "destination": "/docs/settings/keyboard-shortcuts",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/troubleshooting/extensions",
+    "destination": "/docs/troubleshooting/extensions",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/troubleshooting",
+    "destination": "/docs/troubleshooting",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/troubleshooting/notifications-and-updates",
+    "destination": "/docs/settings/chat-behavior",
+    "permanent": true
+  },
+  {
+    "source": "/docs/desktop-app/troubleshooting/providers-and-models",
+    "destination": "/docs/troubleshooting/models",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/custom-extensions/canva-mcp",
+    "destination": "/docs/extensions/custom-http",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/custom-extensions/fast-filesystem-mcp",
+    "destination": "/docs/extensions/custom-local",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/custom-extensions",
+    "destination": "/docs/extensions/custom-http",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/extensions/approval-and-auth",
+    "destination": "/docs/extensions/authentication-and-approvals",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/extensions/built-in-tools",
+    "destination": "/docs/tools",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/extensions/dangling-extensions",
+    "destination": "/docs/extensions/manage",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/extensions/extension-registry",
+    "destination": "/docs/extensions/install",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/extensions",
+    "destination": "/docs/extensions",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/extensions/install-extension",
+    "destination": "/docs/extensions/install",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/anthropic",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/automatic-model-detection",
+    "destination": "/docs/models/ollama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/built-in-providers",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/custom",
+    "destination": "/docs/models/custom-providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/google",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/groq",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers",
+    "destination": "/docs/models",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/lm-studio",
+    "destination": "/docs/models/lm-studio",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/local-providers",
+    "destination": "/docs/models/ollama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/mistral",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/model-config",
+    "destination": "/docs/models/configuration",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/model-metadata",
+    "destination": "/docs/models/model-metadata",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/model-selector",
+    "destination": "/docs/models",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/ollama-local-llms",
+    "destination": "/docs/models/ollama",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/providers/openai",
+    "destination": "/docs/models/providers",
+    "permanent": true
+  },
+  {
+    "source": "/docs/guides/smithery-integration",
+    "destination": "/docs/extensions/install",
+    "permanent": true
+  }
+]

@@ -1,0 +1,32 @@
+---
+title: "Export and delete chats"
+description: "Save conversation data and remove chats deliberately."
+---
+
+## Export one chat
+
+Open the menu beside its sidebar title, choose **Export Chat**, and use the JSON export option. Save the file somewhere you can find it, then open it to confirm it contains the conversation you expected.
+
+JSON preserves structured conversation data. It is useful for keeping a copy outside the app and for inspecting a chat with another tool. This doesn't promise that an export can be imported back into the current app; there is no general chat-import workflow documented here.
+
+For a single piece of text, use the copy button on a message instead.
+
+## Export several chats
+
+Select the conversations using the sidebar selection controls and choose the export action. Bulk export writes the selected chats into one JSON file. Check the selected count and verify the saved file before deleting anything.
+
+Exports may include prompts, responses, tool arguments, tool results, and file references or embedded content. Review the file before sharing it with someone else.
+
+## Delete one or several chats
+
+Choose the deletion action from a chat's menu, or select several chats for bulk deletion. Review the confirmation and the number of selected conversations.
+
+There is no chat trash or restore workflow to rely on. Export anything you need first. Deleting a conversation removes its local chat data; it doesn't undo completed file changes, service actions, or provider requests.
+
+## Deleting a scheduled agent
+
+A schedule and its run chats are separate. Deleting a scheduled agent stops its future runs but leaves the chats from earlier runs. Delete those conversations separately if you want to remove them too.
+
+## Moving to another computer
+
+[Settings sync](/docs/account/data-and-sync) doesn't copy the complete local chat database. Keep exports of important conversations and configure the new device's providers and extensions before using it. Avoid deleting the original application data until you've checked what you actually have on the new computer.

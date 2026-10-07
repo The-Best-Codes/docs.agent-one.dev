@@ -1,39 +1,24 @@
 ---
-title: Arch Linux
-description: Step-by-step instructions for installing AgentOne on Arch Linux using the AUR
+title: "Arch Linux"
+description: "Use the AUR package or a direct Linux download."
 ---
 
-<Callout>
-  Need help? [Join our Discord server.](https://www.agent-one.dev/discord)
-</Callout>
+The AUR package is [`agent-one-bin`](https://aur.archlinux.org/packages/agent-one-bin). Review the package details and build instructions before installing it. AUR packaging and update availability may differ from the direct release.
 
-## Install from the AUR
+If you already use an AUR helper, install with that helper:
 
-The easiest way to install AgentOne on Arch Linux is through the AUR package [`agent-one-bin`](https://aur.archlinux.org/packages/agent-one-bin).
+```bash
+yay -S agent-one-bin
+```
 
-<Steps>
-<Step>
+Or:
 
-    ### Install with an AUR helper
+```bash
+paru -S agent-one-bin
+```
 
-    If you have `yay` installed, run:
+These commands assume the chosen helper is installed. After installation, open AgentOne from your application menu.
 
-    ```bash
-    yay -S agent-one-bin
-    ```
+Update through the same package manager. Check [Help & Updates](/docs/settings/updates) for the application version and downloaded catalogs.
 
-    You can also use other AUR helpers like `paru`:
-
-    ```bash
-    paru -S agent-one-bin
-    ```
-
-</Step>
-<Step>
-
-    ### Launch AgentOne
-
-    Once the installation is complete, you can launch AgentOne from your application menu or by running `agent-one` in your terminal.
-
-</Step>
-</Steps>
+If the AUR package is unavailable or outdated, check the [official release assets](https://github.com/AgentOne-Dev/agent-one-public/releases/latest) and [AppImage guide](/docs/installation/linux/appimage). For a packaging issue, include the package version, build output, and distribution details when asking for help.

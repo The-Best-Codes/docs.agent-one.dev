@@ -1,33 +1,24 @@
 ---
-title: Snap Store
-description: Step-by-step instructions for installing AgentOne via the Snap Store on any Linux distribution
+title: "Snap Store"
+description: "Install and update AgentOne through Snap."
 ---
 
-<Callout>
-  Need help? [Join our Discord server.](https://www.agent-one.dev/discord)
-</Callout>
+Open [AgentOne in the Snap Store](https://snapcraft.io/agent-one), or search for **AgentOne** in a software center that supports Snap.
 
-AgentOne is available on the [Snap Store](https://snapcraft.io/agent-one) and works on any Linux distribution with snap support. If you have an app center that supports Snapcraft installed, open it and search `AgentOne`, then install AgentOne by following the steps in your app-store.
+With snapd installed, you can use:
 
-## Install from the Snap Store
+```bash
+sudo snap install agent-one
+```
 
-<Steps>
-<Step>
+Launch AgentOne from the application menu. If you need to request a package refresh:
 
-    ### Install AgentOne
+```bash
+sudo snap refresh agent-one
+```
 
-    Open a terminal and run:
+The Store page shows the version available in each channel. Store publishing can lag the direct release, so check that page before assuming an in-app feature is present.
 
-    ```bash
-    sudo snap install agent-one
-    ```
+Snap confinement can affect file access, commands, and desktop integration. If a tool can see a path in your terminal but not in AgentOne, check the package's permissions and interfaces. Include the Snap installation method when [reporting an issue](/docs/troubleshooting).
 
-</Step>
-<Step>
-
-    ### Launch AgentOne
-
-    Once the installation is complete, you can launch AgentOne from your application menu or by running `agent-one` in your terminal.
-
-</Step>
-</Steps>
+Need a different format? See [Linux installation](/docs/installation/linux).

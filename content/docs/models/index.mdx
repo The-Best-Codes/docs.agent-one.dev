@@ -1,0 +1,54 @@
+---
+title: "Choose a model connection"
+description: "Understand AgentOne, external providers, and local inference."
+---
+
+A **provider** is the service or local server that runs a model. A **model** is the specific AI you choose inside that provider. AgentOne supports its own connection, built-in provider integrations, local servers, and custom OpenAI-compatible endpoints.
+
+## Choose your route
+
+| Route                        | Credentials and usage                          | Guide                                             |
+| ---------------------------- | ---------------------------------------------- | ------------------------------------------------- |
+| AgentOne's Default model     | Sign in to AgentOne; uses AgentOne credits     | [AgentOne models](/docs/models/agentone)          |
+| A built-in external provider | Use that provider's API key and usage account  | [Connect a provider](/docs/models/providers)      |
+| Ollama on your computer      | Run a local server and download a model        | [Ollama](/docs/models/ollama)                     |
+| LM Studio on your computer   | Load a model and start its API server          | [LM Studio](/docs/models/lm-studio)               |
+| Another compatible API       | Configure base URL, credentials, and model IDs | [Custom providers](/docs/models/custom-providers) |
+
+A provider's consumer chat subscription may be separate from its API access. Check the provider's own account and API requirements before expecting an API key to work.
+
+## Pick from the composer
+
+Click the model name beside the send button. Search or browse the provider groups, then select a model. The list reflects provider enablement, credentials, downloaded catalog data, and locally configured models.
+
+<AnnotatedScreenshot
+  name="model-selector"
+  alt="AgentOne model selection menu showing provider groups and search."
+  crop={[1790, 825, 720, 780]}
+  points={[
+    {
+      x: 2260,
+      y: 908,
+      label: "Search the models available through your configured providers.",
+    },
+    {
+      x: 2260,
+      y: 1057,
+      label:
+        "Select a model within its provider group. Default belongs to AgentOne.",
+    },
+  ]}
+  caption="The model list depends on your providers and their current catalogs."
+/>
+
+If a model is missing, use **Add more models** or open **Providers**. Check the provider before manually adding a model: its switch may be off, its key may be missing, or its list may still be loading.
+
+## Match capabilities to the task
+
+Use a model with **tool support** for extensions and built-in tools. Use **image input** for screenshots or photos, and check **attachment support** for other files. A model can support one capability without supporting another.
+
+[Model metadata](/docs/models/model-metadata) controls how AgentOne represents those capabilities. The provider API remains the authority on what the model can actually do.
+
+## Tune only what you need
+
+Leave generation settings unset for provider defaults. Change [model configuration](/docs/models/configuration) when you have a specific reason, such as limiting output or changing tool approval behavior. Unsupported sampling parameters can cause an otherwise working model request to fail.

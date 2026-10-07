@@ -1,29 +1,58 @@
 ---
-title: Introduction
-description: Learn what AgentOne is and how to get started.
-icon: BookOpen
+title: "Welcome to AgentOne"
+description: "Choose your models, connect your tools, and get things done."
 ---
 
-AgentOne is a fully-featured AI agent desktop application. To learn more about what AgentOne is, [visit the website](https://www.agent-one.dev).
+AgentOne is a desktop AI app for macOS, Windows, and Linux. You can chat, research a topic, work with files, connect extensions, and schedule an agent to run later. Use AgentOne's built-in model, bring your own provider, or run a model on your computer.
 
-## Key Features
+These guides cover the current desktop app, including the changes in **1.1.1**. Screenshots show the macOS app; most controls work the same way on Windows and Linux.
 
-- **8,500+ AI models** from [60+ providers](/docs/guides/providers) including OpenAI, Anthropic, Google, xAI, Mistral, Groq, Cerebras, and more
-- **19,000+ built-in extensions** connecting to apps like Gmail, Notion, Slack, GitHub, Google Calendar, and more
-- **Multiple agents** can work on different parts of a task (or different tasks) simultaneously
-- **[MCP server support](/docs/guides/custom-extensions)** allows you to extend AgentOne with [Model Context Protocol](https://modelcontextprotocol.io) servers
-- **Private by default**, as your data stays on your device
-- **Cross-device sync** for settings. Synchronization for chats and API keys (encrypted) are coming soon to the Pro plan.
-- **Bring your own key** allows you to use your own API keys directly with no price markup
+## Start here
 
-## Getting Started
+<Cards>
+  <Card title="Install AgentOne" href="/docs/installation">
+    Pick the download for your computer and get the app running.
+  </Card>
+  <Card title="Your first chat" href="/docs/getting-started/first-chat">
+    Choose a model, send a message, and try a useful task.
+  </Card>
+  <Card title="Connect a provider" href="/docs/models/providers">
+    Use your own API key or a local model.
+  </Card>
+  <Card title="Add an extension" href="/docs/extensions/install">
+    Connect an MCP server and check its tools and authorization.
+  </Card>
+  <Card title="Schedule an agent" href="/docs/scheduled-agents/create">
+    Set up a recurring task on your computer.
+  </Card>
+  <Card title="Fix a problem" href="/docs/troubleshooting">
+    Find the likely cause and the next thing to check.
+  </Card>
+</Cards>
 
-To get started, visit [www.agent-one.dev](https://www.agent-one.dev) or read the [Installation Guide](/docs/installation).
+## What do you want to do?
 
-## Get Help from the Community
+| Your task                                          | Where to go                                                |
+| -------------------------------------------------- | ---------------------------------------------------------- |
+| Understand the buttons and sidebar                 | [Find your way around](/docs/getting-started/workspace)    |
+| Ask about a document or image                      | [Attachments](/docs/chat/attachments)                      |
+| Correct a prompt or try another answer             | [Edit, regenerate, and branch](/docs/chat/edit-and-branch) |
+| Redirect an agent while it works                   | [Stop, steer, and resume](/docs/chat/steer-and-resume)     |
+| Find an old conversation                           | [Search and organize chats](/docs/chat/organize)           |
+| Let the agent browse, write files, or run commands | [Tools and approvals](/docs/tools)                         |
+| Keep preferences across conversations              | [Instructions and memory](/docs/tools/memory)              |
+| Check your credits or subscription                 | [Credits and plans](/docs/account/credits-and-plans)       |
+| Understand sync and where data goes                | [Data and settings sync](/docs/account/data-and-sync)      |
+| Change shortcuts, appearance, or notifications     | [Settings](/docs/settings)                                 |
 
-If you encounter bugs, missing features, or just want to chat with the AgentOne community & team, check out the resources below:
+## A few things to know
 
-- [AgentOne Forum](https://forum.agent-one.dev) - Public forum for AgentOne. The forum is currently in beta. Expect occasional downtime.
-- [AgentOne Discord Community](https://www.agent-one.dev/discord) - Our public community on Discord. We recommend this server if you want to be notified for new releases, but the forum is the best place to make feature requests or report bugs.
-- [AgentOne Public GitHub Repo](https://github.com/AgentOne-Dev/agent-one-public) - The public-facing side of AgentOne desktop on GitHub. Source code and other miscellaneous information is shared there.
+**The model and the app do different jobs.** AgentOne manages your chats and tools. The selected provider runs the model and determines its capabilities, availability, and usage limits. Adding a model to a list doesn't give your account access to it.
+
+**Tools do real work.** A model can request a tool call, and AgentOne can run it after any required approval. You can choose the approval behavior for a chat and configure individual tools. Start with [the approval guide](/docs/tools/approvals) before giving an agent access to files or services.
+
+**Scheduled agents run on your device.** Each run creates a new chat. Your computer, provider, and extensions need to be available for the work to finish. See [how scheduling works](/docs/scheduled-agents).
+
+**Settings sync isn't a backup of everything.** Extensions and provider setup are configured separately on each device. Read [what sync includes](/docs/account/data-and-sync) before moving to another computer.
+
+Need a hand? [Join our Discord](https://www.agent-one.dev/discord). Want to explore the code? AgentOne is [open source](https://github.com/The-Best-Codes/agent-one).

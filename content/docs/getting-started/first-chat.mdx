@@ -1,0 +1,52 @@
+---
+title: "Your first chat"
+description: "Get from a fresh installation to a useful conversation."
+---
+
+You only need a working model connection to start chatting. Extensions are optional, and you can add them when a task needs them.
+
+## 1. Install and open the app
+
+[Install AgentOne](/docs/installation) for your operating system, then open it. Complete any setup prompts you see. You can return to configuration later using **Configure AgentOne** at the bottom of the sidebar.
+
+AgentOne downloads its model catalog when it first needs it. Give the first launch a moment to finish loading while you're online. If the list stays empty, see [catalog and update problems](/docs/troubleshooting/models).
+
+## 2. Choose how to connect
+
+| Use this                | When it fits                                                   | What you need                                 |
+| ----------------------- | -------------------------------------------------------------- | --------------------------------------------- |
+| **AgentOne → Default**  | You want to start without setting up a separate model provider | An AgentOne account with available credits    |
+| **Your own provider**   | You already use a model API or want a specific provider        | An API key and access to the selected model   |
+| **Ollama or LM Studio** | You want to run a model on your computer                       | A running local server and a downloaded model |
+
+For the built-in option, open **Configure AgentOne → Account** and sign in. For your own API key, use [the provider guide](/docs/models/providers). For a local model, follow [Ollama](/docs/models/ollama) or [LM Studio](/docs/models/lm-studio).
+
+## 3. Pick a model
+
+Click the model name beside the send button. Models are grouped by provider; you can search the list. Choose **Default** under AgentOne or a model from your configured provider.
+
+If your provider is missing, open **Configure AgentOne → Providers** and check its switch, API key, and model list. An enabled switch alone doesn't establish a working connection.
+
+## 4. Send a small test
+
+Try this first:
+
+> Explain the difference between a model and an AI agent in three sentences.
+
+Type it in **Ask anything…** and press **Enter**, or click the send arrow. The default is Enter to send and Shift+Enter for a new line. You can [change that](/docs/settings/chat-behavior).
+
+A successful answer confirms that your selected model is reachable. If you get an error, read the provider name in the error and use [the model troubleshooting guide](/docs/troubleshooting/models). Don't add extensions to solve a basic connection problem.
+
+## 5. Give it a real task
+
+Tell AgentOne what you want, provide the relevant information, and describe the result. For example:
+
+> Turn these notes into a short project update. Start with what shipped, then explain what is blocked and what happens next. Keep it under 200 words.
+
+Paste your notes below the prompt, or [attach a file](/docs/chat/attachments). For current information, ask for sources and enable [web tools](/docs/tools/web). For another service, [install an extension](/docs/extensions/install).
+
+## What happens next?
+
+Your conversation appears in the sidebar after it is created. Start **New Chat** for a separate task. Keep replying in the current chat when you want the model to use its existing context.
+
+You can [edit your prompt](/docs/chat/edit-and-branch), [stop or steer an answer](/docs/chat/steer-and-resume), and [export a conversation](/docs/chat/export-and-delete). Draft message text is kept when you switch chats during the current app session; attachments aren't part of that draft, so check them before sending.

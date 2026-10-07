@@ -1,0 +1,38 @@
+---
+title: "Stop, steer, and resume"
+description: "Control a running response and recover after an interruption."
+---
+
+You can change direction while AgentOne is working. The response controls sit beside the message box and change with the chat's current state.
+
+## Stop a response
+
+Choose the stop control to halt the current generation. The default global shortcut is **Shift+Escape**. Stopping leaves the response produced so far in the chat.
+
+Stopping a response doesn't undo a tool action that already completed. If an agent edited a file or changed something in a service, inspect that result separately.
+
+## Steer while it works
+
+Type a new message during an active response, then use the interrupt/send control. AgentOne stops the current response and sends your new instruction so the model can continue in the direction you want.
+
+The default interrupt shortcut is **Cmd+Enter** on macOS or **Ctrl+Enter** on Windows/Linux. This is separate from the normal submit shortcut. Set both under **Configure AgentOne → Chats**.
+
+Good steering messages are concrete:
+
+> Focus on the installation problem first. Show me the likely cause before making changes.
+>
+> Use the official sources only, and include the date of each release.
+
+Check the selected model and attachments before sending; your new message becomes part of the conversation.
+
+## Resume after a stop or error
+
+When available, **Resume** continues an interrupted response using the existing chat. Fix the cause of an error before resuming: restore connectivity, correct credentials, or resolve the tool failure.
+
+Resume and regenerate have different purposes. Resume continues from the partial conversation state. Regenerate asks for a fresh response from a chosen message. Either can make additional provider requests and use tools.
+
+## An agent seems stuck
+
+Check whether a tool is waiting for approval. If so, approve or reject the request after reviewing it. A local extension may also be starting or waiting on authorization; inspect its status under **Browse Extensions → Advanced**.
+
+If the provider stopped responding, stop the run and read the error before retrying. For repeated problems, test a simple new chat without tools to separate a model connection issue from a tool issue. See [troubleshooting](/docs/troubleshooting).

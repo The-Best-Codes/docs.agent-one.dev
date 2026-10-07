@@ -1,0 +1,42 @@
+---
+title: "Troubleshoot AgentOne"
+description: "Find the failing part of a workflow and collect useful details."
+---
+
+Start with the smallest task that reproduces the problem. Read the exact error, then check the part responsible for it: provider, tool, extension, account, or desktop installation.
+
+| Symptom                                 | First place to check                                                            |
+| --------------------------------------- | ------------------------------------------------------------------------------- |
+| App won't open                          | [Your installation guide](/docs/installation)                                   |
+| Models missing or messages fail         | [Models and providers](/docs/troubleshooting/models)                            |
+| Extension off, stuck, or unauthorized   | [Extensions](/docs/troubleshooting/extensions)                                  |
+| Scheduled run missing or incomplete     | [Schedules](/docs/troubleshooting/schedules)                                    |
+| Sign-in doesn't return to the app       | [Sign-in](/docs/account/sign-in) and [desktop links](/docs/settings/deep-links) |
+| Settings don't appear on another device | [What settings sync includes](/docs/account/data-and-sync)                      |
+| Notifications missing                   | [Chat notification settings](/docs/settings/chat-behavior) and OS permission    |
+| Long conversation renders slowly        | [Performance](/docs/settings/performance)                                       |
+| Speech fails but chat works             | [Read aloud](/docs/chat/read-aloud)                                             |
+
+## Separate model and tool problems
+
+Try a new chat with a short text-only prompt and **No tools**. If it fails, fix the model connection first. If it succeeds, enable the relevant tool and test one small action. Then add attachments or a larger task.
+
+If the agent appears idle, check for a pending approval or authorization request before stopping and retrying.
+
+## Before reinstalling
+
+Check the app version and downloaded list status in **Help & Updates**. Restore connectivity or correct one configuration field at a time. Reinstallation usually won't fix invalid API credentials, a wrong endpoint, or an unavailable local runtime.
+
+Don't clear app data as the first troubleshooting step. [Export important chats](/docs/chat/export-and-delete) before any reset or removal.
+
+## Ask for help
+
+[Join our Discord](https://www.agent-one.dev/discord), or check the [source repository's issues](https://github.com/The-Best-Codes/agent-one/issues). Include:
+
+- App version, operating system, and installation method.
+- Provider/model or extension name involved.
+- Exact error text and the steps that produced it.
+- Whether a small text-only chat or individual tool test succeeds.
+- A screenshot of the relevant status or failure when useful.
+
+Remove API keys, authorization headers, tokens, personal files, and private conversation content from anything you share. Keep the error wording and relevant non-secret configuration so someone can reproduce the issue.

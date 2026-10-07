@@ -1,0 +1,42 @@
+---
+title: "Add a custom provider"
+description: "Connect another OpenAI-compatible endpoint with explicit model IDs."
+---
+
+Use a custom provider for an OpenAI-compatible server or gateway that doesn't fit a built-in integration. Compatibility needs to include the requests and features you plan to use, not just a `/models` endpoint.
+
+## Prepare the details
+
+Get the provider's API base URL, authentication requirements, and exact model IDs from its documentation. Check whether the endpoint supports streaming, tools, images, and other attachments.
+
+A typical base URL looks like `https://api.example.com/v1`. Use the documented base URL rather than appending a full `/chat/completions` request path.
+
+## Add the provider
+
+1. Open **Configure AgentOne → Providers** and find custom providers.
+2. Choose the add-provider control.
+3. Enter a recognizable name and the API base URL.
+4. Add the API key or required HTTP headers.
+5. Add at least one model using its exact API ID.
+6. Set the model's capabilities and limits using [model metadata](/docs/models/model-metadata).
+7. Save, enable the provider, and select its model in the composer.
+
+Custom providers use an explicit model list. Don't assume a new endpoint automatically supplies the same catalog as a built-in provider.
+
+## Start with a simple test
+
+Send a short text prompt with generation settings left at defaults. Then test one supported capability at a time, such as tool calling or an image.
+
+If a gateway routes to another provider, errors can come from either layer. Record the endpoint, model ID, and error, leaving credentials out of your report.
+
+## Headers and keys
+
+Use the API key field when the provider accepts ordinary API-key authentication. Add custom headers only when required. Check for conflicting authorization headers if you configure both.
+
+Provider API keys use system credential storage. Custom URLs, headers, and model definitions are local configuration; don't assume arbitrary header values have the same storage protection as API keys. See [data and sync](/docs/account/data-and-sync).
+
+## A model appears but fails
+
+An entry in the selector only means AgentOne has a configured model. Common causes include a wrong model ID, incomplete OpenAI compatibility, missing account access, unsupported parameters, or an incorrect base URL.
+
+Use [model troubleshooting](/docs/troubleshooting/models) to distinguish those cases. Disabling the provider hides its models without deleting the setup; removing it removes that local configuration.

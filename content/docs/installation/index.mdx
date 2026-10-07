@@ -1,28 +1,36 @@
 ---
-title: Installation
-description: Download and install AgentOne on your operating system.
-icon: Download
+title: "Install AgentOne"
+description: "Choose the right download and installation method for your device."
 ---
 
-AgentOne is available on Windows, macOS, and Linux. Click on your OS below to read its installation guide.
-
-## Select Your Platform
+Get the desktop app from the [AgentOne download page](https://www.agent-one.dev/download). It detects your operating system, but you can select another tab if you need to.
 
 <Cards>
-  <Card href="/docs/installation/windows" title="Windows">
-    Install AgentOne on Windows
+  <Card title="macOS" href="/docs/installation/macos">
+    Choose Apple Silicon or Intel, then move the app to Applications.
   </Card>
-  <Card href="/docs/installation/macos" title="macOS">
-    Install AgentOne on macOS
+  <Card title="Windows" href="/docs/installation/windows">
+    Install from the Microsoft Store or use the standalone installer.
   </Card>
-  <Card href="/docs/installation/linux" title="Linux">
-    Install AgentOne on Linux
+  <Card title="Linux" href="/docs/installation/linux">
+    Choose an AppImage, native package, Snap, or AUR package.
   </Card>
 </Cards>
 
-## System Requirements
+## Pick the correct build
 
-- A 64-bit processor
-- Preferably at least 4 gigabytes of RAM
-- Preferably at least 500 megabytes of available storage space
-- Access to the internet
+Choose the operating system and CPU architecture that match your computer. On a Mac, **About This Mac** shows whether you have an Apple chip or an Intel processor. On Linux, `uname -m` helps identify your architecture; `x86_64` corresponds to amd64/x64, while `aarch64` corresponds to ARM64.
+
+Available packages can differ between releases. If a format or architecture is missing from the website, check the assets on the [official release page](https://github.com/AgentOne-Dev/agent-one-public/releases/latest). Use the stable release unless you intentionally want to test a prerelease.
+
+## After installation
+
+Open AgentOne and follow [Your first chat](/docs/getting-started/first-chat). The model and extension catalogs download separately when needed, so an installed app may still need an internet connection to populate those lists.
+
+For updates, use your installation source and [Help & Updates](/docs/settings/updates). Store and community packages can arrive at a different time from the direct desktop release.
+
+## Reinstalling or changing computers
+
+Export important chats before uninstalling, replacing an installation, or removing application data. An installer isn't a backup, and [settings sync](/docs/account/data-and-sync) doesn't copy your whole workspace. Configure providers and extensions on the new device before relying on them.
+
+The application source is available in [The-Best-Codes/agent-one](https://github.com/The-Best-Codes/agent-one). Downloadable releases are also distributed through [AgentOne-Dev/agent-one-public](https://github.com/AgentOne-Dev/agent-one-public/releases/latest); the two repositories serve different purposes.

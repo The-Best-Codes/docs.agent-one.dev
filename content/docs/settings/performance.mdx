@@ -1,0 +1,38 @@
+---
+title: "Performance settings"
+description: "Reduce rendering work and tune extension startup without changing model limits."
+---
+
+Open **Configure AgentOne → Performance**. These controls primarily affect the desktop interface and extension runtime. They don't enlarge a model's context window or change a provider's speed.
+
+## Rendering limits
+
+Large content can be expensive to format. AgentOne uses thresholds for rich rendering:
+
+| Content      | Shipped threshold |
+| ------------ | ----------------- |
+| Message text | 50,000 characters |
+| Code block   | 10,000 characters |
+| Tool result  | 15,000 characters |
+
+Above the relevant threshold, content can use a lighter rendering path. Lowering thresholds can help with very large messages; increasing them asks the app to do more rendering work.
+
+These limits are separate from what a tool reads or a model receives. For example, increasing the tool-result rendering threshold won't fetch additional text from a web page.
+
+## Long-chat virtualization
+
+**Virtualize Chat Messages** reduces rendering work in long conversations. Its shipped threshold is 20 messages. Keep it enabled for large chats unless you're diagnosing a specific scrolling or rendering problem.
+
+Virtualization changes how the app renders a conversation; it doesn't delete older messages or reduce the provider's context by itself.
+
+## Extension startup
+
+**Extension Runtime** includes the parallel loading limit. The default is 8. A lower value can reduce simultaneous startup pressure when you have several local processes; a higher value can allow more servers to load at once.
+
+If one extension can't start, fix its command, endpoint, or authorization rather than using concurrency as a substitute for that diagnosis.
+
+## Streaming controls
+
+Streaming throttle and think-tag extraction are under **Chats**. See [chat behavior](/docs/settings/chat-behavior). Change one setting at a time and compare the same conversation before deciding whether it helped.
+
+For a slow provider response, check provider/server performance and task size. For a slow interface with very large content, start with rendering thresholds and virtualization.

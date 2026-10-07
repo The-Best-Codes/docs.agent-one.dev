@@ -1,0 +1,64 @@
+---
+title: "Change chat behavior"
+description: "Set sorting, notifications, message controls, streaming, and automatic titles."
+---
+
+Open **Configure AgentOne → Chats**.
+
+<AnnotatedScreenshot
+  name="chat-settings"
+  alt="Chat settings including sidebar sort, grouping, notifications, action row, and submit/interrupt keys."
+  crop={[1020, 145, 1410, 1430]}
+  points={[
+    {
+      x: 2390,
+      y: 240,
+      label:
+        "Choose whether messages, activity, or creation determines sidebar order.",
+    },
+    { x: 2390, y: 385, label: "Optionally group the sidebar by time." },
+    {
+      x: 2390,
+      y: 815,
+      label: "Choose when completion and attention notifications appear.",
+    },
+    {
+      x: 2390,
+      y: 1100,
+      label: "Submit and interrupt are separate keyboard behaviors.",
+    },
+  ]}
+  caption="Chat controls. Saved preferences may differ from the shipped defaults below."
+/>
+
+## Sorting and grouping
+
+**Recently messaged first** is the default sort. **Recently active first** also reflects reopening or configuring a chat; **Newest chats first** uses creation time. Optional time grouping divides the full sidebar into date ranges and is hidden during search. See [Search and organize chats](/docs/chat/organize).
+
+## Message and input controls
+
+**Markdown Highlighting** changes highlighting in the composer/editor. **Message Action Row** controls whether actions appear always or on hover.
+
+**Submit Key** controls ordinary sending; the default is Enter. Shift+Enter inserts a newline with that default. **Interrupt Key** controls sending while a response is active; the default is Cmd+Enter on macOS or Ctrl+Enter on Windows/Linux. Choose the option that fits how you write multiline prompts.
+
+**Regenerate on Save** controls whether editing a user message restarts the conversation from that point. It is on by default. The message editor also offers this option beside Save. See [editing and branching](/docs/chat/edit-and-branch).
+
+The scroll-to-bottom button, message navigation rail, and chat status indicators provide navigation and progress cues. The rail is hidden in compact layouts and very short conversations even when enabled.
+
+## Notifications
+
+Choose **Always**, **When window unfocused**, or **Never**. The default is When window unfocused. Notifications can tell you that a response arrived or the agent needs attention.
+
+The operating system must also allow AgentOne notifications. If you don't receive them, check the app setting, OS permission, and any focus/do-not-disturb mode. A pending approval still needs a response in the app.
+
+## Streaming experience
+
+**Extract Reasoning from Think Tags** separates compatible tagged thinking from answer text. Leave it off unless the model's output needs it. It doesn't force a model to provide reasoning.
+
+**Throttle** controls how frequently streaming updates are rendered. The default is 100 ms. Increasing it can reduce rendering work at the cost of less frequent visual updates; it doesn't make the provider generate faster.
+
+## Chat titles
+
+Choose AI title generation, the first user message, or a custom phrase using the available title controls. AI generation can use a fallback when it fails. Character limits control the displayed title length; the title-generation output budget applies to the title request, not the main answer.
+
+If chat answers work but titles fail, check these settings separately. You can [rename chats manually](/docs/chat/organize).

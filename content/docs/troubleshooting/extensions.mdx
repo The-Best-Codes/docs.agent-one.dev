@@ -1,0 +1,44 @@
+---
+title: "Fix extension problems"
+description: "Separate installation, process startup, MCP connection, authorization, and tool execution."
+---
+
+Open **Browse Extensions → Advanced** for the affected server. Read its status and error before changing configuration.
+
+## The registry is empty or missing an entry
+
+Check the **extension list** under **Help & Updates** and restore connectivity for its download. The browser shows a limited first page; search for the server or service before assuming it isn't in the catalog.
+
+An unsupported transport needs a compatible server/transport. A server absent from the catalog can still be added manually if you have valid MCP connection details.
+
+## Installed but off
+
+Enable the server and wait for tool loading. Installation stores configuration; it doesn't guarantee that the server is enabled or ready. In Advanced, save draft changes with **Save changes**.
+
+## A local process won't start
+
+Check the runtime, full executable path, arguments, environment variables, and folder permissions. A command that works in your terminal can fail in a GUI app with a different search path.
+
+Use the extension's documented command. STDIO requires a running MCP server, and ordinary log text on its protocol output can interfere with communication. Include process error output when asking the developer for help.
+
+## A remote server won't connect
+
+Use the exact MCP endpoint, not the service homepage or ordinary API URL. Check network access and required headers. For OAuth, connect the intended account and verify that the browser returns to AgentOne.
+
+An authentication error can mean a missing or expired connection, insufficient service permission, or the wrong account. Check those before increasing timeouts.
+
+## Per-tool approvals are empty
+
+The server must be enabled and successfully loaded before its tools appear. Check whether it is starting, connecting, in error, or exposing no tools. Resolve that state first.
+
+## The model doesn't call the tool
+
+Choose a model with tool support and check **Tool Behavior**. No tools hides tools from the model. Describe the intended service and action clearly so the model can choose the relevant tool.
+
+## A call hangs or fails
+
+Check for pending approval, including inside a subagent. If it ran, read the tool result and service error. Test a small action and verify access to the specific resource. Increase a timeout only for a valid operation that needs longer.
+
+## It worked on another computer
+
+Extensions, credentials, local runtimes, and paths need setup on each device. Settings sync won't reproduce them. Follow [installation](/docs/extensions/install) or [custom setup](/docs/extensions/custom-local) on the current device.

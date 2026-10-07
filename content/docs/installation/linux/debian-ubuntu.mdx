@@ -1,102 +1,20 @@
 ---
-title: Debian & Ubuntu
-description: Step-by-step instructions for installing AgentOne on Debian and Ubuntu using a .deb package
+title: "Debian and Ubuntu"
+description: "Install the downloaded .deb with dependency resolution."
 ---
 
-<Callout>
-  Need help? [Join our Discord server.](https://www.agent-one.dev/discord)
-</Callout>
+Download the `.deb` for your architecture from the [download page](https://www.agent-one.dev/download) or [release assets](https://github.com/AgentOne-Dev/agent-one-public/releases/latest).
 
-There are several ways to install AgentOne on Debian and Ubuntu. We recommend installing from agent-one.dev.
+In a terminal, go to the download folder and install the exact file:
 
-## Install from agent-one.dev
+```bash
+sudo apt install ./AgentOne_VERSION_amd64.deb
+```
 
-<Steps>
-<Step>
+Replace `AgentOne_VERSION_amd64.deb` with the downloaded filename. Including `./` tells apt to install a local file; apt can resolve dependencies from your configured repositories.
 
-    ### Download the .deb file
+Open AgentOne from the application menu. If you can't find it, check that apt finished successfully and read any dependency error before retrying.
 
-    Navigate to https://www.agent-one.dev/download in your browser. Make sure the `Linux` tab is selected, then download the `.deb` file.
+For later manual updates, install the newer `.deb` through the same method. Check [Help & Updates](/docs/settings/updates) for application and catalog versions.
 
-</Step>
-<Step>
-
-    ### Install the package
-
-    Open a terminal and navigate to the directory where the file was downloaded (usually `~/Downloads`). Then run:
-
-    ```bash
-    sudo dpkg -i AgentOne_*.deb
-    sudo apt-get install -f
-    ```
-
-    The second command resolves any missing dependencies.
-
-</Step>
-<Step>
-
-    ### Launch AgentOne
-
-    Once the installation is complete, you can launch AgentOne from your application menu or by running `agent-one` in your terminal.
-
-</Step>
-</Steps>
-
-## Install from GitHub Releases
-
-<Callout>
-  If you followed the steps in the [Install from
-  agent-one.dev](#install-from-agent-onedev) section, you can skip this section.
-</Callout>
-
-<Steps>
-<Step>
-
-    ### Find AgentOne on GitHub Releases
-
-    Open https://github.com/AgentOne-Dev/agent-one-public/releases.
-
-</Step>
-<Step>
-
-    ### Select the latest release
-
-    Usually, the latest release is the first release on the list. You'll see a green `Latest` badge next to the latest stable release. If the release has a `Pre-release` badge or title, don't use it unless you're a developer.
-
-    ![GitHub Releases page showing the latest release with a green "Latest" badge](/images/docs/installation/gh-releases/github-releases-latest.png)
-
-    Once you've found the latest release, click on its title (for example, `AgentOne 1.0.0`) to navigate to that release.
-
-</Step>
-<Step>
-
-    ### Download the .deb file
-
-    Scroll to the bottom of the release page and expand the `Assets` accordion.
-    Look for a file named `AgentOne_x.x.x_amd64.deb` and click on it to download it.
-
-</Step>
-<Step>
-
-    ### Install the package
-
-    Open a terminal and navigate to the directory where the file was downloaded. Then run:
-
-    ```bash
-    sudo dpkg -i AgentOne_*.deb
-    sudo apt-get install -f
-    ```
-
-</Step>
-<Step>
-
-    ### Launch AgentOne
-
-    Once the installation is complete, you can launch AgentOne from your application menu or by running `agent-one` in your terminal.
-
-</Step>
-</Steps>
-
-## Other Options
-
-You can also install AgentOne via the [Snap Store](/docs/installation/linux/snap), which works on any distribution with snap support.
+If a dependency isn't available for your distribution release, send the package filename, distribution version, and full error to [support](https://www.agent-one.dev/discord). You can also review the [AppImage option](/docs/installation/linux/appimage).

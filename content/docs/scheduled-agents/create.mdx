@@ -1,0 +1,67 @@
+---
+title: "Create a scheduled agent"
+description: "Use a conversation or enter a title, cron expression, and recurring prompt."
+---
+
+## Ask AgentOne to create it
+
+Open **Scheduled Agents → New → Ask AgentOne to create it**. This opens a chat with a setup request. Tell the agent what should happen, when it should run, and what the finished result should contain.
+
+For example:
+
+> Create a weekday 8 AM research summary. Check these official release pages, include links, and return the summary in the chat. Ask me for any missing details before creating it.
+
+The model needs tool support and the scheduled-agent tools must be enabled. Creation requires approval by default. Review the proposed title, schedule, and complete prompt, then check that the new entry appears in Scheduled Agents. A conversational promise isn't the same as a saved schedule.
+
+## Enter it manually
+
+1. Open **Scheduled Agents → New**.
+2. Choose **or enter manually**.
+3. Enter a descriptive **Title**.
+4. Enter the **Cron schedule**.
+5. Write the complete recurring **Prompt**.
+6. Choose **Create** and check the saved entry.
+
+<AnnotatedScreenshot
+  name="scheduled-agent"
+  alt="New scheduled agent form with Title, Cron schedule, Prompt, and Create."
+  crop={[1060, 435, 780, 820]}
+  points={[
+    {
+      x: 1810,
+      y: 674,
+      label: "Choose a title that identifies the recurring task.",
+    },
+    { x: 1810, y: 836, label: "Use a five-field cron expression." },
+    {
+      x: 1810,
+      y: 1020,
+      label: "Include everything the agent needs in a fresh chat.",
+    },
+    {
+      x: 1810,
+      y: 1190,
+      label:
+        "Create saves and enables the schedule after the fields are complete.",
+    },
+  ]}
+  caption="Manual creation. The example schedule runs at 7 AM each day."
+/>
+
+## Cron examples
+
+Use five fields in this order: **minute, hour, day of month, month, day of week**. The schedule uses the computer's local time. Review it again if you change the device's timezone.
+
+| Expression    | Schedule                        |
+| ------------- | ------------------------------- |
+| `0 7 * * *`   | Every day at 7 AM               |
+| `0 8 * * 1-5` | Monday through Friday at 8 AM   |
+| `30 17 * * 5` | Fridays at 5:30 PM              |
+| `0 */2 * * *` | Every two hours, on the hour    |
+| `0 9 1 * *`   | First day of each month at 9 AM |
+
+The saved entry shows a readable schedule. Hover or focus its schedule text to see the cron expression and calculated run times. A calculated “Last run” time describes the schedule's previous occurrence; it isn't proof that a task completed successfully.
+
+## Test before relying on it
+
+Try the prompt in an ordinary chat with the same model and tools. Then check the first scheduled run's chat for a successful answer and any pending approvals or errors. See [schedule troubleshooting](/docs/troubleshooting/schedules) if it doesn't run.

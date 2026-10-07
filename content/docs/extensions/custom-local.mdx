@@ -1,0 +1,61 @@
+---
+title: "Add a local MCP server"
+description: "Run an STDIO extension with the right runtime, command, and environment."
+---
+
+A local STDIO extension runs a process on your computer and communicates with AgentOne through that process's input and output. It can access whatever its command and operating-system permissions allow.
+
+## Check prerequisites
+
+Read the extension developer's setup instructions. You may need Node.js and `npx`, Python and `uvx`, a compiled executable, or another runtime. Install the required version and confirm that the command works in your terminal.
+
+Use only a command intended to run an MCP STDIO server. A program that prints status text and exits isn't a persistent MCP connection.
+
+## Configure the extension
+
+1. Open **Browse Extensions → Add Custom**.
+2. Choose **STDIO (Local)**.
+3. Enter a name and the complete **Command**, including arguments.
+4. Add required **Environment Variables**. Use the server's documented names.
+5. Review **Timeout (seconds)**; the default is 30 seconds.
+6. Choose **Add Custom**, then check that the server loads.
+
+<AnnotatedScreenshot
+  name="custom-extension"
+  alt="Custom local extension form with server type, name, command, and environment variables."
+  crop={[1060, 195, 780, 1305]}
+  points={[
+    {
+      x: 1810,
+      y: 500,
+      label: "Choose STDIO (Local) for a process on this computer.",
+    },
+    { x: 1810, y: 1020, label: "Enter the server command and its arguments." },
+    {
+      x: 1810,
+      y: 1135,
+      label: "Add environment variables required by this server.",
+    },
+  ]}
+  caption="The local extension form. Install its runtime before expecting a command to start."
+/>
+
+The command placeholder is an example, not a server you need to install. Use the extension you actually intend to connect.
+
+## Paths and folders
+
+Desktop apps can have a different executable search path from a shell. If AgentOne can't find a runtime that works in your terminal, use the runtime's absolute path. Also use exact paths for folders or configuration files passed as arguments, quoting paths with spaces as the server and operating system require.
+
+On another device, these paths and runtime versions may differ. Local extension setup doesn't synchronize between devices.
+
+## Credentials and access
+
+Put required server variables in **Environment Variables**, not in a prompt to the model. Local extension configuration isn't the same as the API-key field for a model provider, so don't assume it uses the same credential storage.
+
+Review the server's access rules. For a filesystem extension, configure its permitted folders using the server's supported arguments rather than assuming AgentOne imposes a universal folder restriction.
+
+## Verify and troubleshoot
+
+Open **Advanced** to check status and tool loading. Configure approvals, then test a small action with a model that supports tools. For an error, check the executable path, arguments, runtime version, required environment, and process output.
+
+Only increase a timeout after identifying that startup or a valid request needs more time. See [extension troubleshooting](/docs/troubleshooting/extensions).

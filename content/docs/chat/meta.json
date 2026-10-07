@@ -1,0 +1,12 @@
+{
+  "title": "Chats",
+  "pages": [
+    "index",
+    "attachments",
+    "edit-and-branch",
+    "steer-and-resume",
+    "organize",
+    "export-and-delete",
+    "read-aloud"
+  ]
+}

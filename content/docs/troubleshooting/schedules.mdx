@@ -1,0 +1,38 @@
+---
+title: "Fix scheduled-agent problems"
+description: "Check device availability, saved schedules, model setup, and run chats."
+---
+
+## No run appears
+
+Open **Scheduled Agents** and verify that the entry exists and its switch is on. Check the cron expression and the device's local timezone. The schedule preview describes expected times, not completed execution.
+
+Confirm that the computer and desktop session were available. A powered-off device can't run the task at that time, and missed-run behavior varies. Check that desktop links can open the installed app.
+
+On Linux, verify that the user session supports `systemd-run --user` and `xdg-open` and has a registered `agent-one://` handler. Standalone files or headless environments can lack that integration.
+
+## A chat opens but doesn't finish
+
+Check the run chat for a provider error, missing credentials, insufficient credits, unavailable local server, failed extension, or pending approval. The schedule launching successfully doesn't establish that the model task finished.
+
+Test its prompt in a normal chat with the same provider and tools. Fix that workflow before relying on the schedule again.
+
+## It used an unexpected model
+
+The current editor saves the title, schedule, and prompt; it doesn't expose a dedicated model selector. Runs use the default setup for new chats. Check that default and provider availability on this device.
+
+## The result lacks context
+
+Each run starts a fresh chat. Include exact URLs, paths, project names, date criteria, and expected output in the saved prompt. Don't depend on the setup conversation being present in every run.
+
+## A paused task is still doing work
+
+Pausing prevents future launches. It doesn't stop a run already active in a chat. Stop that response separately if needed, then inspect any completed tool actions.
+
+## Duplicate results
+
+Check for duplicate enabled schedules and for copies configured on another computer. Device schedules run independently. Keep one active copy when you want one recurring result.
+
+## Deleting didn't remove chats
+
+This is expected. Deleting the schedule stops future runs and leaves historical chats. Use [chat management](/docs/chat/export-and-delete) to export or delete those separately.

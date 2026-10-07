@@ -1,0 +1,38 @@
+---
+title: "Instructions and memory"
+description: "Keep useful preferences across chats and review what the agent remembers."
+---
+
+Use **AI Instructions** for guidance you want the model to follow consistently. Use **Memory** for concise facts or preferences that should be available in later conversations. Both are managed in the desktop settings' account/profile area.
+
+## Write useful instructions
+
+Describe the behavior you want in plain language. For example:
+
+> Use short paragraphs and concrete examples. When researching software, prefer official documentation and link the source. Ask before changing files outside the project folder I name.
+
+Instructions are added to the model's system context. They guide responses; tool enablement and approval configuration still determine what the app can run.
+
+AI Instructions have a 2,000-character limit. Keep stable preferences here and put task-specific details in the chat.
+
+## Use memory deliberately
+
+Ask the agent to remember a short stable fact:
+
+> Remember that my project documentation uses US English and examples should include Windows and macOS when the steps differ.
+
+The memory tool can add, remove, or replace entries. It is enabled by default and doesn't require approval under its default configuration. You can change that requirement or disable it in **Tools**.
+
+Memory entries are limited to 500 characters each, with up to 100 entries. Entries are trimmed and duplicate entries are removed. Use short notes rather than pasting entire conversations.
+
+## Review and correct entries
+
+Open Memory in settings to inspect the stored notes. Remove stale facts and correct conflicting preferences. You can also ask the agent to forget or replace a specific entry, then verify the result in settings.
+
+Deleting a chat doesn't necessarily remove memory created during it. Memory is a separate setting, so review it separately.
+
+## Sync and model context
+
+Memory and instructions can be included in settings sync when you enable it. They are also supplied to the selected model as context. Don't put credentials or material here that you don't want shared with that connection.
+
+Read [data and settings sync](/docs/account/data-and-sync) for device boundaries and [tool approvals](/docs/tools/approvals) for configuration that changes what the agent can do.

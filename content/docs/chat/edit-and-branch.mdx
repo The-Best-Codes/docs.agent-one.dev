@@ -1,0 +1,50 @@
+---
+title: "Edit, regenerate, and branch"
+description: "Correct a prompt, replace an answer, or explore a separate conversation."
+---
+
+Use the action buttons beside a message. Their visibility follows **Settings → Chats → Message action row**; you can show them always or only when hovering.
+
+<AnnotatedScreenshot
+  name="conversation"
+  alt="A user message with copy and edit buttons in AgentOne."
+  crop={[2240, 70, 260, 165]}
+  points={[
+    {
+      x: 2440,
+      y: 192,
+      label: "Edit is available on user messages. Copy takes the message text.",
+    },
+  ]}
+  caption="User message actions. Assistant messages have their own action row."
+/>
+
+## Edit your message
+
+1. Find the user message you want to correct and choose **Edit message**.
+2. Change the text. Attached files stay with that message.
+3. Read the save button before clicking it.
+
+By default, it says **Save and restart from here**. Saving restarts generation at that point, replacing the later conversation path. Export or branch first if you need to preserve the original.
+
+The dropdown beside Save contains **Regenerate when saved**. Turn it off if you want to update the text without immediately regenerating. This choice also appears in Chat settings. **Cancel** or Escape leaves the text unchanged.
+
+Assistant answers aren't editable. If an answer needs changing, ask a follow-up, regenerate it, or correct the user prompt.
+
+## Regenerate an answer
+
+Choose **Regenerate response** on an assistant message. AgentOne asks the selected model for another answer from that point. It can make fresh tool calls and consume more provider usage. Review later conversation content before restarting an earlier answer.
+
+Use regeneration when you want another attempt at the same task. Use a follow-up when the task itself needs additional instructions.
+
+## Branch a conversation
+
+Choose **Branch conversation from this message** on an assistant answer. AgentOne opens a separate chat with the conversation up to that point. Continue with a different approach there while keeping the original chat.
+
+The branch includes a link back to its original conversation. Branching doesn't create a live link between future messages; the two chats continue independently.
+
+For example, branch after a research summary to explore two proposals separately. Keep the original summary as your starting point, and use each branch for one proposal.
+
+## Copy text
+
+The copy action copies the message's text. Use [chat export](/docs/chat/export-and-delete) when you need the conversation data rather than one message.

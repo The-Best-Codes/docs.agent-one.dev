@@ -1,26 +1,24 @@
 ---
-title: Linux Setup Guide
-description: Step-by-step instructions for installing AgentOne on Linux, with guides for each major distribution and package format
+title: "Install on Linux"
+description: "Choose a package format for your Linux distribution."
 ---
 
-AgentOne is available on Linux in several package formats. The recommended installation method depends on your distribution.
+Select **Linux** on the [download page](https://www.agent-one.dev/download). Expand the other download options to find the package format you want, or open the [official release assets](https://github.com/AgentOne-Dev/agent-one-public/releases/latest).
 
-## Select Your Distribution
+| Format   | Start here                                                     |
+| -------- | -------------------------------------------------------------- |
+| AppImage | [Run a standalone AppImage](/docs/installation/linux/appimage) |
+| `.deb`   | [Debian and Ubuntu](/docs/installation/linux/debian-ubuntu)    |
+| `.rpm`   | [Fedora and RHEL](/docs/installation/linux/fedora-rhel)        |
+| Snap     | [Snap Store](/docs/installation/linux/snap)                    |
+| AUR      | [Arch Linux](/docs/installation/linux/arch-linux)              |
 
-<Cards>
-  <Card href="/docs/installation/linux/appimage" title="AppImage">
-    Run AgentOne on any distro without installing
-  </Card>
-  <Card href="/docs/installation/linux/arch-linux" title="Arch Linux">
-    Install from the AUR with yay or paru
-  </Card>
-  <Card href="/docs/installation/linux/debian-ubuntu" title="Debian & Ubuntu">
-    Install using a .deb package
-  </Card>
-  <Card href="/docs/installation/linux/fedora-rhel" title="Fedora & RHEL">
-    Install using an .rpm package
-  </Card>
-  <Card href="/docs/installation/linux/snap" title="Snap Store">
-    Install via Snap on any supported distro
-  </Card>
-</Cards>
+Choose the architecture that matches your device. Package availability and update timing vary by source. Don't assume every release has every format or that a store package already matches the direct release.
+
+## Desktop integration matters
+
+AgentOne uses desktop URL handling for sign-in, extension authorization, and scheduled launches. A native package or store installation normally provides more desktop integration than simply running a standalone file. If a browser can't return you to the app, check the `agent-one://` handler and your installation source. See [deep links](/docs/settings/deep-links).
+
+Scheduled agents also need a working user desktop session. AgentOne's Linux launcher uses `systemd-run --user` and `xdg-open`. A headless environment or session without those services can prevent the app from opening. See [schedule troubleshooting](/docs/troubleshooting/schedules).
+
+After installation, open [Your first chat](/docs/getting-started/first-chat).

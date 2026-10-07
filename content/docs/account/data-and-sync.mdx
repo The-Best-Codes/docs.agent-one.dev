@@ -1,0 +1,46 @@
+---
+title: "Data and settings sync"
+description: "Understand device-local data, credentials, and what your connections receive."
+---
+
+AgentOne keeps a local workspace and can synchronize supported settings through your account. That doesn't make every piece of data local-only, and it doesn't copy the complete workspace to another device.
+
+## What stays on the device
+
+| Data                        | Current desktop behavior                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| Chat database and run chats | Stored locally; don't rely on ordinary settings sync as a chat backup                         |
+| Draft message text          | Kept while the app session is open; attachments aren't part of that draft                     |
+| Provider configuration      | Enablement, headers, model entries, local URLs, and custom providers are device-specific      |
+| Model and speech API keys   | Stored through the app's credential-storage layer rather than the settings-sync payload       |
+| Extensions                  | Installation, commands/URLs, headers/environment, and authorization need setup on each device |
+| Scheduled agents            | Created and executed on the device where you configure them                                   |
+| Downloaded catalogs         | Cached on the device and updated separately                                                   |
+
+Arbitrary header and environment-variable values are extension/provider configuration. Don't assume they receive the same storage treatment as a model API key entered in its dedicated field.
+
+## Enable settings sync
+
+Sign in under **Account**, then turn on **Synchronize my settings**. Enable it on each device you want to participate. Sync needs connectivity and the same AgentOne account.
+
+Supported preferences include appearance, chat behavior, shortcuts, performance choices, built-in tool configuration, your name, AI Instructions, and Memory. Speech preferences can sync, while the required speech credentials still need device setup.
+
+Changes can take a moment to reach another device. Newer setting changes can replace older values, so avoid changing the same preference on several offline devices while expecting a manual conflict-resolution prompt.
+
+Extensions are excluded from current settings sync. Existing local extension setup is retained when upgrading; it isn't automatically replicated to another computer.
+
+Turning sync off stops participating in settings synchronization. It doesn't, by itself, delete the account's stored settings or erase this device's local data.
+
+## What leaves your device during use
+
+Your selected model provider receives the messages, attached content, instructions, memory, and tool results needed for the request. AgentOne's Default model uses AgentOne's service. An external provider uses its own service. A model served entirely on localhost can keep inference local.
+
+Web tools, remote extensions, cloud model routes, and text-to-speech can make additional network requests. Local model selection doesn't make those services offline. Settings sync sends supported preferences to your AgentOne account when enabled.
+
+A tool can also transmit or modify data in a connected service. Review [access and approvals](/docs/tools/approvals) based on the tools you actually enable.
+
+## Keep a usable copy
+
+[Export important chats](/docs/chat/export-and-delete) before removing app data or changing computers. Check exported files before relying on them. Keep a separate setup record for provider and extension prerequisites.
+
+For the service's current policies, read [Privacy](https://www.agent-one.dev/privacy) and [Terms](https://www.agent-one.dev/terms). This guide describes product behavior, not a replacement for those policies.

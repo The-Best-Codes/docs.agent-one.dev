@@ -1,0 +1,34 @@
+---
+title: "Research with web tools"
+description: "Search, read pages, and inspect the sources behind an answer."
+---
+
+Web tools let AgentOne look up information outside the model's training. Enable the tools you need in **Configure AgentOne → Tools**, then choose a model with tool support.
+
+## Choose the right tool
+
+**Web Search** finds pages matching a query. **Get URL Content** reads content from URLs. **Wikipedia** searches or reads reference material through its integration. A search result and the full content of a page aren't the same thing.
+
+Ask for specific sources and a useful result:
+
+> Find the official setup instructions for this product. Read the relevant pages, explain the prerequisites, and link the source for each step.
+
+For current events or releases, name the date range. For comparisons, ask the agent to use the same criteria for every option and distinguish documented facts from its own inference.
+
+## Configure result limits
+
+The tool settings include limits for search concurrency, result/page counts, URL counts, and returned content length. Smaller results can keep a chat focused and reduce context size. Larger limits can help with a broad task, but don't guarantee more relevant information.
+
+The shipped URL-content default returns a limited amount of text from each page. If the needed detail is missing, ask for a more focused source or adjust the appropriate tool limit. Performance display thresholds don't increase the amount a web tool fetches.
+
+## Check the sources
+
+Open the links that support important claims. Confirm that the page says what the answer claims, that the information is current enough, and that the source is appropriate for the question.
+
+A fetched page can be incomplete because it depends on JavaScript, requires sign-in, blocks automated requests, or uses an unsupported format. An unsuccessful fetch isn't evidence that the underlying fact is false.
+
+## Limits
+
+Web retrieval isn't a full interactive browser. Don't assume the tool can sign in, navigate an account dashboard, or submit a form. For another service's authenticated data, use an appropriate [extension](/docs/extensions).
+
+Search and remote page requests still use the network when the chat model is local. The selected model receives the returned tool content as part of its context.

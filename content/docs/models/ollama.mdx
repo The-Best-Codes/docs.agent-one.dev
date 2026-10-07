@@ -1,0 +1,79 @@
+---
+title: "Use Ollama"
+description: "Connect AgentOne to an Ollama model running on your computer."
+---
+
+Ollama runs models through a local server. Install it from [Ollama](https://ollama.com), download a model, and keep the server running while AgentOne uses it.
+
+## Prepare the server
+
+Download a model using the exact name from Ollama's library. For example:
+
+```bash
+ollama pull llama3.2
+```
+
+Choose a model that fits your memory and supports the capabilities your task needs. This example establishes a basic text model; don't assume it supports images or tools.
+
+If the Ollama app or service isn't already serving requests, start it with:
+
+```bash
+ollama serve
+```
+
+A port-in-use message can mean the server is already running. Check the existing server rather than starting a second one.
+
+## Connect AgentOne
+
+1. Open **Configure AgentOne → Providers**.
+2. Find **Ollama** under local providers and open its configuration.
+3. Use the default base URL: `http://127.0.0.1:11434/v1`.
+4. Keep the default headers unless your server requires a different setup. AgentOne includes an `Origin` header for Ollama compatibility.
+5. Use **Auto** to discover models, or add the exact model ID manually.
+6. Save changes, enable the provider, and select its model in chat.
+
+<AnnotatedScreenshot
+  name="ollama"
+  alt="Ollama local provider configuration showing the base URL, headers, and models."
+  crop={[770, 305, 1360, 1080]}
+  points={[
+    {
+      x: 2060,
+      y: 550,
+      label: "Use the OpenAI-compatible base URL ending in /v1.",
+    },
+    {
+      x: 2060,
+      y: 750,
+      label:
+        "Check server-specific headers without removing defaults unnecessarily.",
+    },
+    {
+      x: 1840,
+      y: 900,
+      label:
+        "Auto discovers models from the running server; stored entries can remain when the server is offline.",
+    },
+  ]}
+  caption="Ollama configuration. A model saved in the list doesn't establish that the server is currently running."
+/>
+
+AgentOne uses [Ollama's OpenAI-compatible API](https://docs.ollama.com/api/openai-compatibility). Use the base URL, not the full `/chat/completions` path.
+
+## Check the endpoint
+
+This read-only request lists the server's models:
+
+```bash
+curl http://127.0.0.1:11434/v1/models
+```
+
+If it fails, fix the Ollama connection first. If it succeeds, check the exact returned model ID against the model configured in AgentOne.
+
+## Local doesn't always mean offline
+
+A model running on this computer can keep inference local. A cloud model selected through Ollama still uses a remote service. AgentOne's web tools and remote extensions also need network access, even when the language model is local.
+
+## If tools or files fail
+
+Confirm that the particular model supports the requested capability. Discovery of a model ID doesn't guarantee complete capability metadata. Correct its [model metadata](/docs/models/model-metadata) based on the server documentation, and test text first, then one tool or attachment. See [model troubleshooting](/docs/troubleshooting/models).

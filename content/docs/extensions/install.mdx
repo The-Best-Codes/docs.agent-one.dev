@@ -1,0 +1,72 @@
+---
+title: "Install a registry extension"
+description: "Find an extension, complete its setup, and verify that its tools load."
+---
+
+## 1. Find the extension
+
+Open **Browse Extensions**, then search for the service or capability you need. The first visible results are only part of the catalog. Use the filter menu when you want to narrow the view.
+
+<AnnotatedScreenshot
+  name="extensions"
+  alt="Extensions page showing search, Add Custom, and an installed disabled extension."
+  crop={[460, 215, 1970, 395]}
+  points={[
+    {
+      x: 2110,
+      y: 266,
+      label:
+        "Search by service or capability; the catalog is larger than the first page.",
+    },
+    {
+      x: 2390,
+      y: 266,
+      label: "Add Custom is for a server you configure yourself.",
+    },
+    {
+      x: 2360,
+      y: 406,
+      label:
+        "Installed extensions can be off. Enablement is separate from installation.",
+    },
+    {
+      x: 2350,
+      y: 531,
+      label:
+        "Advanced opens connection details, status, and approval controls.",
+    },
+  ]}
+  caption="The installed Excalidraw example is off. Catalog results and their order change over time."
+/>
+
+Read the extension's description and follow its developer or documentation link for prerequisites. An **Unsupported** entry doesn't offer a transport the current app can use; installing a different runtime won't necessarily change that.
+
+## 2. Review the setup
+
+Choose **Install**. Review the server type and the values requested by the installation dialog.
+
+A remote extension can require a URL, headers, configuration fields, or authorization after installation. A local extension can require a runtime and a command with environment variables. Install the runtime from its official source before expecting the command to start.
+
+Only install a local extension when you trust its developer: its command runs code on your device. Use [custom local setup](/docs/extensions/custom-local) for runtime and path guidance.
+
+## 3. Check enablement and loading
+
+After installation, check the extension's switch and status. Open **Advanced** for detailed status and configuration. Wait for its tools to finish loading before testing a model task.
+
+Off, starting, connecting, ready, and error states require different next steps. An off server won't load tools. An error needs its connection or process problem fixed.
+
+## 4. Authorize when needed
+
+For an HTTP server with OAuth support, use **Connect** in Advanced and complete the service's sign-in and authorization. Check that it returns to AgentOne and the status becomes **Connected**.
+
+Other servers use supplied headers or environment variables instead. Follow the server's documented method. Installing an extension doesn't automatically connect your account.
+
+## 5. Try one small task
+
+Choose a model with tool support and ask for a small, specific action from the extension. Review any approval request and inspect the returned result.
+
+If the model doesn't call it, check model capabilities, the server's loaded tools, and the chat's **Tool Behavior**. If the tool starts and fails, inspect the error before reinstalling. See [extension troubleshooting](/docs/troubleshooting/extensions).
+
+## On another device
+
+Repeat the setup there. Extensions and their configuration stay on the device; [settings sync](/docs/account/data-and-sync) won't install or authorize them elsewhere.

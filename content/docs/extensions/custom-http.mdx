@@ -1,0 +1,38 @@
+---
+title: "Add a remote MCP server"
+description: "Configure an HTTP endpoint, headers, timeout, and authorization."
+---
+
+Use a custom HTTP extension when you have an MCP server URL that isn't in the registry, or when its developer gives you a specific endpoint for your account.
+
+## Prepare the endpoint
+
+Get the **MCP URL** from the server documentation. It might end in `/mcp` or another path, but there is no universal suffix. Don't substitute the service's homepage or ordinary REST API endpoint.
+
+Check whether the server needs OAuth, an authorization header, or other configuration. Keep credentials out of URLs and screenshots when the service offers a header-based option.
+
+## Add it
+
+1. Open **Browse Extensions → Add Custom**.
+2. Choose **HTTP (Remote)** for **Server Type**.
+3. Enter a name that you'll recognize later.
+4. Enter the full MCP endpoint in **URL**.
+5. Add any required **HTTP Headers**, using the exact names and values documented by the server.
+6. Set **Timeout (seconds)** if its requests need more time than the default 30 seconds.
+7. Choose **Add Custom**, then check the enabled state and loading status.
+
+For example, a developer might provide `https://mcp.example.com/mcp` and require `Authorization: Bearer YOUR_TOKEN`. This is a placeholder example; use the actual server's documented values.
+
+## Connect and configure approvals
+
+Open **Advanced**. If the server supports OAuth, use **Connect** and complete the browser flow. Review the available tools and configure **Require Approval By Default** and **Per-tool approvals** before using the connection for changes.
+
+Save edits in Advanced with **Save changes**. The server must load successfully before the tool-specific list is available.
+
+## Verify
+
+Use a model with tool support and ask for a small read-only action. Inspect the actual tool result. If the server can't load, check the endpoint, network reachability, headers, authorization, and timeout.
+
+A plain API returning JSON isn't necessarily an MCP server. If the endpoint never completes an MCP connection, check the server's protocol documentation instead of just increasing the timeout.
+
+This configuration is local to the device. See [data and sync](/docs/account/data-and-sync) and [extension troubleshooting](/docs/troubleshooting/extensions).

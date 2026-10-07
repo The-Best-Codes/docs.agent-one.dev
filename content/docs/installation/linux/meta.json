@@ -1,4 +1,11 @@
 {
   "title": "Linux",
-  "pages": ["appimage", "arch-linux", "debian-ubuntu", "fedora-rhel", "snap"]
+  "pages": [
+    "index",
+    "appimage",
+    "debian-ubuntu",
+    "fedora-rhel",
+    "snap",
+    "arch-linux"
+  ]
 }

@@ -1,0 +1,41 @@
+---
+title: "Connect extensions"
+description: "Use MCP servers to give AgentOne access to other tools and services."
+---
+
+Extensions connect AgentOne to tools outside the app. An extension is an **MCP server**: a local process or remote endpoint that exposes tools through the [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro).
+
+## Choose a connection
+
+| Type              | Runs where        | Setup                                                          |
+| ----------------- | ----------------- | -------------------------------------------------------------- |
+| **HTTP (Remote)** | On another server | MCP URL, optional headers, and sometimes account authorization |
+| **STDIO (Local)** | On this computer  | A command, its runtime, and any environment variables          |
+
+A remote HTTP endpoint must speak MCP. A normal website URL or ordinary REST API URL isn't enough. A local STDIO server must implement MCP over its process input/output; a generic terminal command isn't an extension.
+
+## Start with the registry
+
+Open **Browse Extensions** from the sidebar. The registry is downloaded separately from the app and searched in pages. Use a specific service or tool name rather than expecting the first visible results to represent the entire catalog.
+
+[Install a registry extension](/docs/extensions/install), or add [a custom remote server](/docs/extensions/custom-http) or [a custom local server](/docs/extensions/custom-local).
+
+## Check three separate states
+
+1. **Installed:** AgentOne has the server configuration.
+2. **Enabled and loaded:** the server is running or connected and has exposed its tools.
+3. **Authorized:** any required service account is connected or credentials are accepted.
+
+An installed extension can be off. An enabled server can fail to load. A connected server can still need authentication or tool approval. [This guide](/docs/extensions/authentication-and-approvals) explains those distinctions.
+
+## Device-specific setup
+
+Extensions aren't included in settings sync. Install and configure them on every device where you want to use them. Local commands, filesystem paths, and service sessions may differ between those devices.
+
+A model also needs tool support to use an extension. Test the model connection first, then ask for a small extension task and inspect the tool card.
+
+## Practical limits
+
+Registry entries are supplied by extension developers and may change. Check the publisher, supported transport, prerequisites, and service limits. Third-party accounts can have their own usage charges.
+
+For failures, inspect **Advanced** and use [extension troubleshooting](/docs/troubleshooting/extensions). Don't reinstall repeatedly until you've distinguished a loading error from missing authorization.

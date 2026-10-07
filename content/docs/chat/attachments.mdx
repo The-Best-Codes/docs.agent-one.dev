@@ -1,0 +1,38 @@
+---
+title: "Attach files and images"
+description: "Give a model useful context and handle unsupported formats."
+---
+
+Click the paperclip beside the message box, then select the files you want to include. You can also drag files into the composer. Add a prompt explaining what you want the model to do with them, then send.
+
+## Choose a compatible model
+
+The app can select images, PDFs, text, common document files, and source-code files. The selected model and provider determine what can actually be processed. Image input and general attachment support are separate capabilities in [model metadata](/docs/models/model-metadata).
+
+Selecting a `.docx`, video, or other file doesn't mean every provider can read that format. If the model rejects it, use a supported file type or extract the relevant text. Don't enable a capability that the API doesn't have.
+
+For images, choose a model with image input support. For a text-only model, paste the information you want it to use or attach a compatible text file.
+
+## Make the request specific
+
+Tell the model which files to compare, what to extract, and how to present the result. For example:
+
+> Read `proposal-a.pdf` and `proposal-b.pdf`. Compare the scope, deadlines, and exclusions. Quote short passages only when needed and identify the source file for each point.
+
+For a large document, ask a focused question or send the relevant pages. Provider size and context limits still apply.
+
+## Review files before sending
+
+Check the attachment previews in the composer. Remove files you don't need and make sure the prompt refers to the correct filenames. Files in your message are sent to the selected model provider; local inference is only local when you chose a genuinely local model server.
+
+Draft text is preserved while switching chats during an app session, but attachments aren't saved as part of that draft. Recheck them after navigating. A file attached to a user message remains attached when you edit that message's text.
+
+## Use a chat as context
+
+You can drag a conversation from the sidebar into the composer. AgentOne turns the chat export into a text attachment for the new message. Explain what you want the model to use from it, and consider the additional context size.
+
+This gives the model a copy to read. It doesn't merge the two conversations or keep future changes in sync.
+
+## If an attachment fails
+
+Start with a short text message to confirm that the provider works. Then test one small file of a supported type. If text succeeds but the file fails, check model capabilities, file format, file size, and the exact provider error. See [model troubleshooting](/docs/troubleshooting/models).
