@@ -148,12 +148,14 @@ export default [
     ],
     prepare: async (page) => {
       // Give the toolbar room above it for markers, without changing anything inside it.
+      // The margin goes on the whole toolbar (search, filter, and Add Custom), so the
+      // search group and the button stay aligned.
       await page.getByPlaceholder("Search extensions...").evaluate((input) => {
         let row = input;
         while (
           row.parentElement &&
-          !row.querySelector(
-            "button:has(svg.tabler-icon-filter), button[aria-label*='ilter']",
+          ![...row.querySelectorAll("button")].some((button) =>
+            /Add Custom/.test(button.textContent ?? ""),
           )
         )
           row = row.parentElement;

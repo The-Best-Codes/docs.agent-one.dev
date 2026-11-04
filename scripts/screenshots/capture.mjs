@@ -139,6 +139,9 @@ const CAPTURE_CSS = `
   ::-webkit-scrollbar { display: none; }
   * { scrollbar-width: none !important; }
   .cm-cursor, .cm-dropCursor { display: none !important; }
+  /* The switch is 1.15rem (18.4px) tall. At a fractional y-position Chrome snaps the
+     thumb a pixel off the track, so round the track to whole pixels to keep it centered. */
+  [data-slot="switch"][data-size="default"] { height: 18px !important; }
 `;
 
 // `isolate`: show a dialog or popover on the app's plain dimmed backdrop, without the

@@ -4,12 +4,6 @@ import { notFound } from "next/navigation";
 
 export const revalidate = false;
 
-const fontData = fetch(
-  new URL(
-    "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2",
-  ),
-).then((res) => res.arrayBuffer());
-
 export async function GET(
   _req: Request,
   { params }: RouteContext<"/og/docs/[...slug]">,
@@ -28,7 +22,6 @@ export async function GET(
         backgroundColor: "#000",
         color: "#fff",
         padding: "64px",
-        fontFamily: "Space Grotesk",
       }}
     >
       <p
@@ -69,14 +62,6 @@ export async function GET(
       width: 1200,
       height: 630,
       format: "webp",
-      fonts: [
-        {
-          name: "Space Grotesk",
-          data: await fontData,
-          weight: 700,
-          style: "normal",
-        },
-      ],
     },
   );
 }

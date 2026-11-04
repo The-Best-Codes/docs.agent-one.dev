@@ -81,16 +81,16 @@ const homeLab = {
         enabled: true,
         models: [
           {
-            id: "qwen3-32b",
-            name: "Qwen3 32B",
+            id: "llama-6.9",
+            name: "Llama 6.9",
             supportsText: true,
             supportsTools: true,
             supportsImages: false,
             contextWindow: 131072,
           },
           {
-            id: "llama-4-scout",
-            name: "Llama 4 Scout",
+            id: "gpt-9000-turbo",
+            name: "GPT-9000 Turbo",
             supportsText: true,
             supportsTools: true,
             supportsImages: true,
@@ -255,11 +255,6 @@ export default [
     scene: scene(byok()),
     prepare: async (page) => {
       await openOpenAi(page);
-      await page
-        .getByRole("dialog")
-        .getByPlaceholder("Search models...")
-        .fill("gpt-5.5");
-      await page.waitForTimeout(600);
     },
     annotate: async (page, h) => [
       await h.box(
@@ -304,12 +299,10 @@ export default [
         .click();
       await page.waitForTimeout(800);
       const dialog = page.getByRole("dialog").last();
-      await dialog
-        .getByPlaceholder("e.g. gpt-5")
-        .fill("gpt-5.5-research-preview");
+      await dialog.getByPlaceholder("e.g. gpt-5").fill("gpt-9000-turbo-max");
       await dialog
         .getByPlaceholder(/Optional label/)
-        .fill("GPT-5.5 Research Preview");
+        .fill("GPT-9000 Turbo Max");
       await dialog.getByPlaceholder("e.g. 200000").fill("400000");
       await dialog.getByPlaceholder("e.g. 8192").fill("128000");
       await page.evaluate(() => {
@@ -354,8 +347,8 @@ export default [
           body: {
             object: "list",
             data: [
-              { id: "qwen3-32b", object: "model" },
-              { id: "llama-4-scout", object: "model" },
+              { id: "llama-6.9", object: "model" },
+              { id: "gpt-9000-turbo", object: "model" },
             ],
           },
         },
@@ -403,7 +396,7 @@ export default [
       await page.waitForTimeout(700);
       await page
         .getByPlaceholder("Search models...")
-        .pressSequentially("claude opus 4", { delay: 50 });
+        .pressSequentially("claude opus 5.5", { delay: 50 });
       await page.waitForTimeout(800);
     },
     crop: async (page, h) => h.rect(popover(page).first(), 20),

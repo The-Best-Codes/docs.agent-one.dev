@@ -182,7 +182,7 @@ export function byok(
 }
 
 /** A local Ollama server with a few models pulled. */
-export const ollama = (models = ["gemma3:12b", "qwen3:8b", "llama3.2:3b"]) => ({
+export const ollama = (models = ["gemma4:e4b", "qwen3:8b", "llama3.2:3b"]) => ({
   http: {
     "http://127.0.0.1:11434/v1/models": {
       body: {
