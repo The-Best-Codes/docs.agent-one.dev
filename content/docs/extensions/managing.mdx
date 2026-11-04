@@ -1,0 +1,63 @@
+---
+title: Managing Extensions
+description: Sign in to extensions, set tool approvals, restart, turn off, and uninstall extensions.
+---
+
+To see only the extensions you've installed, open **Extensions**, click the filter button, and choose **Only show installed**.
+
+Each installed extension shows:
+
+- A **switch** to turn it on or off without uninstalling it.
+- Its **status**, like **Loaded successfully with 12 tools**, **Authentication required to load tools**, or an error.
+- A **Restart** button, handy after you change its settings or install a missing tool.
+- **Advanced** settings for sign-in and approvals.
+- **Uninstall**.
+
+## Status Messages
+
+| Status                                    | Meaning                                                                                    |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Loaded successfully with N tools**      | Ready to use.                                                                              |
+| **Starting** / **Connecting**             | AgentOne is starting the extension.                                                        |
+| **Connected, but no tools are available** | The server is running but didn't offer any tools. You may need to sign in or configure it. |
+| **Authentication required to load tools** | Sign in to the service. See below.                                                         |
+| **Login available for full access**       | It works now, but signing in unlocks more.                                                 |
+| **Error: ...**                            | Something went wrong. See [Troubleshooting Extensions](/docs/troubleshooting/extensions).  |
+| **Disabled**                              | You turned it off.                                                                         |
+
+## Signing In to an Extension
+
+Many remote extensions, like Linear, Notion, and Canva, need you to sign in to your account with the service.
+
+1. Open the extension's **Advanced** settings.
+2. Next to the authorization status, click **Connect**.
+3. Your browser opens the service's sign-in page. Sign in and approve access.
+4. Return to AgentOne. The status changes to **Connected**.
+
+To sign out, open **Advanced** and click **Disconnect**.
+
+<Callout>
+  If you see "This server's authorization provider does not support automatic
+  client registration," the service needs an API key or a manually created OAuth
+  app instead. Check the service's MCP documentation, and add the key as an HTTP
+  header or environment variable.
+</Callout>
+
+## Tool Approvals
+
+Extension tools run without asking by default. In the extension's **Advanced** settings you can:
+
+- Turn on **Require Approval By Default** to ask before any of this extension's tools run.
+- Open **Per-tool approvals** to set each tool to **Approval required** or **No approval required**. For example, you might allow "search issues" freely but require approval for "delete issue."
+
+Click **Save changes** when you're done. A chat's [Tool Behavior](/docs/agent/tools-and-approvals#tool-behavior) setting can override these: **Always ask** asks before every tool, and **YOLO** never asks.
+
+## Uninstall an Extension
+
+Click **Uninstall** on the extension and confirm. To stop using an extension for a while without removing its settings, turn off its switch instead.
+
+## Dangling Extensions
+
+When an extension in the registry gets a new version, your installed copy may no longer match anything in the list. These are called **dangling extensions**, and they may still be running in the background.
+
+To clean them up, click the filter button and choose **Find dangling extensions**. Remove them one at a time, or click **Remove all**. Then install the latest version from the list.

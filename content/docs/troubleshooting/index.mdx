@@ -1,0 +1,61 @@
+---
+title: Troubleshooting
+description: Fix common problems with AgentOne and find out where to get help.
+---
+
+Start with the guide for the area you're having trouble with:
+
+<Cards>
+  <Card
+    href="/docs/troubleshooting/models-and-providers"
+    title="Models & Providers"
+  >
+    No models, connection errors, API key problems, and running out of credits.
+  </Card>
+  <Card href="/docs/troubleshooting/extensions" title="Extensions">
+    Extensions that won't start, sign in, or show tools.
+  </Card>
+  <Card href="/docs/troubleshooting/scheduled-agents" title="Scheduled Agents">
+    Scheduled agents that don't run or run late.
+  </Card>
+  <Card href="/docs/troubleshooting/logs" title="Logs & Diagnostics">
+    Find AgentOne's logs and report a bug.
+  </Card>
+</Cards>
+
+Having trouble installing? See the troubleshooting sections for [macOS](/docs/installation/macos#troubleshooting), [Windows](/docs/installation/windows#troubleshooting), and [Linux](/docs/installation/linux#troubleshooting).
+
+## Quick Fixes
+
+These solve a surprising number of problems:
+
+1. **Update AgentOne.** Go to `Settings` -> `Help & Updates` and click **Check Now**.
+2. **Restart AgentOne.** Quit it completely and open it again.
+3. **Update the model and extension lists.** In `Settings` -> `Help & Updates`, click **Update now** under **Model List** and **Extension List**.
+4. **Try another model.** If one model or provider is having trouble, switch to another in the model selector.
+
+## Common Questions
+
+<Accordions>
+<Accordion title="AgentOne isn't using tools. It just describes what it would do.">
+  Make sure the chat's **Tool Behavior** isn't set to **No tools** (open the model configuration next to the model selector), and that you're using a model that supports tools. Use the **Tools** filter in the model selector to find one.
+</Accordion>
+<Accordion title="I can't send a message.">
+  If a tool is waiting for your approval, you need to **Approve** or **Deny** it first. Also check that a model is selected and that you see no **No Models Available** banner.
+</Accordion>
+<Accordion title="Notifications don't appear.">
+  Check `Settings` -> `Chats` -> **Agent Notifications**. By default, you only get notifications when the AgentOne window isn't focused. Also make sure notifications for AgentOne are allowed in your operating system's settings.
+</Accordion>
+<Accordion title="The chat says Incomplete Chat.">
+  AgentOne didn't finish replying, often because the app was closed mid-response. Click **Resume** to continue.
+</Accordion>
+<Accordion title="I accidentally skipped onboarding.">
+  Click **Take onboarding** on the reminder that appears, or take the tour any time from `Settings` -> `Help & Updates` -> **Take the tour**.
+</Accordion>
+</Accordions>
+
+## Get Help
+
+- [Join the AgentOne Discord](https://www.agent-one.dev/discord) for live help from the team and community.
+- Ask on the [AgentOne Forum](https://forum.agent-one.dev).
+- [Report a bug on GitHub](https://github.com/The-Best-Codes/agent-one/issues/new). Include your AgentOne version (from `Help & Updates`), your operating system, and [your logs](/docs/troubleshooting/logs) if you can.

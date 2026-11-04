@@ -1,0 +1,61 @@
+---
+title: App Tour
+description: Learn where everything is in the AgentOne desktop app and what each part does.
+icon: LayoutDashboard
+---
+
+AgentOne has one main window: a **sidebar** on the left with your chats, and the **chat area** on the right where you talk to your agent.
+
+![The AgentOne window with six numbered areas: the chat list, usage stats, message navigation rail, a response, the message box, and the account menu.](/images/docs/overview/app-layout.png)
+
+1. **Chat list.** Start a **New Chat**, search your chats, and switch between conversations. See [Managing Chats](/docs/chats/managing-chats).
+2. **Usage stats.** Shows how much of the model's context window the current chat is using, plus the estimated cost when you use your own API keys. Click the arrow to collapse it. See [Long Chats & Compaction](/docs/chats/long-chats).
+3. **Message navigation rail.** One small tick per message. Hover a tick to preview that message, and click it to jump there. The rail appears on wider windows and can be turned off in `Settings` -> `Chats`.
+4. **The conversation.** AgentOne's responses appear here, including the tools it ran, like web searches and files it created. Hover a message to see its [actions](/docs/chats/message-actions).
+5. **Message box.** Type your message, attach files, and choose your model. More on this below.
+6. **Account menu.** Your name and plan. Click it to open Extensions, Scheduled Agents, Settings, your account dashboard, and billing.
+
+## The Message Box
+
+![The message box with numbered controls: the text field, attach button, model selector, model configuration, and send button.](/images/docs/overview/composer.png)
+
+1. **Text field.** Type your message here. Press `Enter` to send and `Shift + Enter` for a new line. You can switch to `Ctrl/Cmd + Enter` in `Settings` -> `Chats` -> **Submit Key**.
+2. **Attach files.** Add images, PDFs, documents, and code files. You can also drag files anywhere onto the chat. See [Attachments](/docs/chats#attach-files).
+3. **Model selector.** Choose which AI model answers. See [Choosing a Model](/docs/models/choosing-a-model).
+4. **Model configuration.** Per-chat options like **Tool Behavior**, **Reasoning Effort**, and **Auto-Compact**. A dot appears on the button when you've changed something from the defaults.
+5. **Send.** Sends your message. While AgentOne is responding, a **Stop** button appears next to it. See [Stopping and Interrupting](/docs/chats#stop-or-interrupt-a-response).
+
+Unsent text is remembered separately for each chat while the app is open, so you can switch chats without losing a draft.
+
+## The Account Menu
+
+Click your name at the bottom of the sidebar to open the account menu.
+
+![The account menu open, showing Manage Billing, Account Dashboard, Extensions, Scheduled Agents, Settings, and Sign Out.](/images/docs/overview/account-menu.png)
+
+1. **Upgrade Your Plan** or **Manage Billing**, depending on your plan. Opens your billing page on agent-one.dev.
+2. **Account Dashboard** opens [your account dashboard](https://www.agent-one.dev/dashboard) in your browser.
+3. **Extensions** opens the extension browser. See [Extensions](/docs/extensions).
+4. **Scheduled Agents** opens your scheduled agents. See [Scheduled Agents](/docs/agent/scheduled-agents).
+5. **Settings** opens settings. You can also press `Cmd + ,` on macOS or `Ctrl + ,` on Windows and Linux.
+6. **Sign Out** signs you out after you confirm.
+
+If you aren't signed in, the account menu says **Not signed in** and has a **Sign In** option instead.
+
+## Collapsing the Sidebar
+
+Press `Cmd + B` (macOS) or `Ctrl + B` (Windows and Linux) to hide the sidebar. A small toolbar stays in the top-left corner:
+
+![The collapsed sidebar toolbar with the sidebar toggle, search, and new chat buttons.](/images/docs/overview/collapsed-sidebar.png)
+
+1. **Open sidebar** brings the sidebar back.
+2. **Search chats** opens a search window with your chat list.
+3. **New Chat** starts a new conversation.
+
+You can stack these buttons in a column instead of a row with `Settings` -> `Appearance` -> **Collapsed Sidebar Layout**. On narrow windows, the sidebar becomes a drawer that slides in from the left.
+
+## Light and Dark Mode
+
+AgentOne follows your system theme by default. You can pick **Light** or **Dark**, choose an accent color, change the font, and more in [Appearance settings](/docs/settings/appearance).
+
+![The same chat in dark mode.](/images/docs/overview/hero-dark.png)

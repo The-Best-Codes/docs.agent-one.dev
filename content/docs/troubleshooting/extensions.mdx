@@ -1,0 +1,50 @@
+---
+title: Troubleshooting Extensions
+description: Fix extensions that won't install, start, sign in, or show tools.
+---
+
+## The Extension List Is Empty or Won't Load
+
+If **Extensions** says **The extension list is not available yet**, AgentOne is still downloading it, or the download failed.
+
+1. Check your internet connection.
+2. Go to `Settings` -> `Help & Updates` -> **Extension List** and click **Update now**. You'll see the progress and any error.
+3. The first download can take a few minutes because the list is large. It resumes if it's interrupted.
+
+## Missing Required Tool
+
+Local extensions need a program like `npx`, `uvx`, or `docker` to run. If AgentOne shows **Missing required tool**, install it (see [the table on Installing Extensions](/docs/extensions/installing#missing-required-tool)), then click **Restart** on the extension.
+
+## The Extension Shows an Error
+
+- Click **Restart** on the extension.
+- Open **Advanced** -> **Debug info** for details about the error.
+- Check that any API keys or settings you entered when installing are correct. To change them, uninstall the extension and install it again with the right values.
+- Increase the **Timeout (seconds)** for slow-starting servers, especially the first time a package is downloaded.
+
+## Authentication Required to Load Tools
+
+The extension needs you to sign in to the service. Open **Advanced**, click **Connect**, and finish signing in in your browser. See [Signing In to an Extension](/docs/extensions/managing#signing-in-to-an-extension).
+
+## Connected, but No Tools Are Available
+
+The server is running but didn't offer any tools. This usually means you need to sign in, or the server needs extra configuration, like an API key. Check the extension's documentation.
+
+## AgentOne Doesn't Use the Extension
+
+- Make sure the extension's switch is on and its status says **Loaded successfully**.
+- Make sure the chat's **Tool Behavior** isn't **No tools**.
+- Mention the app by name in your message, like "Using Linear, list my open issues."
+- Use a model that supports tools.
+
+## Extensions Feel Slow to Load at Startup
+
+AgentOne loads up to 8 extensions at a time by default. If you have many installed, turn off the ones you don't use, or raise `Settings` -> `Performance` -> **MCP Parallel Load Limit**.
+
+## Extensions Are Missing on My Other Computer
+
+Extensions don't sync between devices. Install them on each computer.
+
+## Still Stuck?
+
+[Join our Discord server for live support!](https://www.agent-one.dev/discord)

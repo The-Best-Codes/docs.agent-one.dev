@@ -1,0 +1,57 @@
+---
+title: Sync & Privacy
+description: What AgentOne syncs between your devices, what stays on your computer, and where your data goes.
+---
+
+AgentOne is private by default. Your chats, files, and API keys stay on your computer. If you sign in, AgentOne can sync your **settings** across devices.
+
+## Turn Sync On or Off
+
+Settings sync is on by default when you're signed in. To change it, open `Settings` -> `Account` and use **Synchronize my settings**.
+
+Changes sync a couple of seconds after you make them, and AgentOne also does a full sync when you sign in and every hour. If you change the same setting on two devices, the most recent change wins.
+
+## What Syncs
+
+When sync is on, these sync between your devices:
+
+- Appearance, chat, performance, and keyboard shortcut settings
+- Your name, AI instructions, and [memories](/docs/chats/personalization)
+- Which built-in tools are turned on and how they're configured
+- Text-to-speech settings (but not the API key)
+- Chat background choices and effects (custom image files stay on each device)
+- Chat title settings
+
+## What Stays on Each Device
+
+These never leave your computer:
+
+| Data                                             | Where it's stored                             |
+| ------------------------------------------------ | --------------------------------------------- |
+| Chats and attachments                            | A local database on your computer             |
+| API keys and your sign-in token                  | Your system's secure keychain                 |
+| Provider settings and custom providers           | Local app storage                             |
+| [Extensions](/docs/extensions)                   | Local app storage                             |
+| [Scheduled agents](/docs/agent/scheduled-agents) | Local app storage and your system's scheduler |
+| Custom fonts and custom background images        | Local app storage                             |
+| The default model for new chats                  | Local app storage                             |
+
+<Callout title="Coming to paid plans">
+  Chat sync and encrypted API key sync are planned for paid plans and are
+  rolling out in beta. Until they're available on your account, set up providers
+  and extensions on each device.
+</Callout>
+
+See [Data Locations](/docs/reference/data-locations) for the exact folders on each operating system.
+
+## Where Your Messages Go
+
+AgentOne sends your messages only to the AI model you choose:
+
+- **AgentOne's model:** messages go through AgentOne's servers to the model provider that handles your request.
+- **Your own provider:** messages go directly from your computer to that provider (like OpenAI or Anthropic), using your API key.
+- **Local models:** messages stay on your computer with Ollama or LM Studio.
+
+Tools only reach the internet when they need to. For example, **Search the web** queries DuckDuckGo, and extensions connect to whatever service they're built for.
+
+The desktop app doesn't include usage analytics. For details, read the [Privacy Policy](https://www.agent-one.dev/privacy).

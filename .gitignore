@@ -25,3 +25,7 @@ yarn-error.log*
 .vercel
 next-env.d.ts
 .untracked
+
+# next-sitemap
+/public/robots.txt
+/public/sitemap*.xml

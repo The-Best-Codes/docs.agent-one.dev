@@ -1,0 +1,11 @@
+{
+  "title": "Agent Capabilities",
+  "icon": "Bot",
+  "pages": [
+    "tools-and-approvals",
+    "subagents",
+    "chat-history",
+    "computer-use",
+    "scheduled-agents"
+  ]
+}

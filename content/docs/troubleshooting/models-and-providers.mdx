@@ -1,0 +1,54 @@
+---
+title: Troubleshooting Models & Providers
+description: Fix missing models, connection errors, invalid API keys, and credit problems.
+---
+
+## No Models Available
+
+If the message box shows **No Models Available**, AgentOne doesn't have any model it can use. Do one of these:
+
+- **Sign in** to use AgentOne's model. Make sure `Settings` -> `Account` -> **Hide AgentOne models** is off.
+- **Turn on a provider** and add its API key in `Settings` -> `Providers`. See [Built-in Providers](/docs/models/built-in-providers).
+- **Start a local model** with Ollama or LM Studio, then restart AgentOne. See [Local Models](/docs/models/local-models).
+
+## A Provider's Models Don't Appear
+
+- Check that the provider's switch is on in `Settings` -> `Providers`. A warning icon next to it means it has no API key.
+- If you see **Model list missing**, the model list hasn't downloaded yet. Go to `Settings` -> `Help & Updates` -> **Model List** and click **Update now**.
+- Make sure no filters are active in the model selector. The filter button shows how many filters are on.
+- For a model that's brand new, [add it manually](/docs/models/model-metadata#add-a-model).
+
+## Account Setup in Progress
+
+New accounts may show **Account setup in progress** for a few minutes while your credits are created. AgentOne's model starts working as soon as they appear. If it lasts longer than about 15 minutes, sign out and back in, or [ask on Discord](https://www.agent-one.dev/discord).
+
+## Error Messages
+
+Errors from your own providers start with the provider's name, so you can tell where they came from.
+
+| Error                                            | What to try                                                                                                                                                              |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Failed to connect to AI model**                | Check your internet connection, then try again with **Resume**. For local models, make sure the server is running. Try a different model to see if the provider is down. |
+| **Invalid API key**                              | Copy a fresh key from your provider and paste it into the provider's **API Key** field in `Settings` -> `Providers`. Make sure there are no extra spaces.                |
+| **Unauthorized access to AI model**              | Your key may not have access to that model, or your provider account may need billing set up.                                                                            |
+| **Only image files are supported by this model** | Remove the attachment, or switch to a model that supports that file type.                                                                                                |
+| You've used up your credits for this month       | Wait for your credits to reset, [upgrade your plan](/docs/account/plans-and-credits), or switch to your own provider.                                                    |
+| Model unavailable                                | Switch back to **Default** under **AgentOne** in the model selector.                                                                                                     |
+
+## Responses Stop Partway Through
+
+- Click **Resume** to continue from where it stopped.
+- If a long task keeps stopping, make sure **Auto-Compact** is on in the model configuration. See [Long Chats & Compaction](/docs/chats/long-chats).
+- Check **Max Steps** and **Max Tokens** in the model configuration. If they're set, try clearing them.
+
+## The Usage Stats Show "Unknown"
+
+AgentOne needs the model's context window and pricing from the [model list](/docs/models/model-metadata). For custom or brand-new models, add the **Context Window** yourself in the provider's model settings.
+
+## Reasoning Shows "No reasoning content was provided"
+
+The model reported that it was thinking but didn't share its thoughts. Some providers hide reasoning. This doesn't affect the answer.
+
+## Still Stuck?
+
+[Join our Discord server for live support!](https://www.agent-one.dev/discord)

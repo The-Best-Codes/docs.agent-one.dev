@@ -1,0 +1,184 @@
+---
+title: Linux Setup Guide
+description: Install AgentOne on Linux with an AppImage, a .deb or .rpm package, the Snap Store, or the AUR.
+---
+
+AgentOne runs on 64-bit (x86_64) Linux. Pick the option that fits your distribution:
+
+| Option                               | Best for                                 | Updates                       |
+| ------------------------------------ | ---------------------------------------- | ----------------------------- |
+| [AppImage](#appimage)                | Any distribution, no installation needed | Built-in updater              |
+| [`.deb` package](#debian-and-ubuntu) | Debian, Ubuntu, Linux Mint, Pop!\_OS     | Built-in updater              |
+| [`.rpm` package](#fedora-and-rhel)   | Fedora, RHEL, openSUSE                   | Built-in updater              |
+| [Snap Store](#snap-store)            | Any distribution with snap support       | Snap updates it automatically |
+| [AUR](#arch-linux-aur)               | Arch Linux, Manjaro, EndeavourOS         | Your AUR helper               |
+
+## Download from agent-one.dev
+
+The AppImage, `.deb`, and `.rpm` downloads are on the download page:
+
+https://www.agent-one.dev/download
+
+![The download page with the Linux tab selected and buttons for the AppImage, .deb, and .rpm packages.](/images/docs/installation/download-linux.png)
+
+1. The **Linux** tab.
+2. **Download AppImage**, which works on almost any distribution.
+3. **Download .deb (Debian/Ubuntu)** for Debian-based distributions.
+4. **Download .rpm (Fedora/RHEL)** for Fedora, RHEL, and openSUSE.
+
+The same files are attached to every release on [GitHub](https://github.com/The-Best-Codes/agent-one/releases/latest). Look for the release with the green **Latest** badge and expand **Assets**.
+
+## AppImage
+
+The AppImage runs without installing anything.
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Download the AppImage
+
+    Click **Download AppImage** on the download page.
+
+</Step>
+<Step>
+
+    ### Make it executable
+
+    Open a terminal in the folder you downloaded it to (usually `~/Downloads`) and run:
+
+    ```bash
+    chmod +x AgentOne_*.AppImage
+    ```
+
+    You can also right-click the file in your file manager, open **Properties**, and turn on **Allow executing file as program**.
+
+</Step>
+<Step>
+
+    ### Run AgentOne
+
+    Double-click the file, or run it from the terminal:
+
+    ```bash
+    ./AgentOne_*.AppImage
+    ```
+
+</Step>
+</Steps>
+
+<Callout title="AppImage won't start?">
+  Some distributions need FUSE to run AppImages. On Ubuntu 22.04 and newer,
+  install it with `sudo apt install libfuse2t64` (or `libfuse2` on older
+  releases).
+</Callout>
+
+## Debian and Ubuntu
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Download the package
+
+    Click **Download .deb (Debian/Ubuntu)** on the download page.
+
+</Step>
+<Step>
+
+    ### Install it
+
+    Double-click the file to open it in your software center, or install it from a terminal:
+
+    ```bash
+    sudo apt install ./AgentOne_*.deb
+    ```
+
+</Step>
+<Step>
+
+    ### Launch AgentOne
+
+    Open AgentOne from your application menu, or run `agent-one` in a terminal.
+
+</Step>
+</Steps>
+
+## Fedora and RHEL
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Download the package
+
+    Click **Download .rpm (Fedora/RHEL)** on the download page.
+
+</Step>
+<Step>
+
+    ### Install it
+
+    ```bash
+    sudo dnf install ./AgentOne-*.rpm
+    ```
+
+    On openSUSE, use `sudo zypper install ./AgentOne-*.rpm`.
+
+</Step>
+<Step>
+
+    ### Launch AgentOne
+
+    Open AgentOne from your application menu, or run `agent-one` in a terminal.
+
+</Step>
+</Steps>
+
+## Snap Store
+
+AgentOne is on the [Snap Store](https://snapcraft.io/agent-one). Search for `AgentOne` in your app store, or install it from a terminal:
+
+```bash
+sudo snap install agent-one
+```
+
+Then launch AgentOne from your application menu or run `agent-one`. Snap keeps AgentOne up to date automatically.
+
+## Arch Linux (AUR)
+
+Install the [`agent-one-bin`](https://aur.archlinux.org/packages/agent-one-bin) package with your favorite AUR helper:
+
+```bash
+yay -S agent-one-bin
+```
+
+or:
+
+```bash
+paru -S agent-one-bin
+```
+
+Update AgentOne the same way you update other AUR packages.
+
+## Troubleshooting
+
+### AgentOne doesn't show up in my application menu after installing the AppImage
+
+AppImages aren't installed, so they don't add a menu entry by themselves. Use a tool like [Gear Lever](https://flathub.org/apps/it.mijorus.gearlever) or AppImageLauncher to integrate it, or switch to the `.deb`, `.rpm`, Snap, or AUR package.
+
+### AgentOne can't save my API keys
+
+AgentOne stores API keys in your system keyring through the Secret Service (provided by GNOME Keyring or KWallet). If no keyring is available, AgentOne saves keys to a local file instead and moves them into the keyring once one is available. If keys don't persist, install `gnome-keyring` (or enable KWallet) and restart AgentOne.
+
+### Computer Use isn't available
+
+[Computer Use](/docs/agent/computer-use) works on macOS and Windows for now. It isn't available on Linux yet.
+
+### Notifications don't appear
+
+Make sure notifications are enabled for AgentOne in your desktop environment's settings, and check [Agent Notifications](/docs/settings/chats#agent-notifications) in AgentOne.
+
+### Other Problems
+
+Having a different issue? [Join our Discord server for live support!](https://www.agent-one.dev/discord)

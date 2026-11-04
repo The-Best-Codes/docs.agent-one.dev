@@ -1,0 +1,12 @@
+{
+  "title": "Settings",
+  "icon": "Settings",
+  "pages": [
+    "account",
+    "appearance",
+    "chats",
+    "keyboard-shortcuts",
+    "performance",
+    "help-and-updates"
+  ]
+}

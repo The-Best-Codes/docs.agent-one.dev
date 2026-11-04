@@ -1,0 +1,44 @@
+---
+title: Models & Providers
+description: Choose between AgentOne's own model, your own API keys for 125+ providers, local models, and custom OpenAI-compatible APIs.
+---
+
+AgentOne works with almost any AI model. There are four ways to connect one, and you can use several at once:
+
+| Option                                                | You need                     | Cost                                            |
+| ----------------------------------------------------- | ---------------------------- | ----------------------------------------------- |
+| [AgentOne's model](#agentones-model)                  | An AgentOne account          | Free monthly credits, more with a paid plan     |
+| [Built-in providers](/docs/models/built-in-providers) | An API key from the provider | Billed by the provider, no markup from AgentOne |
+| [Local models](/docs/models/local-models)             | Ollama or LM Studio          | Free, runs on your computer                     |
+| [Custom providers](/docs/models/custom-providers)     | Any OpenAI-compatible API    | Depends on the API                              |
+
+## AgentOne's Model
+
+When you [sign in](/docs/account), AgentOne's own model appears in the model selector as **Default** under **AgentOne**. It works right away, with no API keys, and routes each request to a capable model behind the scenes. It uses your account's [monthly credits](/docs/account/plans-and-credits).
+
+If you'd rather only use your own providers, turn on `Settings` -> `Account` -> **Hide AgentOne models**.
+
+## Bring Your Own Keys
+
+AgentOne has more than 125 providers built in, including OpenAI, Anthropic, Google, xAI, Mistral, Groq, DeepSeek, OpenRouter, Together AI, Fireworks AI, Cerebras, Hugging Face, Vercel AI Gateway, and many more. Turn one on, paste your API key, and its models appear in the model selector. Your messages go straight from your computer to the provider.
+
+See [Built-in Providers](/docs/models/built-in-providers).
+
+## Where Model Information Comes From
+
+AgentOne knows each model's name, context window, pricing, and features (like tool and image support) from the [AI Model Directory](https://www.modeldirectory.dev), an open, daily-updated catalog of over 22,000 model listings. AgentOne downloads the list on its own and keeps it fresh. See [Model Metadata](/docs/models/model-metadata).
+
+<Cards>
+  <Card href="/docs/models/choosing-a-model" title="Choosing a Model">
+    Use the model selector and per-chat model settings.
+  </Card>
+  <Card href="/docs/models/built-in-providers" title="Built-in Providers">
+    Turn on a provider and add your API key.
+  </Card>
+  <Card href="/docs/models/local-models" title="Local Models">
+    Run models on your own computer with Ollama or LM Studio.
+  </Card>
+  <Card href="/docs/models/custom-providers" title="Custom Providers">
+    Connect any OpenAI-compatible API.
+  </Card>
+</Cards>

@@ -1,128 +1,122 @@
 ---
 title: macOS Setup Guide
-description: Step-by-step instructions for installing AgentOne on macOS, including solutions for common installation issues
+description: Step-by-step instructions for installing AgentOne on macOS, including fixes for common installation issues.
 ---
+
+AgentOne runs on macOS 14.0 (Sonoma) or later, on both Apple Silicon and Intel Macs.
 
 ## Install AgentOne on macOS
 
 {/* prettier-ignore */}
 <Steps>
 <Step>
-  
+
     ### Download the desktop app
-    
+
     Head to:
     https://www.agent-one.dev/download
-    
-    You'll be redirected to a download page, which will attempt to automatically detect your operating system. Make sure the `macOS` tab at the top of the page is selected:
-    
-    ![AgentOne download page showing macOS tab](/images/docs/installation/macos/download-macos-tab.png)
-    
-    You'll see two download options:
-    
-    - **Download Apple Silicon (.dmg):** for Macs with Apple Silicon chips (M1, M2, M3, M4, or newer).
-    - **Download Intel (.dmg):** for older Macs with Intel processors.
-    
+
+    Make sure the **macOS** tab is selected.
+
+    ![The download page with the macOS tab selected and numbered download buttons.](/images/docs/installation/download-macos.png)
+
+    1. The **macOS** tab.
+    2. **Download Apple Silicon (.dmg)** for Macs with an Apple chip (M1 or newer).
+    3. **Download Intel (.dmg)** for older Macs with an Intel processor.
+
     Click the button that matches your Mac.
-    
+
     <Callout title="Not sure which one to pick?">
-      Click the Apple menu in the top-left corner of your screen and select `About This Mac`. Look at the `Chip` or `Processor` field:
-      
-      - If it says something like `Apple M1`, `Apple M2`, `Apple M3`, `Apple M4`, or newer, choose **Apple Silicon**.
-      - If it says something like `Intel Core i5` or `Intel Core i7`, choose **Intel**.
-      
-      If you pick the wrong one, AgentOne may not open correctly or may run more slowly than it should. To learn more, read [Apple's support article.](https://support.apple.com/en-us/116943)
+      Click the Apple menu in the top-left corner of your screen and choose `About This Mac`. If the `Chip` field says something like `Apple M1`, `Apple M3`, or `Apple M4`, choose **Apple Silicon**. If it shows a `Processor` field with something like `Intel Core i5`, choose **Intel**.
+
+      If you pick the wrong one, AgentOne may not open or may run slowly. To learn more, read [Apple's support article](https://support.apple.com/en-us/116943).
     </Callout>
 
-    <Callout>If macOS or your browser warns you about the download or blocks the app from opening, see the [Troubleshooting](#troubleshooting) section below.</Callout>
+</Step>
+<Step>
+
+    ### Open the `.dmg` file
+
+    When the download finishes, open the `.dmg` file from your browser or from the `Downloads` folder in Finder.
 
 </Step>
 <Step>
-  
-    ### Open the `dmg` file
-    
-    When the download finishes, open the `.dmg` file from your browser or from the `Downloads` folder in Finder.
-  
-</Step>
-<Step>
-  
+
     ### Move AgentOne to Applications
-    
-    In the installer window, drag `AgentOne.app` into the `Applications` folder.
-  
+
+    An installer window opens.
+
+    ![The AgentOne installer window showing the AgentOne icon on the left and the Applications folder on the right.](/images/docs/installation/macos-dmg.png)
+
+    Drag **AgentOne** (1) onto the **Applications** folder (2).
+
 </Step>
 <Step>
-  
+
     ### Open AgentOne
-    
-    Open the `Applications` folder and double-click `AgentOne`.
-    
-    The first time you launch the app, macOS may ask you to confirm that you want to open something downloaded from the internet. Click `Open` to continue.
-  
+
+    Open the `Applications` folder and double-click **AgentOne**, or find it in Launchpad or Spotlight.
+
+    The first time you launch the app, macOS may ask you to confirm that you want to open an app downloaded from the internet. Click **Open** to continue.
+
+</Step>
+<Step>
+
+    ### Finish setup
+
+    Follow the [Quickstart](/docs/quickstart) to sign in or connect your own AI provider.
+
 </Step>
 </Steps>
 
+AgentOne updates itself on macOS. See [Updating AgentOne](/docs/installation/updating).
+
 ## Troubleshooting
+
+### "AgentOne.app" was downloaded from the internet
+
+This is a normal macOS message the first time you open many apps downloaded outside the App Store. If you downloaded AgentOne from `agent-one.dev` or the official GitHub releases page, click **Open**.
+
+### "AgentOne.app" can't be opened because Apple cannot check it for malicious software
+
+macOS Gatekeeper may block an app until you allow it. AgentOne releases are signed and notarized, but you might still see this on some setups. To allow it:
+
+1. Try to open AgentOne once so macOS shows the warning.
+2. Open **System Settings**.
+3. Go to **Privacy & Security**.
+4. Scroll down to the **Security** section.
+5. Click **Open Anyway** next to the message about AgentOne.
+6. Confirm by clicking **Open**.
+
+Apple notes that the **Open Anyway** button only appears for about an hour after you try to open the app.
 
 ### "AgentOne.app" is damaged and can't be opened
 
-This is a common macOS Gatekeeper message for apps downloaded outside the App Store. To fix this, first try to go to System Settings > Privacy & Security and click 'Open Anyway' next to the security warning.
-If that doesn't work or you don't see a warning, try these steps.
+This usually means the download was interrupted or modified. Try these steps:
 
-1. Delete the old `.dmg` file and delete `AgentOne.app` from your `Applications` folder if it is already there.
-2. Download a fresh copy for the correct macOS version.
-3. Open the new `.dmg` file.
-4. Drag `AgentOne.app` into the `Applications` folder.
-5. Open the `Applications` folder, but do not open AgentOne yet.
-6. Open the `Terminal` app on your Mac.
-   You can do this by pressing `Command` + `Space`, typing `Terminal`, and pressing `Return`.
-7. Copy and paste this command into Terminal:
+1. Delete `AgentOne.app` from your `Applications` folder and delete the old `.dmg` file.
+2. Download a fresh copy for the correct chip (Apple Silicon or Intel).
+3. Open the new `.dmg` and drag AgentOne into `Applications` again.
+
+If you still see the message, you can clear the quarantine flag macOS added to the download. Open the **Terminal** app (press `Command + Space`, type `Terminal`, and press `Return`), then run:
 
 ```bash
 xattr -cr /Applications/AgentOne.app
 ```
 
-8. Press `Return` on your keyboard to run the command.
-9. Close Terminal.
-10. Go back to `Applications` and open `AgentOne` again.
+This removes the "downloaded from the internet" flag so macOS checks the app normally again.
 
-What this command does: it removes the macOS quarantine flag from the app so macOS will re-check it normally.
-
-<Callout>
-  Only do this if you downloaded AgentOne from `agent-one.dev` or the official
-  GitHub releases page.
+<Callout type="warn">
+  Only run this command if you downloaded AgentOne from `agent-one.dev` or the
+  official GitHub releases page.
 </Callout>
 
-If you still see the same message after doing this, [join our Discord server for live support](https://www.agent-one.dev/discord).
+### AgentOne asks for permissions
 
-### "AgentOne.app" was downloaded from the internet
+AgentOne only asks for macOS permissions when a feature needs them:
 
-This is a normal macOS warning shown the first time you open many apps downloaded outside the App Store. If you downloaded AgentOne from `agent-one.dev` or the official GitHub releases page, click `Open`.
-
-### "AgentOne.app" cannot be opened because the developer cannot be verified
-
-macOS Gatekeeper may block new or newly updated apps until you explicitly allow them.
-
-To resolve the issue, follow these steps:
-
-1. Double-click `AgentOne.app` once so macOS shows the warning.
-2. Open `System Settings`.
-3. Go to `Privacy & Security`.
-4. Scroll down to the `Security` section.
-5. Click `Open Anyway` for AgentOne.
-6. Confirm by clicking `Open`.
-
-Apple notes that the `Open Anyway` button is only available for about one hour after you try opening the app.
-
-If none of this works, you could also try the steps in the ["AgentOne.app" is damaged and can't be opened](#agentoneapp-is-damaged-and-cant-be-opened) section.
-
-### "Apple could not verify \"AgentOne.app\" is free of malware"
-
-This is another version of the same Gatekeeper warning. Follow the steps in ["AgentOne.app" cannot be opened because the developer cannot be verified](#agentoneapp-cannot-be-opened-because-the-developer-cannot-be-verified).
-
-### The app says it is from an unidentified developer or an unknown developer
-
-This is another version of the same Gatekeeper warning. Follow the steps in ["AgentOne.app" cannot be opened because the developer cannot be verified](#agentoneapp-cannot-be-opened-because-the-developer-cannot-be-verified).
+- **Notifications** when AgentOne wants to tell you a response is ready. See [Agent Notifications](/docs/settings/chats#agent-notifications).
+- **Accessibility** and **Screen Recording** if you use [Computer Use](/docs/agent/computer-use).
 
 ### Other Problems
 
