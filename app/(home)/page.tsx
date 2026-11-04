@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -55,15 +56,23 @@ export default function HomePage() {
         </div>
       </div>
       <div className="mt-12 w-full max-w-5xl">
-        <img
+        <Image
           src="/images/docs/overview/hero.png"
           alt="The AgentOne desktop app with a chat open."
-          className="w-full dark:hidden"
+          width={2832}
+          height={2154}
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          fetchPriority="high"
+          className="w-full h-auto dark:hidden"
         />
-        <img
+        <Image
           src="/images/docs/overview/hero-dark.png"
           alt="The AgentOne desktop app in dark mode with a chat open."
-          className="w-full hidden dark:block"
+          width={2832}
+          height={2154}
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          fetchPriority="high"
+          className="w-full h-auto hidden dark:block"
         />
       </div>
       <div className="mt-12 grid w-full max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
