@@ -1,0 +1,87 @@
+---
+title: Built-in Providers
+description: Turn on any of AgentOne's 125+ built-in providers and add your API key.
+---
+
+AgentOne has more than 125 AI providers built in. Turn one on, add your API key, and its models show up in the model selector.
+
+## Set Up a Provider
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Get an API key
+
+    Create an API key on your provider's website. For example:
+
+    | Provider       | Where to get a key                                                      |
+    | -------------- | ----------------------------------------------------------------------- |
+    | OpenAI         | [platform.openai.com/api-keys](https://platform.openai.com/api-keys)    |
+    | Anthropic      | [console.anthropic.com](https://console.anthropic.com/settings/keys)    |
+    | Google         | [aistudio.google.com/apikey](https://aistudio.google.com/apikey)        |
+    | OpenRouter     | [openrouter.ai/keys](https://openrouter.ai/keys)                        |
+    | Groq           | [console.groq.com/keys](https://console.groq.com/keys)                  |
+    | Mistral        | [console.mistral.ai](https://console.mistral.ai/api-keys)               |
+    | xAI            | [console.x.ai](https://console.x.ai)                                     |
+
+    <Callout title="One key, hundreds of models">
+      Providers like OpenRouter and Vercel AI Gateway give you access to models from many companies with a single key.
+    </Callout>
+
+</Step>
+<Step>
+
+    ### Find the provider
+
+    Open `Settings` -> `Providers` -> **Built-in**, and search for the provider.
+
+    ![The Built-in providers card searched for open, showing OpenAI, OpenCode Zen, and OpenRouter with configure buttons and switches.](/images/docs/models/providers.png)
+
+    1. Search built-in providers.
+    2. The configure (gear) button opens the provider's settings.
+    3. The switch turns the provider on or off.
+
+</Step>
+<Step>
+
+    ### Turn it on and add your key
+
+    Turn on the provider's switch, then click **Set Up Provider** (or the gear button) to open its settings.
+
+    ![The Configure OpenAI provider dialog with the API Key field, HTTP Headers, and the Models list.](/images/docs/models/provider-dialog.png)
+
+    1. Paste your key into **API Key** and click **Save**, which appears once you change the field. Click the eye button to show or hide the key.
+    2. **HTTP Headers** are optional. Add them if your provider asks for extra headers.
+    3. **Models** lists every model AgentOne knows for this provider. Search to find one.
+    4. **Add Model** registers a model that isn't in the list. See [Model Metadata](/docs/models/model-metadata).
+
+</Step>
+<Step>
+
+    ### Pick a model
+
+    Close the dialog, go back to a chat, and choose one of the provider's models in the [model selector](/docs/models/choosing-a-model).
+
+</Step>
+</Steps>
+
+<Callout title="Your keys stay on your computer">
+  API keys are saved in your system's secure keychain (Keychain on macOS,
+  Credential Manager on Windows, Secret Service on Linux). They're never synced
+  or sent anywhere except to the provider itself.
+</Callout>
+
+A warning icon next to a provider means it's turned on but doesn't have an API key yet.
+
+## Usage and Cost
+
+When you use your own provider, the usage stats at the top of a chat show the estimated cost in US dollars, based on the model's published pricing. Edits and deleted messages aren't included, and if pricing is missing for a model, the estimate shows as a lower bound (for example `≥ $0.04`). Check your provider's dashboard for exact billing.
+
+## All Built-in Providers
+
+Every provider below works with an API key, set up the same way. Some, like GitHub Copilot and Ollama Cloud, need an account with that service.
+
+302.AI, Abacus, Abliteration.ai, Above, AgentRouter, Agnes, ai&, AIgateway, AIHubMix, Aion, Alibaba (China), Ambient, Ant Ling, Anthropic, AnyAPI, Api.Airforce, avian, Baseten, BazaarLink, Berget.AI, BigModel, BotHub, Cerebras, Chutes, Cline, Cohere, Cortecs, CrofAI, CrossModel, DaoXE, DeepInfra, DeepSeek, Eden AI, ElectronHub, EmpirioLabs AI, Engy, Fastino, FastRouter, Fireworks AI, Friendli, GitHub Copilot, Google Generative AI, Groq, Helicone, Hugging Face, Hyper by Charm, Impossibl, Inception, Inceptron, Inco, Inference.net, IO.NET, Jiekou.AI, Kenari, Kilo Gateway, KiosAPI, Kosmik Compute, LiteRouter, LLM Gateway, LLM Tech, LLMTR, LowRouter, MegaNova, Meta, Mistral, Mixlayer, MNN, Moark, Modelis, ModelScope, Naga, NanoGPT, NaraRouter, NEAR AI Cloud, Nebius Token Factory, Neuralwatt, Nous Portal, Novita, Nvidia, Ofox, Ollama Cloud, OpenAI, OpenCode Zen, OpenRouter, Opper, OrcaRouter, OVHcloud AI Endpoints, Perplexity, Poe, Prime Intellect, QiHang AI, Qiniu, Quiver, Requesty, routing.run, Sakana, SEA-LION, SenseNova Token Plan, Speka, Standard Compute, Synthetic, Tetrate Agent Router Service, The Grid, Tinfoil, Together AI, TokenRouter, TrustedRouter, Typhoon, Umans AI, UnoRouter, Vancine, Venice AI, Vercel AI Gateway, Vispark, Vivgrid, Void AI, Vultr Inference, Wafer, Weights & Biases, xAI, Xiaomi MiMo, Xpersona, Z.ai, Zenifra, ZenMux, and Zylo.
+
+Don't see yours? If it has an OpenAI-compatible API, add it as a [custom provider](/docs/models/custom-providers). To compare providers and prices, browse [modeldirectory.dev](https://www.modeldirectory.dev/providers).

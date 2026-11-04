@@ -1,0 +1,5 @@
+{
+  "title": "Account & Plans",
+  "icon": "CircleUserRound",
+  "pages": ["plans-and-credits", "sync-and-privacy"]
+}

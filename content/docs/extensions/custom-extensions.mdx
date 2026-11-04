@@ -1,0 +1,69 @@
+---
+title: Custom Extensions
+description: Add any local (STDIO) or remote (HTTP) MCP server to AgentOne.
+---
+
+If an MCP server isn't in the registry, or you want to configure it yourself, add it as a custom extension.
+
+Open **Extensions** from the account menu and click **Add Custom**.
+
+## Local Server (STDIO)
+
+A local server is a program AgentOne runs on your computer.
+
+![The Add Custom Extension dialog set to STDIO (Local), with Name, Command, Environment Variables, and Timeout fields.](/images/docs/extensions/add-custom.png)
+
+To add it:
+
+1. Set **Server Type** to **STDIO (Local)**.
+2. Enter a **Name**, like `Filesystem`.
+3. Enter the full **Command** to start the server, including its arguments. For example:
+
+   ```bash
+   npx -y @modelcontextprotocol/server-filesystem ~/Documents
+   ```
+
+4. Add any **Environment Variables** the server needs, like API keys. Click **Add** for each one.
+5. Optionally change **Timeout (seconds)** (default: 30).
+6. Click **Add Custom**.
+
+To have AgentOne ask before using this server's tools, turn on **Require Approval By Default** in the extension's **Advanced** settings after adding it. See [Tool Approvals](/docs/extensions/managing#tool-approvals).
+
+<Callout type="warn">
+  Local servers run with the same access as your user account. Only add servers
+  you trust.
+</Callout>
+
+## Remote Server (HTTP)
+
+A remote server is an MCP endpoint on the internet.
+
+![The Add Custom Extension dialog set to HTTP (Remote), with a name and URL filled in and an HTTP Headers section.](/images/docs/extensions/add-custom-http.png)
+
+To add it:
+
+1. Set **Server Type** to **HTTP (Remote)**.
+2. Enter a **Name** and the server's **URL**, like `https://mcp.example.com/mcp`.
+3. If the server uses an API key, add it under **HTTP Headers**, for example `Authorization` with the value `Bearer your-key`.
+4. Click **Add Custom**.
+
+If the server supports OAuth sign-in, you can connect your account after adding it. See [Signing In to an Extension](/docs/extensions/managing#signing-in-to-an-extension).
+
+## Install from a Link
+
+Some websites offer an **Add to AgentOne** link that starts with `agent-one://mcp/install`. Clicking one opens AgentOne with the **Add Custom Extension** form already filled in.
+
+![The Add Custom Extension dialog with the alert Extension details were auto-filled, and the Filesystem server's details filled in.](/images/docs/extensions/deep-link-prefill.png)
+
+AgentOne shows **Extension details were auto-filled** so you know to check them. Review the command or URL carefully before clicking **Add Custom**. To create your own install links, see [Deep Links](/docs/reference/deep-links#install-an-extension).
+
+## Popular Servers to Try
+
+| Server                        | Command or URL                                               |
+| ----------------------------- | ------------------------------------------------------------ |
+| Filesystem                    | `npx -y @modelcontextprotocol/server-filesystem ~/Documents` |
+| Everything (a test server)    | `npx -y @modelcontextprotocol/server-everything`             |
+| Context7 (code documentation) | `npx -y @upstash/context7-mcp`                               |
+| Linear                        | `https://mcp.linear.app/mcp`                                 |
+
+You can find many more on the [MCP Registry](https://registry.modelcontextprotocol.io) or in **Extensions**.

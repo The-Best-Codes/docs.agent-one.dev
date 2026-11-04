@@ -1,0 +1,65 @@
+---
+title: Logs & Diagnostics
+description: Find AgentOne's log files, turn on detailed logging, and report a bug.
+---
+
+AgentOne writes a log file that can help the team figure out what went wrong.
+
+## Find the Log File
+
+The log file is called `agent-one-logs.log`:
+
+| OS      | Folder                               |
+| ------- | ------------------------------------ |
+| macOS   | `~/Library/Logs/dev.agent-one/`      |
+| Windows | `%LOCALAPPDATA%\dev.agent-one\logs\` |
+| Linux   | `~/.local/share/dev.agent-one/logs/` |
+
+Each log file is limited to 1 MB, and AgentOne keeps older files alongside it.
+
+<Callout type="warn">
+  Logs can include details about your chats, like chat titles or tool names.
+  Look through a log before sharing it publicly.
+</Callout>
+
+## Turn On Detailed Logging
+
+By default, AgentOne logs only important information to save disk space. For more detail, start AgentOne with the `AGENT_ONE_LOG_LEVEL` environment variable set to `debug` or `trace`:
+
+<Tabs items={["macOS", "Windows", "Linux"]}>
+<Tab value="macOS">
+
+```bash
+AGENT_ONE_LOG_LEVEL=debug /Applications/AgentOne.app/Contents/MacOS/agent-one
+```
+
+</Tab>
+<Tab value="Windows">
+
+In PowerShell:
+
+```powershell
+$env:AGENT_ONE_LOG_LEVEL = "debug"; & "$env:LOCALAPPDATA\AgentOne\AgentOne.exe"
+```
+
+The path may be different if you installed AgentOne somewhere else.
+
+</Tab>
+<Tab value="Linux">
+
+```bash
+AGENT_ONE_LOG_LEVEL=debug agent-one
+```
+
+</Tab>
+</Tabs>
+
+The available levels are `error`, `warn`, `info` (the default), `debug`, `trace`, and `off`.
+
+## Report a Bug
+
+1. Go to `Settings` -> `Help & Updates` and note your **Current Version**.
+2. Click **Report a bug** to open a new issue on [GitHub](https://github.com/AgentOne-Dev/agent-one-public/issues/new).
+3. Describe what you did, what you expected, and what happened instead. Include your operating system and, if you can, the relevant part of your log.
+
+You can also ask for help in the [AgentOne Discord](https://www.agent-one.dev/discord).

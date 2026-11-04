@@ -1,0 +1,37 @@
+---
+title: Troubleshooting Scheduled Agents
+description: Fix scheduled agents that don't run, run late, or stop for approval.
+---
+
+## The Agent Didn't Run
+
+- **Is it turned on?** Check its switch on the [Scheduled Agents](/docs/agent/scheduled-agents) page.
+- **Was your computer awake?** Scheduled agents run on your computer. If it was off or asleep, the run happens when it wakes, but only if it's no more than 5 minutes late. To always run late jobs, edit the agent and check **Never skip late runs**, or raise **Skip if late by (minutes)**.
+- **Is the schedule right?** Hover over the schedule on the Scheduled Agents page to see the next run time. Remember that cron schedules use your computer's local time zone.
+- **Is AgentOne installed normally?** The system scheduler opens AgentOne with an `agent-one://` link. If those links don't open AgentOne, see [Deep Links](/docs/reference/deep-links#links-dont-open-agentone).
+
+## The Agent Ran, but Stopped
+
+If the prompt uses a tool that needs approval, the run waits for you. Open the chat (it has a clock icon in the sidebar) and approve or deny the tool. To avoid this for agents that run while you're away:
+
+- Turn off **Require Approval** for the tools the agent needs in `Settings` -> `Tools`, or
+- Set **Tool Behavior** to **YOLO (auto-run)** in a new chat so it becomes the default for new chats, including scheduled runs. Only do this if you trust the prompt and tools.
+
+## The Schedule Won't Save
+
+AgentOne uses your operating system's scheduler, which has a few limits:
+
+- On **Windows**, a schedule can't need more than 48 Task Scheduler triggers. Simplify very complex schedules.
+- On **macOS**, schedules that need a very large number of separate times can fail. Try a simpler expression.
+
+## The Agent Used the Wrong Model
+
+Scheduled runs use your **default model for new chats**. To change it, start a new chat, pick the model you want, and close the chat. See [Default Model for New Chats](/docs/models/choosing-a-model#default-model-for-new-chats).
+
+## A Window Flashes on Windows
+
+Since AgentOne 1.1.2, scheduled agents no longer open a PowerShell window when they run. Update AgentOne from `Settings` -> `Help & Updates`.
+
+## Still Stuck?
+
+[Join our Discord server for live support!](https://www.agent-one.dev/discord)

@@ -1,0 +1,80 @@
+---
+title: Run a Local Agent with Ollama
+description: Use AgentOne without an account or API keys, with a free model running entirely on your computer.
+---
+
+[Ollama](https://ollama.com) runs open-source AI models on your own computer. Combined with AgentOne, you get a private agent that works offline, costs nothing to use, and never sends your messages to anyone.
+
+## What You'll Need
+
+- A computer with at least 8 GB of memory (16 GB or more is better).
+- About 5 GB of free disk space for a small model.
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Install Ollama
+
+    Download and install Ollama from [ollama.com/download](https://ollama.com/download), then open it. On macOS and Windows, Ollama keeps running in the background.
+
+</Step>
+<Step>
+
+    ### Download a model that supports tools
+
+    Open a terminal and run:
+
+    ```bash
+    ollama pull qwen3:8b
+    ```
+
+    This downloads a capable model that can use tools. If your computer has less memory, try a smaller model like `qwen3:4b`. If it has a lot, try a bigger one. Look for the **tools** tag in the [Ollama library](https://ollama.com/search?c=tools).
+
+</Step>
+<Step>
+
+    ### Open AgentOne
+
+    If AgentOne was already open, quit and reopen it. AgentOne finds your Ollama models when it starts.
+
+    During onboarding, choose **I want to use my own API keys instead**. Make sure **Ollama** is turned on under **Local**, then click **Continue**.
+
+</Step>
+<Step>
+
+    ### Check the Ollama provider
+
+    Go to `Settings` -> `Providers` -> **Local** and click the gear next to **Ollama**. Your model should be listed.
+
+    ![The Configure Ollama provider dialog listing three downloaded models.](/images/docs/models/ollama-dialog.png)
+
+    If it isn't, make sure Ollama is running and click **Auto**.
+
+</Step>
+<Step>
+
+    ### Pick your local model
+
+    In a chat, open the model selector and choose your model under **Ollama**. Then try something like:
+
+    ```text
+    What's in my Downloads folder? Group the files by type.
+    ```
+
+</Step>
+</Steps>
+
+## Going Fully Offline
+
+Everything above works without the internet, except tools that need it, like **Search the web**, **Browse**, and **Wikipedia**. You can turn those off in `Settings` -> `Tools`, or set a chat's [Tool Behavior](/docs/agent/tools-and-approvals#tool-behavior) to **No tools** for plain chatting.
+
+If you signed in, you can also turn on `Settings` -> `Account` -> **Hide AgentOne models** so only your local models show up.
+
+## Tips
+
+- **Local models are slower** than cloud models, especially the first message after loading. Smaller models are faster.
+- **Keep chats focused.** Local models usually have smaller context windows, so start new chats often. [Auto-Compact](/docs/chats/long-chats) helps when the model's context window is known.
+- **Set the context window** if usage stats show it as unknown: edit the model in the Ollama provider settings and fill in **Context Window**.
+
+See [Local Models](/docs/models/local-models) for LM Studio and more options.

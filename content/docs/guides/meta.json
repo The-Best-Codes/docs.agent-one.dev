@@ -1,0 +1,5 @@
+{
+  "title": "Guides",
+  "icon": "Map",
+  "pages": ["morning-briefing", "local-agent-with-ollama", "connect-an-app"]
+}

@@ -1,0 +1,65 @@
+---
+title: Data Locations
+description: Where AgentOne stores your chats, settings, API keys, scheduled agents, and logs on each operating system.
+---
+
+AgentOne stores everything on your computer, in folders named after its app ID, `dev.agent-one`.
+
+## App Data
+
+Your chats, the extension list, and scheduled agents are stored here:
+
+| OS      | Folder                                         |
+| ------- | ---------------------------------------------- |
+| macOS   | `~/Library/Application Support/dev.agent-one/` |
+| Windows | `%APPDATA%\dev.agent-one\`                     |
+| Linux   | `~/.config/dev.agent-one/`                     |
+
+| File              | Contains                                              |
+| ----------------- | ----------------------------------------------------- |
+| `agent-one.db`    | Your chats and their search index                     |
+| `mcp-registry.db` | The downloaded extension list                         |
+| `crons.json`      | Your [scheduled agents](/docs/agent/scheduled-agents) |
+
+The downloaded [model list](/docs/models/model-metadata) (`model-directory.json`), custom fonts (`custom-fonts/`), and custom chat backgrounds (`chat-backgrounds/`) are stored in the app's local data folder. On macOS that's the same folder as above. On Windows it's `%LOCALAPPDATA%\dev.agent-one\`, and on Linux `~/.local/share/dev.agent-one/`.
+
+Most settings are stored in the app's built-in web storage.
+
+## API Keys
+
+API keys and your sign-in token are stored in your system's secure credential store:
+
+| OS      | Store                                     |
+| ------- | ----------------------------------------- |
+| macOS   | Keychain                                  |
+| Windows | Credential Manager                        |
+| Linux   | Secret Service (GNOME Keyring or KWallet) |
+
+On Linux, if no keyring is available, keys are kept in a local file next to `agent-one.db` and moved to the keyring once one is available.
+
+## Logs
+
+| OS      | Folder                               |
+| ------- | ------------------------------------ |
+| macOS   | `~/Library/Logs/dev.agent-one/`      |
+| Windows | `%LOCALAPPDATA%\dev.agent-one\logs\` |
+| Linux   | `~/.local/share/dev.agent-one/logs/` |
+
+See [Logs & Diagnostics](/docs/troubleshooting/logs).
+
+## Scheduled Agent Jobs
+
+Each [scheduled agent](/docs/agent/scheduled-agents) is also registered with your system's scheduler:
+
+| OS      | Where                                               |
+| ------- | --------------------------------------------------- |
+| macOS   | A `launchd` agent in `~/Library/LaunchAgents/`      |
+| Windows | A task in Task Scheduler                            |
+| Linux   | A `systemd` user timer in `~/.config/systemd/user/` |
+
+AgentOne manages these for you. Use the [Scheduled Agents page](/docs/agent/scheduled-agents) to change or delete them instead of editing them by hand.
+
+<Callout type="warn">
+  Back up the app data folder before deleting or moving anything. Deleting
+  `agent-one.db` permanently deletes all of your chats.
+</Callout>

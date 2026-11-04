@@ -1,0 +1,114 @@
+---
+title: Quickstart
+description: Install AgentOne, finish the first-run setup, and send your first message.
+icon: Rocket
+---
+
+This guide takes you from download to your first conversation in a few minutes.
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Install AgentOne
+
+    Go to [agent-one.dev/download](https://www.agent-one.dev/download) and download AgentOne for your operating system. If you need help, follow the guide for [macOS](/docs/installation/macos), [Windows](/docs/installation/windows), or [Linux](/docs/installation/linux).
+
+</Step>
+<Step>
+
+    ### Start setup
+
+    Open AgentOne. The first time you launch it, you'll see the welcome screen. Click **Get Started**.
+
+    ![The AgentOne welcome screen with the heading Welcome to AgentOne and a Get Started button.](/images/docs/quickstart/onboarding-welcome.png)
+
+</Step>
+<Step>
+
+    ### Choose how you want to use AI models
+
+    AgentOne needs an AI model to think with. On the **Set up your account** screen, you have two options:
+
+    ![The Set up your account step, with a Sign in button and a link to use your own API keys instead.](/images/docs/quickstart/onboarding-account.png)
+
+    1. **Sign in** (recommended). Signing in gives you access to AgentOne's own model with free monthly credits, and syncs your settings across devices. If you don't have an account yet, clicking **Sign in** lets you create one.
+    2. **I want to use my own API keys instead.** Skip the account and connect a provider like OpenAI, Anthropic, Google, OpenRouter, or a local model running in Ollama or LM Studio.
+
+    <Callout title="Not sure which to pick?">
+      Sign in. It's free, you can start chatting immediately, and you can still add your own API keys later in [Providers settings](/docs/models/built-in-providers).
+    </Callout>
+
+</Step>
+<Step>
+
+    ### Sign in through your browser
+
+    When you click **Sign in**, AgentOne opens a sign-in page in your web browser and shows a short code.
+
+    ![AgentOne showing Link your account with an eight-character code and an Open Login Form Manually link.](/images/docs/quickstart/onboarding-link-account.png)
+
+    1. The code AgentOne shows. Make sure it matches the code in your browser, then click **Approve** on the web page.
+    2. If your browser didn't open, click **Open Login Form Manually**.
+
+    Once you approve, AgentOne finishes signing you in on its own. It uses the name on your account, so you won't be asked for it again.
+
+    If you chose your own API keys instead, enable at least one provider and enter its key, then click **Continue**. AgentOne will then ask what it should call you.
+
+    ![The Configure providers step listing built-in providers with switches, and the Local section below.](/images/docs/quickstart/onboarding-providers.png)
+
+</Step>
+<Step>
+
+    ### Take the tour
+
+    When setup is done, you'll see **You're all set!**
+
+    ![The final onboarding screen with Take the Tour, Browse Documentation, and Skip and launch AgentOne options.](/images/docs/quickstart/onboarding-done.png)
+
+    1. **Take the Tour** walks you through the message box, attachments, the model selector, your chats, and the account menu. We recommend it if you're new.
+    2. **Browse Documentation** opens these docs.
+    3. **Skip and launch AgentOne** takes you straight to a new chat.
+
+    ![The guided tour highlighting the message box, with a popover explaining how to write a message.](/images/docs/quickstart/tour-step-2.png)
+
+    You can take the tour again any time from `Settings` -> `Help & Updates` -> **Take the tour**.
+
+</Step>
+<Step>
+
+    ### Send your first message
+
+    Click the message box at the bottom of the window, type what you need the way you'd ask a person, and press `Enter`. For example:
+
+    ```text
+    Help me plan a 3-day trip to Chicago in December. Keep it budget-friendly.
+    ```
+
+    AgentOne streams its answer as it writes. Keep replying in the same chat to refine the result, or click **New Chat** in the sidebar to start a new topic.
+
+</Step>
+</Steps>
+
+<Callout title="Skipped setup by accident?">
+  If you leave onboarding early, AgentOne shows a reminder that says **You
+  haven't finished setting up AgentOne**. Click **Take onboarding** to go back,
+  or **Never** to hide the reminder for good.
+</Callout>
+
+## Next Steps
+
+<Cards>
+  <Card href="/docs/app-tour" title="App Tour">
+    Learn what every part of the window does.
+  </Card>
+  <Card href="/docs/agent/tools-and-approvals" title="Tools & Approvals">
+    See what AgentOne can do on your computer and how approvals work.
+  </Card>
+  <Card href="/docs/chats/personalization" title="Personalization">
+    Tell AgentOne your name, your preferences, and how to respond.
+  </Card>
+  <Card href="/docs/guides/morning-briefing" title="Set Up a Morning Briefing">
+    Create your first scheduled agent.
+  </Card>
+</Cards>

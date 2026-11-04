@@ -1,0 +1,61 @@
+---
+title: Deep Links
+description: Open AgentOne from other apps and websites with agent-one:// links.
+---
+
+AgentOne registers the `agent-one://` link type, so links on websites, in documents, or in other apps can open AgentOne and start an action. If AgentOne is already open, the link brings it to the front.
+
+All links include a version parameter, `v=1`.
+
+## Start a New Chat
+
+```text
+agent-one://new-chat?v=1&message=<text>
+```
+
+Opens a new chat. If you include `message` (URL-encoded), it's typed into the message box for you. AgentOne doesn't send it until you press `Enter`.
+
+**Example:**
+
+```text
+agent-one://new-chat?v=1&message=Summarize%20today's%20top%20tech%20news
+```
+
+## Install an Extension
+
+```text
+agent-one://mcp/install?v=1&name=<name>&config=<json>
+```
+
+Opens **Extensions** with the **Add Custom Extension** form filled in, so the person can review it and click **Add Custom**. See [Custom Extensions](/docs/extensions/custom-extensions#install-from-a-link).
+
+| Parameter | Required | Description                                                                                                                                         |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | Yes      | The extension's name.                                                                                                                               |
+| `config`  | Yes      | URL-encoded JSON. For a remote server: `{"type":"http","url":"https://..."}`. For a local server: `{"command":"npx","args":["-y","package-name"]}`. |
+
+**Example (remote):**
+
+```text
+agent-one://mcp/install?v=1&name=Linear&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.linear.app%2Fmcp%22%7D
+```
+
+<Callout title="Extension authors">
+  You can add an "Add to AgentOne" button to your README or website with a link
+  like the one above. AgentOne always asks people to review the details before
+  installing.
+</Callout>
+
+## Scheduled Agent Runs
+
+```text
+agent-one://cron?v=1&id=<id>
+```
+
+Your operating system's scheduler uses this link to start a [scheduled agent](/docs/agent/scheduled-agents). You don't need to use it yourself.
+
+## Links Don't Open AgentOne?
+
+- Open AgentOne at least once after installing so it can register the link type.
+- On Linux, AgentOne registers the link type each time it starts. If you use the AppImage, integrate it with your desktop (see [Linux troubleshooting](/docs/installation/linux#troubleshooting)).
+- Links with an unknown action or a different version are ignored.

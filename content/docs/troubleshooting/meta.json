@@ -1,0 +1,5 @@
+{
+  "title": "Troubleshooting",
+  "icon": "LifeBuoy",
+  "pages": ["models-and-providers", "extensions", "scheduled-agents", "logs"]
+}

@@ -1,0 +1,67 @@
+---
+title: Connect an App with an Extension
+description: Install the Linear extension, sign in, and manage issues by chatting with AgentOne.
+---
+
+[Extensions](/docs/extensions) let AgentOne work with your other apps. In this guide, you'll connect [Linear](https://linear.app), a project tracker, but the steps are the same for most apps, like Notion, Canva, Figma, Supabase, and Stripe.
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Find the extension
+
+    Open the account menu, click **Extensions**, and search for `linear`. Look for the official one, published as `app.linear/linear`, and click **Install**.
+
+</Step>
+<Step>
+
+    ### Install it
+
+    Linear's extension is a remote extension, so AgentOne fills in everything for you.
+
+    ![Installing Linear: Install method HTTP, with the name and URL filled in.](/images/docs/extensions/install-remote.png)
+
+    Click **Install**.
+
+</Step>
+<Step>
+
+    ### Sign in to Linear
+
+    The extension's status says **Authentication required to load tools**. Click **Advanced**, then **Connect**. Your browser opens Linear's sign-in page. Sign in, approve access for AgentOne, and come back.
+
+    Once you're connected, the status changes to **Loaded successfully** with a number of tools.
+
+</Step>
+<Step>
+
+    ### Decide what needs approval
+
+    By default, extension tools run without asking. For an app where AgentOne can make changes, you may want approval for anything that edits or deletes. In **Advanced**, open **Per-tool approvals** and set those tools to **Approval required**, or turn on **Require Approval By Default**. Click **Save changes**.
+
+</Step>
+<Step>
+
+    ### Try it
+
+    Start a new chat and ask:
+
+    ```text
+    Which Linear issues are assigned to me and due this week? Summarize them in a table.
+    ```
+
+    AgentOne uses the Linear tools to look up your issues. Each tool call appears in the chat, so you can see exactly what it did.
+
+</Step>
+</Steps>
+
+## Ideas to Try
+
+- "Create a Linear issue for the login bug I just described, and assign it to me."
+- Combine extensions: "Read my Notion meeting notes from today and create Linear issues for each action item."
+- Put it on a schedule: "Every Monday at 9am, summarize what my team finished in Linear last week." See [Scheduled Agents](/docs/agent/scheduled-agents).
+
+## If Something Goes Wrong
+
+See [Troubleshooting Extensions](/docs/troubleshooting/extensions).

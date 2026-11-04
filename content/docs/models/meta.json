@@ -1,0 +1,12 @@
+{
+  "title": "Models & Providers",
+  "icon": "Sparkles",
+  "pages": [
+    "choosing-a-model",
+    "built-in-providers",
+    "local-models",
+    "custom-providers",
+    "model-metadata",
+    "text-to-speech"
+  ]
+}

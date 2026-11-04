@@ -1,11 +1,21 @@
 {
   "title": "Documentation",
   "pages": [
-    "---Getting Started---",
+    "---Get Started---",
     "index",
+    "quickstart",
     "installation",
-    "desktop-app",
-    "---Guides---",
-    "...guides"
+    "app-tour",
+    "account",
+    "---Using AgentOne---",
+    "chats",
+    "agent",
+    "extensions",
+    "models",
+    "settings",
+    "---Help---",
+    "guides",
+    "reference",
+    "troubleshooting"
   ]
 }

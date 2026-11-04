@@ -12,7 +12,9 @@
     "lint:docs:links": "lychee \"content/docs/**/*.mdx\"",
     "lint:docs:spelling": "cspell \"content/docs/**/*.mdx\"",
     "format": "prettier --write .",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "screenshots:serve": "node scripts/screenshots/serve-app.mjs",
+    "screenshots": "node scripts/screenshots/capture.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.4.0",
@@ -29,6 +31,7 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
+    "@sqlite.org/sqlite-wasm": "^3.54.1-build1",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/mdx": "^2.0.14",
     "@types/node": "^26.6.4",
@@ -36,6 +39,7 @@
     "@types/react-dom": "^19.3.0",
     "cspell": "^10.3.6",
     "markdownlint-cli2": "^0.23.3",
+    "playwright-core": "^1.64.1",
     "postcss": "^8.5.29",
     "prettier": "^3.9.9",
     "tailwindcss": "^4.3.3",

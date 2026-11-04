@@ -1,0 +1,53 @@
+---
+title: Extensions
+description: Connect AgentOne to more apps and services with Model Context Protocol (MCP) extensions.
+---
+
+**Extensions** give AgentOne new tools, like reading your Notion pages, managing Linear issues, or searching GitHub. They're built on the [Model Context Protocol](https://modelcontextprotocol.io) (MCP), an open standard for connecting AI agents to apps and data.
+
+AgentOne's extension list comes from the [official MCP Registry](https://registry.modelcontextprotocol.io), with more than 50,000 entries. You can also add any MCP server yourself.
+
+## Open Extensions
+
+Open the account menu at the bottom of the sidebar and click **Extensions**.
+
+![The Extensions page with a search box, a filter button, an Add Custom button, and a list of extensions with Install buttons.](/images/docs/extensions/browse.png)
+
+1. **Search extensions...** searches by name, description, and keywords.
+2. **Filter** shows only installed extensions, or only extensions of one type.
+3. **Add Custom** adds an MCP server that isn't in the registry. See [Custom Extensions](/docs/extensions/custom-extensions).
+4. **Install** adds an extension. See [Installing Extensions](/docs/extensions/installing).
+
+The page shows the first 100 results. Search to find the one you want.
+
+## Two Kinds of Extensions
+
+| Type              | Filter name             | How it works                                                                                                                                      |
+| ----------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Local (STDIO)** | **Runs on this device** | AgentOne starts a program on your computer, often with `npx`, `uvx`, or `docker`. These can access your computer, so only install ones you trust. |
+| **Remote (HTTP)** | **Connects online**     | AgentOne connects to a server on the internet. Many ask you to sign in to the service.                                                            |
+
+![The extension filter menu with Only show installed, Runs on this device, Connects online, and Find dangling extensions.](/images/docs/extensions/filters.png)
+
+## Keeping the List Up to Date
+
+AgentOne downloads the extension list separately from the app, and refreshes it automatically every 24 hours, even while AgentOne stays open. The list is saved on your computer, so you can browse it offline. To refresh it now, go to `Settings` -> `Help & Updates` -> **Extension List** and click **Update now**.
+
+## Extensions Stay on Each Device
+
+Installed extensions and their settings stay on the computer you installed them on and don't sync. Set them up separately on each device.
+
+<Cards>
+  <Card href="/docs/extensions/installing" title="Installing Extensions">
+    Install an extension from the registry.
+  </Card>
+  <Card href="/docs/extensions/custom-extensions" title="Custom Extensions">
+    Add your own local or remote MCP server.
+  </Card>
+  <Card href="/docs/extensions/managing" title="Managing Extensions">
+    Sign in, set approvals, restart, and uninstall.
+  </Card>
+  <Card href="/docs/guides/connect-an-app" title="Guide: Connect an App">
+    A start-to-finish example with Linear.
+  </Card>
+</Cards>

@@ -1,114 +1,107 @@
 ---
 title: Windows Setup Guide
-description: Step-by-step instructions for installing AgentOne on Windows, including solutions for common installation issues
+description: Step-by-step instructions for installing AgentOne on Windows from the Microsoft Store or with the installer.
 ---
 
-## Get AgentOne from the Microsoft Store
+AgentOne runs on 64-bit Windows 10 (version 1809) or later, and Windows 11. There are two ways to install it:
 
-Installing AgentOne from the Microsoft Store is the recommended method for Windows users. It's easy! Just open this link, or search "AgentOne" in the Microsoft Store:
+- **Microsoft Store** (recommended). The Store installs and updates AgentOne for you, and you won't see any security warnings.
+- **Installer (`.exe`)**. Download and run the installer yourself. AgentOne then updates itself.
 
-https://apps.microsoft.com/detail/9NR1TW9NZZBW?hl=en-us&gl=US&ocid=pdpshare
+## Download AgentOne
 
-Then click `Download` or `View in Microsoft Store` and follow the instructions.
+Head to:
+https://www.agent-one.dev/download
 
-## Manually Install AgentOne on Windows
+Make sure the **Windows** tab is selected.
 
-<Callout title="We recommend getting AgentOne from the Microsoft Store">
-  The Microsoft Store provides a more secure and reliable installation
-  experience. You can read the instructions for installing from the Microsoft
-  Store [above](#get-agentone-from-the-microsoft-store).
-</Callout>
+![The download page with the Windows tab selected, a Get it from Microsoft Store button, and a More download options section.](/images/docs/installation/download-windows.png)
+
+1. The **Windows** tab.
+2. **Get it from Microsoft Store** opens AgentOne in the Microsoft Store.
+3. **More download options** reveals **Download Installer (.exe)**.
+
+<Tabs items={["Microsoft Store", "Installer (.exe)"]}>
+<Tab value="Microsoft Store">
 
 {/* prettier-ignore */}
 <Steps>
 <Step>
-  
-    ### Download the desktop app installer
-    
-    Head to:
-    https://www.agent-one.dev/download
-        
-    You'll be redirected to a download page, which will attempt to automatically detect your operating system. Make sure the `Windows` tab at the top of the page is selected:
-    
-    ![AgentOne download page showing Windows tab](/images/docs/installation/windows/download-windows-tab.png)
-    
-    Now click `Download Installer (.exe)`.
-    
-    <Callout>If you see a warning from Windows or your browser, or you are unable to download the file, reference the [Download Blocked by Windows](#download-blocked-by-windows) troubleshooting section.</Callout>
-  
+
+    ### Open the Store listing
+
+    Click **Get it from Microsoft Store** on the download page, or open the Microsoft Store app and search for `AgentOne`. You can also go straight to the [AgentOne Store listing](https://apps.microsoft.com/detail/9NR1TW9NZZBW).
+
 </Step>
 <Step>
-  
-    ### Run the installer
-    
-    You're almost done! After downloading the installer, open it (click or double-click the `.exe` file) and follow the prompts to install AgentOne on your system. If you get stuck, refer to the [Windows Installer](#windows-installer) troubleshooting section below.
-  
+
+    ### Install
+
+    Click **Get** (or **Install**) and wait for the download to finish.
+
+</Step>
+<Step>
+
+    ### Open AgentOne
+
+    Click **Open** in the Store, or find **AgentOne** in the Start menu. Then follow the [Quickstart](/docs/quickstart).
+
 </Step>
 </Steps>
+
+</Tab>
+<Tab value="Installer (.exe)">
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Download the installer
+
+    On the download page, click **More download options**, then **Download Installer (.exe)**.
+
+</Step>
+<Step>
+
+    ### Keep the download if your browser warns you
+
+    Because the installer isn't downloaded very often yet, Microsoft Edge and other browsers may say the file "isn't commonly downloaded." Open the browser's downloads list, click the **...** menu next to the file, choose **Keep**, then **Show more** and **Keep anyway**.
+
+</Step>
+<Step>
+
+    ### Run the installer
+
+    Open the downloaded file. If Windows shows **Windows protected your PC**, click **More info**, then **Run anyway**.
+
+    In the **AgentOne Setup** window, click **Next** and follow the prompts. The defaults work for most people.
+
+</Step>
+<Step>
+
+    ### Open AgentOne
+
+    When setup finishes, launch **AgentOne** from the Start menu. Then follow the [Quickstart](/docs/quickstart).
+
+</Step>
+</Steps>
+
+</Tab>
+</Tabs>
 
 ## Troubleshooting
 
-### Windows Protected Your PC
+### Microsoft Defender SmartScreen blocks the installer
 
-Because AgentOne is relatively new software, Windows SmartScreen may block it by default. If you see a message like `Windows Protected Your PC`, look for a button or link such as `Learn more` or `Advanced`, click it, and then click `Run anyway`.
+SmartScreen warns about apps that haven't been downloaded many times yet. If you downloaded the installer from `agent-one.dev` or the official GitHub releases page, it's safe to continue with **More info** -> **Run anyway**. To avoid the warning entirely, install from the [Microsoft Store](https://apps.microsoft.com/detail/9NR1TW9NZZBW) instead.
 
-### Download Blocked by Windows
+### Links that start with `agent-one://` don't open AgentOne
 
-If your system is equipped with Windows Defender SmartScreen or similar security features, you may encounter warnings when attempting to download or run the installer. This is not a problem with AgentOne or Windows, it's a feature built-in to your computer.
+AgentOne registers the `agent-one://` link type when it starts. Open AgentOne once after installing, then try the link again. See [Deep Links](/docs/reference/deep-links).
 
-![Windows Defender SmartScreen warning](/images/docs/installation/windows/smartscreen-blocked-download.png)
+### The app shows "Automatic updates disabled"
 
-If you see a SmartScreen warning, look for an option like `Advanced`, `Proceed anyway`, or similar. In Microsoft Edge, click the three dots next to the download and select `Keep`. You may see an additional screen warning you that AgentOne isn't commonly downloaded. Next to the `Delete` button, click the dropdown arrow and select `Keep anyway`.
-
-![Keep anyway option](/images/docs/installation/windows/smartscreen-keep-anyway.png)
-
-The file should then begin downloading. Once it finishes, you can click "Open file" to run the installer and follow the prompts to complete the AgentOne installation. If you encounter any issues while running the installer, see the [Windows Installer](#windows-installer) troubleshooting section.
-
-![File downloaded successfully in Microsoft Edge](/images/docs/installation/windows/file-downloaded.png)
-
-### Windows Installer
-
-If you get stuck or are unsure what option to select while running the AgentOne installer, reference this section. It will walk you through running the Windows installer `exe` that you downloaded in either of the previous sections.
-
-<Steps>
-<Step>
-      
-    #### Run the installer
-      
-    After downloading the installer, try opening it from your browser. It's probably listed in the top-right corner of your browser window under a `Downloads` icon.
-    If you can't find the file, try this:
-      
-      - Open your File Explorer and navigate to the `Downloads` folder.
-      - Look for the `AgentOne_x.x.x_x64-setup.exe` file and double-click it to start the installation.
-      - If you saved the file to a different location, navigate to that folder and double-click the installer file.
-      
-</Step>
-<Step>
-
-    #### Choose an install location
-
-    The installer window should prompt you for an installation. If you see a screen like this one first, simply click `Next`:
-
-    ![AgentOne installer initial screen showing Next button](/images/docs/installation/windows/installer-initial-next.png)
-
-    The installer should automatically detect the correct location to install AgentOne. Click `Next` to continue. If it doesn't choose a location for you, a good default location is `C:\Users\<username>\AppData\Local\AgentOne` (replacing `<username>` with your username).
-
-    ![AgentOne install location selection screen](/images/docs/installation/windows/install-location.png)
-
-</Step>
-<Step>
-
-    #### Finish the installation
-
-    The installer should continue installing AgentOne. After each step completes, simply click `Next`. When the installer is finished, you'll see a `Finish` button and two options:
-
-    - Create desktop shortcut
-    - Launch AgentOne
-
-    We recommend leaving both boxes checked and clicking `Finish`.
-
-</Step>
-</Steps>
+That's expected for Microsoft Store installs. The Store keeps AgentOne up to date. See [Updating AgentOne](/docs/installation/updating).
 
 ### Other Problems
 
