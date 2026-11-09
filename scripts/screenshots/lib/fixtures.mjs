@@ -325,9 +325,21 @@ export const historyChat = {
       tool(
         "readChat",
         { chatId: "chat-postgres" },
-        undefined,
-        "approval-requested",
+        {
+          chatId: "chat-postgres",
+          title: "Plan the Postgres migration",
+          isCurrent: false,
+          start: 0,
+          end: 8400,
+          transcriptChars: 8400,
+        },
       ),
+      { type: "step-start" },
+      {
+        type: "text",
+        state: "done",
+        text: "Last week you decided to move to **Postgres 17** over the weekend of the 15th, using logical replication so the old database stays live until you switch over. You were still deciding whether to keep the read replica.",
+      },
     ]),
   ],
 };
@@ -407,3 +419,169 @@ export const olderChats = [
     assistant(`Here are a few ideas for "${title.toLowerCase()}".`),
   ],
 }));
+
+// ---- Projects, auto mode, and skills (1.2.0) ------------------------------
+
+export const PROJECT_FOLDER = "/Users/alex/Code/field-notes";
+
+export const projects = [
+  {
+    id: "project-field-notes",
+    name: "Field Notes app",
+    folder: PROJECT_FOLDER,
+    instructions:
+      "This is a React Native app. Use TypeScript and run the tests before saying something is done.",
+    separateMemory: true,
+    memory: ["Releases go out on Tuesdays"],
+  },
+  {
+    id: "project-kitchen",
+    name: "Kitchen remodel",
+    instructions:
+      "Our kitchen is 3.2 m by 4 m. Keep the budget under $18,000 and prefer local suppliers.",
+  },
+];
+
+const projectChat = (id, title, projectId, hoursAgo) => ({
+  id,
+  title,
+  projectId,
+  modelId: AGENT_ONE_MODEL,
+  createdAt: NOW - hoursAgo * HOUR,
+  messages: [user(title), assistant("Sure, let's get started.")],
+});
+
+export const projectChats = [
+  projectChat(
+    "chat-fn-onboarding",
+    "Fix onboarding crash on Android",
+    "project-field-notes",
+    2,
+  ),
+  projectChat(
+    "chat-fn-release",
+    "Draft 2.4 release notes",
+    "project-field-notes",
+    26,
+  ),
+  projectChat(
+    "chat-kitchen-cabinets",
+    "Compare cabinet quotes",
+    "project-kitchen",
+    5,
+  ),
+  projectChat(
+    "chat-kitchen-layout",
+    "Island or peninsula?",
+    "project-kitchen",
+    50,
+  ),
+];
+
+export const autoModeChat = {
+  id: "chat-auto-mode",
+  title: "Fix the date parsing bug",
+  projectId: "project-field-notes",
+  modelId: AGENT_ONE_MODEL,
+  createdAt: NOW - 30 * 60 * 1000,
+  messages: [
+    user(
+      "The due dates in Field Notes show up a day early. Can you fix it and commit the change?",
+    ),
+    multi("assistant", [
+      { type: "step-start" },
+      tool(
+        "viewFile",
+        { filePath: `${PROJECT_FOLDER}/src/utils/dates.ts` },
+        {
+          content:
+            "export function parseDueDate(value: string) {\n  return new Date(value);\n}\n",
+          totalLines: 3,
+          totalChars: 66,
+          truncated: false,
+          startLine: 1,
+          endLine: 3,
+        },
+      ),
+      { type: "step-start" },
+      {
+        type: "tool-executeCommand",
+        toolCallId: "call_auto_blocked",
+        state: "output-denied",
+        input: {
+          command: "git push --force origin main",
+          timeout: 120000,
+        },
+        approval: {
+          id: "approval_auto_blocked",
+          approved: false,
+          isAutomatic: true,
+          reason:
+            "Auto mode blocked this action: You asked for a commit, not a force push to main, which would overwrite the shared history.",
+        },
+      },
+      { type: "step-start" },
+      {
+        type: "text",
+        state: "done",
+        text: "I fixed `parseDueDate` so it reads dates in your local time zone and committed the change. Auto mode stopped me from force-pushing to `main`, so the commit is only on your computer for now. Want me to push it to a new branch instead?",
+      },
+    ]),
+  ],
+};
+
+export const skillsChat = {
+  id: "chat-skills",
+  title: "Q3 sales slide deck",
+  modelId: AGENT_ONE_MODEL,
+  createdAt: NOW - 40 * 60 * 1000,
+  messages: [
+    user(
+      "Turn the Q3 sales numbers in ~/Documents/q3-sales.csv into a short slide deck.",
+    ),
+    multi("assistant", [
+      { type: "step-start" },
+      tool(
+        "listSkills",
+        {},
+        {
+          skills: [
+            {
+              name: "brand-guidelines",
+              description:
+                "Colors, fonts, and logo rules for company documents.",
+              folder: "/Users/alex/.agents/skills/brand-guidelines",
+              file: "/Users/alex/.agents/skills/brand-guidelines/SKILL.md",
+            },
+            {
+              name: "pptx",
+              description: "Create and edit PowerPoint slide decks.",
+              folder: "/Users/alex/.claude/skills/pptx",
+              file: "/Users/alex/.claude/skills/pptx/SKILL.md",
+            },
+          ],
+        },
+      ),
+      { type: "step-start" },
+      tool(
+        "viewFile",
+        { filePath: "/Users/alex/.claude/skills/pptx/SKILL.md" },
+        {
+          content:
+            "---\nname: pptx\ndescription: Create and edit PowerPoint slide decks.\n---\n",
+          totalLines: 4,
+          totalChars: 70,
+          truncated: false,
+          startLine: 1,
+          endLine: 4,
+        },
+      ),
+      { type: "step-start" },
+      {
+        type: "text",
+        state: "done",
+        text: "I followed your **pptx** and **brand-guidelines** skills and saved a five-slide deck to `~/Documents/q3-sales.pptx`, with revenue by region, the top ten products, and month-over-month growth.",
+      },
+    ]),
+  ],
+};

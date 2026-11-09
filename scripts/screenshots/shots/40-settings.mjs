@@ -57,6 +57,39 @@ function section(id, anchor, options = {}) {
   };
 }
 
+/** Crops to the rows from one settings anchor to another, on an otherwise blank page. */
+function range(id, from, to, options = {}) {
+  return {
+    id,
+    route: "/settings",
+    viewport: { width: 1200, height: options.height ?? 1000 },
+    scene: options.scene ?? scene(profile),
+    settle: 3000,
+    prepare: async (page) => {
+      await page
+        .locator(`#${from}`)
+        .evaluate((el) => el.scrollIntoView({ block: "center" }));
+      await page.waitForTimeout(500);
+      // Hide the rows outside the range so nothing bleeds into the crop's padding.
+      await page.evaluate(
+        ([fromId, toId]) => {
+          const first = document.getElementById(fromId);
+          const last = document.getElementById(toId);
+          let inside = false;
+          for (const row of first.parentElement.children) {
+            if (row === first) inside = true;
+            if (!inside) row.style.visibility = "hidden";
+            if (row === last) inside = false;
+          }
+        },
+        [from, to],
+      );
+    },
+    crop: async (page, h) =>
+      h.rect([page.locator(`#${from}`), page.locator(`#${to}`)], 20),
+  };
+}
+
 /** A dialog on the app's plain dimmed backdrop. */
 const dialogShot = (shot) => ({
   isolate: true,
@@ -173,8 +206,8 @@ export default [
       await page.waitForTimeout(800);
     },
   }),
-  section("settings/account", "section-account-card-0"),
-  section("settings/profile", "section-account-card-1"),
+  section("settings/account", "section-account-card-0", { height: 1200 }),
+  section("settings/profile", "section-account-card-1", { height: 2100 }),
   section("settings/appearance", "section-appearance-card-0"),
   section("settings/background", "section-appearance-card-1", {
     height: 1100,
@@ -193,8 +226,9 @@ export default [
   }),
   section("settings/appearance-chat", "section-appearance-card-2"),
   section("settings/chats", "section-chats-card-0", { height: 1200 }),
-  section("settings/streaming", "section-chats-card-1"),
-  section("settings/titles", "section-chats-card-2"),
+  section("settings/scheduled-agents", "section-chats-card-1"),
+  section("settings/streaming", "section-chats-card-2"),
+  section("settings/titles", "section-chats-card-3"),
   section("settings/keyboard-shortcuts", "section-keyboard-shortcuts", {
     height: 1100,
     annotate: async (page, h) => [
@@ -496,26 +530,47 @@ export default [
   }),
 
   // Tools
-  section("tools/settings", "section-tools-card-1", { height: 1000 }),
-  section("tools/system-tools", "section-tools-card-4"),
+  section("tools/settings", "section-tools-card-0", { height: 2400 }),
+  range(
+    "tools/system-tools",
+    "setting-tools-system",
+    "setting-allow-subagents",
+  ),
   dialogShot({
     id: "tools/tool-config",
-    route: "/settings#setting-tool-run-command",
+    route: "/settings#setting-allow-run-commands",
     scene: scene(),
     prepare: async (page) => {
-      await page.locator("#setting-tool-run-command").scrollIntoViewIfNeeded();
       await page
-        .locator("#setting-tool-run-command")
-        .getByRole("button")
-        .first()
-        .click();
+        .locator("#setting-allow-run-commands")
+        .scrollIntoViewIfNeeded();
+      await page.getByRole("button", { name: "Run commands options" }).click();
       await page.waitForTimeout(800);
     },
   }),
-  section("tools/chat-history-settings", "section-tools-card-7"),
-  section("tools/computer-use-settings", "section-tools-card-8", {
-    scene: scene({
-      computerUsePermissions: { accessibility: true, screenRecording: false },
-    }),
+  range(
+    "tools/chat-history-settings",
+    "setting-allow-chat-history",
+    "setting-allow-chat-history",
+    { height: 2100 },
+  ),
+  range(
+    "tools/computer-use-settings",
+    "setting-tools-computer-use",
+    "setting-ask-before-computer-use",
+    {
+      height: 2400,
+      scene: scene({
+        computerUsePermissions: { accessibility: true, screenRecording: false },
+      }),
+    },
+  ),
+  section("tools/auto-mode-settings", "setting-auto-mode", {
+    scene: scene(
+      settings({
+        AUTO_MODE_RULES:
+          "Installing npm packages is fine. Never push to git without asking.",
+      }),
+    ),
   }),
 ];

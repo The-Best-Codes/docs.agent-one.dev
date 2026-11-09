@@ -16,6 +16,8 @@ export interface Scene {
   /** Extra SQL run after migrations, per database. */
   sql?: { app?: string[]; registry?: string[] };
   files?: Record<string, string>;
+  /** Folders that exist on the mock disk (for project folders). */
+  folders?: string[];
   update?: unknown;
   scheduledAgents?: unknown[];
   computerUsePermissions?: unknown;

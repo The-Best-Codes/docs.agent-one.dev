@@ -3,6 +3,7 @@
   "icon": "MessagesSquare",
   "pages": [
     "managing-chats",
+    "projects",
     "message-actions",
     "responses",
     "long-chats",

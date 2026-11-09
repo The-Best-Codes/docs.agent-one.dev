@@ -26,15 +26,16 @@ When sync is on, these sync between your devices:
 
 These never leave your computer:
 
-| Data                                             | Where it's stored                             |
-| ------------------------------------------------ | --------------------------------------------- |
-| Chats and attachments                            | A local database on your computer             |
-| API keys and your sign-in token                  | Your system's secure keychain                 |
-| Provider settings and custom providers           | Local app storage                             |
-| [Extensions](/docs/extensions)                   | Local app storage                             |
-| [Scheduled agents](/docs/agent/scheduled-agents) | Local app storage and your system's scheduler |
-| Custom fonts and custom background images        | Local app storage                             |
-| The default model for new chats                  | Local app storage                             |
+| Data                                                                                                       | Where it's stored                             |
+| ---------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Chats, attachments, and [projects](/docs/chats/projects)                                                   | A local database on your computer             |
+| API keys and your sign-in token                                                                            | Your system's secure keychain                 |
+| Provider settings and custom providers                                                                     | Local app storage                             |
+| [Extensions](/docs/extensions)                                                                             | Local app storage                             |
+| [Scheduled agents](/docs/agent/scheduled-agents)                                                           | Local app storage and your system's scheduler |
+| Custom fonts and custom background images                                                                  | Local app storage                             |
+| The default model for new chats                                                                            | Local app storage                             |
+| [Instruction files](/docs/chats/personalization#instruction-files) and [skill](/docs/agent/skills) folders | Local app storage                             |
 
 <Callout title="Coming to paid plans">
   Chat sync and encrypted API key sync are planned for paid plans and are
@@ -53,5 +54,7 @@ AgentOne sends your messages only to the AI model you choose:
 - **Local models:** messages stay on your computer with Ollama or LM Studio.
 
 Tools only reach the internet when they need to. For example, **Search the web** queries DuckDuckGo, and extensions connect to whatever service they're built for.
+
+With [Auto mode](/docs/agent/auto-mode), a summary of the chat and each tool call that needs approval is also sent to the auto mode model, which is the chat's model unless you choose another. If you allow AgentOne to [report problems](/docs/agent/tools-and-approvals#reporting-problems), it sends a short report to the AgentOne developers only after you approve it.
 
 The desktop app doesn't include usage analytics. For details, read the [Privacy Policy](https://www.agent-one.dev/privacy).

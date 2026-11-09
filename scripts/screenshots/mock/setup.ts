@@ -119,7 +119,14 @@ mockIPC(
       case "plugin:fs|write_file":
         return null;
       case "plugin:fs|exists":
-        return files.has(args.path) || args.path === "model-directory.json";
+        return (
+          files.has(args.path) ||
+          args.path === "model-directory.json" ||
+          (scene.folders ?? []).some(
+            (folder) =>
+              args.path === folder || args.path.startsWith(`${folder}/`),
+          )
+        );
       case "plugin:fs|mkdir":
       case "plugin:fs|remove":
         return null;
@@ -127,11 +134,16 @@ mockIPC(
         return [];
 
       case "plugin:path|resolve_directory":
-        return "/Users/alex/Library/Application Support/dev.agent-one";
+        // 21 is BaseDirectory.Home.
+        return args.directory === 21
+          ? "/Users/alex"
+          : "/Users/alex/Library/Application Support/dev.agent-one";
+      case "plugin:path|is_absolute":
+        return String(args.path).startsWith("/");
       case "plugin:path|join":
         return (args.paths as string[]).join("/");
       case "plugin:app|version":
-        return scene.version ?? "1.1.3";
+        return scene.version ?? "1.2.0";
       case "plugin:app|name":
         return "AgentOne";
       case "plugin:app|tauri_version":
@@ -163,6 +175,15 @@ mockIPC(
   },
   { shouldMockEvents: true },
 );
+
+// path.sep() and path.delimiter() read these synchronously.
+(window as any).__TAURI_INTERNALS__.plugins = {
+  ...(window as any).__TAURI_INTERNALS__.plugins,
+  path: {
+    sep: scene.platform === "windows" ? "\\" : "/",
+    delimiter: scene.platform === "windows" ? ";" : ":",
+  },
+};
 
 async function loadFile(path: string) {
   if (path === "model-directory.json") {

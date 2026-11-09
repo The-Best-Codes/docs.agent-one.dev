@@ -1,14 +1,11 @@
 ---
 title: Computer Use
-description: Let AgentOne see and use the other apps on your Mac or Windows PC.
+description: Let AgentOne see and use the other apps on your Mac, Windows PC, or Linux computer.
 ---
 
 With **Computer Use**, AgentOne can see and use the other apps on your computer, like a person at the keyboard. Ask it to fill in a form, click through a settings screen, or pull information out of a window, and it will find the app, read what's on screen, and act on it.
 
-<Callout>
-  Computer Use works on **macOS** and **Windows**. It isn't available on Linux
-  yet.
-</Callout>
+<Callout>Computer Use works on **macOS**, **Windows**, and **Linux**.</Callout>
 
 ![AgentOne listing open apps, opening System Settings, and asking for approval to click Focus in the sidebar.](/images/docs/tools/computer-use.png)
 
@@ -17,7 +14,7 @@ With **Computer Use**, AgentOne can see and use the other apps on your computer,
 - **See apps** finds your open and installed apps and reads what's on screen in them. It can include a screenshot so the model can see the window.
 - **Use apps** opens apps and clicks, types, presses keys, scrolls, and drags in them.
 
-Both ask for your approval by default. Each approval card says which app AgentOne wants to use and what it's about to do, like "Click Focus in the sidebar."
+Both are controlled by **Allow AgentOne to use apps** in `Settings` -> `Tools` -> **Computer Use**, and ask for your approval by default. To change that, use **Ask before using apps**, or let [Auto mode](/docs/agent/auto-mode) decide. Each approval card says which app AgentOne wants to use and what it's about to do, like "Click Focus in the sidebar."
 
 ## Set Up on macOS
 
@@ -31,7 +28,7 @@ macOS needs two permissions before AgentOne can see and control other apps. You 
 
     Go to `Settings` -> `Tools` -> **Computer Use**.
 
-    ![The Computer Use settings with Accessibility allowed, Screen Recording not yet allowed, and switches for See apps and Use apps.](/images/docs/tools/computer-use-settings.png)
+    ![The Computer Use settings with Accessibility allowed, Screen Recording not yet allowed, and the Allow AgentOne to use apps and Ask before using apps switches.](/images/docs/tools/computer-use-settings.png)
 
 </Step>
 <Step>
@@ -56,12 +53,19 @@ macOS needs two permissions before AgentOne can see and control other apps. You 
 
     ### Check that both show Allowed
 
-    Back in AgentOne, both permissions should show **Allowed**. AgentOne checks again whenever you switch back to the app.
+    Back in AgentOne, both permissions should show **Allowed**. AgentOne checks again whenever you switch back to the app. **Allow AgentOne to use apps** can only be turned on once both are allowed.
 
 </Step>
 </Steps>
 
 On Windows, no extra permissions are needed.
+
+## Set Up on Linux
+
+Computer Use on Linux reads apps through the desktop's accessibility service (AT-SPI), which is running by default on GNOME and KDE. No other setup is needed.
+
+- **Restart apps if needed.** Some apps, like Chromium- and Electron-based apps, only turn on accessibility when they start. If AgentOne can't see inside one, quit and reopen that app.
+- **Wayland.** On Wayland, AgentOne can read and use apps, but it can only take screenshots of and send input to apps running under X11 or XWayland.
 
 ## Tips
 
@@ -71,4 +75,4 @@ On Windows, no extra permissions are needed.
 
 ## Turn Computer Use Off
 
-Turn off **See apps** and **Use apps** in `Settings` -> `Tools` -> **Computer Use**. You can also remove AgentOne from **Accessibility** and **Screen Recording** in macOS System Settings at any time.
+Turn off **Allow AgentOne to use apps** in `Settings` -> `Tools` -> **Computer Use**. You can also remove AgentOne from **Accessibility** and **Screen Recording** in macOS System Settings at any time.

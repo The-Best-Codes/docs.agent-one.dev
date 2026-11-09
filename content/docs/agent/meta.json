@@ -3,6 +3,8 @@
   "icon": "Bot",
   "pages": [
     "tools-and-approvals",
+    "auto-mode",
+    "skills",
     "subagents",
     "chat-history",
     "computer-use",

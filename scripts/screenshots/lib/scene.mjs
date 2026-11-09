@@ -38,11 +38,20 @@ export function chatSql(chats) {
     const created = chat.createdAt ?? NOW - (index + 1) * 5 * HOUR;
     const updated = chat.updatedAt ?? created + 10 * 60 * 1000;
     return [
-      `INSERT INTO chat_metadata (id, title, title_state, model_id, model_config, branch_of, created_at, updated_at, last_message_at, scheduled_agent_id, scheduled_agent_title)
-       VALUES (${sql(chat.id)}, ${sql(chat.title)}, 'done', ${sql(chat.modelId ?? null)}, ${sql(chat.modelConfig ? JSON.stringify(chat.modelConfig) : null)}, ${sql(chat.branchOf ?? null)}, ${created}, ${updated}, ${updated}, ${sql(chat.scheduledAgentId ?? null)}, ${sql(chat.scheduledAgentTitle ?? null)});`,
+      `INSERT INTO chat_metadata (id, title, title_state, model_id, model_config, branch_of, created_at, updated_at, last_message_at, scheduled_agent_id, scheduled_agent_title, project_id)
+       VALUES (${sql(chat.id)}, ${sql(chat.title)}, 'done', ${sql(chat.modelId ?? null)}, ${sql(chat.modelConfig ? JSON.stringify(chat.modelConfig) : null)}, ${sql(chat.branchOf ?? null)}, ${created}, ${updated}, ${updated}, ${sql(chat.scheduledAgentId ?? null)}, ${sql(chat.scheduledAgentTitle ?? null)}, ${sql(chat.projectId ?? null)});`,
       `INSERT INTO chat_messages (id, messages) VALUES (${sql(chat.id)}, ${sql(JSON.stringify(chat.messages ?? []))});`,
     ];
   });
+}
+
+/** Turns a list of projects into SQL inserts for the app database. */
+export function projectSql(projects) {
+  return projects.map(
+    (project) =>
+      `INSERT INTO projects (id, name, instructions, folder, separate_memory, memory, agents_files, skills_folders, created_at, updated_at)
+       VALUES (${sql(project.id)}, ${sql(project.name)}, ${sql(project.instructions ?? "")}, ${sql(project.folder ?? null)}, ${project.separateMemory ? 1 : 0}, ${sql(JSON.stringify(project.memory ?? []))}, ${sql(project.agentsFiles ? JSON.stringify(project.agentsFiles) : null)}, ${sql(project.skillsFolders ? JSON.stringify(project.skillsFolders) : null)}, ${NOW - 10 * DAY}, ${NOW - DAY});`,
+  );
 }
 
 export function signedIn({
@@ -139,7 +148,8 @@ export const base = (overrides = {}) =>
       localStorage: {
         "agent-one-onboarding-completed": true,
         "agent-one-onboarding-reminder-dismissed": true,
-        "agent-one-release-notes-last-seen-version": "1.1.3",
+        "agent-one-star-reminder-dismissed": true,
+        "agent-one-release-notes-last-seen-version": "1.2.0",
         "agent-one-last-model-directory-sync-timestamp": NOW,
         "agent-one-last-extension-list-sync-timestamp": NOW,
       },

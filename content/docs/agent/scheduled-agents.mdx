@@ -81,7 +81,7 @@ Chats started by a scheduled agent have a clock icon in the sidebar. Hover it to
 <Callout title="Approvals still apply" type="warn">
   If the prompt uses tools that need approval, the run pauses until you approve
   them. For agents that run while you're away, use tools that don't need
-  approval, or change [Tool
+  approval, keep [Auto mode](/docs/agent/auto-mode) on, or change [Tool
   Behavior](/docs/agent/tools-and-approvals#tool-behavior) for new chats.
 </Callout>
 
@@ -104,6 +104,10 @@ The schedule uses standard five-part cron syntax in your local time zone: minute
 | `0 */4 * * *` | Every 4 hours                     |
 
 Not sure how to write one? Ask AgentOne to set it up for you, and describe the schedule in plain words.
+
+## Let AgentOne Manage Scheduled Agents
+
+AgentOne can list, create, and change scheduled agents for you when you ask. It asks before saving any change. To turn this off, or to stop it asking, go to `Settings` -> `Chats` -> **Scheduled Agents**.
 
 ## Where Scheduled Agents Live
 

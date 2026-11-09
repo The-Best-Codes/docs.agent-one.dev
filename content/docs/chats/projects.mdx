@@ -1,0 +1,95 @@
+---
+title: Projects
+description: Group related chats, give them shared instructions, and let them work inside a folder.
+---
+
+A **project** groups related chats and gives them shared instructions. Use one for anything you come back to: an app you're building, a trip you're planning, or a home renovation. Projects appear at the top of the sidebar, with their chats underneath.
+
+![The sidebar with the New project button, the Field Notes app project and its chats, the Kitchen remodel project, and the Chats heading above chats without a project.](/images/docs/projects/sidebar.png)
+
+1. **New project** creates a project.
+2. **A project.** Click its name to show or hide its chats. Hover it to see **+**, which starts a new chat in the project, and the **⋮** menu with **Edit Project** and **Delete Project**. You can also right-click a project.
+3. **Chats** lists the chats that aren't in a project.
+
+## Create a Project
+
+{/* prettier-ignore */}
+<Steps>
+<Step>
+
+    ### Click New project
+
+    Click the folder button next to **New Chat** at the top of the sidebar. You can also choose **New Project** in the project picker next to the message box.
+
+</Step>
+<Step>
+
+    ### Name it and add instructions
+
+    Give the project a **Name**, and write anything AgentOne should know or do in every chat in the project under **Instructions**. For example:
+
+    ```text
+    Our kitchen is 3.2 m by 4 m. Keep the budget under $18,000 and prefer local suppliers.
+    ```
+
+</Step>
+<Step>
+
+    ### Choose a folder (optional)
+
+    Click **Choose a folder** to pick a folder on your computer. Chats in the project work inside that folder, so AgentOne reads, creates, and edits files and runs commands there by default. If you haven't named the project yet, it's named after the folder.
+
+</Step>
+<Step>
+
+    ### Click Create Project
+
+    The project appears in the sidebar. Click **+** next to it to start its first chat.
+
+</Step>
+</Steps>
+
+## Project Settings
+
+To change a project, hover it in the sidebar, click **⋮**, and choose **Edit Project**. Open **Memory, instruction files, and skills** for more options.
+
+![The Edit Project dialog with a name, a folder, instructions, Separate memory turned on with one project memory, and lists of instruction files and skill folders.](/images/docs/projects/edit-project.png)
+
+| Setting               | What it does                                                                                                                                                                                              |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Name**              | How the project appears in the sidebar and project picker.                                                                                                                                                |
+| **Folder**            | The folder the project's chats work in. If the folder is moved or deleted, AgentOne asks you to choose it again.                                                                                          |
+| **Instructions**      | Followed in every chat in the project, together with your own [AI instructions](/docs/chats/personalization#ai-instructions).                                                                             |
+| **Separate memory**   | Keeps the project's memory and chats apart from everything else. See [Separate Memory](#separate-memory).                                                                                                 |
+| **Instruction files** | Files like `AGENTS.md` that AgentOne reads in every chat in the project. By default, it's your [instruction files](/docs/chats/personalization#instruction-files) plus `AGENTS.md` in the project folder. |
+| **Skills**            | Folders AgentOne looks in for [skills](/docs/agent/skills). By default, it's your skill folders plus `.agents/skills` and `.claude/skills` in the project folder.                                         |
+
+When you change the instruction files or skill folders, the project uses its own list from then on. Click **Reset** to go back to the default list.
+
+### Separate Memory
+
+Turn on **Separate memory** when a project shouldn't mix with the rest of your chats, like a client project or a private topic.
+
+- AgentOne keeps a **project memory** for the project instead of using your usual [memories](/docs/chats/personalization#memory). You can see and edit it under **Project memory** in the project's settings.
+- [Chat history](/docs/agent/chat-history) tools in the project's chats can only find chats from the same project, and chats outside the project can't find the project's chats.
+
+## Add Chats to a Project
+
+- **Start a chat in a project.** Click **+** next to the project in the sidebar, or pick the project next to the message box in a new chat.
+- **Move a chat.** Drag a chat onto a project in the sidebar, or right-click the chat (or click its **⋮** menu) and choose **Move to Project**.
+- **Take a chat out.** Choose **Remove from Project** in the chat's menu.
+
+![The project picker next to the message box, with No project selected, two projects, and New Project.](/images/docs/projects/picker.png)
+
+## Delete a Project
+
+Hover the project, click **⋮**, and choose **Delete Project**.
+
+![The Delete Project confirmation with an option to also delete the project's three chats.](/images/docs/projects/delete-project.png)
+
+By default, the project's chats are kept and moved out of the project. Check **Also delete its chats** to delete them too. That can't be undone. If the project used separate memory, its project memory is deleted, and your other chats can find its chats again.
+
+<Callout title="Projects stay on your computer">
+  Projects are stored with your chats in a local database, so they don't
+  [sync](/docs/account/sync-and-privacy) to your other devices.
+</Callout>

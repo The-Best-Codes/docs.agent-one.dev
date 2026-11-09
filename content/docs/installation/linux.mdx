@@ -171,9 +171,9 @@ AppImages aren't installed, so they don't add a menu entry by themselves. Use a 
 
 AgentOne stores API keys in your system keyring through the Secret Service (provided by GNOME Keyring or KWallet). If no keyring is available, AgentOne saves keys to a local file instead and moves them into the keyring once one is available. If keys don't persist, install `gnome-keyring` (or enable KWallet) and restart AgentOne.
 
-### Computer Use isn't available
+### Computer Use can't see or control an app
 
-[Computer Use](/docs/agent/computer-use) works on macOS and Windows for now. It isn't available on Linux yet.
+[Computer Use](/docs/agent/computer-use) on Linux needs your desktop's accessibility service (AT-SPI), which GNOME and KDE run by default. If AgentOne can't see inside an app, quit and reopen that app. On Wayland, screenshots and input only work with apps running under X11 or XWayland. See [Set Up on Linux](/docs/agent/computer-use#set-up-on-linux).
 
 ### Notifications don't appear
 

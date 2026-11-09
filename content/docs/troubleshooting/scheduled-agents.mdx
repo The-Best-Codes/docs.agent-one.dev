@@ -14,7 +14,8 @@ description: Fix scheduled agents that don't run, run late, or stop for approval
 
 If the prompt uses a tool that needs approval, the run waits for you. Open the chat (it has a clock icon in the sidebar) and approve or deny the tool. To avoid this for agents that run while you're away:
 
-- Turn off **Require Approval** for the tools the agent needs in `Settings` -> `Tools`, or
+- Turn off the **Ask before** switch for the tools the agent needs in `Settings` -> `Tools`, or
+- Keep **Tool Behavior** on **Auto**, the default. [Auto mode](/docs/agent/auto-mode) approves safe steps on its own and only stops for actions it can't judge, or
 - Set **Tool Behavior** to **YOLO (auto-run)** in a new chat so it becomes the default for new chats, including scheduled runs. Only do this if you trust the prompt and tools.
 
 ## The Schedule Won't Save

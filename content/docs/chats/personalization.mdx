@@ -1,13 +1,13 @@
 ---
 title: Personalization
-description: Tell AgentOne your name, give it standing instructions, and manage what it remembers about you.
+description: Tell AgentOne your name, give it standing instructions and instruction files, and manage what it remembers about you.
 ---
 
-AgentOne can tailor every chat to you. Your name, custom instructions, and memories are included in every conversation, and they [sync](/docs/account/sync-and-privacy) across your devices when you're signed in.
+AgentOne can tailor every chat to you. Your name, custom instructions, instruction files, and memories are included in every conversation. Your name, instructions, and memories [sync](/docs/account/sync-and-privacy) across your devices when you're signed in.
 
 Find them in `Settings` -> `Account` -> **Profile & Instructions**.
 
-![The Profile & Instructions card with Your Name, AI Instructions, and three saved memories.](/images/docs/settings/profile.png)
+![The Profile & Instructions card with Your Name, AI Instructions, Instruction files, Skills, and three saved memories.](/images/docs/settings/profile.png)
 
 ## Your Name
 
@@ -21,6 +21,20 @@ Standing instructions that AgentOne follows in every chat, up to 2,000 character
 Keep answers short unless I ask for detail. Use metric units.
 I'm a product designer, so skip the basics on UX terminology.
 ```
+
+[Projects](/docs/chats/projects) can add their own instructions on top of these.
+
+## Instruction Files
+
+Instruction files are Markdown files with instructions AgentOne reads at the start of every chat. If you already keep an `AGENTS.md` or `CLAUDE.md` for other coding agents, AgentOne can follow it too.
+
+By default, AgentOne reads `~/AGENTS.md` if it exists. Under **Instruction files**, click **Add** to choose more files, or the **x** next to a file to stop using it. The file itself isn't deleted.
+
+- Files that don't exist are skipped, so it's fine to list a file you haven't created yet.
+- If files disagree, files later in the list take priority.
+- [Projects](/docs/chats/projects) with a folder also read the `AGENTS.md` in that folder, and you can choose each project's files in its settings.
+
+Instruction files and [skill](/docs/agent/skills) folders are saved on each computer and don't sync between devices.
 
 ## Memory
 
@@ -38,4 +52,6 @@ To change a memory, edit its text. To remove one, click the **x** next to it and
   AgentOne reuses short facts more reliably.
 </Callout>
 
-If you don't want AgentOne to save memories on its own, turn off the **Memory** tool in `Settings` -> `Tools`. See [Tools & Approvals](/docs/agent/tools-and-approvals).
+If you don't want AgentOne to save memories on its own, turn off **Allow AgentOne to edit memories** in the same card. You can still add memories yourself.
+
+[Projects](/docs/chats/projects) with **Separate memory** turned on keep their own memory instead of using these.

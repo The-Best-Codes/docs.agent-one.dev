@@ -9,9 +9,9 @@ The **Chat History** tools let AgentOne search your past chats by keyword and re
 - "Pick up where we left off in the Postgres migration chat."
 - "Find the chat where I asked for a sourdough recipe."
 
-AgentOne finds the right chat, then asks to read it.
+AgentOne finds the right chat, reads it, and answers.
 
-![AgentOne found one matching chat and asks for approval to read it, with Deny and Approve buttons.](/images/docs/tools/chat-history.png)
+![AgentOne searched for a matching chat, read it, and summarized what was decided about the Postgres migration.](/images/docs/tools/chat-history.png)
 
 When AgentOne reads a chat, it leaves out the AI's reasoning and summarizes attachments, so it only reads the conversation itself. It also skips tool calls unless it needs them.
 
@@ -21,11 +21,15 @@ Drag a chat from the sidebar into the message box to attach it to your message. 
 
 ## Settings
 
-Both tools ask for your approval by default, and the approval card shows which chat AgentOne wants to read. To change this, or turn the tools off, go to `Settings` -> `Tools` -> **Chat History**.
+The Chat History tools only read, so they don't ask for approval. To turn them off, go to `Settings` -> `Account` -> **Profile & Instructions** and turn off **Allow AgentOne to read past chats**.
 
-![The Chat History group in Tools settings with Search chats and Read chat.](/images/docs/tools/chat-history-settings.png)
+![The Allow AgentOne to read past chats switch with an options button.](/images/docs/tools/chat-history-settings.png)
 
-- **Search chats** has **Default Max Results**.
-- **Read chat** has **Default Read Length (chars)** and **Max Read Length (chars)**, which limit how much of a chat AgentOne reads at once.
+Click the gear next to the switch to change how much AgentOne reads:
+
+- **Default Max Results** is how many chats a search returns.
+- **Default Read Length (chars)** and **Max Read Length (chars)** limit how much of a chat AgentOne reads at once.
+
+In a [project](/docs/chats/projects) with **Separate memory** turned on, the Chat History tools only find chats from that project, and chats outside the project can't find its chats.
 
 The Chat History tools also help [compaction](/docs/chats/long-chats): if AgentOne can't summarize a long chat, it uses them to read back through the conversation.

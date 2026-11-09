@@ -44,7 +44,7 @@ In this guide, you'll create a [scheduled agent](/docs/agent/scheduled-agents) t
 
     ### Make sure it won't wait for approval
 
-    A scheduled run pauses if it needs your approval. **Search the web** and **Browse** don't need approval by default, so this briefing runs on its own. If your prompt uses tools that do, like creating files, turn off **Require Approval** for those tools in `Settings` -> `Tools`.
+    A scheduled run pauses if it needs your approval. Web search never needs approval, so this briefing runs on its own. If your prompt uses tools that do, like creating files, [Auto mode](/docs/agent/auto-mode) (the default) usually approves routine steps for you. To skip the check entirely, turn off the matching **Ask before** switch, like **Ask before changing files**, in `Settings` -> `Tools`.
 
 </Step>
 <Step>
@@ -59,6 +59,6 @@ In this guide, you'll create a [scheduled agent](/docs/agent/scheduled-agents) t
 ## Make It Your Own
 
 - **Change the time.** Edit the agent and set the schedule, for example `30 6 * * 1-5` for 6:30 AM.
-- **Save it to a file.** Add "Save the briefing to `~/Documents/briefings/` with today's date as the filename" to the prompt, and allow **Create file** to run without approval.
+- **Save it to a file.** Add "Save the briefing to `~/Documents/briefings/` with today's date as the filename" to the prompt, and turn off **Ask before changing files** if you don't want to rely on Auto mode.
 - **Add your calendar or email.** Install an [extension](/docs/extensions) for your calendar or email, and mention it in the prompt.
 - **Pause it on vacation.** Turn off the agent's switch, and turn it back on when you're back.

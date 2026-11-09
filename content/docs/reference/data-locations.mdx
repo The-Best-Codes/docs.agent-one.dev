@@ -15,15 +15,15 @@ Your chats, the extension list, and scheduled agents are stored here:
 | Windows | `%APPDATA%\dev.agent-one\`                     |
 | Linux   | `~/.config/dev.agent-one/`                     |
 
-| File              | Contains                                              |
-| ----------------- | ----------------------------------------------------- |
-| `agent-one.db`    | Your chats and their search index                     |
-| `mcp-registry.db` | The downloaded extension list                         |
-| `crons.json`      | Your [scheduled agents](/docs/agent/scheduled-agents) |
+| File              | Contains                                                                  |
+| ----------------- | ------------------------------------------------------------------------- |
+| `agent-one.db`    | Your chats, their search index, and your [projects](/docs/chats/projects) |
+| `mcp-registry.db` | The downloaded extension list                                             |
+| `crons.json`      | Your [scheduled agents](/docs/agent/scheduled-agents)                     |
 
 The downloaded [model list](/docs/models/model-metadata) (`model-directory.json`), custom fonts (`custom-fonts/`), and custom chat backgrounds (`chat-backgrounds/`) are stored in the app's local data folder. On macOS that's the same folder as above. On Windows it's `%LOCALAPPDATA%\dev.agent-one\`, and on Linux `~/.local/share/dev.agent-one/`.
 
-Most settings are stored in the app's built-in web storage.
+Most settings, including your lists of [instruction files](/docs/chats/personalization#instruction-files) and [skill](/docs/agent/skills) folders, are stored in the app's built-in web storage.
 
 ## API Keys
 

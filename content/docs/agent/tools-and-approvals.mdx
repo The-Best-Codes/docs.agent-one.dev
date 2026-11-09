@@ -3,7 +3,7 @@ title: Tools & Approvals
 description: The built-in tools AgentOne can use, and how to control when it asks for your approval.
 ---
 
-Tools are what let AgentOne take action. AgentOne comes with a set of built-in tools, and you can add more with [extensions](/docs/extensions). Every built-in tool is turned on by default, and tools that can change things on your computer ask for your approval first.
+Tools are what let AgentOne take action. AgentOne comes with a set of built-in tools, and you can add more with [extensions](/docs/extensions). Every built-in tool is turned on by default. Tools that can change things on your computer need approval, and by default [Auto mode](/docs/agent/auto-mode) decides which of those are safe to run and asks you about the rest.
 
 ## Approving a Tool
 
@@ -20,14 +20,15 @@ While a tool is waiting for approval, you can't send new messages in that chat. 
 
 **Tool Behavior** controls approvals for the whole chat. Find it in the model configuration panel next to the model selector.
 
-![The Model Config panel with Tool Behavior set to Per-tool approval.](/images/docs/models/model-config.png)
+![The Model Config panel with Tool Behavior set to Auto.](/images/docs/models/model-config.png)
 
-| Option                | What it does                                                                                       |
-| --------------------- | -------------------------------------------------------------------------------------------------- |
-| **Per-tool approval** | Uses each tool's own approval setting (default). Sensitive tools ask first; read-only tools don't. |
-| **Always ask**        | Asks for approval before running every tool.                                                       |
-| **YOLO (auto-run)**   | Runs every tool without asking. Use with caution.                                                  |
-| **No tools**          | Turns off all tools for this chat, so AgentOne can only chat.                                      |
+| Option                | What it does                                                                                                                                                                     |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Auto**              | A model checks each tool that would need your approval. It runs safe ones, blocks risky ones, and asks you when it can't tell (default). See [Auto Mode](/docs/agent/auto-mode). |
+| **Per-tool approval** | Uses each tool's own approval setting. Tools that can make changes ask first; tools that only look things up don't.                                                              |
+| **Always ask**        | Asks for approval before running every tool.                                                                                                                                     |
+| **YOLO (auto-run)**   | Runs every tool without asking. Use with caution.                                                                                                                                |
+| **No tools**          | Turns off all tools for this chat, so AgentOne can only chat.                                                                                                                    |
 
 When you change Tool Behavior in a new, empty chat, it becomes the default for future chats.
 
@@ -41,68 +42,67 @@ Check **Don't show this again** to skip the warning in the future. You can turn 
 
 <Callout type="warn">
   Only use YOLO mode with models and extensions you trust. AgentOne won't switch
-  to YOLO mode by itself. You always have to choose it.
+  to YOLO mode by itself. You always have to choose it. For fewer approvals with
+  a safety net, try [Auto mode](/docs/agent/auto-mode) instead.
 </Callout>
 
 ## Built-in Tools
 
-Manage built-in tools in `Settings` -> `Tools`. Each tool has a switch to turn it on or off, a gear button for its options, and a reset button.
+Manage built-in tools in `Settings` -> `Tools`. Tools are grouped by what they do, with an **Allow** switch for each group and, where it matters, an **Ask before** switch that controls whether it asks for approval first. A gear button next to some switches opens more options.
 
-![The Web group in Tools settings, with a switch, options button, and reset button for each tool.](/images/docs/tools/settings.png)
+![The Configure card in Tools settings with Web, Files, System, and Computer Use groups, plus switches for reporting problems and confirming YOLO mode.](/images/docs/tools/settings.png)
 
-| Group                 | Tool                   | What it does                                                        | Asks first by default |
-| --------------------- | ---------------------- | ------------------------------------------------------------------- | --------------------- |
-| **Web**               | Search the web         | Searches the web with DuckDuckGo                                    | No                    |
-|                       | Browse                 | Reads the content of web pages                                      | No                    |
-|                       | Wikipedia              | Searches Wikipedia and reads articles                               | No                    |
-| **Files**             | View file              | Reads files on your computer                                        | No                    |
-|                       | Edit file              | Changes text in a file                                              | Yes                   |
-|                       | Create file            | Creates new files                                                   | Yes                   |
-|                       | Delete file            | Deletes files                                                       | Yes                   |
-| **Utilities**         | Current date and time  | Checks the date and time                                            | No                    |
-|                       | Pause                  | Waits for a short time                                              | No                    |
-|                       | Memory                 | Saves and updates [memories](/docs/chats/personalization) about you | No                    |
-| **System**            | Run command            | Runs terminal commands on your computer                             | Yes                   |
-|                       | Spawn subagent         | Hands a task to a [subagent](/docs/agent/subagents)                 | Yes                   |
-| **AgentOne Settings** | List settings          | Lists the settings AgentOne can change                              | No                    |
-|                       | Get setting            | Reads a setting's current value                                     | No                    |
-|                       | Update setting         | Changes a setting for you                                           | Yes                   |
-| **Scheduled Agents**  | List scheduled agents  | Lists your [scheduled agents](/docs/agent/scheduled-agents)         | No                    |
-|                       | Create scheduled agent | Creates a scheduled agent                                           | Yes                   |
-|                       | Update scheduled agent | Changes a scheduled agent                                           | Yes                   |
-|                       | Delete scheduled agent | Deletes a scheduled agent                                           | Yes                   |
-| **Chat History**      | Search chats           | Searches your past chats                                            | Yes                   |
-|                       | Read chat              | Reads a past chat                                                   | Yes                   |
-| **Computer Use**      | See apps               | Finds your apps and reads what's on screen                          | Yes                   |
-|                       | Use apps               | Clicks, types, and scrolls in other apps                            | Yes                   |
+| Group            | Switch                            | What it lets AgentOne do                                                                  | Asks first by default |
+| ---------------- | --------------------------------- | ----------------------------------------------------------------------------------------- | --------------------- |
+| **Web**          | Allow web access                  | Search the web with DuckDuckGo, read web pages, and look things up on Wikipedia           | No                    |
+| **Files**        | Allow AgentOne to read files      | Read files on your computer, and use your [skills](/docs/agent/skills)                    | No                    |
+|                  | Allow AgentOne to change files    | Create, edit, and delete files                                                            | Yes                   |
+| **System**       | Allow AgentOne to run commands    | Run terminal commands on your computer                                                    | Yes                   |
+|                  | Allow AgentOne to use subagents   | Hand a task to a [subagent](/docs/agent/subagents)                                        | No                    |
+| **Computer Use** | Allow AgentOne to use apps        | See and use the other apps on your computer. See [Computer Use](/docs/agent/computer-use) | Yes                   |
+|                  | Allow AgentOne to report problems | Send a short problem report to the AgentOne developers. See [below](#reporting-problems)  | Yes                   |
 
-<Callout title="Changing settings by asking">
-  With the AgentOne Settings tools, you can just ask, for example "Switch to
-  dark mode" or "Make the text bigger." Some settings, like your API keys and
-  sign-in, can't be read or changed by AgentOne.
+A few tools are turned on and off next to the features they work with:
+
+| Tools                                             | Where to find the switch                                               | Asks first by default |
+| ------------------------------------------------- | ---------------------------------------------------------------------- | --------------------- |
+| [Memory](/docs/chats/personalization#memory)      | `Settings` -> `Account` -> **Allow AgentOne to edit memories**         | No                    |
+| [Chat history](/docs/agent/chat-history)          | `Settings` -> `Account` -> **Allow AgentOne to read past chats**       | No                    |
+| [AgentOne settings](#changing-settings-by-asking) | `Settings` -> `Account` -> **Allow AgentOne to change settings**       | Only for changes      |
+| [Scheduled agents](/docs/agent/scheduled-agents)  | `Settings` -> `Chats` -> **Allow AgentOne to manage scheduled agents** | Only for changes      |
+
+AgentOne can always check the date and time and pause for a moment. Tools that only look things up never ask for approval, and subagents don't ask either, since the tools a subagent uses still follow your approval settings.
+
+<Callout>
+  In [Auto mode](/docs/agent/auto-mode), tools with **Ask before** turned on are
+  checked by a model instead of always asking you. Tools with it turned off run
+  without a check. **Always ask** and **YOLO** ignore these switches.
 </Callout>
+
+### Changing Settings by Asking
+
+With the settings tools, you can just ask, for example "Switch to dark mode" or "Make the text bigger." Some settings, like your API keys and sign-in, can't be read or changed by AgentOne.
 
 ### Tool Options
 
-Click the gear next to a tool to change its options. Every tool has **Require Approval**. Some have more, for example:
+Click the gear next to a switch to change that group's options:
 
-![The Run command options with Require Approval, Default Timeout, and Max Scrollback.](/images/docs/tools/tool-config.png)
+![The Run commands options with Default Timeout and Max Scrollback.](/images/docs/tools/tool-config.png)
 
-| Tool                  | Options                                                                     |
-| --------------------- | --------------------------------------------------------------------------- |
-| Search the web        | **Max Concurrent Searches**, **Default Max Results**, **Default Max Pages** |
-| Browse                | **Min URLs**, **Max URLs**, **Default Max Content Length**                  |
-| Wikipedia             | **Default Max Results**                                                     |
-| View file             | **Default Max Characters**                                                  |
-| Current date and time | **Use UTC**                                                                 |
-| Pause                 | **Min Duration (ms)**, **Max Duration (ms)**                                |
-| Run command           | **Default Timeout (ms)**, **Max Scrollback (chars)**                        |
-| Search chats          | **Default Max Results**                                                     |
-| Read chat             | **Default Read Length (chars)**, **Max Read Length (chars)**                |
+| Switch                            | Options                                                                                                           |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Allow web access                  | **Max Concurrent Searches**, **Default Max Results**, **Default Max Pages**, **Min URLs**, **Max URLs**, and more |
+| Allow AgentOne to read files      | **Default Max Characters**                                                                                        |
+| Allow AgentOne to run commands    | **Default Timeout (ms)**, **Max Scrollback (chars)**                                                              |
+| Allow AgentOne to read past chats | **Default Max Results**, **Default Read Length (chars)**, **Max Read Length (chars)**                             |
 
 ### How Commands Run
 
-**Run command** uses `zsh` on macOS, `sh` on Linux, and `cmd` on Windows. Commands run as your user, in the same environment as your terminal, so they can find tools you've installed with Homebrew, nvm, and similar tools.
+**Run command** uses `zsh` on macOS, `sh` on Linux, and PowerShell on Windows. Commands run as your user, in the same environment as your terminal, so they can find tools you've installed with Homebrew, nvm, and similar tools. In a [project](/docs/chats/projects) with a folder, commands start in that folder.
+
+### Reporting Problems
+
+When something goes wrong on AgentOne's side, like a tool that keeps failing or a capability AgentOne is missing, AgentOne can send a short report to the AgentOne developers so they can fix it. The approval card shows the report before it's sent. To stop reports, turn off **Allow AgentOne to report problems** in `Settings` -> `Tools`.
 
 ## More Tools with Extensions
 
