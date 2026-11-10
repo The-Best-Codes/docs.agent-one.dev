@@ -1,8 +1,4 @@
 // Chatting: the sidebar, message actions, streaming, attachments, compaction, and rich responses.
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 import {
   allChats,
   approvalChat,
@@ -14,10 +10,6 @@ import {
 } from "../lib/fixtures.mjs";
 import { base, chatSql, merge, settings, signedIn } from "../lib/scene.mjs";
 
-const sources = path.join(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../sources",
-);
 const COMPLETIONS =
   "POST https://www.agent-one.dev/api/openai-compat/v1/chat/completions";
 const chats = [
@@ -341,24 +333,23 @@ export default [
     id: "chats/attachments",
     route: "/chat",
     css: composerSpace,
-    scene: scene(),
+    scene: scene({
+      ipc: {
+        "plugin:dialog|open": [
+          "/Users/alex/Documents/quarterly-report.pdf",
+          "/Users/alex/Desktop/whiteboard.png",
+        ],
+      },
+    }),
     prepare: async (page) => {
-      await page
-        .locator("input[type=file]")
-        .first()
-        .setInputFiles([
-          {
-            name: "quarterly-report.pdf",
-            mimeType: "application/pdf",
-            buffer: Buffer.alloc(1_240_000, 32),
-          },
-          {
-            name: "whiteboard.png",
-            mimeType: "image/png",
-            buffer: fs.readFileSync(path.join(sources, "dmg-background.png")),
-          },
-        ]);
-      await page.waitForTimeout(1200);
+      await page.locator(".cm-content").click();
+      await page.keyboard.type("Turn the notes in ", { delay: 20 });
+      await page.getByTestId("attach-button").click();
+      await page.waitForTimeout(600);
+      await page.locator(".cm-content").press("End");
+      await page.keyboard.type(" into a summary for the team.", { delay: 20 });
+      await page.locator(".cm-content").blur();
+      await page.waitForTimeout(800);
     },
     crop: async (page, h) => h.rect(page.getByTestId("chat-form"), 20),
     annotate: async (page, h) => [
@@ -368,12 +359,10 @@ export default [
       }),
       await h.box(
         await h.all(
-          page
-            .getByTestId("chat-form")
-            .locator(".overflow-x-auto > div.border"),
+          page.getByTestId("chat-form").locator("[data-preview-path]"),
         ),
         "2",
-        { anchor: "r" },
+        { anchor: "t" },
       ),
     ],
   },

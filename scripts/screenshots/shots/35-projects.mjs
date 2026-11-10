@@ -150,6 +150,47 @@ export default [
       ),
   },
   {
+    id: "chats/mention-files",
+    route: "/chat?project=project-field-notes",
+    keepFocus: true,
+    viewport: { width: 1200, height: 800 },
+    scene: scene({
+      ipc: {
+        list_project_files: [
+          ["README.md", false],
+          ["src", true],
+          ["src/screens", true],
+          ["src/screens/ReadingList.tsx", false],
+          ["src/screens/NoteEditor.tsx", false],
+          ["src/lib/readTime.ts", false],
+          ["docs/release-checklist.md", false],
+          ["package.json", false],
+          ["app.json", false],
+        ].map(([path, isDirectory]) => ({
+          path,
+          name: path.split("/").pop(),
+          isDirectory,
+          depth: path.split("/").length - 1,
+        })),
+      },
+    }),
+    settle: 2000,
+    prepare: async (page) => {
+      await page.locator(".cm-content").click();
+      await page.keyboard.type("Summarize @read", { delay: 40 });
+      await page.locator(".cm-tooltip-autocomplete").waitFor();
+      await page.waitForTimeout(600);
+    },
+    crop: async (page, h) =>
+      h.rect(
+        [
+          page.getByTestId("chat-form"),
+          page.locator(".cm-tooltip-autocomplete"),
+        ],
+        20,
+      ),
+  },
+  {
     id: "tools/skills-in-chat",
     route: "/chat/chat-skills",
     viewport: { width: 1360, height: 900 },

@@ -1,9 +1,9 @@
 ---
 title: Chat Settings
-description: Control chat sorting, notifications, send and interrupt keys, scheduled agent access, streaming, and how chats get their titles.
+description: Control chat sorting, notifications, send and interrupt keys, how AgentOne analyzes attachments, scheduled agent access, streaming, and how chats get their titles.
 ---
 
-`Settings` -> `Chats` has four cards: **Behavior**, **Scheduled Agents**, **Streaming**, and **Titles**.
+`Settings` -> `Chats` has five cards: **Behavior**, **Attachments**, **Scheduled Agents**, **Streaming**, and **Titles**.
 
 ## Behavior
 
@@ -36,6 +36,19 @@ AgentOne can notify you when it finishes a response (with a preview of the answe
 | **Never**                   | Never                                           |
 
 The first time, your system may ask whether to allow notifications from AgentOne.
+
+## Attachments
+
+When you [attach a file](/docs/chats#attach-files), AgentOne gets the file's location. When it needs to know what's in a file it can't read itself, like an image or a PDF, it can send the file to another model to analyze it.
+
+![The Attachments card with Let AgentOne analyze files turned on and a model picker for Images, Videos, Audio, PDFs, and Other files.](/images/docs/settings/attachments.png)
+
+| Setting                        | What it does                                                                                                                                                                                            | Default            |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| **Let AgentOne analyze files** | Lets AgentOne send a file it can't read to a model and ask about it.                                                                                                                                    | On                 |
+| **Models for analyzing files** | The model used for each type of file: **Images**, **Videos**, **Audio**, **PDFs**, and **Other files**. Pick a model that can read that type of file. Click the reset button to go back to the default. | Same as chat model |
+
+Analyzing a file sends it to that model's provider, and uses credits or costs money like any other message to that model. If a model you picked is no longer available, the chat's model is used instead.
 
 ## Scheduled Agents
 

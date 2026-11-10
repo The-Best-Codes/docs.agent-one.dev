@@ -149,7 +149,7 @@ export const base = (overrides = {}) =>
         "agent-one-onboarding-completed": true,
         "agent-one-onboarding-reminder-dismissed": true,
         "agent-one-star-reminder-dismissed": true,
-        "agent-one-release-notes-last-seen-version": "1.2.0",
+        "agent-one-release-notes-last-seen-version": "1.2.2",
         "agent-one-last-model-directory-sync-timestamp": NOW,
         "agent-one-last-extension-list-sync-timestamp": NOW,
       },

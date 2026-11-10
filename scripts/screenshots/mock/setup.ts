@@ -143,7 +143,7 @@ mockIPC(
       case "plugin:path|join":
         return (args.paths as string[]).join("/");
       case "plugin:app|version":
-        return scene.version ?? "1.2.0";
+        return scene.version ?? "1.2.2";
       case "plugin:app|name":
         return "AgentOne";
       case "plugin:app|tauri_version":

@@ -226,9 +226,10 @@ export default [
   }),
   section("settings/appearance-chat", "section-appearance-card-2"),
   section("settings/chats", "section-chats-card-0", { height: 1200 }),
-  section("settings/scheduled-agents", "section-chats-card-1"),
-  section("settings/streaming", "section-chats-card-2"),
-  section("settings/titles", "section-chats-card-3"),
+  section("settings/attachments", "setting-attachments"),
+  section("settings/scheduled-agents", "section-chats-card-2"),
+  section("settings/streaming", "section-chats-card-3"),
+  section("settings/titles", "section-chats-card-4"),
   section("settings/keyboard-shortcuts", "section-keyboard-shortcuts", {
     height: 1100,
     annotate: async (page, h) => [

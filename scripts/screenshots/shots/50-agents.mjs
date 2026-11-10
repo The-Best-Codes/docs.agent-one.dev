@@ -417,8 +417,8 @@ export default [
     scene: scene({
       update: {
         rid: 1,
-        currentVersion: "1.2.0",
-        version: "1.2.1",
+        currentVersion: "1.2.1",
+        version: "1.2.2",
         date: "2026-11-10",
         body: "Bug fixes and improvements.",
         rawJson: {},
@@ -430,7 +430,7 @@ export default [
     route: "/chat",
     viewport: { width: 1200, height: 1000 },
     scene: scene({
-      localStorage: { "agent-one-release-notes-last-seen-version": "1.1.3" },
+      localStorage: { "agent-one-release-notes-last-seen-version": "1.2.1" },
     }),
   }),
 ];

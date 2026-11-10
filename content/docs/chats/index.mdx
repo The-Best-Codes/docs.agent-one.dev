@@ -1,6 +1,6 @@
 ---
 title: Chatting with AgentOne
-description: Send messages, attach files, and stop or redirect AgentOne while it works.
+description: Send messages, attach files, mention files and skills, and stop or redirect AgentOne while it works.
 ---
 
 Every conversation with AgentOne happens in a **chat**. Within a chat, AgentOne remembers everything you've talked about. Start a new chat whenever you move on to a different topic or task.
@@ -20,24 +20,43 @@ AgentOne shows its answer as it's written. If it needs to look something up, rea
 
 ## Attach Files
 
-To give AgentOne something to look at, attach it to your message:
+To give AgentOne a file to work with, attach it to your message:
 
 - Click the paperclip button in the message box, or
 - Drag files anywhere onto the chat, or
 - Paste a file or image into the message box.
 
-![The message box with a PDF and an image attached as chips above the text field.](/images/docs/chats/attachments.png)
+![The message box with a PDF and an image attached as chips inside the message text.](/images/docs/chats/attachments.png)
 
-1. The paperclip button adds files, and shows how many are attached.
-2. Attached files appear above your message. Click the **x** on a file to remove it.
+1. The paperclip button adds files.
+2. Attached files appear as chips right where you put them in your message. Click a chip to preview the file, and open it in its default app from there. To remove a file, delete its chip like any other text.
 
-You can attach images, PDFs, Word documents, text and Markdown files, CSV and JSON data, and most code files. Whether a model can read a particular kind of file depends on the model. If a model can't handle a file, AgentOne tells you, for example "Only image files are supported by this model." To find models that accept images or files, use the filters in the [model selector](/docs/models/choosing-a-model).
+AgentOne doesn't send a copy of each file to the model. Instead, it gives the model the file's location on your computer, so AgentOne can open it with its [tools](/docs/agent/tools-and-approvals). That means you can attach any kind of file, including large ones. Because AgentOne needs tools to open the files, attaching files needs tools to be turned on. If **Tool Behavior** is set to **No tools**, the paperclip button is turned off.
 
-<Callout title="Attach a past chat">
-  Drag a chat from the sidebar into the message box to give AgentOne a reference
-  to it. Instead of pasting the whole conversation, AgentOne reads only the
-  parts it needs with the [Chat History](/docs/agent/chat-history) tools, which
-  keeps room in the context window for your actual work.
+Files you pick with the paperclip button stay where they are, and AgentOne works on a copy if it needs to change one. Files you drag or paste are copied into your system's temporary folder first. Your system may clear that folder later, so if you'll need one of those files after the chat, ask AgentOne to save it somewhere else.
+
+### Images, PDFs, and Other Files AgentOne Can't Read
+
+AgentOne reads text, code, and data files itself. When it needs to know what's in a file it can't read, like an image, video, audio file, or PDF, it uses the **Analyze file** tool to send the file to a model and ask about it. You'll see **Analyzing** and the file's name in the chat while it works.
+
+By default, the chat's own model analyzes the file, so pick a model that can read that type of file. To find one, use the filters in the [model selector](/docs/models/choosing-a-model). You can choose a different model for each type of file, or turn this off, in [Attachments settings](/docs/settings/chats#attachments).
+
+## Mention Files and Skills
+
+The message box understands what you're pointing at. Mentions show up as chips in your message, both while you type and in the chat afterward.
+
+![The message box in a project with a folder, with "Summarize @read" typed and a list of matching project files, like readTime.ts, README.md, and ReadingList.tsx.](/images/docs/chats/mention-files.png)
+
+- **Type `@` to mention a file.** In a [project](/docs/chats/projects) with a folder, type `@` and start typing a name to search the project's files and folders. Pick one with the arrow keys and `Enter`, or click it. AgentOne gets the file's path and opens it with its tools when it needs to.
+- **Type `/` to use a skill.** Type `/` to search your [skills](/docs/agent/skills), and pick one for AgentOne to follow.
+
+Turn off either kind of suggestion with **@ Mention Suggestions** and **/ Skill Suggestions** in [Appearance settings](/docs/settings/appearance#chat).
+
+<Callout title="Mention a past chat">
+  Drag a chat from the sidebar into the message box to add it as a chip. Instead
+  of pasting the whole conversation, AgentOne reads only the parts it needs with
+  the [Chat History](/docs/agent/chat-history) tools, which keeps room in the
+  context window for your actual work.
 </Callout>
 
 ## Stop or Interrupt a Response

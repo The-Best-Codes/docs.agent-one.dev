@@ -11,7 +11,7 @@ const onboarding = (extra = {}) =>
   merge(
     {
       localStorage: {
-        "agent-one-release-notes-last-seen-version": "1.2.0",
+        "agent-one-release-notes-last-seen-version": "1.2.2",
         "agent-one-last-model-directory-sync-timestamp": Date.now(),
         "agent-one-last-extension-list-sync-timestamp": Date.now(),
       },

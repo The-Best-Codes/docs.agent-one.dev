@@ -26,6 +26,8 @@ https://www.agent-one.dev/download
 3. **Download .deb (Debian/Ubuntu)** for Debian-based distributions.
 4. **Download .rpm (Fedora/RHEL)** for Fedora, RHEL, and openSUSE.
 
+AgentOne needs glibc 2.38 or newer, such as Ubuntu 24.04+, Debian 13+, Fedora 40+, or Linux Mint 22+. Ubuntu 22.04 and Debian 12 aren't supported.
+
 The same files are attached to every release on [GitHub](https://github.com/The-Best-Codes/agent-one/releases/latest). Look for the release with the green **Latest** badge and expand **Assets**.
 
 ## AppImage
@@ -68,9 +70,8 @@ The AppImage runs without installing anything.
 </Steps>
 
 <Callout title="AppImage won't start?">
-  Some distributions need FUSE to run AppImages. On Ubuntu 22.04 and newer,
-  install it with `sudo apt install libfuse2t64` (or `libfuse2` on older
-  releases).
+  Some distributions need FUSE to run AppImages. On Ubuntu 24.04 and newer,
+  install it with `sudo apt install libfuse2t64`.
 </Callout>
 
 ## Debian and Ubuntu

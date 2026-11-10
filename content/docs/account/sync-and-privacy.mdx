@@ -3,7 +3,7 @@ title: Sync & Privacy
 description: What AgentOne syncs between your devices, what stays on your computer, and where your data goes.
 ---
 
-AgentOne is private by default. Your chats, files, and API keys stay on your computer. If you sign in, AgentOne can sync your **settings** across devices.
+AgentOne is private by default. Your chats, files, and API keys are stored on your computer, and messages only leave it to reach the model you choose (see [Where Your Messages Go](#where-your-messages-go)). If you sign in, AgentOne can sync your **settings** across devices.
 
 ## Turn Sync On or Off
 
@@ -28,7 +28,8 @@ These never leave your computer:
 
 | Data                                                                                                       | Where it's stored                             |
 | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| Chats, attachments, and [projects](/docs/chats/projects)                                                   | A local database on your computer             |
+| Chats and [projects](/docs/chats/projects)                                                                 | A local database on your computer             |
+| Dragged or pasted [attachments](/docs/chats#attach-files)                                                  | Your system's temporary folder                |
 | API keys and your sign-in token                                                                            | Your system's secure keychain                 |
 | Provider settings and custom providers                                                                     | Local app storage                             |
 | [Extensions](/docs/extensions)                                                                             | Local app storage                             |
@@ -49,8 +50,8 @@ See [Data Locations](/docs/reference/data-locations) for the exact folders on ea
 
 AgentOne sends your messages only to the AI model you choose:
 
-- **AgentOne's model:** messages go through AgentOne's servers to the model provider that handles your request.
-- **Your own provider:** messages go directly from your computer to that provider (like OpenAI or Anthropic), using your API key.
+- **AgentOne's model:** messages go through AgentOne's servers to the model provider that handles your request. AgentOne keeps a record of each request, including the messages, attachments, tool information, and response, for a limited time. These records are kept apart from your chat history, are only accessed for things like investigating abuse or security incidents, and aren't used to train AI models. See section 1.9 of the [Privacy Policy](https://www.agent-one.dev/privacy).
+- **Your own provider:** messages go directly from your computer to that provider (like OpenAI or Anthropic), using your API key. They don't pass through AgentOne's servers.
 - **Local models:** messages stay on your computer with Ollama or LM Studio.
 
 Tools only reach the internet when they need to. For example, **Search the web** queries DuckDuckGo, and extensions connect to whatever service they're built for.
